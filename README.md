@@ -27,7 +27,7 @@ Three courses, at very different stages:
 
 | Course | Lang | Lessons | State |
 |---|---|---|---|
-| `sociedades-es` | es | **40 / 40** | **complete** — 10 chapters |
+| `sociedades-es` | es | **48 / 48** | **complete** — 12 chapters |
 | `historia-es` | es | 23 / 32 | chapters 7 and 8 unwritten (lessons 24–32) |
 | `crypto-chains` | en | 1 / 1 | one finished lesson; no outline beyond it |
 
@@ -40,7 +40,7 @@ landscape. Not verified: `prefers-reduced-motion` (CSS-only path).
 - `historia-es` lists lessons 24–32 in its manifest with no files on disk, so
   `tools/validate.py` currently exits non-zero. Research briefs exist through
   lesson 21.
-- `sociedades-es` has research briefs for 16 of its 40 lessons. The 20 lessons of
+- `sociedades-es` has research briefs for 24 of its 48 lessons. The 20 lessons of
   chapters 1–7 written before the brief discipline settled have none.
 - Lesson `01-what-a-hash-does` predates the content pipeline and has **no research
   brief**. Its figures are computed by `tools/visuals/avalanche.py`, so they are
@@ -107,8 +107,8 @@ references, ragged tables, unbalanced `$`, missing sources on law/tax courses.
    mechanism first, no metaphors.
 2. **`sociedades-es`** (Spanish, **España**) — sociedades empresariales: SL, SA, SLU,
    autónomo, Impuesto sobre Sociedades, IVA, IRPF, RETA, modelos AEAT, Registro
-   Mercantil. Ten chapters, from what a company legally is through hiring, partners,
-   distress and restructuring.
+   Mercantil. Twelve chapters, from what a company legally is through hiring,
+   partners, distress, growth, non-tax obligations and groups.
 3. **`historia-es`** (Spanish) — the history of Spain, argued from sources rather
    than narrated.
 
