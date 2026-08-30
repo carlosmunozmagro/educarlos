@@ -1,0 +1,21 @@
+<svg viewBox="0 0 300 172" xmlns="http://www.w3.org/2000/svg">
+  <text class="dim" x="8" y="12" font-size="10">a majority of the hashrate</text>
+
+  <rect class="box" x="8" y="20" width="136" height="140" rx="6"/>
+  <text class="accent" x="76" y="38" font-size="12" text-anchor="middle">can</text>
+  <text x="18" y="60" font-size="11">choose the chain</text>
+  <text x="18" y="78" font-size="11">exclude any</text>
+  <text x="18" y="93" font-size="11">transaction</text>
+  <text x="18" y="113" font-size="11">reverse recent</text>
+  <text x="18" y="128" font-size="11">blocks</text>
+  <text x="18" y="148" font-size="11">take every reward</text>
+
+  <rect class="box" x="156" y="20" width="136" height="140" rx="6"/>
+  <text class="lbl" x="224" y="38" font-size="12" text-anchor="middle">cannot</text>
+  <text x="166" y="60" font-size="11">sign for a key</text>
+  <text x="166" y="75" font-size="11">it does not hold</text>
+  <text x="166" y="95" font-size="11">mint coins the</text>
+  <text x="166" y="110" font-size="11">rules forbid</text>
+  <text x="166" y="130" font-size="11">rewrite deep</text>
+  <text x="166" y="145" font-size="11">history cheaply</text>
+</svg>

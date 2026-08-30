@@ -1,0 +1,18 @@
+<svg viewBox="0 0 300 166" xmlns="http://www.w3.org/2000/svg">
+  <defs><marker id="fn-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 1 L7 4 L0 7 z" fill="currentColor"/></marker></defs>
+  <text class="dim" x="8" y="12" font-size="10">the clock, and where it stops</text>
+  <rect class="box" x="8" y="22" width="284" height="38" rx="6"/>
+  <text class="lbl" x="18" y="38" font-size="11">one slot</text>
+  <text x="282" y="38" font-size="11" text-anchor="end">12 seconds</text>
+  <text class="dim" x="18" y="53" font-size="10">one chance to propose</text>
+  <line class="line" x1="150" y1="60" x2="150" y2="70" marker-end="url(#fn-arrow)"/>
+  <rect class="box" x="8" y="72" width="284" height="38" rx="6"/>
+  <text class="lbl" x="18" y="88" font-size="11">one epoch</text>
+  <text x="282" y="88" font-size="11" text-anchor="end">32 slots, 6.4 min</text>
+  <text class="dim" x="18" y="103" font-size="10">validators vote</text>
+  <line class="line" x1="150" y1="110" x2="150" y2="120" marker-end="url(#fn-arrow)"/>
+  <rect class="box" x="8" y="122" width="284" height="38" rx="6"/>
+  <text class="accent" x="18" y="138" font-size="11">finalised</text>
+  <text x="282" y="138" font-size="11" text-anchor="end">2 epochs, 12.8 min</text>
+  <text class="dim" x="18" y="153" font-size="10">reverting now costs a third of all stake</text>
+</svg>

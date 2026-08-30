@@ -1,0 +1,181 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "17-fifty-one-percent",
+  "courseId": "crypto-chains",
+  "chapterId": "ch3-consensus",
+  "title": "Fifty-one percent",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 3 - Agreeing without a referee",
+          "heading": "Fifty-one percent",
+          "text": [
+            "The phrase gets used as though it meant the end of everything.",
+            "It buys a specific and surprisingly short list of powers, and the list of what it does not buy is more interesting."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One power, several uses",
+          "text": [
+            "A majority of the hashrate means your chain grows fastest. That is the whole capability.",
+            "Everything else follows from it, because the network's rule is to follow the chain with the most work."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The two columns"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/majority-power.svg",
+          "alt": "Two columns listing what a hashrate majority can do - choose the chain, exclude transactions, reverse recent blocks, take rewards - against what it cannot",
+          "caption": "The left column is bad. The right column is the reason the system is still standing."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "How it turns into money",
+          "text": [
+            "Deposit coins at an exchange. Wait out its confirmation policy. Trade for something else and withdraw that.",
+            "Then publish the private chain in which the deposit never happened. The exchange is holding nothing; you kept the withdrawal."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "Notice what was attacked. Not a signature, not a hash, not the chain's mathematics.",
+            "The target was somebody else's decision about how many confirmations were enough - which is exactly the decision Nora had to make in the last lesson."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What it still cannot do",
+          "text": [
+            "It cannot move coins out of an address. Hashing is not signing, and no quantity of it produces a signature for a key you do not have.",
+            "It cannot mint. A block paying itself an over-large subsidy is rejected by every full node, no matter how much work is behind it."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "If a majority can rewrite history, why not go back to 2015 and take everything?",
+          "answer": [
+            "Because rewriting from depth $d$ means redoing $d$ blocks of work while the honest chain keeps extending. With 51% you outpace it by a hair, so catching up on a decade takes roughly a decade.",
+            "Depth is the defence, and it is the only one that gets stronger by itself while you do nothing."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Which is fine, until you do not own the hardware",
+          "text": [
+            "A chain's security is paid for by its block reward. So a small chain has a small security budget - and that would be its own business, except for one thing.",
+            "If it uses the same proof-of-work algorithm as a much larger chain, the hashrate to attack it can simply be rented by the hour."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "January 2019, then August 2020",
+          "heading": "Ethereum Classic, twice",
+          "text": [
+            "Deep reorganisations and double spends against exchanges. The January incident cost in the region of a million dollars; the August attacks reorganised **thousands of blocks**.",
+            "Nothing about Ethereum Classic's cryptography failed. It ran an algorithm whose hardware was pointed at a bigger chain, and could be turned around for an afternoon."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "warning",
+          "text": [
+            "Bitcoin Gold, May 2018: double spends against exchanges in the region of 18 million dollars, and attacked again in 2020. Same shape.",
+            "The lesson generalises: a chain is not secured by its own hashrate. It is secured by how expensive it is for someone to briefly acquire more."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "And the uncomfortable part"
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "There is no 51% threshold in any protocol rule. Nothing detects it, nothing triggers, no alarm goes off.",
+            "Below a majority the attacks in this lesson still work - just less often, exactly as the curve in lesson 16 says. 51% is where success becomes certain given enough patience, not where it starts."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "Proof of work does not make attacks impossible; it prices them, and the price is set by what the hardware costs to rent, not by what the chain is worth.",
+            "One large network looked at that bill and stopped paying it. Next: what it bought instead."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+              "url": "https://bitcoin.org/bitcoin.pdf",
+              "note": "section 11 - the same model, read from the attacker's side"
+            },
+            {
+              "title": "Ethereum Classic project statements, January 2019 and August 2020 attacks",
+              "note": "amounts and reorg depths as reported by the project and affected exchanges"
+            },
+            {
+              "title": "Bitcoin Gold project statement, May 2018 double-spend attack",
+              "note": "figures are the project's own, quoted here as orders of magnitude"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

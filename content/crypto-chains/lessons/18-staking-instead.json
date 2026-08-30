@@ -1,0 +1,202 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "18-staking-instead",
+  "courseId": "crypto-chains",
+  "chapterId": "ch3-consensus",
+  "title": "Staking instead",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 3 - Agreeing without a referee",
+          "heading": "Staking instead",
+          "text": [
+            "On 15 September 2022 Ethereum stopped mining. Not gradually - between one block and the next.",
+            "The chain kept running, and its electricity bill fell by about 99.95%."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Keep the problem, change the scarce thing",
+          "text": [
+            "The requirement from lesson 13 has not moved: votes must cost something, or identities are free and the vote means nothing.",
+            "Work makes a vote cost electricity. Stake makes it cost **capital you have already handed over**."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What a validator is",
+          "text": [
+            "Someone who has deposited 32 ETH into a contract and runs software that proposes and attests to blocks.",
+            "The deposit is not a fee. It sits there, and the protocol can take it."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The clock is fixed, not lottery-driven"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/finality.svg",
+          "alt": "Three stacked steps: a 12-second slot, a 32-slot epoch of 6.4 minutes, and finality two epochs later at 12.8 minutes",
+          "caption": "No memoryless search. A validator is chosen for each 12-second slot and simply proposes."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Which lets it say a word bitcoin cannot",
+          "text": [
+            "After two epochs, about 12.8 minutes, a block is **finalised**.",
+            "Not \"very probably safe\". Reverting it requires at least a third of all staked ETH to be destroyed by the protocol itself."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "key",
+          "title": "A price, not a probability",
+          "text": [
+            "Lesson 16 gave Nora a curve that approaches zero and never arrives. Casper FFG gives a number instead: the attacker's own capital, forfeited.",
+            "That is a genuinely different kind of guarantee, and it is the strongest argument for the design."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Under proof of work, mining two competing chains splits your hashrate. Under staking, signing both costs nothing. What stops a validator voting for everything?",
+          "answer": [
+            "Slashing. Proposing two blocks for one slot, or casting contradictory attestations, is provable from the signatures alone - the evidence is the validator's own signature, submitted by anyone who sees both.",
+            "The protocol then destroys part of the stake and ejects the validator. \"Nothing at stake\" is not solved by physics here; it is solved by writing down a punishment and making the proof self-contained."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The switch itself was unusual",
+          "text": [
+            "It was not scheduled at a block height or a date. It triggered at a **terminal total difficulty** - a cumulative amount of work.",
+            "The last mined block was the one that pushed the total past the threshold. After it, the beacon chain took over."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "And now the cost nobody advertises",
+          "text": [
+            "Under proof of work, a brand-new node can verify everything from the genesis block using only the rules. Work is checkable from outside; the heaviest chain identifies itself.",
+            "Under proof of stake, validators who have withdrawn their deposits can sign an alternative history for free. There is nothing left to slash."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "warning",
+          "title": "Weak subjectivity",
+          "text": [
+            "So a node syncing from scratch cannot tell the real history from a fabricated one. It needs a recent block hash obtained out of band - from a friend, a client's defaults, a block explorer - and has to trust it.",
+            "It is a small, bounded, well-understood amount of trust. It is not zero, and proof of work needed none."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What each one actually sells"
+        },
+        {
+          "type": "table",
+          "columns": [
+            "Proof of work",
+            "Proof of stake"
+          ],
+          "rows": [
+            [
+              "Cost is electricity, spent",
+              "Cost is capital, at risk"
+            ],
+            [
+              "Finality is a probability",
+              "Finality is a price"
+            ],
+            [
+              "Verifiable from genesis",
+              "Needs a recent checkpoint"
+            ],
+            [
+              "Attackable with rented hardware",
+              "Attacker must buy the asset"
+            ]
+          ],
+          "caption": "Neither column is the safe one. They fail differently."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "Proof of stake does not remove the cost of agreement; it moves it from a bill you pay forever to a deposit you can lose once.",
+            "That is the end of how a chain agrees with itself. The rest of the course is about what people then built on top, and where it leaks."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "EIP-3675: Upgrade consensus to Proof-of-Stake",
+              "url": "https://eips.ethereum.org/EIPS/eip-3675",
+              "note": "the terminal total difficulty trigger"
+            },
+            {
+              "title": "Buterin and Griffith, \"Casper the Friendly Finality Gadget\"",
+              "url": "https://arxiv.org/abs/1710.09437",
+              "note": "justification, finalisation, and the one-third bound"
+            },
+            {
+              "title": "Ethereum Foundation: The Merge",
+              "url": "https://ethereum.org/en/roadmap/merge/",
+              "note": "the date and the energy figure"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
