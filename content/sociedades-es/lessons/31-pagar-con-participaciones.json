@@ -1,0 +1,161 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "31-pagar-con-participaciones",
+  "courseId": "sociedades-es",
+  "chapterId": "c8-cuando-entra-gente",
+  "title": "Pagar con participaciones",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 8 — Cuando entra gente",
+          "heading": "Pagar con participaciones",
+          "text": [
+            "Ámbar no puede subirle el sueldo a Nuria tanto como querría.",
+            "Puede darle un 4 % y que no tribute por él."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Diciembre de 2027",
+          "text": [
+            "Nuria lleva once meses. Marta quiere atarla al proyecto y no tiene caja para otra subida.",
+            "Le ofrece un **4 %** de Ámbar, valorado en **6.000 €**. Ni un euro sale de la cuenta de la sociedad."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La regla",
+          "text": [
+            "El **artículo 42.3.f) LIRPF** declara exenta la entrega de participaciones de la propia empresa a trabajadores en activo, gratuita o por debajo del valor de mercado, hasta **12.000 € al año** por trabajador.",
+            "Los 6.000 € de Nuria caben de sobra. Pero el importe es sólo la primera comprobación."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Las tres condiciones"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/tres-puertas-exencion.svg",
+          "alt": "Tres cajas en fila —oferta a toda la plantilla, participación que no supera el 5 %, mantenimiento de tres años— con flechas que bajan hacia una barra que dice exentos 12.000 € al año",
+          "caption": "El **artículo 43 del Reglamento** exige las tres a la vez."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Ámbar las cumple, y una por accidente",
+          "text": [
+            "El 4 % está por debajo del 5 % que puede tener cada trabajador con su cónyuge y familiares hasta el segundo grado. Nuria las mantendrá hasta diciembre de **2030**.",
+            "Y la oferta a toda la plantilla se cumple sola: Ámbar tiene una sola trabajadora. Ofrecérselo a Nuria **es** ofrecérselo a todos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Si Marta le hubiera dado un 6 % en lugar de un 4 %, valorado igual en 6.000 €, ¿tributaría Nuria por el 1 % que sobra?",
+          "answer": [
+            "No. Tributaría por los **6.000 € enteros**.",
+            "El 5 % es una **condición** de la exención, no un tramo exento. Superarlo no recorta el beneficio: lo elimina.",
+            "Es la misma lógica que dejó fuera la operación de la lección 22, donde Marta se planteaba entregarse participaciones sólo a ella."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y el régimen que todo el mundo cita",
+          "text": [
+            "La **Ley 28/2022** sube el límite a **50.000 €**, quita la exigencia de ofertar en las mismas condiciones a todos, y alcanza a las participaciones recibidas al ejercitar opciones de compra.",
+            "Añade además una regla de valoración y un diferimiento de hasta **diez años** (**art. 14.2.m) LIRPF**)."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Pero no es para cualquiera",
+          "text": [
+            "Ese régimen es de las **empresas emergentes**, una condición legal con antigüedad máxima y certificación. No basta con ser joven o pequeña.",
+            "Ámbar se constituyó en 2023 y no está certificada. Vive en los 12.000 €."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "«La ley de startups permite 50.000 € exentos» es cierto y casi siempre irrelevante: la mayoría de las SL que lo intentan no son empresas emergentes."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde está la dificultad de verdad",
+          "text": [
+            "En el número. Ámbar no cotiza y nunca ha tenido una ronda: no hay precio de mercado observable.",
+            "La regla del tercero independiente que fija el **art. 43.1.1.g)** existe **sólo** para las emergentes. Para Ámbar, «valor de mercado» es lo que las partes puedan defender ante una comprobación."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que Marta acaba de hacer",
+          "text": [
+            "Ha convertido a su empleada en socia. Nuria vota, pide información y ya no es sólo una nómina. Marta baja al 66 %, Diego se queda en el 30 %.",
+            "Tres socios donde hacía un año había uno. En la siguiente, qué pasa cuando uno de ellos se quiere ir."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 35/2006, del IRPF",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+              "note": "arts. 42.3.f), 43.1.1.g) y 14.2.m)"
+            },
+            {
+              "title": "RD 439/2007, Reglamento del IRPF",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820",
+              "note": "art. 43, condiciones de la exención"
+            },
+            {
+              "title": "Ley 28/2022, de empresas emergentes",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-21739"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "32-cuando-un-socio-se-va",
+  "courseId": "sociedades-es",
+  "chapterId": "c8-cuando-entra-gente",
+  "title": "Cuando un socio se va",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 8 — Cuando entra gente",
+          "heading": "Cuando un socio se va",
+          "text": [
+            "Diego quiere salir de Ámbar.",
+            "Descubre que en una SL no te vas cuando quieres."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "2029, dos años después",
+          "text": [
+            "Marta y Diego discuten por dónde llevar el estudio. Diego quiere su dinero y marcharse.",
+            "En una sociedad de capital no existe un derecho general a irse. Hay tres puertas y dos están cerradas por defecto."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Las tres puertas"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/tres-puertas-de-salida.svg",
+          "alt": "Tres cajas apiladas: vender, que necesita comprador y el permiso de los estatutos; separarse, que exige causa legal; y ser excluido, que decide la sociedad. Debajo, una línea señala que enfadarse no es ninguna de ellas",
+          "caption": "Separación y exclusión son **causadas**. El desacuerdo no es una causa."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Separarse: la lista del 346",
+          "text": [
+            "El **artículo 346 LSC** da derecho de separación al socio **que no votó a favor** del acuerdo: sustitución o modificación sustancial del objeto social, prórroga, reactivación, y creación o extinción anticipada de prestaciones accesorias.",
+            "En la SL, además, modificar el régimen de transmisión. Plazo: **un mes** desde la junta."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Ninguna le sirve",
+          "text": [
+            "Ámbar no cambia de objeto, no se prorroga, no se reactiva y no tiene prestaciones accesorias que extinguir (lección 30).",
+            "Diego puede vender. Pero el comprador tiene que pasar por el régimen de transmisión de unos estatutos que no escribió él."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La puerta del minoritario",
+          "text": [
+            "El **artículo 348 bis** da derecho de separación cuando la sociedad gana dinero y no reparte. Exige cuatro cosas a la vez."
+          ]
+        },
+        {
+          "type": "table",
+          "columns": ["Requisito", "Ámbar en 2029"],
+          "rows": [
+            ["Pasado el quinto ejercicio desde la inscripción", "inscrita el 24-3-2023 ✔"],
+            ["Beneficios en los tres ejercicios anteriores", "2026, 2027 y 2028 ✔"],
+            ["La junta no reparte el 25 % de lo distribuible", "reparte 0 de 45.000 € ✔"],
+            ["Protesta del socio en el acta", "Diego la hace constar ✔"]
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Marta acaba de abrirle la puerta",
+          "text": [
+            "El 25 % de los 45.000 € distribuibles de 2028 son **11.250 €**. Marta, con el 66 %, vota repartir cero y reinvertir.",
+            "Diego tiene un mes. Y Ámbar, que no quería sacar 11.250 €, va a tener que pagar el valor entero de un 30 %."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "text": [
+            "El derecho no nace si en los últimos cinco años se repartió, al menos, el 25 % de lo distribuible en ese periodo. Repartir poco todos los años desactiva el 348 bis; no repartir nada, lo dispara."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Marta prefiere echarlo a pagarle. Diego, mientras tanto, ha empezado a trabajar por su cuenta para dos clientes de Ámbar. ¿Puede excluirlo?",
+          "answer": [
+            "No.",
+            "El **artículo 350** permite excluir al socio que incumple prestaciones accesorias, y al **socio administrador** que infringe la prohibición de competencia o ha sido condenado por sentencia firme.",
+            "Diego no es administrador, y la no competencia que firmó vive en el pacto de socios, no en los estatutos. Es exactamente el agujero de la lección 30, ahora con precio."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y el precio no lo pone ninguno",
+          "text": [
+            "Diego pide 90.000 € por su 30 %. Marta ofrece 40.000 €.",
+            "A falta de acuerdo sobre el valor razonable —o sobre quién debe valorarlo—, el **artículo 353** lo manda a un **experto independiente designado por el registrador mercantil** del domicilio social."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que cierra el capítulo",
+          "text": [
+            "Marta contrató, dio entrada a un socio y repartió participaciones sin tocar nunca los estatutos de plantilla que firmó el 3 de marzo de 2023.",
+            "Cada decisión de este capítulo se ha resuelto en ese documento. El pacto de socios no lo sustituyó: sólo lo tapó cuatro años."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley de Sociedades de Capital (RDL 1/2010)",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2010-10544",
+              "note": "arts. 346, 348 bis, 350 y 353"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "29-el-primer-trabajador",
+  "courseId": "sociedades-es",
+  "chapterId": "c8-cuando-entra-gente",
+  "title": "El primer trabajador",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 8 — Cuando entra gente",
+          "heading": "El primer trabajador",
+          "text": [
+            "Marta le ofrece a Nuria 24.000 € al año.",
+            "A Ámbar le va a costar 31.356 €."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El 1 de febrero de 2027",
+          "text": [
+            "Nuria entra como diseñadora, contrato **indefinido** y jornada completa: **2.000 € brutos** al mes, doce pagas.",
+            "Ámbar lleva cuatro ejercicios facturando 180.000 € con una sola persona dentro. Es la primera vez que hay una nómina que no es la de Marta."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Antes del primer día",
+          "text": [
+            "El alta en la Seguridad Social se solicita **con anterioridad al inicio de la prestación de servicios** (**art. 32 del RD 84/1996**). No es un trámite del final de mes.",
+            "Nuria empieza el lunes: el alta está pedida el viernes."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Dar de alta después de que alguien ya ha trabajado no es un retraso administrativo. Es una infracción, y la fecha queda registrada."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La cotización no es un porcentaje",
+          "text": [
+            "Son cinco conceptos independientes sobre la misma base. La base de Nuria son sus 2.000 €."
+          ]
+        },
+        {
+          "type": "table",
+          "columns": ["Concepto", "Empresa", "Nuria"],
+          "rows": [
+            ["Contingencias comunes", "23,60 %", "4,70 %"],
+            ["Desempleo (indefinido)", "5,50 %", "1,55 %"],
+            ["FOGASA", "0,20 %", "—"],
+            ["Formación profesional", "0,60 %", "0,10 %"],
+            ["MEI", "0,75 %", "0,15 %"],
+            ["Suma", "30,65 %", "6,50 %"]
+          ],
+          "caption": "Orden PJC/297/2026, art. 18."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "A Nuria le descuentan 130 € al mes de Seguridad Social. ¿Cuánto de esos 130 € es coste para Ámbar?",
+          "answer": [
+            "Nada.",
+            "Ese 6,50 % sale del bruto de Nuria: se lo descuentan a ella y Ámbar sólo lo ingresa por su cuenta.",
+            "El coste de Ámbar son **otros 613 €** que no aparecen en la nómina de Nuria y que casi nadie ve hasta que llega el cargo. Sumar los dos porcentajes —y calcular casi un 37 %— es el error más común en la dirección contraria."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y todavía falta un concepto",
+          "text": [
+            "Las contingencias profesionales —accidente de trabajo y enfermedad profesional— van **enteras** a cargo de la empresa, con un tipo que depende de la actividad según la tarifa de primas.",
+            "Por eso el 30,65 % es un **suelo**, no un total."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que cuesta, y lo que cuesta de verdad"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/coste-empleado.svg",
+          "alt": "Tres barras comparadas: el sueldo bruto de 24.000 €, el coste bruto para la empresa de 31.356 €, y el coste neto tras el Impuesto sobre Sociedades, 25.725 €",
+          "caption": "El sueldo y la cuota patronal son gasto deducible: el coste real se queda en el **82 %** del bruto."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Por dónde baja",
+          "text": [
+            "Sin Nuria, Ámbar cerraría 2027 con 60.000 € de base y **10.500 €** de cuota (lección 06).",
+            "Con Nuria, la base baja a **28.644 €** y la cuota a **4.869,48 €**. Son **5.630,52 €** menos de impuesto."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "31.356 € de coste bruto − 5.630,52 € de ahorro = **25.725,48 €** reales."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Donde esto se malinterpreta",
+          "text": [
+            "Deducible no significa gratis. Ámbar recupera el **tipo del impuesto** sobre el gasto, no el gasto.",
+            "De cada euro que le paga a Nuria, en 2027 le vuelven 17 o 20 céntimos. Los otros ochenta y tantos salen de la caja igual."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que cambia dentro",
+          "text": [
+            "El modelo 111 que Ámbar ya presentaba por la nómina de Marta (lección 18) ahora lleva dos personas. El resto —alta, cotización, prima de accidentes— es maquinaria nueva.",
+            "Y hay algo que no es maquinaria: dentro de la sociedad ya hay alguien que no es la dueña. En la siguiente, alguien que además quiere ser socio."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Orden PJC/297/2026, de 30 de marzo, de cotización para 2026",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2026-7296",
+              "note": "art. 18, tipos de cotización"
+            },
+            {
+              "title": "RD 84/1996, Reglamento de inscripción, afiliación, altas y bajas",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1996-4447",
+              "note": "art. 32, plazo del alta"
+            },
+            {
+              "title": "Ley 27/2014, del Impuesto sobre Sociedades",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328",
+              "note": "DT 44.ª, escala de microempresa"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

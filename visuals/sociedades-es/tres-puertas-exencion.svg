@@ -1,0 +1,25 @@
+<svg viewBox="0 0 300 168" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="tp-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+<path d="M0 0 L8 4 L0 8 z" fill="currentColor"/>
+</marker>
+</defs>
+<text class="dim" x="6" y="14" font-size="10">Entrega de participaciones a un trabajador</text>
+<rect class="box" x="6" y="24" width="86" height="34" rx="3"/>
+<text x="14" y="40" font-size="11">Oferta a toda</text>
+<text x="14" y="52" font-size="11">la plantilla</text>
+<rect class="box" x="102" y="24" width="86" height="34" rx="3"/>
+<text x="110" y="40" font-size="11">Su parte no</text>
+<text x="110" y="52" font-size="11">pasa del 5 %</text>
+<rect class="box" x="198" y="24" width="86" height="34" rx="3"/>
+<text x="206" y="40" font-size="11">Las mantiene</text>
+<text x="206" y="52" font-size="11">tres años</text>
+<path class="line" d="M49 58 L49 76" marker-end="url(#tp-arrow)"/>
+<path class="line" d="M145 58 L145 76" marker-end="url(#tp-arrow)"/>
+<path class="line" d="M241 58 L241 76" marker-end="url(#tp-arrow)"/>
+<rect class="hot" x="6" y="80" width="278" height="26" rx="3"/>
+<text class="lbl" x="14" y="97" font-size="11">Exentos 12.000 € al año — art. 42.3.f)</text>
+<text class="dim" x="6" y="124" font-size="10">Falla una sola y no tributa el exceso:</text>
+<text class="accent" x="6" y="138" font-size="11" font-weight="700">tributa la entrega entera.</text>
+<text class="dim" x="6" y="158" font-size="10">Los 50.000 € son otra cosa: sólo empresas emergentes.</text>
+</svg>

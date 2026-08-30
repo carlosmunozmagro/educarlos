@@ -190,6 +190,32 @@
           "summary": "Venta, liquidación y las responsabilidades que sobreviven a la sociedad."
         }
       ]
+    },
+    {
+      "id": "c8-cuando-entra-gente",
+      "title": "Cuando entra gente",
+      "lessons": [
+        {
+          "id": "29-el-primer-trabajador",
+          "title": "El primer trabajador",
+          "summary": "Lo que cuesta de verdad una nómina, y por qué el bruto es la parte pequeña."
+        },
+        {
+          "id": "30-el-pacto-de-socios",
+          "title": "El pacto de socios",
+          "summary": "Por qué lo que firmaste ante abogado no obliga a tu sociedad, y qué hay que llevar a los estatutos."
+        },
+        {
+          "id": "31-pagar-con-participaciones",
+          "title": "Pagar con participaciones",
+          "summary": "Los 12.000 € exentos, sus tres condiciones, y por qué el régimen de startups casi nunca te aplica."
+        },
+        {
+          "id": "32-cuando-un-socio-se-va",
+          "title": "Cuando un socio se va",
+          "summary": "Vender, separarse o ser excluido: las tres puertas, y quién acaba poniendo el precio."
+        }
+      ]
     }
   ]
 }

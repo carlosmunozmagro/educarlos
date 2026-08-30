@@ -1,0 +1,152 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "30-el-pacto-de-socios",
+  "courseId": "sociedades-es",
+  "chapterId": "c8-cuando-entra-gente",
+  "title": "El pacto de socios",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 8 — Cuando entra gente",
+          "heading": "El pacto de socios",
+          "text": [
+            "Marta y Diego firman ocho folios ante abogado.",
+            "La sociedad no está obligada por ninguno de ellos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Junio de 2027",
+          "text": [
+            "Diego llevaba tres años haciéndole a Ámbar el _motion graphics_ como proveedor. Entra como socio: **30 %** para él, **70 %** para Marta.",
+            "El pacto recoge cuatro cosas: permanencia de cuatro años, no competencia, arrastre y acompañamiento, y que las decisiones grandes las firman los dos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Una frase lo cambia todo",
+          "text": [
+            "El **artículo 29 LSC** completo dice: «Los pactos que se mantengan reservados entre los socios **no serán oponibles a la sociedad**.»",
+            "Ámbar no firmó ese papel. Ámbar no lo conoce. Para Ámbar, no existe."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Qué significa en la práctica",
+          "text": [
+            "Si Diego vota en junta contra lo que prometió, **el acuerdo es válido**. No se anula por contradecir el pacto.",
+            "Marta no ha perdido su derecho: lo tiene contra Diego, en su patrimonio, por incumplimiento de contrato. Lo que no tiene es poder dentro de la sociedad."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dos documentos, dos alcances"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/pacto-y-estatutos.svg",
+          "alt": "Dos cajas comparadas: el pacto de socios, privado, que obliga sólo a quien firma y se sanciona indemnizando; y los estatutos, inscritos y públicos, que obligan a la sociedad y permiten excluir. Una flecha señala las prestaciones accesorias del artículo 86 como única puerta entre ambos",
+          "caption": "Lo que quieras poder **exigir** tiene que estar en el lado derecho."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "A los dos años Diego monta un estudio paralelo, justo lo que firmó que no haría. ¿Puede Marta expulsarlo de Ámbar?",
+          "answer": [
+            "Con el pacto en la mano, no. Puede reclamarle daños, y poco más: seguirá siendo socio del 30 % y seguirá votando.",
+            "Sólo habría podido excluirlo si esa obligación de no competir estuviera **en los estatutos** como prestación accesoria. El **artículo 350 LSC** permite excluir al socio que incumple voluntariamente esa obligación.",
+            "El remedio no depende de lo grave que sea el incumplimiento. Depende de en qué documento se escribió."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La puerta entre los dos",
+          "text": [
+            "El **artículo 86 LSC** deja establecer en estatutos obligaciones distintas de aportar capital: trabajar en exclusiva, no competir, aportar servicios.",
+            "Exige contenido **concreto y determinado**, decir si son **gratuitas o retribuidas**, y admite cláusulas penales. Nunca forman parte del capital social."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que cuesta llevarlo allí",
+          "text": [
+            "Un estatuto es público: cualquiera puede leerlo en el Registro (lección 19). Y cambiarlo exige junta, escritura e inscripción, no una firma.",
+            "Además, el **artículo 88** ata esas participaciones: al ser obligaciones personales, transmitirlas necesita autorización de la sociedad."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Qué va en cada sitio",
+          "text": [
+            "A estatutos, lo que tiene que dar poder: prestaciones accesorias, límites a la transmisión, causas de exclusión.",
+            "Al pacto, la economía que no quieres publicar: arrastre, acompañamiento, cómo se valora una salida, quién ocupa qué puesto."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "text": [
+            "El error caro no es firmar un pacto. Es firmarlo creyendo que sustituye a los estatutos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y lo que Marta arrastra desde 2023",
+          "text": [
+            "Los estatutos de Ámbar son los de plantilla que firmó sin leer el 3 de marzo (lección 04). No dicen nada de esto.",
+            "Diego ha entrado comprando. En la siguiente, la otra manera de dar entrada a alguien: pagarle con participaciones."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley de Sociedades de Capital (RDL 1/2010)",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2010-10544",
+              "note": "arts. 29, 86, 88 y 350"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

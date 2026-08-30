@@ -1,0 +1,13 @@
+<svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg">
+<text class="dim" x="6.0" y="13" font-size="10">Nuria, 24.000 € brutos, indefinida, 2027</text>
+<text class="lbl" x="6.0" y="34.0" font-size="11">Lo que crees que cuesta</text>
+<rect class="cold" x="6.0" y="38.0" width="136.2" height="20.0" rx="3"/>
+<text class="accent" x="190" y="52.0" font-size="10" font-weight="700">24.000 €</text>
+<text class="lbl" x="6.0" y="68.0" font-size="11">Coste bruto para Ámbar</text>
+<rect class="hot" x="6.0" y="72.0" width="178.0" height="20.0" rx="3"/>
+<text class="accent" x="190" y="86.0" font-size="10" font-weight="700">31.356 €</text>
+<text class="lbl" x="6.0" y="102.0" font-size="11">Coste neto tras el IS</text>
+<rect class="hot" x="6.0" y="106.0" width="146.0" height="20.0" rx="3"/>
+<text class="accent" x="190" y="120.0" font-size="10" font-weight="700">25.725 €</text>
+<text class="dim" x="6.0" y="134" font-size="10">Más la prima de accidentes, que depende de la actividad.</text>
+</svg>
