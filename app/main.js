@@ -8,6 +8,7 @@ import { inline, escapeHtml } from './mdlite.js';
 import { t } from './i18n.js';
 import { NAME, MARK, punField } from './brand.js';
 import * as P from './progress.js';
+import * as Theme from './theme.js';
 
 const app = document.getElementById('app');
 const cache = { index: null, sections: null, courses: new Map(), lessons: new Map(), svgs: new Map() };
@@ -68,9 +69,19 @@ function ring(pct, label) {
 }
 
 const BACK_ICON = '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M11 3L5 9l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const GO_ICON = '<svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M7 3l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const TICK = '<svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M6 13.5l5 5L20 8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
+/* View-transition names must be CSS idents and must be unique on the page.
+   Deriving them from the id keeps the same element paired across two views,
+   which is what makes the badge fly and the title settle instead of both
+   just cross-fading. */
+function vtName(prefix, id) {
+  return prefix + '-' + String(id).toLowerCase().replace(/[^a-z0-9]+/g, '-');
+}
+
 function setChrome(course) {
+  Theme.apply(Theme.stored());
   document.documentElement.lang = course?.lang || 'en';
   document.title = course ? course.title : NAME;
   app.style.setProperty('--accent', course?.accent || '#f0a13a');
@@ -123,11 +134,13 @@ function searchIndex(course) {
 
 /* ---------------------------------------------------------- views */
 
-function courseCard(c) {
+function courseCard(c, i = 0) {
   const st = P.courseStats(c);
   const label = st.total ? st.done + '/' + st.total : '0';
-  return '<a class="course-card" href="#/c/' + encodeURIComponent(c.id) + '" style="--accent:' + escapeHtml(c.accent || '#f0a13a') + '">'
-    + '<div class="meta"><h2>' + inline(c.title) + '</h2>'
+  return '<a class="course-card" href="#/c/' + encodeURIComponent(c.id) + '"'
+    + ' data-rise style="--i:' + i + ';--accent:' + escapeHtml(c.accent || '#f0a13a') + '">'
+    + '<div class="meta"><h2 style="view-transition-name:' + vtName('course', c.id) + '">'
+    + inline(c.title) + '</h2>'
     + '<div class="desc">' + inline(c.subtitle || '') + '</div>'
     + '<span class="tag">' + escapeHtml((c.lang || 'en').toUpperCase()) + ' &middot; ' + st.total + ' ' + t(c.lang)(st.total === 1 ? 'lessonOne' : 'lessons') + '</span></div>'
     + ring(st.pct, label) + '</a>';
@@ -144,12 +157,21 @@ async function viewHome() {
     const n = s.courses.length;
     const tr = t(s.lang || 'en');
     const count = n ? n + ' ' + tr(n === 1 ? 'courseOne' : 'courses') : tr('planned');
+    // Three course names, each in its own accent: a shelf you can read the
+    // spines of before you pull it open.
+    const rail = s.courses.slice(0, 3).map(c =>
+        '<span class="chip" style="--accent:' + escapeHtml(c.accent || '#f0a13a') + '">'
+        + '<span class="txt">' + inline(c.title) + '</span></span>').join('')
+      + (n > 3 ? '<span class="chip more">+' + (n - 3) + '</span>' : '');
     return '<a class="section-card' + (n ? '' : ' soon') + '" href="#/s/' + encodeURIComponent(s.id) + '"'
       + ' data-anim style="--i:' + (i + 1) + '">'
-      + '<span class="badge">' + escapeHtml(s.badge || '&middot;') + '</span>'
+      + '<span class="badge" style="view-transition-name:' + vtName('shelf', s.id) + '">'
+      + escapeHtml(s.badge || '&middot;') + '</span>'
       + '<div class="meta"><h2>' + inline(s.title) + '</h2>'
       + (s.subtitle ? '<div class="desc">' + inline(s.subtitle) + '</div>' : '')
-      + '<span class="tag">' + escapeHtml(count) + '</span></div></a>';
+      + (rail ? '<div class="rail">' + rail + '</div>' : '')
+      + '<span class="tag">' + escapeHtml(count) + '</span></div>'
+      + '<span class="go">' + GO_ICON + '</span></a>';
   }).join('');
 
   app.innerHTML = '<div class="deck home" id="home">'
@@ -160,7 +182,8 @@ async function viewHome() {
     + '<span class="d1">to educate them</span>'
     + '<span class="d2">One screen at a time.</span>'
     + '</div>'
-    + '</div><div class="hint">' + t('en')('swipe') + '</div></section>'
+    + '</div><div class="hint">' + t('en')('swipe') + '</div>'
+    + '<div class="corner">' + Theme.button('en') + '</div></section>'
     + '<section class="screen" data-kind="shelves"><div class="wrap">'
     + '<div class="sec-head" data-anim>' + t('en')('sections') + '</div>'
     + '<div class="section-list">' + shelves + '</div>'
@@ -210,9 +233,13 @@ async function viewSection(id) {
     + '<a class="back" href="#/" aria-label="' + tr('home') + '">' + BACK_ICON + '</a>'
     + '<div class="crumb">' + tr('home') + '</div>'
     + '<div class="count">' + sec.courses.length + '</div>'
+    + Theme.button(lang)
     + '</div></div>'
     + '<div class="page has-bar"><div class="wrap">'
-    + '<div class="map-head"><h1>' + inline(sec.title) + '</h1>'
+    + '<div class="map-head sec-hero">'
+    + '<span class="badge" style="view-transition-name:' + vtName('shelf', sec.id) + '">'
+    + escapeHtml(sec.badge || '&middot;') + '</span>'
+    + '<h1>' + inline(sec.title) + '</h1>'
     + (sec.subtitle ? '<div class="desc">' + inline(sec.subtitle) + '</div>' : '') + '</div>'
     + (index.length
         ? '<div class="searchbox"><input id="q" type="search" autocomplete="off" spellcheck="false"'
@@ -241,7 +268,7 @@ async function viewSection(id) {
       results.innerHTML = '<div class="empty">' + escapeHtml(tr('noResults')) + '</div>';
       return;
     }
-    results.innerHTML = hits.map(({ ix, lessons }) => {
+    results.innerHTML = hits.map(({ ix, lessons }, ci) => {
       const rows = lessons.slice(0, 4).map(l => {
         const label = '<span class="hit-ch">' + escapeHtml(l.chapter) + '</span>' + inline(l.title);
         return l.status === 'planned'
@@ -251,7 +278,7 @@ async function viewSection(id) {
       }).join('');
       const more = lessons.length > 4
         ? '<div class="hit more">+' + (lessons.length - 4) + '</div>' : '';
-      return courseCard(ix.course) + (rows ? '<div class="hits">' + rows + more + '</div>' : '');
+      return courseCard(ix.course, ci) + (rows ? '<div class="hits">' + rows + more + '</div>' : '');
     }).join('');
   };
 
@@ -280,7 +307,7 @@ async function viewCourse(courseId) {
       return '<a class="lesson-row ' + state + '" href="#/c/' + encodeURIComponent(course.id) + '/l/' + encodeURIComponent(ls.id) + '">'
         + body + '</a>';
     }).join('');
-    return '<div class="chapter"><div class="chapter-title"><span class="n">'
+    return '<div class="chapter" data-rise style="--i:' + (ci + 1) + '"><div class="chapter-title"><span class="n">'
       + tr('chapter') + ' ' + (ci + 1) + '</span><span>' + inline(ch.title) + '</span></div>'
       + '<div class="spine">' + rows + '</div></div>';
   }).join('');
@@ -291,9 +318,11 @@ async function viewCourse(courseId) {
     + '<a class="back" href="' + up + '" aria-label="' + tr('backToLibrary') + '">' + BACK_ICON + '</a>'
     + '<div class="crumb">' + tr('backToLibrary') + '</div>'
     + '<div class="count">' + st.done + ' ' + tr('of') + ' ' + st.total + '</div>'
+    + Theme.button(course.lang)
     + '</div><div class="pbar"><i style="width:' + (st.pct * 100) + '%"></i></div></div>'
     + '<div class="page has-bar"><div class="wrap">'
-    + '<div class="map-head"><h1>' + inline(course.title) + '</h1>'
+    + '<div class="map-head"><h1 style="view-transition-name:' + vtName('course', course.id) + '">'
+    + inline(course.title) + '</h1>'
     + (course.description ? '<div class="desc">' + inline(course.description) + '</div>' : '') + '</div>'
     + (chapters || '<div class="empty">No lessons yet.</div>')
     + (course.disclaimer ? '<div class="disclaimer">' + inline(course.disclaimer) + '</div>' : '')
@@ -393,9 +422,32 @@ function wireDeck(course, lesson, tr) {
 
 /* ---------------------------------------------------------- route */
 
-async function route() {
-  const hash = location.hash.replace(/^#\/?/, '');
-  const parts = hash.split('/').filter(Boolean).map(decodeURIComponent);
+/* How deep in the app a route sits. The difference between two of these is
+   the direction of travel, which is all the transition needs to know. */
+function depthOf(parts) {
+  if (parts[0] === 'c' && parts[2] === 'l' && parts[3]) return 3;
+  if (parts[0] === 'c') return 2;
+  if (parts[0] === 's') return 1;
+  return 0;
+}
+
+/* Warm the caches before the transition starts. A view transition freezes the
+   old frame while its callback runs, so any fetch left inside it would show up
+   as the screen hanging on the way out. */
+async function prefetch(parts) {
+  try {
+    if (parts[0] === 'c' && parts[2] === 'l' && parts[3]) {
+      await getCourse(parts[1]);
+      await preloadSVGs(await getLesson(parts[1], parts[3]));
+    } else if (parts[0] === 'c' && parts[1]) {
+      await getCourse(parts[1]);
+    } else {
+      await getSections();
+    }
+  } catch { /* let the view report it */ }
+}
+
+async function render(parts) {
   window.scrollTo(0, 0);
   punfield?.dispose();
   punfield = null;
@@ -412,5 +464,60 @@ async function route() {
   }
 }
 
+const canAnimate = () =>
+  typeof document.startViewTransition === 'function'
+  && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* Run a DOM change as a view transition, tagged so the stylesheet knows which
+   way the page is travelling. Falls back to the plain change where the API is
+   missing or motion is unwelcome. */
+let vtToken = 0;
+async function transition(kind, mutate) {
+  if (!canAnimate()) return mutate();
+  const root = document.documentElement;
+  const token = ++vtToken;
+  root.dataset.nav = kind;
+  try {
+    await document.startViewTransition(mutate).finished;
+  } catch { /* a superseded transition is not an error */ }
+  // Only the newest transition clears the flag: a tap during a navigation
+  // supersedes it, and the loser must not strip the winner's direction.
+  finally { if (token === vtToken) delete root.dataset.nav; }
+}
+
+let depth = -1;
+
+async function route() {
+  const hash = location.hash.replace(/^#\/?/, '');
+  const parts = hash.split('/').filter(Boolean).map(decodeURIComponent);
+  const to = depthOf(parts);
+  const dir = depth < 0 || to === depth ? null : (to > depth ? 'forward' : 'back');
+  depth = to;
+
+  if (!dir) return render(parts);
+  await prefetch(parts);
+  await transition(dir, () => render(parts));
+}
+
+/* One listener for every toggle the views mount. The swap itself runs as a
+   transition, so light and dark wash across the page instead of snapping.
+
+   The next preference is worked out here rather than inside the callback: a
+   transition defers its mutation by a frame, so two quick taps would otherwise
+   both read the same stored value and land on the same theme. */
+let themePref = Theme.stored();
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-theme-toggle]');
+  if (!btn) return;
+  e.preventDefault();
+  themePref = Theme.next(themePref);
+  const pref = themePref;
+  transition('theme', () => {
+    Theme.set(pref);
+    Theme.refreshButtons(document.documentElement.lang);
+  });
+});
+
 addEventListener('hashchange', route);
+Theme.apply(Theme.stored());
 route();

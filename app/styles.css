@@ -26,8 +26,11 @@
   --safe-b: env(safe-area-inset-bottom, 0px);
 }
 
+/* Light is a token swap. It applies when the device asks for it and the reader
+   has not overridden that, or when they pick it outright: the toggle writes
+   data-theme onto <html> and localStorage remembers the choice. */
 @media (prefers-color-scheme: light) {
-  :root {
+  :root:not([data-theme="dark"]) {
     --bg:        #fbfbfa;
     --bg-soft:   #f3f4f2;
     --surface:   #ffffff;
@@ -39,6 +42,18 @@
     --line-2:    #cdd3da;
     --accent-ink:#ffffff;
   }
+}
+:root[data-theme="light"] {
+  --bg:        #fbfbfa;
+  --bg-soft:   #f3f4f2;
+  --surface:   #ffffff;
+  --surface-2: #f1f3f5;
+  --text:      #16191d;
+  --text-dim:  #56616d;
+  --text-faint:#8b95a1;
+  --line:      #e3e6ea;
+  --line-2:    #cdd3da;
+  --accent-ink:#ffffff;
 }
 
 * { box-sizing: border-box; }
@@ -427,10 +442,14 @@ code, pre, .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, 
   --pun-hot: rgba(240, 161, 58, .12);
 }
 @media (prefers-color-scheme: light) {
-  :root {
+  :root:not([data-theme="dark"]) {
     --pun-ink: rgba(22, 25, 29, .05);
     --pun-hot: rgba(185, 112, 26, .13);
   }
+}
+:root[data-theme="light"] {
+  --pun-ink: rgba(22, 25, 29, .05);
+  --pun-hot: rgba(185, 112, 26, .13);
 }
 
 .brandlock { display: flex; align-items: center; gap: .55rem; }
@@ -574,3 +593,130 @@ code, pre, .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, 
     transparent 82%);
 }
 .screen[data-kind="hero"] > .wrap.hero { position: relative; z-index: 1; }
+
+/* ============================================================
+   Theme toggle — system, light, dark
+   ============================================================ */
+/* On the home deck it floats; inside a topbar it sits in the row. Both need
+   pointer events back, since .topbar itself lets touches through. */
+.corner {
+  position: fixed; z-index: 30;
+  top: calc(var(--safe-t) + .6rem); right: max(var(--pad-x), .75rem);
+}
+.theme-toggle {
+  pointer-events: auto;
+  flex: none; display: grid; place-items: center;
+  width: 36px; height: 36px; padding: 0;
+  border-radius: 50%; cursor: pointer;
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  border: 1px solid var(--line);
+  color: var(--text-dim);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  transition: transform .18s var(--ease), border-color .18s var(--ease), color .18s var(--ease);
+}
+.theme-toggle:active { transform: scale(.9); }
+.theme-toggle:hover { color: var(--text); border-color: var(--line-2); }
+.theme-toggle svg { width: 20px; height: 20px; fill: currentColor; }
+.theme-toggle svg [fill="none"] { stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
+.theme-toggle svg .half { fill: currentColor; opacity: .999; }
+/* The icon turns over as the theme does - a half-second of feedback that the
+   tap landed, on a control whose effect is otherwise instantaneous. */
+.theme-toggle.spun svg { animation: spin-in .45s var(--ease); }
+@keyframes spin-in {
+  from { transform: rotate(-120deg) scale(.55); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+
+/* ============================================================
+   Shelves — reading the spines before opening the shelf
+   ============================================================ */
+.section-card .rail {
+  display: flex; flex-wrap: wrap; gap: .3rem .35rem; margin-top: .6rem;
+}
+.section-card .chip {
+  display: inline-flex; align-items: center; gap: .32rem;
+  padding: .22rem .55rem .24rem;
+  border-radius: 999px; border: 1px solid var(--line);
+  background: var(--bg-soft);
+  font-size: .72rem; font-weight: 550; color: var(--text-dim);
+  max-width: 100%; min-width: 0;
+}
+/* The ellipsis has to live on a block inside the chip: a flex container
+   never truncates its own text. */
+.section-card .chip .txt {
+  min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.section-card .chip::before {
+  content: ""; flex: none; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent);
+}
+.section-card .chip.more { color: var(--text-faint); }
+.section-card .chip.more::before { display: none; }
+.section-card .tag { margin-top: .55rem; }
+
+/* The chevron leans in on touch, so the card reads as a door rather than a
+   panel. It is decoration: the whole card is the link. */
+.section-card .go {
+  flex: none; display: grid; place-items: center;
+  width: 26px; height: 26px; color: var(--text-faint);
+  transition: transform .22s var(--ease), color .22s var(--ease);
+}
+.section-card:active .go { transform: translateX(3px); color: var(--accent); }
+.section-card { align-items: flex-start; }
+.section-card .badge, .section-card .go { margin-top: .1rem; }
+
+/* The section's own header: the badge that flew in from the shelf, then the
+   title under it rather than beside it - this screen has room to breathe. */
+.sec-hero .badge {
+  display: grid; place-items: center;
+  width: 52px; height: 52px; border-radius: 15px; margin-bottom: .9rem;
+  background: var(--surface-2); border: 1px solid var(--line);
+  font-size: 1.05rem; font-weight: 700; letter-spacing: .04em; color: var(--text-dim);
+}
+
+/* Cards and chapters land one after another, wherever they are mounted.
+   Distinct from [data-anim], which waits on a snapped screen to scroll in. */
+[data-rise] {
+  animation: rise .46s var(--ease) both;
+  animation-delay: calc(var(--i, 0) * 55ms);
+}
+@keyframes rise { from { opacity: 0; transform: translateY(13px); } to { opacity: 1; transform: none; } }
+
+/* ============================================================
+   View transitions — one screen handing over to the next
+   ============================================================ */
+/* Paired elements (a shelf badge, a course title) fly between the two views;
+   everything else is the root cross-fade below. Safari and Chrome run these;
+   anywhere else the navigation simply happens, which is the old behaviour. */
+::view-transition-group(*) { animation-duration: .44s; animation-timing-function: var(--ease); }
+::view-transition-old(root), ::view-transition-new(root) {
+  animation-duration: .44s; animation-timing-function: var(--ease);
+  mix-blend-mode: normal;                 /* the two frames must not multiply */
+}
+::view-transition-old(root) { z-index: 0; }
+::view-transition-new(root) { z-index: 1; }
+
+/* Going deeper: the new screen rises over the old one, which settles back. */
+:root[data-nav="forward"]::view-transition-old(root) { animation-name: vt-recede; }
+:root[data-nav="forward"]::view-transition-new(root) { animation-name: vt-rise; }
+/* Coming back out: mirrored, so the gesture feels reversible. */
+:root[data-nav="back"]::view-transition-old(root) { animation-name: vt-sink; }
+:root[data-nav="back"]::view-transition-new(root) { animation-name: vt-return; }
+/* A theme change is not travel - it washes, in place. */
+:root[data-nav="theme"]::view-transition-old(root) { animation: vt-fade-out .5s var(--ease) both; }
+:root[data-nav="theme"]::view-transition-new(root) { animation: vt-fade-in .5s var(--ease) both; }
+
+@keyframes vt-rise    { from { opacity: 0; transform: translateY(26px) scale(.985); } to { opacity: 1; transform: none; } }
+@keyframes vt-recede  { from { opacity: 1; transform: none; } to { opacity: 0; transform: scale(.965); } }
+@keyframes vt-return  { from { opacity: 0; transform: scale(.97); } to { opacity: 1; transform: none; } }
+@keyframes vt-sink    { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(22px) scale(.99); } }
+@keyframes vt-fade-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes vt-fade-in  { from { opacity: 0; } to { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-rise] { animation: none; }
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+}
+
+/* The toggle rides at the end of a topbar row, clear of the count. */
+.topbar .theme-toggle { margin-left: .35rem; margin-right: -4px; }
