@@ -1,0 +1,22 @@
+<svg viewBox="0 0 300 116" xmlns="http://www.w3.org/2000/svg">
+  <text class="dim" x="6" y="14" font-size="10">Ejercicio cerrado el 31 de diciembre</text>
+
+  <path class="line" d="M18 46 H286"/>
+
+  <circle class="hot" cx="18" cy="46" r="5"/>
+  <text class="lbl" x="6" y="66">Cierre</text>
+
+  <circle class="box" cx="105" cy="46" r="5"/>
+  <text class="lbl" x="86" y="66">3 meses</text>
+  <text class="dim" x="86" y="79" font-size="10">formular</text>
+
+  <circle class="box" cx="192" cy="46" r="5"/>
+  <text class="lbl" x="173" y="66">6 meses</text>
+  <text class="dim" x="173" y="79" font-size="10">aprobar</text>
+
+  <circle class="hot" cx="268" cy="46" r="5"/>
+  <text class="lbl" x="248" y="66">+1 mes</text>
+  <text class="dim" x="248" y="79" font-size="10">depositar</text>
+
+  <text class="accent" x="6" y="104" font-size="10" font-weight="700">Fallar la última cierra el Registro</text>
+</svg>

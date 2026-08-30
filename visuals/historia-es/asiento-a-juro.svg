@@ -1,0 +1,24 @@
+<svg viewBox="0 0 300 168" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="a-asi" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path class="line" d="M0 1 L9 5 L0 9 z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <rect class="box" x="8" y="14" width="120" height="58" rx="4"/>
+  <text class="lbl" x="68" y="34" text-anchor="middle">Asiento</text>
+  <text class="dim" x="68" y="50" text-anchor="middle" font-size="10">corto plazo, caro</text>
+  <text class="dim" x="68" y="63" text-anchor="middle" font-size="10">banqueros extranjeros</text>
+
+  <rect class="box" x="172" y="14" width="120" height="58" rx="4"/>
+  <text class="accent" x="232" y="34" text-anchor="middle" font-weight="700">Juro</text>
+  <text class="dim" x="232" y="50" text-anchor="middle" font-size="10">largo plazo, barato</text>
+  <text class="dim" x="232" y="63" text-anchor="middle" font-size="10">inversores del reino</text>
+
+  <path class="line" d="M130 43 H168" marker-end="url(#a-asi)"/>
+  <text class="lbl" x="149" y="94" text-anchor="middle" font-size="10">«bancarrota»</text>
+
+  <text class="dim" x="150" y="126" text-anchor="middle" font-size="10">No es dejar de pagar. Es cambiar el calendario</text>
+  <text class="dim" x="150" y="139" text-anchor="middle" font-size="10">y el precio del dinero.</text>
+  <text class="lbl" x="150" y="160" text-anchor="middle" font-size="10">Y al día siguiente vuelven a prestarle.</text>
+</svg>

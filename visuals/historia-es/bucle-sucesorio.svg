@@ -1,0 +1,27 @@
+<svg viewBox="0 0 300 168" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="a-buc" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path class="line" d="M0 1 L9 5 L0 9 z" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <rect class="box" x="86" y="8" width="128" height="30" rx="4"/>
+  <text class="lbl" x="150" y="27" text-anchor="middle">Muere o cae el rey</text>
+
+  <rect class="box" x="176" y="60" width="116" height="42" rx="4"/>
+  <text class="lbl" x="234" y="78" text-anchor="middle">Nadie sabe</text>
+  <text class="lbl" x="234" y="91" text-anchor="middle">quién elige</text>
+
+  <rect class="box" x="86" y="124" width="128" height="30" rx="4"/>
+  <text class="lbl" x="150" y="143" text-anchor="middle">Hecho consumado</text>
+
+  <rect class="box" x="8" y="60" width="116" height="42" rx="4"/>
+  <text class="accent" x="66" y="78" text-anchor="middle" font-weight="700">El concilio</text>
+  <text class="accent" x="66" y="91" text-anchor="middle" font-weight="700">lo ratifica</text>
+
+  <path class="line" d="M214 26 H244 V56" marker-end="url(#a-buc)"/>
+  <path class="line" d="M234 106 V136 H218" marker-end="url(#a-buc)"/>
+  <path class="line" d="M86 139 H56 V106" marker-end="url(#a-buc)"/>
+  <path class="line" d="M66 56 V26 H82" marker-end="url(#a-buc)"/>
+</svg>

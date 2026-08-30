@@ -1,0 +1,15 @@
+<svg viewBox="0 0 300 96" xmlns="http://www.w3.org/2000/svg">
+  <rect class="hot" x="55" y="38" width="120" height="18" rx="3" opacity=".2"/>
+  <path class="line" d="M20 54 H286"/>
+
+  <circle class="hot" cx="55" cy="54" r="5"/>
+  <circle class="box" cx="175" cy="54" r="5"/>
+
+  <text class="dim" x="115" y="32" text-anchor="middle" font-size="10">deudas de este período</text>
+
+  <text x="6" y="72">Pasa a ser unipersonal</text>
+  <text class="dim" x="6" y="86" font-size="10">art. 14.1</text>
+
+  <text class="accent" x="180" y="72" font-weight="600">Seis meses sin</text>
+  <text class="accent" x="180" y="86" font-weight="600">inscribir</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg viewBox="0 0 300 148" xmlns="http://www.w3.org/2000/svg">
+<text class="dim" x="14.0" y="16" font-size="10">Las tres veces que entró en vigor</text>
+<path class="line" d="M14.0 62 H286.0"/>
+<circle class="hot" cx="24.9" cy="62" r="5"/>
+<text class="lbl" x="4.0" y="46" text-anchor="start" font-size="10">1812</text>
+<circle class="line" cx="68.4" cy="62" r="5"/>
+<text class="lbl" x="68.4" y="46" text-anchor="middle" font-size="10">1820</text>
+<circle class="line" cx="155.4" cy="62" r="5"/>
+<text class="lbl" x="155.4" y="46" text-anchor="middle" font-size="10">1836</text>
+<text class="accent" x="14.0" y="102" font-weight="700">26 meses la primera vez</text>
+<text class="dim" x="14.0" y="120.0" font-size="10">Derogada el 4 de mayo de 1814.</text>
+<text class="dim" x="14.0" y="133.0" font-size="10">Volvió dos veces, y viajó a media América.</text>
+</svg>

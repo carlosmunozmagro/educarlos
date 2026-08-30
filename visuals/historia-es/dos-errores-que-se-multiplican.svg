@@ -1,0 +1,26 @@
+<svg viewBox="0 0 300 164" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="a-err" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path class="line" d="M0 1 L9 5 L0 9 z" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <rect class="box" x="8" y="14" width="132" height="56" rx="4"/>
+  <text class="lbl" x="74" y="34" text-anchor="middle" font-size="11">El grado, más corto</text>
+  <text class="dim" x="74" y="50" text-anchor="middle" font-size="10">84 km en vez de 111</text>
+  <text class="dim" x="74" y="63" text-anchor="middle" font-size="10">(Alfragano)</text>
+
+  <rect class="box" x="160" y="14" width="132" height="56" rx="4"/>
+  <text class="lbl" x="226" y="34" text-anchor="middle" font-size="11">Y menos grados</text>
+  <text class="dim" x="226" y="50" text-anchor="middle" font-size="10">130° en vez de 210°</text>
+  <text class="dim" x="226" y="63" text-anchor="middle" font-size="10">(Toscanelli)</text>
+
+  <path class="line" d="M74 74 V96 H148" marker-end="url(#a-err)"/>
+  <path class="line" d="M226 74 V96 H152" marker-end="url(#a-err)"/>
+
+  <rect class="box" x="40" y="106" width="220" height="34" rx="4"/>
+  <text class="accent" x="150" y="128" text-anchor="middle" font-weight="700">Un océano cuatro veces menor</text>
+
+  <text class="dim" x="150" y="158" text-anchor="middle" font-size="10">Van en el mismo sentido: no se suman, se multiplican.</text>
+</svg>

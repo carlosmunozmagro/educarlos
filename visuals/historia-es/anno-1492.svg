@@ -1,0 +1,14 @@
+<svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
+<path class="line" d="M18.0 56.0 H272.0"/>
+<circle class="line" cx="18.0" cy="56.0" r="4.5"/>
+<circle class="hot" cx="124.1" cy="56.0" r="4.5"/>
+<circle class="hot" cx="144.4" cy="56.0" r="4.5"/>
+<circle class="line" cx="272.0" cy="56.0" r="4.5"/>
+<text class="lbl" x="4" y="42.0">2 ene</text>
+<text class="lbl" x="296.0" y="42.0" text-anchor="end">2 ago</text>
+<text class="accent" x="150.0" y="82.0" text-anchor="middle" font-weight="700">17 días entre el edicto y Colón</text>
+<text class="dim" x="8" y="104.0" font-size="10">2 ene — Entrada en Granada</text>
+<text class="dim" x="8" y="117.0" font-size="10">31 mar — Edicto de expulsión</text>
+<text class="dim" x="8" y="130.0" font-size="10">17 abr — Capitulaciones con Colón</text>
+<text class="dim" x="8" y="143.0" font-size="10">2 ago — Fin del plazo de salida</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg viewBox="0 0 300 142" xmlns="http://www.w3.org/2000/svg">
+<path class="line" d="M20.0 50.0 H268.0"/>
+<rect class="box" x="20.0" y="44.0" width="248.0" height="12" rx="3"/>
+<text class="dim" x="144.0" y="53.0" text-anchor="middle" font-size="10">143 años de dominio cristiano</text>
+<circle class="line" cx="20.0" cy="50.0" r="4.5"/>
+<text class="lbl" x="4.0" y="36.0" text-anchor="start">1248</text>
+<circle class="hot" cx="268.0" cy="50.0" r="4.5"/>
+<text class="accent" x="296.0" y="36.0" text-anchor="end">1391</text>
+<text class="dim" x="8" y="80.0" font-size="10">1248 — Sevilla pasa a manos cristianas</text>
+<text class="dim" x="8" y="93.0" font-size="10">1391 — Los motines, en esa misma ciudad</text>
+<text class="lbl" x="8" y="112.0" font-size="10">15 de mayo — motín sofocado por el concejo</text>
+<text class="lbl" x="8" y="125.0" font-size="10">6 de junio — la matanza, ya sin contención</text>
+</svg>

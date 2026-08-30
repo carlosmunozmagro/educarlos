@@ -1,0 +1,13 @@
+<svg viewBox="0 0 300 164" xmlns="http://www.w3.org/2000/svg">
+<rect class="box" x="16.0" y="50.0" width="238.2" height="16" rx="3"/>
+<text class="dim" x="135.1" y="62.0" text-anchor="middle" font-size="10">ocho meses de carestía</text>
+<rect class="hot" x="254.2" y="50.0" width="29.8" height="16" rx="3"/>
+<path class="line" d="M16.0 74.0 H284.0"/>
+<text class="lbl" x="4" y="44.0" font-size="10">jul 1765</text>
+<text class="accent" x="296.0" y="44.0" text-anchor="end" font-size="10" font-weight="700">tres días</text>
+<text class="dim" x="8" y="98.0" font-size="10">jul 1765 — libre comercio de granos</text>
+<text class="dim" x="8" y="111.0" font-size="10">ene–mar 1766 — el precio del pan se dobla</text>
+<text class="dim" x="8" y="124.0" font-size="10">20 mar 1766 — se prohíben capas y sombreros</text>
+<text class="dim" x="8" y="137.0" font-size="10">23–26 mar 1766 — Madrid se amotina</text>
+<text class="lbl" x="8" y="156.0" font-size="10">El sombrero fue la chispa. El pan, el incendio.</text>
+</svg>

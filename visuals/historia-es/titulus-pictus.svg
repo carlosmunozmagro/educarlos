@@ -1,0 +1,21 @@
+<svg viewBox="0 0 300 176" xmlns="http://www.w3.org/2000/svg">
+  <path class="box" d="M60 26 h20 v10 c24 11 31 37 31 61 c0 28 -13 48 -41 48
+                       c-28 0 -41 -20 -41 -48 c0 -24 7 -50 31 -61 z"/>
+  <path class="line" d="M60 34 c-13 2 -17 9 -15 18" fill="none"/>
+  <path class="line" d="M80 34 c13 2 17 9 15 18" fill="none"/>
+
+  <path class="line" d="M82 40 H166"/>
+  <text class="lbl" x="170" y="43">α — tara del ánfora</text>
+
+  <path class="line" d="M102 68 H166"/>
+  <text class="lbl" x="170" y="71">β — el comerciante</text>
+
+  <path class="line" d="M110 96 H166"/>
+  <text class="lbl" x="170" y="99">γ — peso neto</text>
+
+  <path class="line" d="M108 124 H166"/>
+  <text class="accent" x="170" y="127" font-weight="700">δ — origen y año</text>
+
+  <text class="dim" x="8" y="160" font-size="10">Tara, contenido, responsable, procedencia y fecha:</text>
+  <text class="dim" x="8" y="171" font-size="10">el expediente entero, pintado sobre el barro.</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg viewBox="0 0 300 146" xmlns="http://www.w3.org/2000/svg">
+<rect class="box" x="20.0" y="47.0" width="24.1" height="14" rx="3"/>
+<path class="line" d="M20.0 54.0 H268.0"/>
+<circle class="line" cx="20.0" cy="54.0" r="4.5"/>
+<circle class="line" cx="38.5" cy="54.0" r="4.5"/>
+<circle class="line" cx="44.1" cy="54.0" r="4.5"/>
+<circle class="hot" cx="268.0" cy="54.0" r="4.5"/>
+<text class="lbl" x="4" y="40.0">1512</text>
+<text class="accent" x="296.0" y="40.0" text-anchor="end" font-weight="700">1914</text>
+<text class="dim" x="8" y="80.0" font-size="10">1512 — Leyes de Burgos</text>
+<text class="dim" x="8" y="93.0" font-size="10">1542 — Leyes Nuevas</text>
+<text class="dim" x="8" y="106.0" font-size="10">1551 — Junta de Valladolid</text>
+<text class="dim" x="8" y="119.0" font-size="10">1914 — Se difunde «leyenda negra»</text>
+<text class="lbl" x="8" y="138.0" font-size="10">363 años entre el debate y la palabra.</text>
+</svg>

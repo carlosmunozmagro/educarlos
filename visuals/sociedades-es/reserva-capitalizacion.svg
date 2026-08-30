@@ -1,0 +1,16 @@
+<svg viewBox="0 0 300 118" xmlns="http://www.w3.org/2000/svg">
+<text class="dim" x="10.0" y="14" font-size="10">Reducción según el incremento de plantilla</text>
+<rect class="cold" x="13.0" y="45.3" width="64.0" height="38.7" rx="3"/>
+<text class="lbl" x="45.0" y="41.3" text-anchor="middle" font-size="10">20 %</text>
+<text class="dim" x="45.0" y="98.0" text-anchor="middle" font-size="9.5">sin incremento</text>
+<rect class="cold" x="83.0" y="39.5" width="64.0" height="44.5" rx="3"/>
+<text class="lbl" x="115.0" y="35.5" text-anchor="middle" font-size="10">23 %</text>
+<text class="dim" x="115.0" y="98.0" text-anchor="middle" font-size="9.5">2 – 5 %</text>
+<rect class="cold" x="153.0" y="32.8" width="64.0" height="51.2" rx="3"/>
+<text class="lbl" x="185.0" y="28.8" text-anchor="middle" font-size="10">26,5 %</text>
+<text class="dim" x="185.0" y="98.0" text-anchor="middle" font-size="9.5">5 – 10 %</text>
+<rect class="hot" x="223.0" y="26.0" width="64.0" height="58.0" rx="3"/>
+<text class="lbl" x="255.0" y="22.0" text-anchor="middle" font-size="10">30 %</text>
+<text class="dim" x="255.0" y="98.0" text-anchor="middle" font-size="9.5">más del 10 %</text>
+<text class="accent" x="10.0" y="110" font-size="10" font-weight="700">Todo ello, mantenido tres años</text>
+</svg>

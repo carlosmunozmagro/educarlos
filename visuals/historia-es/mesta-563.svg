@@ -1,0 +1,13 @@
+<svg viewBox="0 0 300 151" xmlns="http://www.w3.org/2000/svg">
+<rect class="box" x="20.0" y="49.0" width="248.0" height="14" rx="3"/>
+<path class="line" d="M20.0 56.0 H268.0"/>
+<circle class="line" cx="20.0" cy="56.0" r="4.5"/>
+<circle class="hot" cx="124.4" cy="56.0" r="4.5"/>
+<circle class="line" cx="268.0" cy="56.0" r="4.5"/>
+<text class="lbl" x="4" y="40.0">1273</text>
+<text class="lbl" x="296.0" y="40.0" text-anchor="end">1836</text>
+<text class="accent" x="150.0" y="86.0" text-anchor="middle" font-weight="700">563 años de la misma institución</text>
+<text class="dim" x="8" y="108.0" font-size="10">1273 — Alfonso X concede el privilegio</text>
+<text class="dim" x="8" y="121.0" font-size="10">s. XVI — se fija el derecho de posesión</text>
+<text class="dim" x="8" y="134.0" font-size="10">1836 — disolución de la Mesta</text>
+</svg>

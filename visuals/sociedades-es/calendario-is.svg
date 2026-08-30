@@ -1,0 +1,20 @@
+<svg viewBox="0 0 300 112" xmlns="http://www.w3.org/2000/svg">
+<text class="dim" x="78.3" y="16" text-anchor="middle" font-size="10">2026</text>
+<text class="dim" x="214.3" y="16" text-anchor="middle" font-size="10">2027</text>
+<path class="line" d="M16.0 44 H288.0"/>
+<path class="line" d="M152.0 24 V68" stroke-dasharray="3 3" opacity=".6"/>
+<circle class="hot" cx="55.7" cy="44" r="5"/>
+<text class="lbl" x="55.7" y="64" text-anchor="middle">abr</text>
+<text class="accent" x="55.7" y="78" text-anchor="middle" font-size="10">1.117,80 €</text>
+<circle class="box" cx="123.7" cy="44" r="5"/>
+<text class="lbl" x="123.7" y="64" text-anchor="middle">oct</text>
+<text class="dim" x="123.7" y="78" text-anchor="middle" font-size="10">0 €</text>
+<circle class="box" cx="146.3" cy="44" r="5"/>
+<text class="lbl" x="146.3" y="64" text-anchor="middle">dic</text>
+<text class="dim" x="146.3" y="78" text-anchor="middle" font-size="10">0 €</text>
+<circle class="hot" cx="225.7" cy="44" r="5"/>
+<text class="lbl" x="225.7" y="64" text-anchor="middle">25 jul</text>
+<text class="accent" x="225.7" y="78" text-anchor="middle" font-size="10">10.482,20 €</text>
+<text class="dim" x="108.9" y="100" text-anchor="middle" font-size="10">modelo 202</text>
+<text class="dim" x="225.7" y="100" text-anchor="middle" font-size="10">modelo 200</text>
+</svg>

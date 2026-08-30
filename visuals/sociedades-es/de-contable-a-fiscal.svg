@@ -1,0 +1,29 @@
+<svg viewBox="0 0 300 118" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="r" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <text class="dim" x="98" y="26" text-anchor="middle" font-size="10">+ ajustes</text>
+  <text class="dim" x="202" y="26" text-anchor="middle" font-size="10">− bases negativas</text>
+
+  <rect class="box" x="6" y="38" width="82" height="40" rx="6"/>
+  <text class="lbl" x="47" y="55" text-anchor="middle">Resultado</text>
+  <text class="lbl" x="47" y="68" text-anchor="middle">contable</text>
+
+  <path class="line" d="M90 58 H105" marker-end="url(#r)"/>
+
+  <rect class="box" x="109" y="38" width="82" height="40" rx="6"/>
+  <text class="lbl" x="150" y="55" text-anchor="middle">Base previa</text>
+  <text class="dim" x="150" y="68" text-anchor="middle" font-size="10">art. 10.3</text>
+
+  <path class="line" d="M193 58 H208" marker-end="url(#r)"/>
+
+  <rect class="hot" x="212" y="38" width="82" height="40" rx="6" opacity=".25"/>
+  <text class="lbl" x="253" y="55" text-anchor="middle">Base</text>
+  <text class="lbl" x="253" y="68" text-anchor="middle">imponible</text>
+
+  <text class="dim" x="6" y="102" font-size="10">La contabilidad es el punto de partida,</text>
+  <text class="dim" x="6" y="113" font-size="10">no un cálculo paralelo.</text>
+</svg>

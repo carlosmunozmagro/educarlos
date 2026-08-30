@@ -1,0 +1,26 @@
+<svg viewBox="0 0 300 186" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="a-tro" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path class="line" d="M0 1 L9 5 L0 9 z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <rect class="box" x="8" y="8" width="284" height="24" rx="4"/>
+  <text class="lbl" x="18" y="24" font-size="11">Fernando VII devuelve la corona</text>
+  <path class="line" d="M150 34 V40" marker-end="url(#a-tro)"/>
+
+  <rect class="box" x="8" y="44" width="284" height="24" rx="4"/>
+  <text class="lbl" x="18" y="60" font-size="11">Carlos IV la cede a Napoleón</text>
+  <path class="line" d="M150 70 V76" marker-end="url(#a-tro)"/>
+
+  <rect class="box" x="8" y="80" width="284" height="24" rx="4"/>
+  <text class="lbl" x="18" y="96" font-size="11">Napoleón nombra rey a José I</text>
+
+  <path class="line" d="M8 116 H292" stroke-dasharray="4 4"/>
+  <text class="accent" x="150" y="134" text-anchor="middle" font-weight="700">Nadie lo reconoce</text>
+
+  <rect class="box" x="8" y="144" width="284" height="24" rx="4"/>
+  <text class="lbl" x="18" y="160" font-size="11">Gobiernan las juntas, en nombre del ausente</text>
+
+  <text class="dim" x="150" y="181" text-anchor="middle" font-size="10">Las firmas transfieren el título, no la obediencia.</text>
+</svg>

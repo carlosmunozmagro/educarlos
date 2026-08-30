@@ -1,0 +1,27 @@
+<svg viewBox="0 0 300 176" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="a-ver" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path class="line" d="M0 1 L9 5 L0 9 z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <rect class="box" x="8" y="8" width="284" height="44" rx="4"/>
+  <text class="accent" x="18" y="27" font-size="11" font-weight="700">«los Fueros, en cuanto sean</text>
+  <text class="accent" x="18" y="43" font-size="11" font-weight="700">conciliables con las leyes de la nación»</text>
+
+  <path class="line" d="M80 56 V72" marker-end="url(#a-ver)"/>
+  <path class="line" d="M220 56 V72" marker-end="url(#a-ver)"/>
+
+  <rect class="box" x="8" y="76" width="136" height="58" rx="4"/>
+  <text class="lbl" x="76" y="96" text-anchor="middle" font-size="11">Lee el carlista</text>
+  <text class="dim" x="76" y="112" text-anchor="middle" font-size="10">los fueros quedan</text>
+  <text class="dim" x="76" y="125" text-anchor="middle" font-size="10">confirmados</text>
+
+  <rect class="box" x="156" y="76" width="136" height="58" rx="4"/>
+  <text class="lbl" x="224" y="96" text-anchor="middle" font-size="11">Lee el liberal</text>
+  <text class="dim" x="224" y="112" text-anchor="middle" font-size="10">quedan sujetos a lo</text>
+  <text class="dim" x="224" y="125" text-anchor="middle" font-size="10">que decida la nación</text>
+
+  <text class="dim" x="150" y="158" text-anchor="middle" font-size="10">Se firma porque nadie tiene que admitir que cede.</text>
+  <text class="dim" x="150" y="171" text-anchor="middle" font-size="10">Y por eso el asunto sigue abierto.</text>
+</svg>

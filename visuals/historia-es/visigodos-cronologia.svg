@@ -1,0 +1,20 @@
+<svg viewBox="0 0 300 154" xmlns="http://www.w3.org/2000/svg">
+<path class="line" d="M113.1 44 V32 H212.5 V44" stroke-dasharray="3 3"/>
+<text class="accent" x="162.8" y="24" text-anchor="middle" font-weight="700">47 años</text>
+<path class="line" d="M20.0 74.0 H276.0"/>
+<circle class="line" cx="20.0" cy="74.0" r="4.5"/>
+<text class="lbl" x="20.0" y="60.0" text-anchor="middle">589</text>
+<circle class="line" cx="113.1" cy="74.0" r="4.5"/>
+<text class="lbl" x="113.1" y="60.0" text-anchor="middle">633</text>
+<circle class="line" cx="157.5" cy="74.0" r="4.5"/>
+<text class="lbl" x="157.5" y="60.0" text-anchor="middle">654</text>
+<circle class="hot" cx="212.5" cy="74.0" r="4.5"/>
+<text class="accent" x="212.5" y="60.0" text-anchor="middle">680</text>
+<circle class="line" cx="276.0" cy="74.0" r="4.5"/>
+<text class="lbl" x="276.0" y="60.0" text-anchor="middle">710</text>
+<text class="dim" x="20" y="96.0" font-size="10">589 — III Concilio: catolicismo</text>
+<text class="dim" x="20" y="108.0" font-size="10">633 — Canon 75: rey electivo</text>
+<text class="dim" x="20" y="120.0" font-size="10">654 — Liber Iudiciorum</text>
+<text class="dim" x="20" y="132.0" font-size="10">680 — Wamba, tonsurado</text>
+<text class="dim" x="20" y="144.0" font-size="10">710 — Sucesión disputada</text>
+</svg>

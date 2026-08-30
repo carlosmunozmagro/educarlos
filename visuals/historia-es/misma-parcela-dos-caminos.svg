@@ -1,0 +1,22 @@
+<svg viewBox="0 0 300 186" xmlns="http://www.w3.org/2000/svg">
+  <text class="lbl" x="8" y="16">Presura, Duero, siglo IX</text>
+  <text class="dim" x="8" y="30" font-size="10">ocupa quien cultiva</text>
+  <rect class="cold" x="8" y="38" width="42" height="26" rx="2"/>
+  <rect class="cold" x="56" y="38" width="42" height="26" rx="2"/>
+  <rect class="cold" x="104" y="38" width="42" height="26" rx="2"/>
+  <rect class="cold" x="152" y="38" width="42" height="26" rx="2"/>
+  <rect class="cold" x="200" y="38" width="42" height="26" rx="2"/>
+  <rect class="cold" x="248" y="38" width="42" height="26" rx="2"/>
+  <rect class="cold" x="8" y="68" width="42" height="26" rx="2"/>
+  <rect class="cold" x="56" y="68" width="42" height="26" rx="2"/>
+  <rect class="cold" x="104" y="68" width="42" height="26" rx="2"/>
+  <rect class="cold" x="152" y="68" width="42" height="26" rx="2"/>
+  <rect class="cold" x="200" y="68" width="42" height="26" rx="2"/>
+  <rect class="cold" x="248" y="68" width="42" height="26" rx="2"/>
+  <text class="lbl" x="8" y="108" font-size="10">Doce dueños</text>
+
+  <text class="lbl" x="8" y="134">Repartimiento, Guadalquivir, siglo XIII</text>
+  <text class="dim" x="8" y="148" font-size="10">reparte quien puso el ejército</text>
+  <rect class="hot" x="8" y="156" width="282" height="26" rx="2"/>
+  <text class="accent" x="149" y="174" text-anchor="middle" font-weight="700" font-size="11">Uno</text>
+</svg>

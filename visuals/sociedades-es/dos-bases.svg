@@ -1,0 +1,18 @@
+<svg viewBox="0 0 300 138" xmlns="http://www.w3.org/2000/svg">
+  <rect class="box" x="6" y="6" width="134" height="84" rx="8"/>
+  <text class="lbl" x="73" y="26" text-anchor="middle">Base general</text>
+  <text class="dim" x="16" y="48" font-size="10">Nómina</text>
+  <text class="dim" x="16" y="64" font-size="10">Actividad económica</text>
+  <text class="dim" x="16" y="80" font-size="10">Alquileres</text>
+
+  <path class="line" d="M150 2 V104" stroke-dasharray="4 4" opacity=".7"/>
+
+  <rect class="box" x="160" y="6" width="134" height="84" rx="8"/>
+  <text class="accent" x="227" y="26" text-anchor="middle" font-weight="700">Base del ahorro</text>
+  <text class="dim" x="170" y="48" font-size="10">Dividendos</text>
+  <text class="dim" x="170" y="64" font-size="10">Intereses</text>
+  <text class="dim" x="170" y="80" font-size="10">Plusvalías</text>
+
+  <text class="lbl" x="150" y="118" text-anchor="middle">Dos escalas. No se suman.</text>
+  <text class="dim" x="150" y="132" text-anchor="middle" font-size="10">El tipo de una no empuja a la otra.</text>
+</svg>

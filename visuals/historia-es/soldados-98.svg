@@ -1,0 +1,12 @@
+<svg viewBox="0 0 300 168" xmlns="http://www.w3.org/2000/svg">
+<text class="dim" x="12.0" y="16" font-size="10">Enviados a Cuba y Filipinas, 1895–1898</text>
+<rect class="box" x="12.0" y="24" width="276.0" height="20" rx="3"/>
+<text class="lbl" x="20.0" y="38" font-size="10">220.000</text>
+<text class="dim" x="12.0" y="70" font-size="10">Muertos por el enemigo o por heridas</text>
+<rect class="cold" x="12.0" y="78" width="12.5" height="20" rx="3"/>
+<text class="lbl" x="30.5" y="92" font-size="10">unos 10.000</text>
+<text class="dim" x="12.0" y="124" font-size="10">Muertos por enfermedad</text>
+<rect class="hot" x="12.0" y="132" width="125.5" height="20" rx="3"/>
+<text class="accent" x="20.0" y="146" font-size="10" font-weight="700">unos 100.000</text>
+<text class="accent" x="12.0" y="164" font-weight="700">Diez veces más</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg viewBox="0 0 300 128" xmlns="http://www.w3.org/2000/svg">
+  <path class="line" d="M14 18 V106"/>
+
+  <circle class="box" cx="14" cy="20" r="5"/>
+  <text class="lbl" x="28" y="18">¿Participas ≥ 25 %?</text>
+  <text class="dim" x="28" y="32" font-size="10">no — no hay vinculación por socio</text>
+
+  <circle class="box" cx="14" cy="62" r="5"/>
+  <text class="lbl" x="28" y="60">¿Es tu retribución por el cargo?</text>
+  <text class="dim" x="28" y="74" font-size="10">sí — fuera del art. 18 (art. 18.2.b)</text>
+
+  <circle class="hot" cx="14" cy="104" r="5"/>
+  <text class="accent" x="28" y="102" font-weight="700">Todo lo demás: valor de mercado</text>
+  <text class="dim" x="28" y="116" font-size="10">art. 18.1</text>
+</svg>

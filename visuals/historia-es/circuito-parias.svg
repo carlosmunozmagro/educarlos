@@ -1,0 +1,26 @@
+<svg viewBox="0 0 300 156" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="a-par" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path class="line" d="M0 1 L9 5 L0 9 z" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <rect class="box" x="8" y="30" width="112" height="46" rx="4"/>
+  <text class="lbl" x="64" y="52" text-anchor="middle">Taifa</text>
+  <text class="dim" x="64" y="66" text-anchor="middle" font-size="10">paga oro</text>
+
+  <rect class="box" x="180" y="30" width="112" height="46" rx="4"/>
+  <text class="lbl" x="236" y="52" text-anchor="middle">Rey cristiano</text>
+  <text class="dim" x="236" y="66" text-anchor="middle" font-size="10">no ataca</text>
+
+  <path class="line" d="M122 44 H176" marker-end="url(#a-par)"/>
+  <text class="dim" x="149" y="24" text-anchor="middle" font-size="10">parias</text>
+
+  <path class="line" d="M176 64 H124" marker-end="url(#a-par)"/>
+  <text class="dim" x="149" y="90" text-anchor="middle" font-size="10">protección</text>
+
+  <text class="accent" x="150" y="122" text-anchor="middle" font-weight="700">Si la conquista, deja de cobrar</text>
+  <text class="dim" x="150" y="140" text-anchor="middle" font-size="10">Fernando I repartió el cobro de parias</text>
+  <text class="dim" x="150" y="151" text-anchor="middle" font-size="10">en su testamento, junto a los territorios.</text>
+</svg>

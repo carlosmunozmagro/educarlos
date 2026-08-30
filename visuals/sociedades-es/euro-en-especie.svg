@@ -1,0 +1,12 @@
+<svg viewBox="0 0 300 128" xmlns="http://www.w3.org/2000/svg">
+<text class="dim" x="6.0" y="14" font-size="10">1.000 € de coste para la empresa</text>
+<text class="lbl" x="6.0" y="24.0" font-size="11">Como nómina</text>
+<rect class="cold" x="6.0" y="30.0" width="232.0" height="20" rx="3"/>
+<rect class="hot" x="6.0" y="30.0" width="167.5" height="20" rx="3"/>
+<text class="accent" x="244.0" y="44.0" font-size="10" font-weight="700">722 €</text>
+<text class="lbl" x="6.0" y="72.0" font-size="11">Como retribución exenta</text>
+<rect class="cold" x="6.0" y="78.0" width="232.0" height="20" rx="3"/>
+<rect class="hot" x="6.0" y="78.0" width="232.0" height="20" rx="3"/>
+<text class="accent" x="244.0" y="92.0" font-size="10" font-weight="700">1.000 €</text>
+<text class="dim" x="6.0" y="120" font-size="10">La empresa deduce lo mismo en los dos casos</text>
+</svg>

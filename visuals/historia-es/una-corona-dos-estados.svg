@@ -1,0 +1,21 @@
+<svg viewBox="0 0 300 172" xmlns="http://www.w3.org/2000/svg">
+  <rect class="box" x="72" y="8" width="156" height="32" rx="4"/>
+  <text class="accent" x="150" y="29" text-anchor="middle" font-weight="700">Los mismos titulares</text>
+
+  <path class="line" d="M150 42 V56 H74 V66"/>
+  <path class="line" d="M150 42 V56 H226 V66"/>
+
+  <rect class="box" x="8" y="66" width="132" height="82" rx="4"/>
+  <text class="lbl" x="74" y="86" text-anchor="middle">Castilla</text>
+  <text class="dim" x="74" y="104" text-anchor="middle" font-size="10">sus Cortes</text>
+  <text class="dim" x="74" y="118" text-anchor="middle" font-size="10">sus leyes y su moneda</text>
+  <text class="dim" x="74" y="132" text-anchor="middle" font-size="10">sus aduanas</text>
+
+  <rect class="box" x="160" y="66" width="132" height="82" rx="4"/>
+  <text class="lbl" x="226" y="86" text-anchor="middle">Aragón</text>
+  <text class="dim" x="226" y="104" text-anchor="middle" font-size="10">sus Cortes</text>
+  <text class="dim" x="226" y="118" text-anchor="middle" font-size="10">sus leyes y su moneda</text>
+  <text class="dim" x="226" y="132" text-anchor="middle" font-size="10">sus aduanas</text>
+
+  <text class="dim" x="150" y="166" text-anchor="middle" font-size="10">Entre las dos cajas sigue habiendo frontera fiscal.</text>
+</svg>

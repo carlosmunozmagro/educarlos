@@ -1,0 +1,18 @@
+<svg viewBox="0 0 300 166" xmlns="http://www.w3.org/2000/svg">
+<path class="line" d="M22.0 58.0 H274.0"/>
+<circle class="hot" cx="22.0" cy="58.0" r="4.5"/>
+<text class="accent" x="4.0" y="44.0" text-anchor="start">713</text>
+<circle class="line" cx="41.2" cy="58.0" r="4.5"/>
+<text class="lbl" x="41.2" y="78.0" text-anchor="middle">754</text>
+<circle class="line" cx="180.1" cy="58.0" r="4.5"/>
+<text class="lbl" x="180.1" y="44.0" text-anchor="middle">s. XI</text>
+<circle class="line" cx="227.1" cy="58.0" r="4.5"/>
+<text class="lbl" x="227.1" y="78.0" text-anchor="middle">s. XII</text>
+<circle class="line" cx="274.0" cy="58.0" r="4.5"/>
+<text class="lbl" x="296.0" y="44.0" text-anchor="end">s. XIII</text>
+<text class="dim" x="8" y="104.0" font-size="10">713 — El pacto se firma</text>
+<text class="dim" x="8" y="117.0" font-size="10">754 — Crónica mozárabe</text>
+<text class="dim" x="8" y="130.0" font-size="10">s. XI — Copia de al-Udri</text>
+<text class="dim" x="8" y="143.0" font-size="10">s. XII — Copia de al-Dabbi</text>
+<text class="dim" x="8" y="156.0" font-size="10">s. XIII — Copia de al-Gharnati</text>
+</svg>

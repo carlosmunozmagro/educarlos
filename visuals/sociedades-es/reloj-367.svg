@@ -1,0 +1,15 @@
+<svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+  <rect class="hot" x="185" y="38" width="101" height="18" rx="3" opacity=".2"/>
+  <path class="line" d="M20 54 H286"/>
+
+  <circle class="hot" cx="55" cy="54" r="5"/>
+  <circle class="box" cx="185" cy="54" r="5"/>
+
+  <text class="dim" x="120" y="46" text-anchor="middle" font-size="10">dos meses</text>
+
+  <text x="6" y="72">Causa de disolución</text>
+  <text class="dim" x="6" y="86" font-size="10">art. 363.1.e)</text>
+
+  <text class="accent" x="190" y="72" font-weight="600">Deudas de aquí</text>
+  <text class="accent" x="190" y="86" font-weight="600">en adelante</text>
+</svg>

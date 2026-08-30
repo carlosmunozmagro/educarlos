@@ -1,0 +1,13 @@
+<svg viewBox="0 0 300 147" xmlns="http://www.w3.org/2000/svg">
+<rect class="box" x="20.0" y="47.0" width="239.0" height="14" rx="3"/>
+<path class="line" d="M20.0 54.0 H268.0"/>
+<circle class="line" cx="20.0" cy="54.0" r="4.5"/>
+<circle class="hot" cx="259.0" cy="54.0" r="4.5"/>
+<circle class="line" cx="268.0" cy="54.0" r="4.5"/>
+<text class="lbl" x="4" y="38.0">1469</text>
+<text class="lbl" x="296.0" y="38.0" text-anchor="end">1716</text>
+<text class="accent" x="150.0" y="82.0" text-anchor="middle" font-weight="700">238 años con dos legislaciones</text>
+<text class="dim" x="8" y="104.0" font-size="10">1469 — Capitulaciones de Cervera</text>
+<text class="dim" x="8" y="117.0" font-size="10">1707 — Nueva Planta: Aragón y Valencia</text>
+<text class="dim" x="8" y="130.0" font-size="10">1715 y 1716 — Mallorca y Cataluña</text>
+</svg>

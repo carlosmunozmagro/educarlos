@@ -1,0 +1,9 @@
+<svg viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+<text class="lbl" x="6.0" y="14">Capital social — 3.000 €</text>
+<rect class="cold" x="6.0" y="20" width="280.0" height="16" rx="3"/>
+<text class="lbl" x="6.0" y="58">Patrimonio neto — 900 €</text>
+<rect class="hot" x="6.0" y="64" width="84.0" height="16" rx="3"/>
+<path class="line" d="M146.0 16 V92" stroke-dasharray="3 3"/>
+<text class="dim" x="6.0" y="104" font-size="10">la mitad: 1.500 €</text>
+<text class="accent" x="152.0" y="104" font-size="10" font-weight="700">por debajo = disolución</text>
+</svg>

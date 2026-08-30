@@ -1,0 +1,10 @@
+<svg viewBox="0 0 300 146" xmlns="http://www.w3.org/2000/svg">
+<text class="dim" x="12.0" y="16" font-size="10">Canarias a Japón</text>
+<text class="lbl" x="12.0" y="36" font-size="10">Lo que Colón calculaba</text>
+<rect class="hot" x="12.0" y="42" width="62.7" height="20" rx="3"/>
+<text class="accent" x="80.7" y="57" font-size="10" font-weight="700">4.450 km</text>
+<text class="lbl" x="12.0" y="88" font-size="10">Lo que había</text>
+<rect class="cold" x="12.0" y="94" width="276.0" height="20" rx="3"/>
+<text class="lbl" x="280.0" y="109" text-anchor="end" font-size="10">19.600 km</text>
+<text class="accent" x="12.0" y="136" font-weight="700">Más de 4,4 veces más lejos</text>
+</svg>

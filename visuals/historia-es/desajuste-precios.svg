@@ -1,0 +1,11 @@
+<svg viewBox="0 0 300 152" xmlns="http://www.w3.org/2000/svg">
+<text class="dim" x="14.0" y="16" font-size="10">Mayor subida de precios</text>
+<rect class="hot" x="14.0" y="24" width="90.7" height="20" rx="3"/>
+<text class="lbl" x="20.0" y="38" font-size="10">1500–1550</text>
+<text class="dim" x="14.0" y="70" font-size="10">Entrada masiva de remesas</text>
+<rect class="cold" x="104.7" y="78" width="181.3" height="20" rx="3"/>
+<text class="lbl" x="110.7" y="92" font-size="10">1550–1650</text>
+<path class="line" d="M104.7 48 V74" stroke-dasharray="3 3"/>
+<text class="accent" x="14.0" y="122" font-weight="700">La causa llega después del efecto</text>
+<text class="dim" x="14.0" y="140" font-size="10">Potosí se explota a gran escala desde 1545.</text>
+</svg>

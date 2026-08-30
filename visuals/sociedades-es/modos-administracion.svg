@@ -1,0 +1,23 @@
+<svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+  <circle class="hot" cx="24" cy="18" r="7"/>
+  <text class="lbl" x="6" y="46">Único</text>
+  <text class="dim" x="6" y="59" font-size="10">firma una persona</text>
+
+  <circle class="hot" cx="172" cy="18" r="7"/>
+  <circle class="hot" cx="196" cy="18" r="7"/>
+  <text class="lbl" x="154" y="46">Solidarios</text>
+  <text class="dim" x="154" y="59" font-size="10">cada uno firma solo</text>
+
+  <circle class="hot" cx="24" cy="93" r="7"/>
+  <circle class="hot" cx="48" cy="93" r="7"/>
+  <path class="line" d="M31 93 H41"/>
+  <text class="lbl" x="6" y="121">Mancomunados</text>
+  <text class="dim" x="6" y="134" font-size="10">firman los dos</text>
+
+  <rect class="box" x="154" y="82" width="76" height="22" rx="6"/>
+  <circle class="hot" cx="170" cy="93" r="5"/>
+  <circle class="hot" cx="186" cy="93" r="5"/>
+  <circle class="hot" cx="202" cy="93" r="5"/>
+  <text class="lbl" x="154" y="121">Consejo</text>
+  <text class="dim" x="154" y="134" font-size="10">decide por mayoría</text>
+</svg>

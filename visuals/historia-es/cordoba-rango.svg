@@ -1,0 +1,10 @@
+<svg viewBox="0 0 300 128" xmlns="http://www.w3.org/2000/svg">
+<text class="dim" x="12.0" y="18" font-size="10">Estimaciones publicadas de población</text>
+<rect class="cold" x="12.0" y="54.0" width="276.0" height="20.0" rx="3"/>
+<rect class="hot" x="39.6" y="54.0" width="13.8" height="20.0" rx="3"/>
+<text class="lbl" x="12.0" y="46.0">100.000</text>
+<text class="accent" x="288.0" y="46.0" text-anchor="end" font-weight="700">1.000.000</text>
+<text class="dim" x="12.0" y="90.0" font-size="10">lo más conservador</text>
+<text class="dim" x="288.0" y="90.0" text-anchor="end" font-size="10">lo más generoso</text>
+<text class="accent" x="12.0" y="118" font-weight="700">Un factor de 10 entre el suelo y el techo</text>
+</svg>

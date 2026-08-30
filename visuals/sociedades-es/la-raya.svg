@@ -1,0 +1,24 @@
+<svg viewBox="0 0 300 136" xmlns="http://www.w3.org/2000/svg">
+  <path class="line" d="M10 34 H290"/>
+  <circle class="hot" cx="46" cy="34" r="5"/>
+  <circle class="box" cx="150" cy="34" r="5"/>
+  <circle class="box" cx="254" cy="34" r="5"/>
+
+  <text class="lbl" x="10" y="24">Economía</text>
+  <text class="lbl" x="112" y="24">Conflicto</text>
+  <text class="lbl" x="224" y="24">Simulación</text>
+
+  <text class="dim" x="10" y="54" font-size="10">eliges entre</text>
+  <text class="dim" x="10" y="66" font-size="10">opciones reales</text>
+
+  <text class="dim" x="112" y="54" font-size="10">acto válido</text>
+  <text class="dim" x="112" y="66" font-size="10">pero artificioso</text>
+
+  <text class="dim" x="206" y="54" font-size="10">lo escrito no</text>
+  <text class="dim" x="206" y="66" font-size="10">es lo que pasó</text>
+
+  <path class="line" d="M10 84 H290" opacity=".4"/>
+  <text class="accent" x="10" y="102" font-weight="600">La pregunta no es cuánto ahorras</text>
+  <text class="dim" x="10" y="118" font-size="10">sino qué efecto económico real tiene, además</text>
+  <text class="dim" x="10" y="130" font-size="10">del ahorro fiscal</text>
+</svg>

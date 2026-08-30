@@ -1,0 +1,15 @@
+<svg viewBox="0 0 300 142" xmlns="http://www.w3.org/2000/svg">
+  <text class="dim" x="6" y="14" font-size="10">Límite de reducción por previsión social</text>
+
+  <rect class="hot" x="6" y="24" width="42" height="22" rx="3"/>
+  <text class="lbl" x="54" y="39">1.500 €</text>
+  <text class="dim" x="112" y="39" font-size="10">por tu cuenta</text>
+
+  <rect class="cold" x="6" y="56" width="238" height="22" rx="3"/>
+  <text class="lbl" x="6" y="94">+ 8.500 €</text>
+  <text class="dim" x="76" y="94" font-size="10">sólo con contribución empresarial</text>
+
+  <path class="line" d="M6 106 H294" opacity=".5"/>
+  <text class="accent" x="6" y="124" font-weight="600">La segunda vía no la abres tú</text>
+  <text class="dim" x="6" y="137" font-size="10">la abre la empresa, y tu parte va atada a una tabla</text>
+</svg>

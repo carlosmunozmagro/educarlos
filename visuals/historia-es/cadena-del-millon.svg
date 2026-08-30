@@ -1,0 +1,26 @@
+<svg viewBox="0 0 300 176" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="a-mil" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path class="line" d="M0 1 L9 5 L0 9 z" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <rect class="box" x="8" y="8" width="284" height="30" rx="4"/>
+  <text class="lbl" x="18" y="27">Censo atribuido a Almanzor</text>
+
+  <path class="line" d="M150 40 V50" marker-end="url(#a-mil)"/>
+
+  <rect class="box" x="8" y="54" width="284" height="30" rx="4"/>
+  <text class="lbl" x="18" y="73">al-Maqqari lo transmite, siglo XVII</text>
+
+  <path class="line" d="M150 86 V96" marker-end="url(#a-mil)"/>
+
+  <rect class="box" x="8" y="100" width="284" height="30" rx="4"/>
+  <text class="lbl" x="18" y="119">200.000 viviendas × 5 personas</text>
+
+  <path class="line" d="M150 132 V142" marker-end="url(#a-mil)"/>
+
+  <text class="accent" x="18" y="160" font-weight="700">Un millón de habitantes</text>
+  <text class="dim" x="18" y="172" font-size="10">Sólo el último paso es una multiplicación moderna.</text>
+</svg>

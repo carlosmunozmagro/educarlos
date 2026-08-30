@@ -1,0 +1,21 @@
+<svg viewBox="0 0 300 144" xmlns="http://www.w3.org/2000/svg">
+  <text class="dim" x="6" y="14" font-size="10">Talleres Rueda, SL — grupo de parentesco</text>
+
+  <rect class="box" x="6" y="22" width="88" height="26" rx="5"/>
+  <text class="lbl" x="50" y="39" text-anchor="middle" font-size="10">Antonio 55 %</text>
+  <rect class="box" x="102" y="22" width="88" height="26" rx="5"/>
+  <text class="lbl" x="146" y="39" text-anchor="middle" font-size="10">Elena 25 %</text>
+  <rect class="box" x="198" y="22" width="88" height="26" rx="5"/>
+  <text class="lbl" x="242" y="39" text-anchor="middle" font-size="10">Javier 20 %</text>
+
+  <path class="line" d="M6 60 H294" opacity=".5"/>
+
+  <circle class="hot" cx="12" cy="76" r="4"/>
+  <text x="24" y="80" font-size="10">No es patrimonial</text>
+  <circle class="hot" cx="12" cy="98" r="4"/>
+  <text x="24" y="102" font-size="10">El grupo suma 100 %, más del 20 %</text>
+  <circle class="hot" cx="12" cy="120" r="4"/>
+  <text x="24" y="124" font-size="10">Elena dirige y cobra más del 50 % de ahí</text>
+
+  <text class="accent" x="6" y="140" font-size="10" font-weight="700">Basta con que el tercero lo cumpla una persona</text>
+</svg>

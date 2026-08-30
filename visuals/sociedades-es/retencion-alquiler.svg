@@ -1,0 +1,14 @@
+<svg viewBox="0 0 300 128" xmlns="http://www.w3.org/2000/svg">
+  <text class="dim" x="6" y="14" font-size="10">1.000 € de alquiler</text>
+
+  <rect class="cold" x="6" y="22" width="232" height="20" rx="3"/>
+  <rect class="hot" x="6" y="22" width="44" height="20" rx="3"/>
+  <text class="accent" x="6" y="58" font-size="10" font-weight="700">190 € a Hacienda</text>
+  <text class="dim" x="112" y="58" font-size="10">810 € al arrendador</text>
+
+  <path class="line" d="M6 72 H294" opacity=".5"/>
+
+  <text class="lbl" x="6" y="90">Si no retienes</text>
+  <text class="dim" x="6" y="104" font-size="10">Hacienda te reclama los 190 € igual (art. 99.4)</text>
+  <text class="dim" x="6" y="118" font-size="10">y el arrendador se los deduce igual (art. 99.5)</text>
+</svg>

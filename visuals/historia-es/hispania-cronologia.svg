@@ -1,0 +1,17 @@
+<svg viewBox="0 0 300 132" xmlns="http://www.w3.org/2000/svg">
+<rect class="box" x="20.0" y="55.0" width="177.2" height="14" rx="3"/>
+<text class="dim" x="108.6" y="65.5" text-anchor="middle" font-size="10">casi 200 años de conquista</text>
+<path class="line" d="M20.0 62.0 H280.0"/>
+<circle class="line" cx="20.0" cy="62.0" r="4.5"/>
+<text class="lbl" x="16.0" y="46.0" text-anchor="start">218 a. C.</text>
+<text class="dim" x="16.0" y="32.0" text-anchor="start" font-size="10">Desembarco en Emporion</text>
+<circle class="hot" cx="136.6" cy="62.0" r="4.5"/>
+<text class="accent" x="136.6" y="86.0" text-anchor="middle">87 a. C.</text>
+<text class="dim" x="136.6" y="100.0" text-anchor="middle" font-size="10">Tabula Contrebiensis: pleito en latín</text>
+<circle class="line" cx="197.2" cy="62.0" r="4.5"/>
+<text class="lbl" x="197.2" y="46.0" text-anchor="middle">19 a. C.</text>
+<text class="dim" x="197.2" y="32.0" text-anchor="middle" font-size="10">Fin de las guerras cántabras</text>
+<circle class="line" cx="280.0" cy="62.0" r="4.5"/>
+<text class="lbl" x="284.0" y="86.0" text-anchor="end">74 d. C.</text>
+<text class="dim" x="284.0" y="100.0" text-anchor="end" font-size="10">Edicto de latinidad</text>
+</svg>

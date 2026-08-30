@@ -1,0 +1,29 @@
+<svg viewBox="0 0 300 158" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="a-esc" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path class="line" d="M0 1 L9 5 L0 9 z" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <rect class="box" x="8" y="96" width="92" height="38" rx="4"/>
+  <text class="lbl" x="54" y="113" text-anchor="middle">Peregrino</text>
+  <text class="dim" x="54" y="126" text-anchor="middle" font-size="10">sin derecho romano</text>
+
+  <rect class="box" x="104" y="68" width="92" height="66" rx="4"/>
+  <text class="lbl" x="150" y="86" text-anchor="middle">Ius Latii</text>
+  <text class="dim" x="150" y="99" text-anchor="middle" font-size="10">tu ciudad pasa a ser</text>
+  <text class="dim" x="150" y="111" text-anchor="middle" font-size="10">municipio romano</text>
+  <text class="dim" x="150" y="126" text-anchor="middle" font-size="10">74 d. C.</text>
+
+  <rect class="box" x="200" y="34" width="92" height="100" rx="4"/>
+  <text class="accent" x="246" y="52" text-anchor="middle" font-weight="700">Ciudadanía</text>
+  <text class="accent" x="246" y="65" text-anchor="middle" font-weight="700">romana</text>
+  <text class="dim" x="246" y="82" text-anchor="middle" font-size="10">para ti,</text>
+  <text class="dim" x="246" y="94" text-anchor="middle" font-size="10">tus padres,</text>
+  <text class="dim" x="246" y="106" text-anchor="middle" font-size="10">tu mujer</text>
+  <text class="dim" x="246" y="118" text-anchor="middle" font-size="10">y tus hijos</text>
+
+  <path class="line" d="M196 24 H246" marker-end="url(#a-esc)"/>
+  <text class="lbl" x="192" y="27" text-anchor="end">ejerces un cargo</text>
+</svg>

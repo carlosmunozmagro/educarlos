@@ -1,0 +1,27 @@
+<svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="a-cmp" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path class="line" d="M0 1 L9 5 L0 9 z" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <rect class="box" x="8" y="10" width="132" height="52" rx="4"/>
+  <text class="lbl" x="74" y="30" text-anchor="middle">Muchos municipios</text>
+  <text class="dim" x="74" y="45" text-anchor="middle" font-size="10">Bética, Levante y los</text>
+  <text class="dim" x="74" y="56" text-anchor="middle" font-size="10">valles fluviales</text>
+
+  <rect class="box" x="160" y="10" width="132" height="52" rx="4"/>
+  <text class="lbl" x="226" y="30" text-anchor="middle">Casi ninguno</text>
+  <text class="dim" x="226" y="45" text-anchor="middle" font-size="10">franja cantábrica</text>
+  <text class="dim" x="226" y="56" text-anchor="middle" font-size="10">y Pirineo occidental</text>
+
+  <path class="line" d="M74 66 V88" marker-end="url(#a-cmp)"/>
+  <path class="line" d="M226 66 V88" marker-end="url(#a-cmp)"/>
+
+  <text class="lbl" x="74" y="106" text-anchor="middle">El latín gana</text>
+  <text class="accent" x="226" y="106" text-anchor="middle" font-weight="700">Sobrevive el euskera</text>
+
+  <text class="dim" x="150" y="134" text-anchor="middle" font-size="10">Y es la zona que más guerra recibió,</text>
+  <text class="dim" x="150" y="145" text-anchor="middle" font-size="10">no la que menos.</text>
+</svg>

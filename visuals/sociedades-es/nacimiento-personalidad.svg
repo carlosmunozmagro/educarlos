@@ -1,0 +1,19 @@
+<svg viewBox="0 0 300 144" xmlns="http://www.w3.org/2000/svg">
+  <path class="line" d="M24 46 H286"/>
+
+  <circle class="box" cx="58" cy="46" r="5"/>
+  <text class="lbl" x="58" y="32" text-anchor="middle">Escritura</text>
+
+  <circle class="hot" cx="150" cy="46" r="5"/>
+  <text class="lbl" x="150" y="32" text-anchor="middle">Inscripción</text>
+
+  <text x="24" y="66">Sociedad en formación</text>
+  <text class="dim" x="24" y="79" font-size="10">art. 37 — respondes tú</text>
+
+  <text class="accent" x="158" y="66" font-weight="600">Personalidad jurídica</text>
+  <text class="dim" x="158" y="79" font-size="10">art. 33</text>
+
+  <path class="line" d="M58 52 v50 H232" stroke-dasharray="3 3"/>
+  <text class="dim" x="24" y="120" font-size="10">Un año sin inscribir:</text>
+  <text class="dim" x="24" y="133" font-size="10">normas de sociedad colectiva (art. 39)</text>
+</svg>

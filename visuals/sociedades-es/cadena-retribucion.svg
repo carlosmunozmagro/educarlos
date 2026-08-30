@@ -1,0 +1,19 @@
+<svg viewBox="0 0 300 132" xmlns="http://www.w3.org/2000/svg">
+  <path class="line" d="M14 16 V116"/>
+
+  <circle class="box" cx="14" cy="18" r="5"/>
+  <text class="lbl" x="28" y="16">Los estatutos lo prevén</text>
+  <text class="dim" x="28" y="29" font-size="10">art. 217.1 LSC</text>
+
+  <circle class="box" cx="14" cy="50" r="5"/>
+  <text class="lbl" x="28" y="48">Y determinan el sistema</text>
+  <text class="dim" x="28" y="61" font-size="10">no basta con «será retribuido»</text>
+
+  <circle class="box" cx="14" cy="82" r="5"/>
+  <text class="lbl" x="28" y="80">La junta aprueba el máximo</text>
+  <text class="dim" x="28" y="93" font-size="10">art. 217.3 LSC</text>
+
+  <circle class="hot" cx="14" cy="114" r="5"/>
+  <text class="accent" x="28" y="112" font-weight="700">Gasto defendible</text>
+  <text class="dim" x="28" y="125" font-size="10">falla un eslabón y cae la cadena</text>
+</svg>

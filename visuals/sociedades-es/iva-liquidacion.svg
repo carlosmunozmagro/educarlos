@@ -1,0 +1,13 @@
+<svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+<text class="dim" x="6.0" y="14" font-size="10">Un trimestre de Ámbar</text>
+<text class="dim" x="6.0" y="22.0" font-size="10">Repercutido a tu cliente</text>
+<rect class="cold" x="6.0" y="26.0" width="240.0" height="18" rx="3"/>
+<text class="lbl" x="252.0" y="39.0" font-size="10">6.300 €</text>
+<text class="dim" x="6.0" y="62.0" font-size="10">Soportado en tus compras</text>
+<rect class="box" x="6.0" y="66.0" width="80.0" height="18" rx="3"/>
+<text class="lbl" x="92.0" y="79.0" font-size="10">2.100 €</text>
+<text class="dim" x="6.0" y="102.0" font-size="10">A ingresar en Hacienda</text>
+<rect class="hot" x="6.0" y="106.0" width="160.0" height="18" rx="3"/>
+<text class="lbl" x="172.0" y="119.0" font-size="10">4.200 €</text>
+<text class="accent" x="6.0" y="142" font-size="10" font-weight="700">Se ingresa aunque el cliente no haya pagado</text>
+</svg>

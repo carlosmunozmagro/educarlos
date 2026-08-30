@@ -1,0 +1,33 @@
+<svg viewBox="0 0 300 172" xmlns="http://www.w3.org/2000/svg">
+  <text class="dim" x="4" y="12">ANY INPUT, ANY SIZE</text>
+
+  <rect class="box" x="4"  y="22" width="70"  height="18" rx="4"/>
+  <text x="12" y="35">4 bytes</text>
+
+  <rect class="box" x="4"  y="48" width="104" height="18" rx="4"/>
+  <text x="12" y="61">a 1 KB contract</text>
+
+  <rect class="box" x="4"  y="74" width="132" height="18" rx="4"/>
+  <text x="12" y="87">a 9 GB movie file</text>
+
+  <path class="line" d="M74 31 C 150 31, 150 96, 172 100"/>
+  <path class="line" d="M108 57 C 150 57, 150 98, 172 102"/>
+  <path class="line" d="M136 83 C 155 83, 155 100, 172 104"/>
+
+  <rect x="172" y="86" width="76" height="34" rx="8"
+        fill="none" stroke="currentColor" stroke-width="2" opacity=".85"/>
+  <text class="lbl" x="210" y="107" text-anchor="middle">SHA-256</text>
+
+  <path class="line" d="M248 103 h16" marker-end="url(#a)"/>
+  <defs>
+    <marker id="a" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <rect class="box" x="266" y="94" width="30" height="18" rx="4"/>
+  <text class="accent" x="281" y="107" text-anchor="middle" font-weight="700">256</text>
+
+  <text class="lbl" x="4" y="146">Always exactly 256 bits out.</text>
+  <text class="dim" x="4" y="162">The output size never depends on the input size.</text>
+</svg>
