@@ -1,0 +1,18 @@
+<svg viewBox="0 0 300 166" xmlns="http://www.w3.org/2000/svg">
+<text class="dim" x="6" y="13" font-size="10">300.000 € por tres puertas</text>
+<text class="dim" x="176" y="30" font-size="10">diluye</text>
+<text class="dim" x="238" y="30" font-size="10">patrim.</text>
+<rect class="box" x="6" y="36" width="288" height="32" rx="3"/>
+<text class="lbl" x="14" y="56" font-size="11">Ampliar capital</text>
+<text class="accent" x="180" y="56" font-size="11" font-weight="700">sí</text>
+<text class="accent" x="244" y="56" font-size="11" font-weight="700">sí</text>
+<rect class="box" x="6" y="74" width="288" height="32" rx="3"/>
+<text class="lbl" x="14" y="94" font-size="11">Préstamo ordinario</text>
+<text x="180" y="94" font-size="11">no</text>
+<text x="244" y="94" font-size="11">no</text>
+<rect class="box" x="6" y="112" width="288" height="32" rx="3"/>
+<text class="lbl" x="14" y="132" font-size="11">Préstamo participativo</text>
+<text x="180" y="132" font-size="11">no</text>
+<text class="accent" x="244" y="132" font-size="11" font-weight="700">sí</text>
+<text class="dim" x="6" y="160" font-size="10">Sólo uno de los tres no diluye y cuenta como patrimonio neto.</text>
+</svg>

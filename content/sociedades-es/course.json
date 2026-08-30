@@ -242,6 +242,32 @@
           "summary": "Cómo se califica una sanción, las dos reducciones en cascada, y lo que cuesta discutirla."
         }
       ]
+    },
+    {
+      "id": "c10-crecer",
+      "title": "Crecer",
+      "lessons": [
+        {
+          "id": "37-ampliar-capital",
+          "title": "Ampliar capital",
+          "summary": "Qué compra un inversor de verdad, dónde va su dinero, y por qué el capital social no lo mide."
+        },
+        {
+          "id": "38-deuda-o-capital",
+          "title": "Deuda o capital",
+          "summary": "Un coste anual y finito contra un porcentaje de todo para siempre — y el préstamo que hace las dos cosas."
+        },
+        {
+          "id": "39-facturar-fuera-de-espana",
+          "title": "Facturar fuera de España",
+          "summary": "Las tres condiciones de la entrega intracomunitaria exenta, y lo que cuesta que falle una."
+        },
+        {
+          "id": "40-reestructurar",
+          "title": "Reestructurar",
+          "summary": "El régimen especial difiere, no exime — y todo depende de un motivo que se juzga después."
+        }
+      ]
     }
   ]
 }

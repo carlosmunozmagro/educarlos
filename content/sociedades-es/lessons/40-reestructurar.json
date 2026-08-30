@@ -1,0 +1,152 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "40-reestructurar",
+  "courseId": "sociedades-es",
+  "chapterId": "c10-crecer",
+  "title": "Reestructurar",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 10 — Crecer",
+          "heading": "Reestructurar",
+          "text": [
+            "Nortia parte la empresa en dos y no paga nada en 2033.",
+            "Los 160.000 € siguen ahí. Sólo han cambiado de dueño."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dos negocios en una sociedad",
+          "text": [
+            "Nortia fabrica sensores y, además, vende el **software** que los explota. Son la misma empresa por accidente histórico.",
+            "Vega quiere invertir sólo en el software. Los bancos financian sólo la fábrica. Ninguno de los dos puede."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La operación",
+          "text": [
+            "Escisión parcial: la rama de software sale a una sociedad nueva.",
+            "La rama vale **1.200.000 €** de mercado y tiene un valor fiscal de **400.000 €**. Sacarla, sin más, sería realizar una plusvalía de **800.000 €**."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El régimen especial",
+          "text": [
+            "Los **artículos 76 a 89 LIS** cubren fusiones, escisiones, aportaciones de activos y canje de valores.",
+            "La transmitente **no integra** la diferencia entre valor de mercado y valor fiscal. Nortia no tributa por esos 800.000 €."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Pero hay un segundo movimiento"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/diferimiento-feac.svg",
+          "alt": "Una barra que representa el valor de mercado de 1.200.000 €, con la porción de 400.000 € de valor fiscal destacada y el resto etiquetado como plusvalía latente de 800.000 €, y debajo los 160.000 € de cuota aplazada",
+          "caption": "La plusvalía no se borra: viaja pegada al valor fiscal antiguo."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Con el mismo valor fiscal",
+          "text": [
+            "Los elementos entran en la sociedad beneficiaria **con el mismo valor fiscal** que tenían en Nortia: 400.000 €, no 1.200.000 €.",
+            "El día que esa rama se venda de verdad, la plusvalía aflorará entera. Es un **diferimiento**, no una exención."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Entonces, ¿Nortia se ha ahorrado los 160.000 € de impuesto o no?",
+          "answer": [
+            "No se los ha ahorrado: los ha **aplazado**.",
+            "Ha cambiado el momento, no el importe. Y a veces cambiar el momento vale mucho —permite hacer la operación sin vender nada para pagarla— pero contarlo como un ahorro es contar la mitad.",
+            "«Con el régimen especial reorganizar no tributa» describe el primer movimiento y olvida el segundo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y todo depende de una frase",
+          "text": [
+            "El **artículo 89.2 LIS**: el régimen no se aplica cuando la operación tenga como principal objetivo el **fraude o la evasión fiscal**, esto es, cuando no se realice por **motivos económicos válidos** como la reestructuración o racionalización de las actividades.",
+            "El de Nortia lo es: dos negocios con clientes, riesgos e inversores distintos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hace difícil esa frase",
+          "text": [
+            "Que **se juzga después**. Nadie autoriza el motivo por adelantado: se comprueba años más tarde, con lo que pasó ya a la vista.",
+            "Si en 2036 la rama escindida se vende sin más, la justificación de 2033 se lee al revés."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "text": [
+            "El motivo económico válido no es una casilla que se marca. Es una historia que tiene que seguir siendo verdad tres años después."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y aquí termina el curso",
+          "text": [
+            "Empezó con Marta transfiriéndose 12.000 € que no eran suyos, y termina con una plusvalía de 800.000 € que cambia de sociedad sin realizarse.",
+            "Entre las dos hay una sola idea: la línea entre tu patrimonio y el de tu sociedad. Todo lo demás —tipos, modelos, plazos, estructuras— son formas de cruzarla sin romperla."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 27/2014, del Impuesto sobre Sociedades",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328",
+              "note": "arts. 76 a 89, en especial el 89.2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

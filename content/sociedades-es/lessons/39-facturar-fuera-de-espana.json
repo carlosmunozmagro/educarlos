@@ -1,0 +1,156 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "39-facturar-fuera-de-espana",
+  "courseId": "sociedades-es",
+  "chapterId": "c10-crecer",
+  "title": "Facturar fuera de España",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 10 — Crecer",
+          "heading": "Facturar fuera de España",
+          "text": [
+            "Nortia factura 180.000 € a Toulouse sin IVA.",
+            "Si un número de nueve dígitos no es válido, debe 37.800 €."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El primer cliente grande de fuera",
+          "text": [
+            "**Agri-Sud, SARL**, distribuidor agrícola de Toulouse, le compra a Nortia **180.000 €** en sensores.",
+            "Álvaro emite la factura sin IVA. «Está fuera de España», dice. Es la frase que cuesta dinero."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La exención existe, pero no es automática",
+          "text": [
+            "El **artículo 25 LIVA** exime las entregas de bienes a un empresario de otro Estado miembro.",
+            "La exención no la produce el destino: la producen tres condiciones que el vendedor tiene que poder probar."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Las tres"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/entrega-intracomunitaria.svg",
+          "alt": "Tres cajas —transporte a otro Estado, NIF-IVA válido en VIES y declaración en el modelo 349— sobre una barra que dice exenta por el artículo 25; debajo, la cifra de 37.800 € de IVA si falla la condición del medio",
+          "caption": "Las tres a la vez. Si falla la del medio, el IVA lo debe quien facturó."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que cambió en 2020",
+          "text": [
+            "Que el comprador comunique un **NIF-IVA** de otro Estado miembro pasó a ser condición **material**, no formal.",
+            "Antes, un defecto documental se subsanaba después. Ahora, si el número no es válido en **VIES** en el momento de la operación, la entrega no está exenta."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Agri-Sud paga, recoge la mercancía, y meses después se descubre que su NIF-IVA estaba de baja. ¿Quién debe los 37.800 €?",
+          "answer": [
+            "**Nortia.**",
+            "No es un papel que falte: es una condición material de la exención. Sin ella, la operación es una entrega interior sujeta al 21 % que Nortia no repercutió.",
+            "Reclamárselo después a un cliente francés que ya cobró su mercancía es exactamente tan fácil como suena. Comprobar VIES antes tarda treinta segundos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y hay que estar en la lista",
+          "text": [
+            "Para tener NIF-IVA propio y figurar en VIES, Nortia debe estar de alta en el **Registro de Operadores Intracomunitarios**.",
+            "No se es operador intracomunitario por vender fuera. Se es por estar inscrito."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Los dos papeles",
+          "text": [
+            "La operación se declara en el **modelo 349**, la declaración recapitulativa. No sustituye al 303 (lección 17): lo acompaña.",
+            "Y la factura, emitida sin IVA, debe referenciar el **art. 25 LIVA** o la **Directiva 2006/112/CE** e indicar que es una entrega exenta."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Una factura intracomunitaria sin esa mención está incompleta aunque la operación sea correcta."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde termina esta lección",
+          "text": [
+            "Esto vale para **bienes** dentro de la UE. Los **servicios** se localizan con otras reglas, y vender fuera de la UE es **exportación**, otro régimen distinto.",
+            "Y una frontera mayor: poner medios materiales o personas en otro Estado puede crear allí un **establecimiento permanente**, y entonces cambia el análisis entero, no un trámite."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que llevarse",
+          "text": [
+            "El riesgo de vender fuera no está en la aduana ni en el idioma. Está en un campo de la factura y en una base de datos pública que casi nadie consulta.",
+            "Nortia vende dentro y fuera, fabrica con línea nueva y tiene cuatro socios. En la última, qué hacer con todo eso junto."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 37/1992, del Impuesto sobre el Valor Añadido",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740",
+              "note": "art. 25, entregas intracomunitarias"
+            },
+            {
+              "title": "Directiva 2006/112/CE, del sistema común del IVA",
+              "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=celex%3A32006L0112"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

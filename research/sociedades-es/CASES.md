@@ -132,3 +132,37 @@ número que nadie pudo justificar en la lección 31.
 al 66 %, Nuria al 4 % y el 30 % de Diego amortizado. Aquí es donde el Caso A deja de dar de
 sí: lo que viene —financiación, salir fuera, reestructurar— exige una empresa que Ámbar no
 es. El capítulo 10 presenta un caso nuevo.
+
+---
+
+## Caso C — Nortia Sensores, SL
+
+Sensores de humedad para agricultura, **Alcalá de Henares**. Introducido en la lección **37**
+porque el Caso A ya no daba de sí: un estudio de diseño de tres personas no levanta rondas
+ni escinde ramas de actividad, y forzarlo habría producido un caso que el lector nota falso.
+
+| Hecho | Valor | Lección |
+|---|---|---|
+| Constituida | 2019 | 37 |
+| Cifra de negocios 2031 | **1,4 millones €** — entidad de reducida dimensión, no microempresa | 37 |
+| Capital social | **60.000 €** en participaciones de **1 €** de nominal | 37 |
+| Socios fundadores | **Álvaro** 45 %, **Rosa** 35 %, **Kenji** 20 % | 37 |
+| Ronda de **Vega Industrial, SL**, enero de 2032 | **500.000 €** por el **20 %** | 37 |
+| Participaciones nuevas | 15.000, a **33,33 €** (1 € de nominal + 32,33 € de prima) | 37 |
+| Reparto tras la ronda | Álvaro 36 %, Rosa 28 %, Kenji 16 %, Vega 20 % | 37 |
+| Capital tras la ronda | 60.000 → **75.000 €**; prima de emisión **485.000 €** | 37 |
+| Valoración | **pre-money 2.000.000 €**, **post-money 2.500.000 €** | 37 |
+| Préstamo para la línea de montaje, 2032 | **300.000 €** a cinco años al **6 %** → 18.000 € de intereses | 38 |
+| Tipo del IS aplicable | **20 %** (senda de la DT 44.ª, lección 06) | 38, 40 |
+| Venta a **Agri-Sud, SARL** (Toulouse) | **180.000 €**; 37.800 € de IVA en juego | 39 |
+| Escisión parcial de la rama de software, 2033 | mercado **1.200.000 €**, fiscal **400.000 €** | 40 |
+| Plusvalía latente diferida | **800.000 €** → **160.000 €** de cuota aplazada | 40 |
+
+**Hilo del capítulo**: cada lección financia o mueve lo que la anterior construyó. La ronda
+paga la fábrica; la fábrica necesita más dinero que la ronda no da; lo que se fabrica se
+vende fuera; y lo que se ha construido acaba necesitando estar en dos sociedades distintas.
+
+**Cuidado al continuar**: Nortia tiene cuatro socios y un inversor con el 20 % — por debajo
+del 25 % del art. 18.2 LIS, así que **no hay vinculación** con Vega. Es un dato del que
+dependen las lecciones 38 y 40. Si una lección futura sube a Vega del 25 %, cambia el
+análisis de las dos.

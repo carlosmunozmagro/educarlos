@@ -1,0 +1,150 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "37-ampliar-capital",
+  "courseId": "sociedades-es",
+  "chapterId": "c10-crecer",
+  "title": "Ampliar capital",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 10 — Crecer",
+          "heading": "Ampliar capital",
+          "text": [
+            "Vega pone 500.000 € en Nortia.",
+            "El capital social de Nortia sube 15.000 €."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Una empresa nueva",
+          "text": [
+            "**Nortia Sensores, SL**, Alcalá de Henares: sensores de humedad para agricultura. Constituida en 2019, **1,4 millones €** de facturación en 2031.",
+            "Tres socios: **Álvaro** con el 45 %, **Rosa** con el 35 % y **Kenji** con el 20 %. Capital: 60.000 € en participaciones de 1 € de nominal."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Enero de 2032",
+          "text": [
+            "**Vega Industrial, SL** quiere entrar con **500.000 €** a cambio del **20 %**.",
+            "Todo el mundo dice la frase al revés: Vega no compra un 20 %. Suscribe participaciones nuevas a un precio, y ese precio es el que produce el 20 %."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Cuántas participaciones nuevas",
+          "text": [
+            "Si Vega ha de tener el 20 % del capital **final**, las nuevas tienen que ser el 20 % del total resultante. Con 60.000 previas, salen **15.000**.",
+            "A 500.000 € entre 15.000, cada una se emite a **33,33 €**. Su nominal es 1 €."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde va el dinero"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/prima-y-dilucion.svg",
+          "alt": "Una barra de 500.000 € con una franja mínima de 15.000 € que va a capital y el resto, 485.000 €, a prima de emisión; debajo, los tres socios bajando del 45, 35 y 20 por ciento al 36, 28 y 16",
+          "caption": "El **97 %** de lo que entra no es capital: es prima de emisión."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Por eso el Registro no lo cuenta",
+          "text": [
+            "El capital de Nortia pasa de 60.000 € a **75.000 €**. Los otros **485.000 €** entran en fondos propios como prima.",
+            "Mirar el capital social de una empresa en el Registro Mercantil no dice casi nada sobre el dinero que ha levantado."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y la cuenta al revés",
+          "text": [
+            "500.000 € por el 20 % implica una valoración **post-money** de 2,5 millones y **pre-money** de 2 millones.",
+            "Nadie firmó «Nortia vale dos millones». Sale del precio de la participación."
+          ]
+        },
+        {
+          "type": "formula",
+          "tex": "n = \\frac{C \\cdot p}{1 - p} = \\frac{60.000 \\cdot 0{,}20}{0{,}80} = 15.000",
+          "caption": "La fórmula llega después de la aritmética, no antes."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Hay que hacerle sitio",
+          "text": [
+            "El **artículo 304 LSC**: en los aumentos con cargo a **aportaciones dinerarias**, cada socio tiene derecho a asumir participaciones en proporción al valor nominal de las que ya tiene.",
+            "Álvaro, Rosa y Kenji tienen preferencia sobre esas 15.000. Para que entre Vega, los tres renuncian."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Si Vega aportara maquinaria por valor de 500.000 € en lugar de dinero, ¿tendrían los tres socios ese mismo derecho de preferencia?",
+          "answer": [
+            "No. El artículo 304 lo concede **sólo** en aumentos con cargo a aportaciones **dinerarias**.",
+            "Un aumento por aportación no dineraria, o por compensación de créditos (art. 301), no genera derecho de preferencia.",
+            "Es la vía por la que un socio se diluye sin que nadie tenga que pedirle permiso. Y no es un descuido de la ley: es exactamente lo que dice."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que se llevan y lo que pierden",
+          "text": [
+            "Los tres bajan proporcionalmente: cada uno conserva el 80 % de lo que tenía. Nadie ha perdido el control por una decisión concreta; lo ha perdido por aritmética.",
+            "Nortia tiene 500.000 € en caja. En la siguiente, la otra manera de conseguirlos sin ceder ni un punto."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley de Sociedades de Capital (RDL 1/2010)",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2010-10544",
+              "note": "arts. 301 y 304"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

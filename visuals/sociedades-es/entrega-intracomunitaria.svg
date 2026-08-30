@@ -1,0 +1,17 @@
+<svg viewBox="0 0 300 172" xmlns="http://www.w3.org/2000/svg">
+<text class="dim" x="6.0" y="14" font-size="10">Factura de 180.000 € a un cliente francés</text>
+<rect class="box" x="6.0" y="22" width="92.0" height="44" rx="3"/>
+<text x="12.0" y="42" font-size="10">Transporte a</text>
+<text x="12.0" y="56" font-size="10">otro Estado</text>
+<rect class="box" x="104.0" y="22" width="92.0" height="44" rx="3"/>
+<text x="110.0" y="42" font-size="10">NIF-IVA válido</text>
+<text x="110.0" y="56" font-size="10">en VIES</text>
+<rect class="box" x="202.0" y="22" width="92.0" height="44" rx="3"/>
+<text x="208.0" y="42" font-size="10">Declarada en</text>
+<text x="208.0" y="56" font-size="10">el 349</text>
+<rect class="hot" x="6.0" y="76" width="288" height="26" rx="3"/>
+<text class="lbl" x="14" y="93" font-size="11">Exenta — art. 25 LIVA</text>
+<text class="dim" x="6.0" y="122" font-size="10">Si falla la del medio:</text>
+<text class="accent" x="6.0" y="140" font-size="11" font-weight="700">37.800 € de IVA que nadie cobró</text>
+<text class="dim" x="6.0" y="158" font-size="10">el 21% de la factura, a cargo de quien la emitió</text>
+</svg>

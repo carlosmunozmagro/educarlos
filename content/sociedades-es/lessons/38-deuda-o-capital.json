@@ -1,0 +1,158 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "38-deuda-o-capital",
+  "courseId": "sociedades-es",
+  "chapterId": "c10-crecer",
+  "title": "Deuda o capital",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 10 — Crecer",
+          "heading": "Deuda o capital",
+          "text": [
+            "Nortia necesita 300.000 € más.",
+            "Uno cuesta 14.400 € al año. El otro, el 10,7 % de la empresa para siempre."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La línea de montaje",
+          "text": [
+            "Con los 500.000 € de Vega dentro, Nortia puede fabricar más de lo que su planta aguanta. La línea nueva cuesta **300.000 €**.",
+            "Álvaro quiere volver a ampliar capital. Rosa no quiere bajar del 28 %."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que cuesta cada puerta",
+          "text": [
+            "A la misma valoración de la ronda anterior, 300.000 € nuevos compran **10,7 %** — que salen de los cuatro socios.",
+            "Un préstamo a cinco años al **6 %** son **18.000 €** de intereses el primer año. Deducibles: al 20 % que paga Nortia en 2032, el coste neto es de **14.400 €**."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "key",
+          "title": "La comparación honesta",
+          "text": [
+            "No es 6 % contra 0 %. Es un coste **anual y finito** contra un porcentaje de todo, **sin fecha de final**. El préstamo se acaba; la dilución no.",
+            "«El capital sale gratis porque no hay que devolverlo» se devuelve en cada dividendo y en cada venta futura."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y hay una tercera",
+          "text": [
+            "El **préstamo participativo** del **artículo 20 del RDL 7/1996**: el prestamista cobra un **interés variable** según la evolución de la actividad — beneficio neto, volumen de negocio o el criterio que se pacte.",
+            "No diluye. Y hace algo que ningún otro préstamo hace."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Cuenta como patrimonio neto",
+          "text": [
+            "A los efectos de **reducción de capital y liquidación**, la ley lo considera patrimonio neto. Para todo lo demás sigue siendo deuda.",
+            "Es decir: refuerza el balance justo en la prueba que decide si hay causa de disolución (lección 02), sin que nadie pierda un punto."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "text": [
+            "A cambio, amortizarlo antes de tiempo exige compensarlo con una ampliación de igual cuantía de los fondos propios. No se devuelve y ya está."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Las tres, en una tabla"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/deuda-o-capital.svg",
+          "alt": "Tres filas —ampliar capital, préstamo ordinario y préstamo participativo— con dos columnas que indican si diluye y si cuenta como patrimonio neto; sólo el préstamo participativo responde no y sí",
+          "caption": "Sólo uno no diluye **y** cuenta como patrimonio neto."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Vega presta los 300.000 € como préstamo participativo. ¿Puede Nortia deducirse esos intereses?",
+          "answer": [
+            "Sí, porque Vega tiene el **20 %**.",
+            "El **artículo 15.a) LIS** convierte en **retribución de fondos propios** —y por tanto en gasto **no** deducible— la de los préstamos participativos otorgados por entidades del **mismo grupo** del art. 42 del Código de Comercio.",
+            "Vega no forma grupo con Nortia. Con un 25 % habría además vinculación del art. 18.2 (lección 14), y el tipo de interés dejaría de ser cosa de las partes."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El límite que no le aplica",
+          "text": [
+            "El **artículo 16 LIS** limita los gastos financieros netos al **30 % del beneficio operativo**. Es la regla que se cita en toda conversación sobre deuda.",
+            "Pero añade que **en todo caso** son deducibles **1.000.000 €**. Nortia paga 18.000 €: está a cincuenta veces del suelo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Para quién es esa regla",
+          "text": [
+            "Para estructuras apalancadas, no para una pyme con un préstamo de maquinaria. Saber que existe vale menos que saber cuándo muerde.",
+            "Nortia tiene la línea montada y capacidad de sobra. En la siguiente, dónde vender lo que ahora puede fabricar."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "RDL 7/1996, de 7 de junio",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1996-13002",
+              "note": "art. 20, préstamos participativos"
+            },
+            {
+              "title": "Ley 27/2014, del Impuesto sobre Sociedades",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328",
+              "note": "arts. 15.a), 16 y 18.2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
