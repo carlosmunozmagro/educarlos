@@ -55,8 +55,7 @@ Consecuencias prácticas, y son grandes:
 
 - Para dar entrada a un tercero con dinero, **los socios existentes tienen que renunciar** a
   su preferencia o hay que excluirla en el acuerdo.
-- Un aumento por **aportación no dineraria** o por **compensación de créditos** (art. 301,
-  lección 33) **no genera derecho de preferencia**. Es la vía por la que un socio se diluye
+- Un aumento por **aportación no dineraria** o por **compensación de créditos** (art. 301) **no genera derecho de preferencia**. Es la vía por la que un socio se diluye
   sin que nadie le pregunte.
 
 ## The hard part
