@@ -6,7 +6,7 @@
 import { renderScreen } from './render.js';
 import { inline, escapeHtml } from './mdlite.js';
 import { t } from './i18n.js';
-import { NAME, MARK, punField } from './brand.js';
+import { NAME, MARK, lettered, punField } from './brand.js';
 import * as P from './progress.js';
 import * as Theme from './theme.js';
 
@@ -59,13 +59,26 @@ async function preloadSVGs(lesson) {
 
 /* ---------------------------------------------------------- chrome */
 
+/* Drawn empty, with its target parked in a data attribute: fillRings() lets
+   the browser paint the empty state once, then hands over the real value, and
+   the CSS transition sweeps the arc round. Progress you watch arrive reads as
+   yours in a way a static arc never does. */
 function ring(pct, label) {
   const r = 19, c = 2 * Math.PI * r;
   return '<svg class="ring" viewBox="0 0 46 46" aria-hidden="true">'
     + '<circle class="track" cx="23" cy="23" r="' + r + '"/>'
     + '<circle class="fill" cx="23" cy="23" r="' + r + '" stroke-dasharray="' + c
-    + '" stroke-dashoffset="' + (c * (1 - pct)) + '" transform="rotate(-90 23 23)"/>'
+    + '" stroke-dashoffset="' + c + '" data-to="' + (c * (1 - pct))
+    + '" transform="rotate(-90 23 23)"/>'
     + '<text x="23" y="23" text-anchor="middle" dominant-baseline="central">' + escapeHtml(label) + '</text></svg>';
+}
+
+function fillRings() {
+  const arcs = [...app.querySelectorAll('.ring .fill[data-to]')];
+  if (!arcs.length) return;
+  requestAnimationFrame(() => {
+    for (const a of arcs) { a.style.strokeDashoffset = a.dataset.to; delete a.dataset.to; }
+  });
 }
 
 const BACK_ICON = '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M11 3L5 9l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
@@ -176,7 +189,8 @@ async function viewHome() {
 
   app.innerHTML = '<div class="deck home" id="home">'
     + '<section class="screen in" data-kind="hero"><div class="wrap hero">'
-    + '<div class="lockup-xl" data-anim>' + MARK + NAME + '</div>'
+    + '<div class="lockup-xl" data-anim><span class="mk">' + MARK + '</span>'
+    + '<span class="word">' + lettered() + '</span></div>'
     + '<div class="hero-def" data-anim style="--i:1">'
     + '<span class="pos">v.</span>'
     + '<span class="d1">to educate them</span>'
@@ -214,17 +228,13 @@ function wireHome() {
     const y = home.scrollTop, h = home.clientHeight || 1;
     const p = Math.max(0, Math.min(1, y / h));
     app.style.setProperty('--p', p.toFixed(3));
-    app.classList.toggle('past-hero', p > 0.25);
     for (const s of screens) if (s.offsetTop < y + h * 0.75) s.classList.add('in');
   };
 
-  // One read per frame at most: scroll fires far faster than the screen draws.
-  let queued = false;
-  home.addEventListener('scroll', () => {
-    if (queued) return;
-    queued = true;
-    requestAnimationFrame(() => { queued = false; update(); });
-  }, { passive: true });
+  // Inline, not on a frame callback. Two reads and a variable write are cheap,
+  // and the shelves' entrance depends on this running: a starved rAF would
+  // leave them hidden, which is the one failure worth designing out.
+  home.addEventListener('scroll', update, { passive: true });
   update();
 }
 
@@ -295,6 +305,7 @@ async function viewSection(id) {
         ? '<div class="hit more">+' + (lessons.length - 4) + '</div>' : '';
       return courseCard(ix.course, ci) + (rows ? '<div class="hits">' + rows + more + '</div>' : '');
     }).join('');
+    fillRings();
   };
 
   draw();
@@ -308,18 +319,19 @@ async function viewCourse(courseId) {
   const st = P.courseStats(course);
 
   const chapters = (course.chapters || []).map((ch, ci) => {
-    const rows = (ch.lessons || []).map(ls => {
-      const body = '<span class="dot"></span>'
+    const rows = (ch.lessons || []).map((ls, li) => {
+      const body = '<span class="dot" style="--i:' + li + '"></span>'
         + '<div class="t">' + inline(ls.title) + '</div>'
         + (ls.summary ? '<div class="s">' + inline(ls.summary) + '</div>' : '');
       // Planned lessons are shown so the curriculum is visible, but they
       // are not links - there is nothing to open yet.
       if (ls.status === 'planned') {
-        return '<div class="lesson-row planned">' + body
+        return '<div class="lesson-row planned" style="--i:' + li + '">' + body
           + '<div class="soon">' + tr('planned') + '</div></div>';
       }
       const state = st.state[ls.id] || 'new';
-      return '<a class="lesson-row ' + state + '" href="#/c/' + encodeURIComponent(course.id) + '/l/' + encodeURIComponent(ls.id) + '">'
+      return '<a class="lesson-row ' + state + '" style="--i:' + li + '"'
+        + ' href="#/c/' + encodeURIComponent(course.id) + '/l/' + encodeURIComponent(ls.id) + '">'
         + body + '</a>';
     }).join('');
     return '<div class="chapter" data-rise style="--i:' + (ci + 1) + '"><div class="chapter-title"><span class="n">'
@@ -513,6 +525,16 @@ async function route() {
   await prefetch(parts);
   await transition(dir, () => render(parts));
 }
+
+/* The card acknowledges the finger before the route does: a flare on press,
+   which has landed by the time the transition takes the screen away. */
+document.addEventListener('pointerdown', (e) => {
+  const card = e.target.closest('.section-card, .course-card, .lesson-row');
+  if (!card) return;
+  card.classList.remove('tapped');
+  void card.offsetWidth;
+  card.classList.add('tapped');
+}, { passive: true });
 
 /* One listener for every toggle the views mount. The swap itself runs as a
    transition, so light and dark wash across the page instead of snapping.

@@ -513,10 +513,11 @@ code, pre, .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, 
 .hero-def .d1 { grid-row: 1; grid-column: 2; color: var(--text); font-size: 1.06rem; }
 .hero-def .d2 { grid-row: 2; grid-column: 2; color: var(--text-dim); font-size: 1.02rem; }
 
-/* Past the hero the field is backdrop, not headline. The opacity step is the
-   floor; the scroll-linked rules further down do the rest. */
-.punfield { transition: opacity .5s var(--ease); }
-#app.past-hero .punfield { opacity: .32; }
+/* Past the hero the field is backdrop, not headline - and it dims on the way
+   there rather than in one step, so it never competes with the shelves it is
+   handing over to. --p carries the swipe even when motion is reduced, which
+   is why the fade lives out here and not with the transforms. */
+.punfield { opacity: max(.22, calc(1 - var(--p, 0) * 1.5)); }
 
 .sec-head {
   font-size: .74rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
@@ -677,8 +678,10 @@ code, pre, .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, 
 
 /* Cards and chapters land one after another, wherever they are mounted.
    Distinct from [data-anim], which waits on a snapped screen to scroll in. */
+/* backwards, never both: if an animation is ever dropped or cut short, the
+   element must be left in its natural, visible state. */
 [data-rise] {
-  animation: rise .46s var(--ease) both;
+  animation: rise .46s var(--ease) backwards;
   animation-delay: calc(var(--i, 0) * 55ms);
 }
 @keyframes rise { from { opacity: 0; transform: translateY(13px); } to { opacity: 1; transform: none; } }
@@ -744,7 +747,7 @@ code, pre, .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, 
   /* The field drifts the other way and swells slightly: the parallax that
      tells the eye the two screens are at different depths. */
   .punfield {
-    transform: translateY(calc(var(--p, 0) * 7vh)) scale(calc(1 + var(--p, 0) * .07));
+    transform: translateY(calc(var(--p, 0) * 7vh)) scale(calc(1 + var(--p, 0) * .04));
     will-change: transform;
   }
 
@@ -785,3 +788,128 @@ code, pre, .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, 
   transform: translateY(22px) scale(.97);
 }
 .screen.in .section-card[data-anim] { transform: none; }
+
+/* ============================================================
+   The opening — the mark drawing itself, the name arriving
+   ============================================================ */
+/* Everything here is first-paint only, and only on the home screen. The idea
+   is one second of assembly: the C draws, the screen it holds drops in, the
+   name rises a letter at a time, the gloss wipes across. */
+.lockup-xl .mk { display: inline-flex; }
+.lockup-xl .word { display: inline-flex; }
+.lockup-xl .word .l { display: inline-block; will-change: transform, opacity; }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* 100 is the arc's length to the nearest unit: r19 over 300 degrees. */
+  .lockup-xl .mark-c .arc {
+    stroke-dasharray: 100; stroke-dashoffset: 100;
+    animation: draw-c 1s var(--ease) .1s forwards;
+  }
+  .lockup-xl .mark-c .bar {
+    transform-box: fill-box; transform-origin: center;
+    scale: 0 .4; opacity: 0;
+    animation: drop-bar .55s cubic-bezier(.2, .9, .25, 1.5) .8s forwards;
+  }
+  .lockup-xl .word .l {
+    opacity: 0; translate: 0 .42em; rotate: x -55deg;
+    animation: letter-up .6s var(--ease) forwards;
+    animation-delay: calc(.34s + var(--i) * .042s);
+  }
+  /* The gloss is a definition: it should read as being written out. */
+  .hero-def {
+    -webkit-mask-image: linear-gradient(to right, #000 0 0);
+            mask-image: linear-gradient(to right, #000 0 0);
+    -webkit-mask-size: 0% 100%; mask-size: 0% 100%;
+    -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+    animation: wipe-in .85s var(--ease) 1s forwards;
+  }
+}
+
+@keyframes draw-c   { to { stroke-dashoffset: 0; } }
+@keyframes drop-bar { to { scale: 1 1; opacity: 1; } }
+@keyframes letter-up { to { opacity: 1; translate: 0 0; rotate: x 0deg; } }
+@keyframes wipe-in  { to { -webkit-mask-size: 100% 100%; mask-size: 100% 100%; } }
+
+/* ============================================================
+   Depth — the swipe as two planes, not one scroll
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+  .deck.home .screen { perspective: 1100px; }
+
+  /* The hero does not merely leave: it falls back into the page. */
+  .deck.home .wrap.hero {
+    transform: translateY(calc(var(--p, 0) * -9vh))
+               translateZ(calc(var(--p, 0) * -170px))
+               rotateX(calc(var(--p, 0) * 7deg));
+    transform-origin: 50% 0;
+  }
+  /* And the shelves tip up to meet the reader as they arrive. */
+  .deck.home .screen[data-kind="shelves"] > .wrap {
+    transform: translateY(calc((1 - var(--p, 0)) * 5vh))
+               rotateX(calc((1 - var(--p, 0)) * 9deg));
+    transform-origin: 50% 100%;
+  }
+  /* The field fans as it goes, alternate rows parting - the swipe opens it
+     like a hand of cards rather than sliding a picture. */
+  .pun-row:nth-child(odd)  { transform: translateY(calc(var(--p, 0) * -2.4vh)); }
+  .pun-row:nth-child(even) { transform: translateY(calc(var(--p, 0) *  2.4vh)); }
+}
+
+/* ============================================================
+   Touch — every tap answered before the route changes
+   ============================================================ */
+.section-card, .course-card, .lesson-row {
+  transition: transform .32s var(--ease), border-color .2s var(--ease),
+              box-shadow .32s var(--ease);
+}
+.section-card:active, .course-card:active, .lesson-row:active {
+  transform: scale(.975);
+  box-shadow: 0 12px 30px -18px rgba(0, 0, 0, .55);
+}
+/* A ring of accent leaves the badge under the finger and fades outward. */
+.section-card .badge { position: relative; transition: color .25s var(--ease), border-color .25s var(--ease); }
+.section-card:active .badge { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
+.section-card .badge::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .section-card.tapped .badge::after { animation: flare .6s var(--ease); }
+  .course-card.tapped, .lesson-row.tapped { animation: nudge .45s var(--ease); }
+}
+@keyframes flare {
+  from { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 55%, transparent); }
+  to   { box-shadow: 0 0 0 16px transparent; }
+}
+@keyframes nudge {
+  0%   { transform: scale(1); }
+  35%  { transform: scale(.972); }
+  100% { transform: scale(1); }
+}
+
+/* ============================================================
+   The course map, assembling
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+  /* The spine draws down, and each stop on it pops as the line reaches it. */
+  .spine::before {
+    transform-origin: 50% 0;
+    animation: draw-spine .7s var(--ease) backwards;
+    animation-delay: .1s;
+  }
+  .lesson-row .dot {
+    animation: dot-in .42s cubic-bezier(.2, .9, .25, 1.55) backwards;
+    animation-delay: calc(.28s + var(--i, 0) * .07s);
+  }
+  /* Done work lands with its accent already lit. */
+  .lesson-row.done .dot { animation-name: dot-in-done; }
+}
+@keyframes draw-spine { from { scale: 1 0; } to { scale: 1 1; } }
+@keyframes dot-in      { from { scale: 0; opacity: 0; } to { scale: 1; opacity: 1; } }
+@keyframes dot-in-done {
+  0%   { scale: 0; opacity: 0; }
+  70%  { scale: 1.35; opacity: 1; }
+  100% { scale: 1; opacity: 1; }
+}
+
+/* The ring sweeps to its value instead of appearing at it. */
+.ring .fill { transition: stroke-dashoffset 1.1s var(--ease) .15s; }

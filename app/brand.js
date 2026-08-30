@@ -8,13 +8,21 @@
 
 export const NAME = 'Educarlos';
 
+/* The name split into letters, each carrying its index, so the stylesheet can
+   stagger them without knowing the word. Spaces would break the layout as
+   inline-blocks; the name has none, but the guard costs nothing. */
+export function lettered(name = NAME) {
+  return [...name].map((ch, i) =>
+    '<span class="l" style="--i:' + i + '">' + (ch === ' ' ? '&nbsp;' : ch) + '</span>').join('');
+}
+
 /* An open C holding one bright screen in its mouth. Same drawing language
    as the lesson diagrams: one arc, one accent bar, nothing else. */
 export const MARK =
   '<svg class="mark-c" viewBox="0 0 64 64" fill="none" aria-hidden="true">'
-  + '<path d="M42.9 16.44 A 19 19 0 1 0 42.9 47.56" stroke="currentColor"'
+  + '<path class="arc" d="M42.9 16.44 A 19 19 0 1 0 42.9 47.56" stroke="currentColor"'
   + ' stroke-width="3.6" stroke-linecap="round"/>'
-  + '<rect x="36" y="24" width="7" height="16" rx="3.5" fill="var(--accent)"/></svg>';
+  + '<rect class="bar" x="36" y="24" width="7" height="16" rx="3.5" fill="var(--accent)"/></svg>';
 
 /* "|" marks the syllable that gets the accent tint. */
 const PUNS = [
@@ -50,7 +58,7 @@ function row(index, dir) {
   for (let i = 0; i < WORDS_PER_ROW; i++) set.push(word(PUNS[(start + i) % PUNS.length], i));
   const html = set.join('');
   const dur = 78 + (index % 4) * 26;
-  return '<div class="pun-row"><div class="pun-track" style="animation-duration:' + dur + 's;'
+  return '<div class="pun-row" style="--r:' + index + '"><div class="pun-track" style="animation-duration:' + dur + 's;'
     + 'animation-direction:' + (dir ? 'normal' : 'reverse') + '">'
     + '<span class="pun-set">' + html + '</span><span class="pun-set">' + html + '</span>'
     + '</div></div>';
