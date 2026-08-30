@@ -4,6 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5">
 <meta name="theme-color" content="#0b0d10">
+<script>
+  /* Applied before first paint, so a saved theme never flashes the other one.
+     Mirrors app/theme.js - keep the key and the bar colours in step. */
+  try {
+    var p = localStorage.getItem('educarlos:theme');
+    if (p === 'light' || p === 'dark') {
+      document.documentElement.setAttribute('data-theme', p);
+      document.querySelector('meta[name=theme-color]')
+        .setAttribute('content', p === 'light' ? '#fbfbfa' : '#0b0d10');
+    } else if (matchMedia('(prefers-color-scheme: light)').matches) {
+      document.querySelector('meta[name=theme-color]').setAttribute('content', '#fbfbfa');
+    }
+  } catch (e) {}
+</script>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Educarlos">

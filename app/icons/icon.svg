@@ -1,40 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="Educarlos">
-  <!-- Educarlos home-screen mark. Full bleed and opaque: iOS rounds the corners
-       itself and never honours transparency, so the artwork stays a square and
-       carries its own dark field. Same drawing language as brand.js and the
-       lesson diagrams - one open arc, one accent bar, nothing else.
+  <!-- Educarlos home-screen mark, light. Full bleed and opaque: iOS rounds the
+       corners itself and ignores transparency, so the artwork stays a square
+       and carries its own paper-white field. Same drawing language as
+       brand.js and the lesson diagrams - one open arc, one accent bar.
 
        The warm halo is a stack of flat circles rather than a radial gradient:
-       gradients drop out when this file is rasterised headlessly, and every PNG
-       beside it is rasterised from this file by tools/icons.sh. -->
+       gradients drop out when this file is rasterised headlessly, and every
+       PNG beside it is rasterised from this file by tools/icons.sh. -->
 
-  <rect width="180" height="180" fill="#10141a"/>
+  <rect width="180" height="180" fill="#fbfbfa"/>
 
-  <!-- Ember behind the C. Thirty steps so it reads as light, not as rings. -->
+  <!-- A breath of the accent behind the C. Thirty steps, so it reads as warmth
+       rather than as rings. -->
   <g fill="#f0a13a" transform="translate(106 72)">
-    <circle r="80.00" opacity=".0035"/><circle r="77.33" opacity=".0035"/>
-    <circle r="74.67" opacity=".0035"/><circle r="72.00" opacity=".0035"/>
-    <circle r="69.33" opacity=".0035"/><circle r="66.67" opacity=".0035"/>
-    <circle r="64.00" opacity=".0035"/><circle r="61.33" opacity=".0035"/>
-    <circle r="58.67" opacity=".0035"/><circle r="56.00" opacity=".0035"/>
-    <circle r="53.33" opacity=".0035"/><circle r="50.67" opacity=".0035"/>
-    <circle r="48.00" opacity=".0035"/><circle r="45.33" opacity=".0035"/>
-    <circle r="42.67" opacity=".0035"/><circle r="40.00" opacity=".0035"/>
-    <circle r="37.33" opacity=".0035"/><circle r="34.67" opacity=".0035"/>
-    <circle r="32.00" opacity=".0035"/><circle r="29.33" opacity=".0035"/>
-    <circle r="26.67" opacity=".0035"/><circle r="24.00" opacity=".0035"/>
-    <circle r="21.33" opacity=".0035"/><circle r="18.67" opacity=".0035"/>
-    <circle r="16.00" opacity=".0035"/><circle r="13.33" opacity=".0035"/>
-    <circle r="10.67" opacity=".0035"/><circle r="8.00"  opacity=".0035"/>
-    <circle r="5.33"  opacity=".0035"/><circle r="2.67"  opacity=".0035"/>
+    <circle r="62.00" opacity=".0022"/><circle r="59.93" opacity=".0022"/><circle r="57.87" opacity=".0022"/>
+    <circle r="55.80" opacity=".0022"/><circle r="53.73" opacity=".0022"/><circle r="51.67" opacity=".0022"/>
+    <circle r="49.60" opacity=".0022"/><circle r="47.53" opacity=".0022"/><circle r="45.47" opacity=".0022"/>
+    <circle r="43.40" opacity=".0022"/><circle r="41.33" opacity=".0022"/><circle r="39.27" opacity=".0022"/>
+    <circle r="37.20" opacity=".0022"/><circle r="35.13" opacity=".0022"/><circle r="33.07" opacity=".0022"/>
+    <circle r="31.00" opacity=".0022"/><circle r="28.93" opacity=".0022"/><circle r="26.87" opacity=".0022"/>
+    <circle r="24.80" opacity=".0022"/><circle r="22.73" opacity=".0022"/><circle r="20.67" opacity=".0022"/>
+    <circle r="18.60" opacity=".0022"/><circle r="16.53" opacity=".0022"/><circle r="14.47" opacity=".0022"/>
+    <circle r="12.40" opacity=".0022"/><circle r="10.33" opacity=".0022"/><circle r="8.27" opacity=".0022"/>
+    <circle r="6.20" opacity=".0022"/><circle r="4.13" opacity=".0022"/><circle r="2.07" opacity=".0022"/>
   </g>
 
   <!-- The C, opened toward the one bright screen it holds. The mark sits on a
-       25% inset, which keeps it clear of both the iOS corner radius and the
-       20% safe zone Android maskable icons crop to. -->
+       25% inset, which clears both the iOS corner radius and the 20% safe zone
+       Android maskable icons crop to. -->
   <g transform="translate(22.8 22.8) scale(2.1)">
     <path d="M42.9 16.44 A 19 19 0 1 0 42.9 47.56"
-          fill="none" stroke="#e9edf2" stroke-width="3.6" stroke-linecap="round"/>
-    <rect x="36" y="24" width="7" height="16" rx="3.5" fill="#f0a13a"/>
+          fill="none" stroke="#1b2027" stroke-width="3.6" stroke-linecap="round"/>
+    <rect x="36" y="24" width="7" height="16" rx="3.5" fill="#e8901f"/>
   </g>
 </svg>

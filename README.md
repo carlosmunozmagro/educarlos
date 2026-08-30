@@ -50,6 +50,7 @@ visuals/<course>/*.svg   inlined into the page, theme-aware
 research/<course>/*.md   sourced briefs lessons are written from
 schema/                  JSON Schema, for editor autocomplete
 app/brand.js             the mark, the name, the pun field
+app/theme.js             system / light / dark, remembered per reader
 app/icons/               home-screen icon: icon.svg + rasterised PNGs
 app/site.webmanifest     install metadata (name, colours, icons)
 tools/serve.py           dev server
