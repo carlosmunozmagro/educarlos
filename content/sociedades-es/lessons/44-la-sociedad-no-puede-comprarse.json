@@ -1,0 +1,140 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "44-la-sociedad-no-puede-comprarse",
+  "courseId": "sociedades-es",
+  "chapterId": "c11-la-ley-que-no-es-fiscal",
+  "title": "La sociedad no puede comprarse a sí misma",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 11 — La ley que no es fiscal",
+          "heading": "La sociedad no puede comprarse a sí misma",
+          "text": [
+            "En 2029, Marta buscó la salida barata para pagar a Diego.",
+            "No existía. Y ahora se puede explicar por qué."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La pregunta que quedó abierta",
+          "text": [
+            "Ámbar tuvo que **reducir capital** para pagarle a Diego sus 66.000 € (lección 33), con la responsabilidad del art. 331 pegada detrás durante cinco años.",
+            "Lo evidente habría sido que Ámbar le comprara el 30 % y ya está. La ley no lo permite."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Los supuestos son tasados",
+          "text": [
+            "El **artículo 140 LSC** enumera los casos en que una SL puede adquirir sus **propias participaciones**. Es una lista cerrada, no un principio general con excepciones.",
+            "Entre ellos: cuando forman parte de un patrimonio adquirido **a título universal**, se adquieren **a título gratuito**, o vienen de una **adjudicación judicial** para cobrar un crédito contra su titular."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y el que importa aquí",
+          "text": [
+            "También cabe adquirirlas **en ejecución de un acuerdo de reducción de capital** adoptado por la junta.",
+            "Es decir: el camino que Marta tomó no era una alternativa peor. Era el supuesto permitido."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Las tres puertas de 2029"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/autocartera-cerrada.svg",
+          "alt": "Tres opciones apiladas: que Ámbar compre el 30 %, marcada como fuera de los supuestos del artículo 140; que le compre otro socio con dinero propio; y reducir capital y amortizar, destacada como la permitida",
+          "caption": "Sólo la tercera usa dinero de la sociedad y está permitida."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "¿Por qué prohibiría la ley algo tan razonable como que una empresa recompre su propia participación?",
+          "answer": [
+            "Porque no es lo que parece. Pagar con dinero de la sociedad a un socio que se va es **devolverle su aportación**.",
+            "Si eso pudiera hacerse por compraventa, el capital —que es la cifra de retención en favor de los acreedores— se vaciaría sin pasar por el procedimiento que los protege.",
+            "Es la misma preocupación de los artículos 331 y 332 de la lección 33, entrando por otra puerta. La prohibición no es una rareza formal: es coherente con todo lo demás."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y si las llega a tener",
+          "text": [
+            "No puede quedárselas indefinidamente: el **artículo 141** obliga a **amortizarlas o enajenarlas** en plazo.",
+            "Una SL con participaciones propias en cartera es una situación transitoria por diseño, no un estado estable."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "text": [
+            "Los tribunales han matizado que no toda adquisición fuera de la lista es automáticamente nula. La regla de partida sigue siendo la prohibición."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Qué se hace entonces",
+          "text": [
+            "O **compra otro socio** con su propio dinero —y entonces no hay problema de capital, sólo de precio—, o **se reduce capital** y se asume el peaje del art. 331.",
+            "No hay una tercera vía barata. Quien la busca acaba en una operación que no cabe."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El patrón del capítulo",
+          "text": [
+            "Cuatro lecciones sin una sola declaración tributaria: la forma societaria obligatoria, el plazo de cobro, el libro que dice quién vota, y el dinero que no puede salir por donde parece.",
+            "Ninguna es fiscal, y las cuatro pueden costar más que un impuesto mal calculado."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley de Sociedades de Capital (RDL 1/2010)",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2010-10544",
+              "note": "arts. 140, 141 y 331"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

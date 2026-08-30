@@ -166,3 +166,33 @@ vende fuera; y lo que se ha construido acaba necesitando estar en dos sociedades
 del 25 % del art. 18.2 LIS, así que **no hay vinculación** con Vega. Es un dato del que
 dependen las lecciones 38 y 40. Si una lección futura sube a Vega del 25 %, cambia el
 análisis de las dos.
+
+---
+
+## Caso D — Aitana y Estudio Nave, SL
+
+Caso **auxiliar**, de una sola lección (**41**). Existe para tener una actividad colegiada
+que el Caso A no puede dar: Ámbar hace diseño gráfico, que no exige titulación ni colegio.
+
+| Hecho | Valor |
+|---|---|
+| Aitana | **arquitecta**, socia profesional |
+| Estudio Nave, SL | Aitana **55 %**, un socio financiero no arquitecto **45 %** |
+| Cumple el art. 4.2 vigente (mayoría) | **sí** — con la redacción de 2007 (3/4) no habría cumplido |
+
+No lo estires: sirve para el test de la sociedad profesional y para nada más.
+
+## Lo que añade el capítulo 11 (lecciones 41–44)
+
+Este capítulo no introduce hechos nuevos en el Caso A; **reinterpreta** los que ya existen.
+
+| Qué reinterpreta | De dónde viene | Lección |
+|---|---|---|
+| Ámbar **no** es sociedad profesional | actividad de la lección 01 | 41 |
+| Agri-Sud paga a **150 días**; contrato marco de **120** días, nulo | venta de la lección 39 | 42 |
+| Las transmisiones a Diego y a Nuria exigían documento público, conocimiento e inscripción | lecciones 30, 31, 32 | 43 |
+| Marta lleva el libro registro desde 2023 y nadie se lo ha pedido | lección 04 | 43 |
+| Por qué Ámbar **tuvo** que reducir capital para pagar a Diego | lección 33 | 44 |
+
+Es deliberado: el capítulo 11 es el que explica decisiones que el curso ya había tomado sin
+justificar del todo. Al escribir aquí, **no inventes hechos nuevos** — busca los que ya están.

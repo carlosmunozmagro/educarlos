@@ -1,0 +1,152 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "42-que-te-paguen",
+  "courseId": "sociedades-es",
+  "chapterId": "c11-la-ley-que-no-es-fiscal",
+  "title": "Que te paguen",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 11 — La ley que no es fiscal",
+          "heading": "Que te paguen",
+          "text": [
+            "Agri-Sud paga a Nortia a los 150 días.",
+            "Mientras tanto se han devengado 4.922 € que nadie ha pedido."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El contrato dice 120 días",
+          "text": [
+            "Álvaro firmó el contrato marco de Agri-Sud sin discutirlo: era el primer cliente grande de fuera y el plazo venía impreso.",
+            "Esa cláusula no vale. Y no porque sea abusiva en abstracto: porque la ley la anula."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Los dos plazos",
+          "text": [
+            "La **Ley 3/2004** se aplica a las operaciones comerciales entre empresas. Sin pacto, el plazo es de **30 días naturales**.",
+            "Con pacto puede ampliarse, pero **nunca más allá de 60 días**. Cualquier cláusula que lo amplíe en perjuicio del acreedor es **nula**."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que corre solo"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/reloj-morosidad.svg",
+          "alt": "Una barra de 150 días con los primeros 60 marcados en plazo y los 90 restantes como mora, con las marcas de 30 y 60 días, y debajo los intereses devengados y los 40 € fijos por factura",
+          "caption": "El plazo aplicable no es el firmado: son **60 días**, y el resto es mora."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El interés no hay que pedirlo",
+          "text": [
+            "El **artículo 7** lo hace de **devengo automático**: no hace falta requerir al deudor, ni pactarlo, ni avisar.",
+            "El tipo es el del **Banco Central Europeo más ocho puntos porcentuales**. Ocho, no siete: subió en la reforma de 2010."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "text": [
+            "El tipo del BCE cambia. Lo estable es el diferencial de ocho puntos; el ejemplo de la pantalla anterior usa un 3 % de referencia sólo para dar una magnitud."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y encima, una cantidad fija",
+          "text": [
+            "El **artículo 8.1** añade **40 €** que se suman «en todo caso y sin necesidad de petición expresa» a la deuda principal.",
+            "Y por encima de esa cifra, todos los costes de cobro que se acrediten."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Nortia tiene 40 facturas cobradas fuera de plazo este año. ¿Cuántos «40 €» puede reclamar?",
+          "answer": [
+            "**Cuarenta.** 1.600 €.",
+            "El Tribunal Supremo ha fijado como doctrina que la cantidad fija del art. 8.1 se devenga **por cada factura** pagada con demora, no una vez por deudor ni por reclamación.",
+            "Para un proveedor con facturación recurrente eso cambia el orden de magnitud del asunto — y es la parte que casi nadie sabe."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La cuenta de Agri-Sud",
+          "text": [
+            "150 días menos los 60 de tope son **90 días de mora** sobre 180.000 €.",
+            "Con un tipo de referencia del 3 %, los intereses son **4.882 €**. Más los 40 € del artículo 8. Total: **4.922 €**, devengados sin que nadie firme nada."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Por qué Nortia no reclama nada",
+          "text": [
+            "Porque Agri-Sud es el 13 % de su facturación, y reclamarle intereses a tu mejor cliente tiene un precio que no está en la ley.",
+            "Eso es real y la ley no lo resuelve."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Pero cambia dónde empiezas",
+          "text": [
+            "No hay que negociar el derecho: ya está devengado. Se **renuncia** a cobrarlo, que no es lo mismo que no tenerlo.",
+            "Y en la negociación siguiente, quien sabe que la cláusula de 120 días es nula no está pidiendo un favor. En la siguiente, quién es socio de verdad."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 3/2004, de lucha contra la morosidad en las operaciones comerciales",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2004-21830",
+              "note": "arts. 4, 7 y 8"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

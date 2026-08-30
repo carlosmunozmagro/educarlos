@@ -268,6 +268,32 @@
           "summary": "El régimen especial difiere, no exime — y todo depende de un motivo que se juzga después."
         }
       ]
+    },
+    {
+      "id": "c11-la-ley-que-no-es-fiscal",
+      "title": "La ley que no es fiscal",
+      "lessons": [
+        {
+          "id": "41-la-sociedad-profesional",
+          "title": "La sociedad profesional",
+          "summary": "Cuándo estás obligado a serlo, por qué el 75 % que todos citan está derogado, y la disolución de pleno derecho."
+        },
+        {
+          "id": "42-que-te-paguen",
+          "title": "Que te paguen",
+          "summary": "El tope de 60 días, el interés que se devenga solo, y los 40 € que son por cada factura."
+        },
+        {
+          "id": "43-quien-es-socio",
+          "title": "Quién es socio",
+          "summary": "Documento público, conocimiento de la sociedad e inscripción en el libro: tres condiciones, tres momentos."
+        },
+        {
+          "id": "44-la-sociedad-no-puede-comprarse",
+          "title": "La sociedad no puede comprarse a sí misma",
+          "summary": "Por qué la autocartera está tasada en una SL, y por qué reducir capital era la única salida."
+        }
+      ]
     }
   ]
 }

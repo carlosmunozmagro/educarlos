@@ -1,0 +1,25 @@
+<svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="sp-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+<path d="M0 0 L8 4 L0 8 z" fill="currentColor"/>
+</marker>
+</defs>
+<rect class="box" x="6" y="10" width="288" height="34" rx="3"/>
+<text class="lbl" x="14" y="27" font-size="11">¿Exige título universitario</text>
+<text class="lbl" x="14" y="39" font-size="11">y colegiación obligatoria?</text>
+<path class="line" d="M78 44 L54 66" marker-end="url(#sp-arrow)"/>
+<path class="line" d="M222 44 L246 66" marker-end="url(#sp-arrow)"/>
+<text class="dim" x="60" y="60" font-size="10">sí</text>
+<text class="dim" x="230" y="60" font-size="10">no</text>
+<rect class="hot" x="6" y="70" width="140" height="52" rx="3"/>
+<text class="lbl" x="14" y="88" font-size="11">Sociedad profesional</text>
+<text x="14" y="103" font-size="11">obligatoria</text>
+<text class="dim" x="14" y="116" font-size="10">Ley 2/2007</text>
+<rect class="cold" x="154" y="70" width="140" height="52" rx="3"/>
+<text class="lbl" x="162" y="88" font-size="11">Sociedad ordinaria</text>
+<text x="162" y="103" font-size="11">nada de esto aplica</text>
+<text class="dim" x="162" y="116" font-size="10">el caso de Ámbar</text>
+<text class="accent" x="6" y="144" font-size="11" font-weight="700">La mayoría del capital y de los votos</text>
+<text class="dim" x="6" y="158" font-size="10">en socios profesionales — art. 4.2, no las 3/4 partes</text>
+<text class="dim" x="6" y="174" font-size="10">Incumplir seis meses: disolución de pleno derecho.</text>
+</svg>

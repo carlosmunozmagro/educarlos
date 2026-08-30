@@ -1,0 +1,14 @@
+<svg viewBox="0 0 300 172" xmlns="http://www.w3.org/2000/svg">
+<text class="dim" x="6" y="14" font-size="10">Diego se va. ¿Quién le paga los 66.000 €?</text>
+<rect class="cold" x="6" y="22" width="288" height="32" rx="3"/>
+<text class="lbl" x="14" y="36" font-size="11">La propia Ámbar le compra su 30 %</text>
+<text class="dim" x="14" y="49" font-size="10">fuera de los supuestos tasados del art. 140</text>
+<rect class="box" x="6" y="62" width="288" height="32" rx="3"/>
+<text class="lbl" x="14" y="76" font-size="11">Le compra otro socio</text>
+<text class="dim" x="14" y="89" font-size="10">con dinero suyo, no de la sociedad</text>
+<rect class="hot" x="6" y="102" width="288" height="32" rx="3"/>
+<text class="lbl" x="14" y="116" font-size="11">Ámbar reduce capital y amortiza</text>
+<text class="dim" x="14" y="129" font-size="10">permitido — y arrastra el art. 331</text>
+<text class="accent" x="6" y="154" font-size="11" font-weight="700">Marta no eligió la vía cara por error.</text>
+<text class="dim" x="6" y="167" font-size="10">Eligió la única que había.</text>
+</svg>

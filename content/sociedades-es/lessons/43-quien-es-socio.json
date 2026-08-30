@@ -1,0 +1,152 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "43-quien-es-socio",
+  "courseId": "sociedades-es",
+  "chapterId": "c11-la-ley-que-no-es-fiscal",
+  "title": "Quién es socio",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 11 — La ley que no es fiscal",
+          "heading": "Quién es socio",
+          "text": [
+            "Diego pagó, firmó y llevaba dos años yendo a las juntas.",
+            "En el libro registro de Ámbar no aparecía."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "En una SL no hay títulos",
+          "text": [
+            "No hay acciones que entregar ni anotaciones en cuenta. La condición de socio se sostiene sobre tres cosas distintas, que se cumplen en tres momentos distintos.",
+            "Se pueden tener dos y no la tercera. Y entonces, frente a la sociedad, no eres socio."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Las tres"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/tres-puertas-de-socio.svg",
+          "alt": "Tres cajas encadenadas por flechas: en documento público, la sociedad lo sabe, e inscrito en el libro registro, esta última destacada",
+          "caption": "Independientes. Cumplir dos no da los derechos de la tercera."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La forma",
+          "text": [
+            "El **artículo 106 LSC**: la transmisión de participaciones —y la prenda sobre ellas— **deberá constar en documento público**.",
+            "Un contrato privado entre las partes no es el vehículo. Para el resto de derechos reales, escritura pública."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El momento",
+          "text": [
+            "El mismo artículo: el adquirente podrá ejercer los derechos de socio frente a la sociedad **desde que ésta tenga conocimiento** de la transmisión.",
+            "No desde que paga. No desde que firma. Desde que la sociedad lo sabe."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y el libro",
+          "text": [
+            "El **artículo 104** obliga a la SL a llevar un **Libro registro de socios** con la titularidad originaria y todas las transmisiones, voluntarias o forzosas.",
+            "Y cierra: «La sociedad sólo reputará socio a quien se halle **inscrito en dicho libro**.»"
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "El Registro Mercantil **no** registra quién es socio de una SL. Registra la sociedad. La titularidad vive en un libro interno."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Quién guarda ese libro",
+          "text": [
+            "El **artículo 105**: la llevanza y custodia corresponden al **órgano de administración**.",
+            "En Ámbar, eso ha sido Marta desde el 3 de marzo de 2023. Cuando Diego entró, cuando Nuria recibió su 4 %, y cuando Diego se fue."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Diego quiere impugnar un acuerdo de la junta y descubre que nunca se le inscribió. ¿Se ha quedado sin nada?",
+          "answer": [
+            "No. El mismo artículo 105 le da dos herramientas: **cualquier socio puede examinar el libro**, y tiene derecho a **certificación** de las participaciones registradas a su nombre.",
+            "Llevar mal el libro es un incumplimiento de quien administra, no una defensa frente a quien adquirió correctamente.",
+            "Pero mientras tanto, el que tiene el libro tiene la ventaja. Y el que tiene el libro es la otra parte del conflicto."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que esto reordena hacia atrás",
+          "text": [
+            "La entrega del 4 % a Nuria estaba exenta en su IRPF (lección 31). Eso es el plano fiscal, y no sustituye nada del plano societario.",
+            "Una operación puede estar impecablemente tributada y no haber transmitido la condición de socio."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que llevarse",
+          "text": [
+            "El libro registro es el documento más barato y más olvidado de una SL. No cuesta nada llevarlo y decide quién vota.",
+            "En la última del capítulo, la pregunta que Marta se hizo en 2029: ¿por qué no podía Ámbar comprarle a Diego sus propias participaciones?"
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley de Sociedades de Capital (RDL 1/2010)",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2010-10544",
+              "note": "arts. 104, 105 y 106"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

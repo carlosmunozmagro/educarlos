@@ -1,0 +1,157 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "41-la-sociedad-profesional",
+  "courseId": "sociedades-es",
+  "chapterId": "c11-la-ley-que-no-es-fiscal",
+  "title": "La sociedad profesional",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 11 — La ley que no es fiscal",
+          "heading": "La sociedad profesional",
+          "text": [
+            "Hay sociedades que la ley disuelve solas si dejas pasar seis meses.",
+            "Y el porcentaje que todo el mundo repite lleva derogado desde 2009."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Aitana monta un estudio",
+          "text": [
+            "**Aitana** es arquitecta. Constituye **Estudio Nave, SL** con un socio que pone dinero y no es arquitecto: ella el **55 %**, él el **45 %**.",
+            "Su gestor le dice que está mal, que los profesionales necesitan tres cuartas partes. Su gestor se ha quedado en 2007."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Primero, si le aplica",
+          "text": [
+            "La **Ley 2/2007** obliga a constituirse como sociedad profesional cuando el objeto es el **ejercicio en común de una actividad profesional**: la que exige **titulación universitaria oficial** e **inscripción en un Colegio Profesional**.",
+            "No depende del tamaño ni de la facturación. Depende de la actividad."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El test"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/test-sociedad-profesional.svg",
+          "alt": "Un árbol de decisión: si la actividad exige título universitario y colegiación obligatoria, sociedad profesional obligatoria; si no, sociedad ordinaria, con Ámbar como ejemplo",
+          "caption": "Arquitectura, sí. Diseño gráfico, no: **Ámbar** nunca ha estado en este árbol."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La cifra derogada",
+          "text": [
+            "La redacción **original** del artículo 4 pedía **tres cuartas partes** del capital y de los votos en manos de socios profesionales.",
+            "La **Ley 25/2009** la cambió. El texto vigente dice: «Como mínimo, **la mayoría** del capital y de los derechos de voto […] habrán de pertenecer a socios profesionales.»"
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Diecisiete años después, medio internet sigue citando el 75 %. El error no es inocente: rechaza entradas de inversores que la ley vigente permite."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Aitana cumple",
+          "text": [
+            "Con el 55 % tiene la mayoría del capital y de los votos. Estudio Nave está bien constituida.",
+            "Con la redacción de 2007 le habrían faltado veinte puntos, y su socio financiero no habría podido entrar."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y el órgano de administración",
+          "text": [
+            "El **artículo 4.3** exige que, como mínimo, **la mitad más uno** de los miembros del órgano de administración sean socios profesionales.",
+            "Si el órgano es unipersonal —o hay consejeros delegados—, esas funciones las tiene que desempeñar un socio profesional. Aitana no puede nombrar administrador único a su socio."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Qué pasa si se incumple",
+          "text": [
+            "No es una multa. Incumplir la composición es **causa de disolución obligatoria**, salvo que se regularice en un plazo máximo de **seis meses**.",
+            "Pasado ese plazo, la sociedad queda **disuelta de pleno derecho**: deja de existir por el transcurso del tiempo, sin que nadie tenga que pedirlo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Aitana comete un error en un proyecto y el cliente reclama 200.000 €. ¿La protege la SL?",
+          "answer": [
+            "De ese acto, no.",
+            "El **artículo 11** dice que de las deudas sociales responde la sociedad con todo su patrimonio — pero de las deudas derivadas de los **actos profesionales** responden **solidariamente la sociedad y los profesionales que los hayan ejecutado**.",
+            "Es la lección 02 otra vez, por una puerta que allí no aparecía: la forma societaria no interpone un muro entre el error profesional y quien lo cometió."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y no vale no constituirse",
+          "text": [
+            "Ese mismo régimen de responsabilidad se aplica a quienes **ejerzan colectivamente** una actividad profesional **sin** haber constituido sociedad profesional.",
+            "La ley cerró la escapatoria antes de que a nadie se le ocurriera. En la siguiente, la obligación que sí es de todos: cobrar a tiempo."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 2/2007, de sociedades profesionales",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-5584",
+              "note": "arts. 1, 4 y 11"
+            },
+            {
+              "title": "Ley 25/2009, de adaptación a la Ley sobre libre acceso a actividades de servicios",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2009-20725",
+              "note": "modificación del art. 4"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

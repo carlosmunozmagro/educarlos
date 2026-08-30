@@ -1,0 +1,16 @@
+<svg viewBox="0 0 300 168" xmlns="http://www.w3.org/2000/svg">
+<text class="dim" x="6.0" y="14" font-size="10">Factura de 180.000 €, cobrada a 150 días</text>
+<rect class="cold" x="6.0" y="24" width="115.2" height="22" rx="3"/>
+<rect class="hot" x="121.2" y="24" width="172.8" height="22" rx="3"/>
+<text class="dim" x="10" y="39" font-size="10">en plazo</text>
+<text class="lbl" x="127" y="39" font-size="11">90 días de mora</text>
+<line class="line" x1="63.6" y1="46" x2="63.6" y2="54"/>
+<text class="dim" x="58.6" y="66" font-size="10">30</text>
+<line class="line" x1="121.2" y1="46" x2="121.2" y2="54"/>
+<text class="dim" x="116.2" y="66" font-size="10">60</text>
+<text class="dim" x="6.0" y="84" font-size="10">30 por defecto · 60 es el tope que se puede pactar</text>
+<text class="lbl" x="6.0" y="110" font-size="11">Intereses: 4.882 €</text>
+<text class="dim" x="6.0" y="124" font-size="10">tipo del BCE + 8 puntos, devengo automático</text>
+<text class="accent" x="6.0" y="146" font-size="11" font-weight="700">Y 40 € más por cada factura</text>
+<text class="dim" x="6.0" y="160" font-size="10">sin pedirlos y sin justificar nada — art. 8.1</text>
+</svg>
