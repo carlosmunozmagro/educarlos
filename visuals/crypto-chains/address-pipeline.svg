@@ -1,0 +1,19 @@
+<svg viewBox="0 0 300 198" xmlns="http://www.w3.org/2000/svg">
+  <defs><marker id="ap-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 1 L7 4 L0 7 z" fill="currentColor"/></marker></defs>
+  <text class="dim" x="8" y="12" font-size="10">each step throws information away, on purpose</text>
+  <rect class="box" x="8" y="26" width="284" height="32" rx="6"/>
+  <text class="lbl" x="18" y="40" font-size="11">Public key, 33 bytes</text>
+  <text x="18" y="53" font-size="11">021b6d5a0e...</text>
+  <line class="line" x1="150" y1="58" x2="150" y2="68" marker-end="url(#ap-arrow)"/>
+  <rect class="box" x="8" y="70" width="284" height="32" rx="6"/>
+  <text class="lbl" x="18" y="84" font-size="11">SHA-256</text>
+  <text x="18" y="97" font-size="11">5823ed8737...</text>
+  <line class="line" x1="150" y1="102" x2="150" y2="112" marker-end="url(#ap-arrow)"/>
+  <rect class="box" x="8" y="114" width="284" height="32" rx="6"/>
+  <text class="lbl" x="18" y="128" font-size="11">RIPEMD-160, 20 bytes</text>
+  <text x="18" y="141" font-size="11">8629185403...</text>
+  <line class="line" x1="150" y1="146" x2="150" y2="156" marker-end="url(#ap-arrow)"/>
+  <rect class="box" x="8" y="158" width="284" height="32" rx="6"/>
+  <text class="accent" x="18" y="172" font-size="11">bech32 + 6-char checksum</text>
+  <text x="18" y="185" font-size="11">bc1qsc53s4qr9x...</text>
+</svg>

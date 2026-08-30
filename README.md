@@ -23,20 +23,30 @@ Then open `http://localhost:8080` and view it at phone width (375×812).
 **Working end to end.** Library → course map → lesson player, with progress saved
 to `localStorage` and mid-lesson resume.
 
-- One course exists: `crypto-chains`, with **one finished lesson**,
-  `01-what-a-hash-does` (11 screens, exercising all nine block types).
-- The `sociedades-es` course (Spanish, España) is **not started** — no outline yet.
-- Verified: snap scrolling, entrance animations, KaTeX inline and display, reveal
-  toggle, resume-after-reload, deep links with storage cleared, light and dark,
-  landscape. Not verified: `prefers-reduced-motion` (CSS-only path).
+| Course | Outlined | Written |
+|---|---|---|
+| `crypto-chains` (EN) | 27 lessons, 5 chapters | chapter 1 complete (7) |
+| `sociedades-es` (ES) | 28 lessons | 28 |
+| `historia-es` (ES) | 32 lessons | 23 |
+
+`crypto-chains` runs one case through its first half: Nora in Lisbon sells a
+restored Yamaha CS-30 to Caleb in Toronto for 0.05 BTC on 14 March 2026, and
+every mechanism arrives because that payment needs it. The established facts of
+the case live in `research/crypto-chains/CASES.md` — read it before writing a
+lesson there, and update it after.
+
+Verified: snap scrolling, entrance animations, KaTeX inline and display, reveal
+toggle, resume-after-reload, deep links with storage cleared, light and dark,
+landscape. Not verified: `prefers-reduced-motion` (CSS-only path).
 
 ### Known gaps
 
 - Lesson `01-what-a-hash-does` predates the content pipeline and has **no research
-  brief** in `research/`. Its figures are computed by `tools/visuals/avalanche.py`,
-  not recalled, so they are sound — but the usual artifact is missing.
-- Not a git repo yet, and not deployed anywhere. Delivery is intended to be
-  GitHub Pages, which on a free account needs a public repo — undecided.
+  brief** in `research/`. It is also the only crypto lesson with no running case,
+  since the case starts in lesson 02.
+- `schema/` is referenced by every content file's `$schema` key but is not in the
+  repo. Editors will not autocomplete until it is written back;
+  `tools/validate.py` does not depend on it.
 
 ## Layout
 

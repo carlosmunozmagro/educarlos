@@ -24,7 +24,7 @@ and never will. They have exchanged eighteen emails.
 | The date they agree | **14 March 2026** |
 | Caleb's wallet holds | a single unspent output of **0.0812 BTC** |
 | The payment splits into | **0.05** to Nora, **0.0309** change to Caleb, **0.0003** fee |
-| Nora's address | a `bc1q…` address her wallet generated; she pastes it once and mistypes it once |
+| Nora's address | `bc1qsc53s4qr9x7n8m7w0pd9mmh8wdvz6d6e80rn8a` — derived for real by `tools/visuals/address.py`, from a teaching key, not a wallet |
 | The block it lands in | referred to as "the block", height never stated |
 
 Arithmetic that must hold everywhere: `0.05 + 0.0309 + 0.0003 = 0.0812`.

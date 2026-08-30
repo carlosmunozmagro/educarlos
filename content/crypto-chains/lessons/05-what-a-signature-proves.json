@@ -1,0 +1,185 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "05-what-a-signature-proves",
+  "courseId": "crypto-chains",
+  "chapterId": "ch1-primitives",
+  "title": "What a signature proves",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 1 - The primitives",
+          "heading": "What a signature proves",
+          "text": [
+            "On 14 March 2026 Caleb sends 0.05 BTC to Nora. The instruction is a public message that thousands of strangers will copy and forward.",
+            "Not one of them can alter a byte of it. Two numbers stop them."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "First, what is being signed",
+          "text": [
+            "Not \"Caleb\", and not \"a payment\". His wallet hashes the exact transaction bytes down to one 32-byte number, $z$.",
+            "Change the amount from 0.05 to 0.06 and $z$ is unrecognisable - the avalanche property, doing the load-bearing work again."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The signature itself",
+          "text": [
+            "His wallet draws a fresh secret number $k$, multiplies the base point by it, and takes the x-coordinate as $r$. Then one line ties $z$, $r$ and his private key together:"
+          ]
+        },
+        {
+          "type": "formula",
+          "tex": "s = k^{-1}(z + r d) \\bmod n",
+          "caption": "$d$ appears once, multiplied by $r$ and buried under $k^{-1}$. The pair $(r, s)$ is the whole signature."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What Nora runs",
+          "text": [
+            "She has the message, the two numbers, and his public key. She rebuilds a point from them and compares one coordinate."
+          ]
+        },
+        {
+          "type": "formula",
+          "tex": "u_1 G + u_2 Q \\stackrel{?}{=} R, \\quad u_1 = zs^{-1}, \\ u_2 = rs^{-1}"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The asymmetry, drawn"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/sign-verify.svg",
+          "alt": "Two boxes: Caleb holding his private key, nonce and message, Nora holding only the public key and message, with r and s crossing between them",
+          "caption": "Everything on Nora's side is public. She can check the claim without being able to make it."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Verification only uses $z$, $r$, $s$ and $Q$. The private key is not in there. So how can it possibly detect a forgery?",
+          "answer": [
+            "Substitute $s = k^{-1}(z + rd)$ into $u_1 G + u_2 Q$ and the whole thing collapses to $kG$ - the exact point Caleb built at the start.",
+            "$d$ cancels algebraically. Nora ends up recomputing his secret point from public numbers, which is only possible if the numbers were made with the matching key."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "How big is it",
+          "text": [
+            "$r$ and $s$ are 32 bytes each. Bitcoin wraps them in DER and appends a flag byte, so a real signature lands at **71 or 72 bytes**.",
+            "Schnorr signatures, available since Taproot, are a flat 64: same security, no encoding to argue about."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The bug that came from an encoding",
+          "text": [
+            "If $(r, s)$ is valid, so is $(r, n - s)$. Negating $s$ flips the point to $-R$, which has the same x-coordinate.",
+            "Anyone could take a broadcast transaction and rewrite its signature into an equally valid form."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "warning",
+          "title": "Malleability",
+          "text": [
+            "The transaction id is a hash of the serialised transaction, signature included - so a rewritten signature meant a different id for the same payment. Software tracking payments by id lost them.",
+            "BIP-146 made the low-$s$ form a relay rule. BIP-141 fixed it properly by taking signatures out of the id entirely."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What it does not prove",
+          "text": [
+            "A valid signature says one thing: whoever made this knew the key for that public key, and applied it to that message."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Not identity - a stolen key signs perfectly. Not time - there is no clock inside a signature. Not intent beyond the exact bytes covered.",
+            "Which raises the question the next chapter has to answer: what exactly _is_ covered?"
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "A signature proves control of a key over a message, and nothing else you might have hoped it meant.",
+            "It also depends on $k$ staying secret and never repeating. Next: what happened to a company that got that wrong once."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "SEC 1 v2: Elliptic Curve Cryptography",
+              "url": "https://www.secg.org/sec1-v2.pdf",
+              "note": "section 4.1, the signing and verification equations"
+            },
+            {
+              "title": "NIST FIPS 186-5: Digital Signature Standard",
+              "url": "https://csrc.nist.gov/pubs/fips/186-5/final",
+              "note": "February 2023 revision"
+            },
+            {
+              "title": "BIP-146: Dealing with signature encoding malleability",
+              "url": "https://github.com/bitcoin/bips/blob/master/bip-0146.mediawiki"
+            },
+            {
+              "title": "BIP-141: Segregated Witness",
+              "url": "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki",
+              "note": "removes the witness from the transaction id"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

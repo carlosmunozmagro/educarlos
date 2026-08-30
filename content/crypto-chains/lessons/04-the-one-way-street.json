@@ -1,0 +1,186 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "04-the-one-way-street",
+  "courseId": "crypto-chains",
+  "chapterId": "ch1-primitives",
+  "title": "The one-way street",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 1 - The primitives",
+          "heading": "The one-way street",
+          "text": [
+            "Nora has 256 secret bits. Caleb needs something he can put in an email.",
+            "It has to identify her wallet exactly, and be useless to anyone who copies it."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The exact shape of the requirement",
+          "text": [
+            "An operation cheap in one direction and infeasible in the other. Nora's laptop runs it in microseconds. Undoing it costs about $2^{128}$ operations, which nothing will ever pay.",
+            "Elliptic curves are one way to get that gap. They are not magic - they are addition, done somewhere unfamiliar."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Not a curve. A scatter.",
+          "text": [
+            "Bitcoin's equation is $y^2 = x^3 + 7$, but taken over a finite field, so there is no smooth line - just the solutions."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/curve-scatter.svg",
+          "alt": "Scatter of the 78 solution points of the curve over the field of 97, with the first four multiples of the base point picked out and far apart",
+          "caption": "The same equation over $p = 97$. $2G$ is nowhere near $G$ - and that is the whole trick."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Adding two points",
+          "text": [
+            "There is a rule for combining any two points into a third one in the set. Geometrically it is a chord and a reflection; in code it is four lines of arithmetic modulo $p$.",
+            "What matters is that it is closed: add two points, you land on another point of the curve. Never outside."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "So multiplication is repeated addition",
+          "text": [
+            "Nora's public key is her private key $d$ added to itself that many times - but nobody does $10^{77}$ additions."
+          ]
+        },
+        {
+          "type": "code",
+          "label": "double-and-add: 256 steps, not 2^256",
+          "code": "Q = None\nfor bit in bits_of(d):        # 256 bits, high to low\n    Q = double(Q)             # always\n    if bit: Q = add(Q, G)     # sometimes"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Caleb ends up with Nora's point $Q$, and $G$ is written in the standard for anyone to read. Why can he not just divide $Q$ by $G$?",
+          "answer": [
+            "Because no division exists here. There is one operation - adding points - and recovering $d$ means finding how many times it was applied. That is the elliptic-curve discrete logarithm problem.",
+            "The best general attack, Pollard's rho, costs about $\\sqrt{n} \\approx 2^{128}$ group operations. Doubling forwards is 256 steps; going backwards has no shortcut anyone has found."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The whole of public-key cryptography, in one line"
+        },
+        {
+          "type": "formula",
+          "tex": "Q = dG",
+          "caption": "$d$ is the secret scalar, $G$ the base point everyone shares, $Q$ the public key. Cheap left to right. Hopeless right to left."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What Nora actually sends",
+          "text": [
+            "$Q$ is a pair of coordinates, 64 bytes. She sends 33.",
+            "Given $x$, the curve equation gives $y^2$ - so only the sign of $y$ is missing. One leading byte carries it: `02` for even, `03` for odd."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One detail that removes a class of bug",
+          "text": [
+            "secp256k1 has cofactor 1: every point on it lies in the single prime-order group."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "text": [
+            "On curves with a larger cofactor there are small subgroups, and an implementation that fails to check which one it is in can leak key bits. secp256k1 does not have that surface at all. The curve was chosen, not found."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Where the street stops being one-way",
+          "text": [
+            "A quantum computer of sufficient size does not weaken this problem. It removes it."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "text": [
+            "Grover's algorithm only halves a hash's strength - SHA-256 would sit at $2^{128}$ and survive. Shor's algorithm solves discrete logarithms outright. NIST published replacement signature standards in August 2024; bitcoin has adopted none of them yet."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "A public key is not an encrypted private key. It is the visible end of an operation that has no reverse gear.",
+            "Nora can now publish $Q$ safely. Next: how she uses $d$ to prove she meant something, without ever revealing it."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "SEC 1 v2: Elliptic Curve Cryptography",
+              "url": "https://www.secg.org/sec1-v2.pdf",
+              "note": "section 2.3.3 defines the 33-byte compressed encoding"
+            },
+            {
+              "title": "SEC 2 v2: Recommended Elliptic Curve Domain Parameters",
+              "url": "https://www.secg.org/sec2-v2.pdf",
+              "note": "secp256k1: a = 0, b = 7, cofactor 1"
+            },
+            {
+              "title": "NIST FIPS 204: Module-Lattice-Based Digital Signature Standard",
+              "url": "https://csrc.nist.gov/pubs/fips/204/final",
+              "note": "August 2024, one of the post-quantum replacements"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

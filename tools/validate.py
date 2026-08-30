@@ -46,7 +46,11 @@ def warn(where, msg):
 
 def load(path):
     with open(os.path.join(ROOT, path), encoding="utf-8") as f:
-        return json.load(f)
+        try:
+            return json.load(f)
+        except json.JSONDecodeError as e:
+            err(path, f"not valid JSON: {e}")
+            return None
 
 
 def words(s):
@@ -113,6 +117,8 @@ def check_block(where, b, seen_visuals):
 def check_lesson(course, meta, path, seen_visuals):
     where = path
     d = load(path)
+    if d is None:
+        return
     for f in ("id", "courseId", "chapterId", "title", "screens"):
         if f not in d:
             err(where, f"missing field {f!r}")
@@ -160,6 +166,8 @@ def check_lesson(course, meta, path, seen_visuals):
 def check_course(course):
     base = f"content/{course}"
     meta = load(f"{base}/course.json")
+    if meta is None:
+        return
     if meta.get("id") != course:
         err(base, "course id does not match its directory")
     if meta.get("needsSources") and not meta.get("disclaimer"):

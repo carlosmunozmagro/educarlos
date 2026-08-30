@@ -1,0 +1,247 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "06-the-number-that-leaked-a-console",
+  "courseId": "crypto-chains",
+  "chapterId": "ch1-primitives",
+  "title": "The number that leaked a console",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 1 - The primitives",
+          "heading": "The number that leaked a console",
+          "text": [
+            "Berlin, 29 December 2010. Three researchers put Sony's PlayStation 3 code-signing key on a slide.",
+            "They did not break ECDSA. They used it correctly, twice."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The rule attached to $k$",
+          "text": [
+            "Caleb's wallet drew a fresh secret $k$ to sign the 0.05 BTC payment. The signing equation carries one condition that is easy to miss:"
+          ]
+        },
+        {
+          "type": "formula",
+          "tex": "s = k^{-1}(z + rd) \\bmod n",
+          "caption": "$k$ must be unpredictable **and never repeated**. The second half is the part that gets skipped."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What Sony shipped",
+          "text": [
+            "The function that was supposed to produce a fresh $k$ for each signature produced the same value every time."
+          ]
+        },
+        {
+          "type": "code",
+          "label": "the shape of the bug",
+          "code": "def get_nonce():\n    return 0xdeadbeef      # placeholder that shipped"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The tell is public",
+          "text": [
+            "$r$ comes only from $k$. Same $k$, same $r$ - visible in any two signatures."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/same-r.svg",
+          "alt": "Two signature rows; the r column is highlighted and identical in both, while the s values differ",
+          "caption": "Nothing here is secret. Both signatures were published in the ordinary way."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Subtract them",
+          "text": [
+            "Both signatures contain the term $rd$, and it is _the same term_. Subtracting one equation from the other deletes the private key:"
+          ]
+        },
+        {
+          "type": "formula",
+          "tex": "k = \\frac{z_1 - z_2}{s_1 - s_2} \\bmod n"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Then put it back",
+          "text": [
+            "With $k$ known, the original equation has exactly one unknown left."
+          ]
+        },
+        {
+          "type": "formula",
+          "tex": "d = \\frac{s_1 k - z_1}{r} \\bmod n",
+          "caption": "Two modular inversions. On a laptop, this is instant."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "$r$ is published in every signature ever made and gives nothing away. Why is seeing the same one twice fatal?",
+          "answer": [
+            "One signature is one equation with two unknowns, $k$ and $d$. Unsolvable, and that is the security.",
+            "A repeated $r$ announces that the same $k$ was used, which turns two signatures into two equations in the _same_ two unknowns. Solvable systems have solutions."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Run on a real key",
+          "text": [
+            "Signing two messages with one reused nonce, then recovering the key from the signatures alone:"
+          ]
+        },
+        {
+          "type": "code",
+          "label": "tools/visuals/nonce-reuse.py",
+          "code": "signature 1   r d7be8435...641e   s 5c5f4ed1...68bf\nsignature 2   r d7be8435...641e   s 716f5b16...057f\nrecovered d   5f3a9c11...b8f1   match: True"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What it cost",
+          "text": [
+            "The recovered key was the one the console trusted. Anything signed with it - any program at all - the PS3 accepted as Sony's own.",
+            "A firmware update can change a key. It cannot un-publish one."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "11 August 2013",
+          "heading": "The same bug, on a chain",
+          "text": [
+            "Bitcoin.org issued an advisory: Android's `SecureRandom` could initialise badly, and wallets on affected phones signed with repeating nonces.",
+            "Duplicate $r$ values appeared on the public chain. The coins behind them were taken."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "warning",
+          "title": "A chain makes this worse, structurally",
+          "text": [
+            "Sony's signatures had to be collected. Bitcoin's are broadcast to everyone and stored forever.",
+            "Scanning the entire history for two signatures that share an $r$ is cheap, needs no access to anything, and works retroactively on a mistake made years ago."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The fix removes the requirement",
+          "text": [
+            "RFC 6979, published the same month as the advisory, derives $k$ from the private key and the message hash with HMAC.",
+            "The signer needs no randomness at signing time at all. There is no entropy source left to fail."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Deterministic nonces mean signing the same message twice gives byte-identical signatures. Is that not itself a leak?",
+          "answer": [
+            "No. $k$ is derived from the message _and_ the private key, so nobody without $d$ can recompute it. The output is predictable only to the signer.",
+            "It also makes signing reproducible, which means a test suite can catch a broken implementation. BIP-340 uses the same approach for Schnorr signatures."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The quiet version of this failure",
+          "text": [
+            "Full reuse is loud. Bias is not."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "If $k$ is merely _slightly_ non-uniform - a few predictable top bits - lattice reduction recovers $d$ from a large collection of ordinary signatures. No repeat is needed. Published attacks have worked with under one bit of leakage per signature."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "The mathematics was never the weak point; the number nobody thinks about was.",
+            "Caleb's wallet uses RFC 6979, so this does not happen to him. Next: turning Nora's public key into something she can paste into an email without losing €4,150 to a typo."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "fail0verflow, \"Console Hacking 2010: PS3 Epic Fail\"",
+              "url": "https://fahrplan.events.ccc.de/congress/2010/Fahrplan/events/4087.en.html",
+              "note": "27C3, 29 December 2010"
+            },
+            {
+              "title": "Bitcoin.org: Android Security Vulnerability",
+              "url": "https://bitcoin.org/en/alert/2013-08-11-android",
+              "note": "the advisory naming the SecureRandom failure"
+            },
+            {
+              "title": "RFC 6979: Deterministic Usage of DSA and ECDSA",
+              "url": "https://www.rfc-editor.org/rfc/rfc6979"
+            },
+            {
+              "title": "Howgrave-Graham and Smart, \"Lattice Attacks on Digital Signature Schemes\"",
+              "note": "Designs, Codes and Cryptography 23, 2001 - recovery from partial nonce leakage"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

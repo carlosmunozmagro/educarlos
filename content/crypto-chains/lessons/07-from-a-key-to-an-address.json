@@ -1,0 +1,190 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "07-from-a-key-to-an-address",
+  "courseId": "crypto-chains",
+  "chapterId": "ch1-primitives",
+  "title": "From a key to an address",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 1 - The primitives",
+          "heading": "From a key to an address",
+          "text": [
+            "Nora types her address into the email to Caleb and gets one character wrong.",
+            "Nothing happens. His wallet refuses to send. That refusal is engineered, and it is the last thing standing between her and €4,150."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Why not just send the public key?",
+          "text": [
+            "Early bitcoin did exactly that - the first transactions paid to a raw public key.",
+            "Two reasons it stopped. The key is 33 bytes of hex nobody can read aloud. And publishing it early gives away more than you need to."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Hash it twice, with two different functions"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/address-pipeline.svg",
+          "alt": "Four stacked boxes: 33-byte public key, SHA-256, RIPEMD-160 at 20 bytes, then the bech32 address with checksum",
+          "caption": "SHA-256 then RIPEMD-160. Different design families, so a break in one does not hand over the other."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Nora's public key becomes visible the first time she spends anyway. So what does hashing it actually buy her?",
+          "answer": [
+            "Everything up to that first spend. While the coins sit there, the network has only $\\text{HASH160}(Q)$ - the point on the curve was never published.",
+            "So even a break of the discrete logarithm would not reach an unspent output at an address that has never been used. Spend once and that shield is gone, which is the real argument against reusing an address."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Then encode it for human hands",
+          "text": [
+            "20 bytes become 32 lowercase characters, drawn from a deliberately reduced alphabet."
+          ]
+        },
+        {
+          "type": "code",
+          "label": "the bech32 character set",
+          "code": "qpzry9x8gf2tvdw0s3jn54khce6mua7l\n\nmissing on purpose: 1  b  i  o"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Four characters you cannot confuse",
+          "text": [
+            "`1` and `l`, `b` and `6`, `i` and `1`, `o` and `0` - the pairs that go wrong on a bad screen or in handwriting.",
+            "Rather than fix the confusion, the encoding removes one of each pair from the alphabet entirely."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The last six characters are not the address",
+          "text": [
+            "They are a BCH checksum over everything before them, including the `bc` prefix.",
+            "BIP-173 states the guarantee precisely: **any error touching at most four characters is always detected**. Beyond four, the chance of slipping through is under one in a billion."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Nora's typo, exactly",
+          "text": [
+            "One character in the middle, where the eye slides over it:"
+          ]
+        },
+        {
+          "type": "code",
+          "label": "tools/visuals/address.py",
+          "code": "bc1qsc53s4qr9x7n8m7w0pd9mmh8wdvz6d6e80rn8a   valid\nbc1qsc53s4qr9x7n8m7wspd9mmh8wdvz6d6e80rn8a   rejected"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Caleb's wallet is connected to the network. Why does the checksum have to catch this, rather than the network rejecting the payment?",
+          "answer": [
+            "Because the network cannot tell. A mistyped address that happened to be well-formed would be a perfectly real address - one whose private key nobody has ever held.",
+            "The coins would arrive, be provably valid, and be unspendable forever. There is no reversal and no support desk. The check has to happen before sending, on Caleb's machine, or not at all."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The checksum that needed a patch",
+          "text": [
+            "bech32 has a flaw: if the final data character is `p`, inserting or deleting `q` characters just before it leaves the checksum valid.",
+            "Segwit v0 addresses have fixed lengths, so they were never exposed. Taproot addresses are variable, so BIP-350 changed one constant and called it bech32m."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What it does not protect against"
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "A checksum catches accidents, not substitutions. Malware that swaps the address on your clipboard for a different valid one passes every check perfectly.",
+            "The defence against that is confirming the address through a second channel - a phone call - and nothing about the arithmetic can help you."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "An address is a commitment to a public key, wrapped in an error-detecting code because humans retype things.",
+            "Nora fixes the character and sends it. Caleb's wallet now has to build the payment itself - and it turns out there is no such thing as his balance."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "BIP-173: Base32 address format for native v0-16 witness outputs",
+              "url": "https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki",
+              "note": "the character set and the four-character detection guarantee"
+            },
+            {
+              "title": "BIP-350: Bech32m format for v1+ witness addresses",
+              "url": "https://github.com/bitcoin/bips/blob/master/bip-0350.mediawiki",
+              "note": "the trailing-p weakness and the constant that fixes it"
+            },
+            {
+              "title": "BIP-141: Segregated Witness",
+              "url": "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki",
+              "note": "defines the P2WPKH output this address pays to"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
