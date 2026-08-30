@@ -50,10 +50,13 @@ visuals/<course>/*.svg   inlined into the page, theme-aware
 research/<course>/*.md   sourced briefs lessons are written from
 schema/                  JSON Schema, for editor autocomplete
 app/brand.js             the mark, the name, the pun field
+app/icons/               home-screen icon: icon.svg + rasterised PNGs
+app/site.webmanifest     install metadata (name, colours, icons)
 tools/serve.py           dev server
 tools/publish.py         validate, commit, push - see docs/PUBLISH.md
 tools/validate.py        format + house-rule enforcement
 tools/visuals/           generators for data-bearing diagrams
+tools/icons.sh           re-rasterises app/icons/ from icon.svg
 docs/                    STYLE.md  VISUALS.md  FORMAT.md  PLAN.md
 ```
 
