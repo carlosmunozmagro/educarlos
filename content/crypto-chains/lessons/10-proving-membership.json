@@ -1,0 +1,193 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "10-proving-membership",
+  "courseId": "crypto-chains",
+  "chapterId": "ch2-ledger",
+  "title": "Proving membership",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 2 - Making a ledger out of it",
+          "heading": "Proving membership",
+          "text": [
+            "Nora's phone tells her the 0.05 has arrived. It is holding none of the chain - hundreds of gigabytes it has no room for.",
+            "It checked anyway, using 384 bytes."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The naive version does not fit",
+          "text": [
+            "To confirm Caleb's payment is in a block, she could download the block and look. That is megabytes for one line of interest.",
+            "The alternative is not to compress the block. It is to build it so that inclusion can be proved without it."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Pair, hash, repeat",
+          "text": [
+            "Hash the transaction ids in pairs, then hash those in pairs, until one hash remains. That is the Merkle root."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/merkle-path.svg",
+          "alt": "A Merkle tree over eight transactions; the three sibling hashes forming the proof are highlighted and numbered, the recomputed path is outlined",
+          "caption": "Orange is what the proof carries. Outlined is what Nora's phone works out for itself."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What she is actually sent",
+          "text": [
+            "Her own transaction, three sibling hashes, and the block header. She hashes her way up and compares the result to the root in the header.",
+            "If they match, that transaction is in that block. Nothing else needed to be downloaded."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "It scales the good way",
+          "text": [
+            "Every doubling of the block adds exactly one hash to the proof."
+          ]
+        },
+        {
+          "type": "table",
+          "columns": [
+            "Transactions in the block",
+            "Proof"
+          ],
+          "rows": [
+            [
+              "8",
+              "3 hashes, 96 bytes"
+            ],
+            [
+              "1,024",
+              "10 hashes, 320 bytes"
+            ],
+            [
+              "4,096",
+              "12 hashes, 384 bytes"
+            ]
+          ],
+          "caption": "A full block costs her twelve hashes. That is the whole reason phones can do this."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "The proof is just hashes, and whoever sent it chose them. Why can a lying node not invent a set that reaches the right root?",
+          "answer": [
+            "Because reaching a chosen root means finding inputs that hash to a fixed value - a second pre-image, then a collision at the level above it.",
+            "That is $2^{128}$ work at best. The root in the header was fixed before the proof was requested, and nothing can be fitted to it afterwards."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What it does not prove"
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "That the transaction is _in a block_. Not that the block is on the winning chain. Not that the transaction was valid - her phone never checked a signature or an input.",
+            "A light client trusts miners for validity and the header chain for ordering. It verifies membership, and outsources everything else."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "May 2012",
+          "heading": "The bug in the odd case",
+          "text": [
+            "When a level has an odd number of nodes, bitcoin duplicates the last one to make a pair.",
+            "So a tree over three transactions and a tree over the same three with the last repeated produce **the same root**."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "warning",
+          "text": [
+            "CVE-2012-2459: take a valid block, duplicate transactions inside it to reach an identical root, and relay that. Nodes checking the root would accept the structure, fail the duplicate-spend check, and mark the **original** block invalid.",
+            "A denial of service against a perfectly good block, built out of one convenience in the tree construction."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "How her phone gets the proof",
+          "text": [
+            "Early light wallets sent a filter describing the addresses they cared about, which told the node exactly who they were.",
+            "BIP-158 inverts it: the node publishes one filter per block, the phone downloads it and checks locally. The question never leaves the device."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "A Merkle proof buys you membership in logarithmic space, and buys you nothing else at all.",
+            "Everything her phone checked hangs off one 32-byte field in a header. Next: the other 48 bytes."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+              "url": "https://bitcoin.org/bitcoin.pdf",
+              "note": "sections 7 and 8, the tree and simplified payment verification"
+            },
+            {
+              "title": "CVE-2012-2459: Merkle tree duplicate-transaction vulnerability",
+              "url": "https://en.bitcoin.it/wiki/Common_Vulnerabilities_and_Exposures#CVE-2012-2459"
+            },
+            {
+              "title": "BIP-158: Compact Block Filters for Light Clients",
+              "url": "https://github.com/bitcoin/bips/blob/master/bip-0158.mediawiki"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

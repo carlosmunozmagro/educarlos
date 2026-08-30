@@ -1,0 +1,217 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "11-eighty-bytes",
+  "courseId": "crypto-chains",
+  "chapterId": "ch2-ledger",
+  "title": "Eighty bytes",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 2 - Making a ledger out of it",
+          "heading": "Eighty bytes",
+          "text": [
+            "Nora's phone downloaded one block header to check Caleb's payment.",
+            "Eighty bytes. Fixed since January 2009, and the only part of bitcoin most machines on the network ever read."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "All six of them"
+        },
+        {
+          "type": "table",
+          "columns": [
+            "Field",
+            "Bytes"
+          ],
+          "rows": [
+            [
+              "version",
+              "4"
+            ],
+            [
+              "previous block hash",
+              "32"
+            ],
+            [
+              "merkle root",
+              "32"
+            ],
+            [
+              "time",
+              "4"
+            ],
+            [
+              "bits",
+              "4"
+            ],
+            [
+              "nonce",
+              "4"
+            ]
+          ],
+          "caption": "Unchanged since the genesis block. Every one of these is explained on the screens below."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Drawn honestly"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/header-80.svg",
+          "alt": "The 80-byte header as a proportional bar; two 32-byte hashes fill most of it and four 4-byte fields are thin slivers",
+          "caption": "Two hashes are 64 of the 80 bytes. The field miners burn gigawatts changing is the last sliver."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Two hashes, two directions",
+          "text": [
+            "The previous block hash points backwards through history. The merkle root points downwards into this block's contents.",
+            "Together they mean one 32-byte number - the hash of this header - commits to every transaction that ever happened."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Four bytes for a 256-bit threshold",
+          "text": [
+            "`bits` encodes the target a block hash must fall below. A 256-bit number in 4 bytes is impossible, so it is stored like a float: one byte of exponent, three of mantissa.",
+            "Coarse on purpose. The target only ever needs to be approximately right."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "And four bytes for the search",
+          "text": [
+            "The nonce is 32 bits. That is $2^{32}$, about 4.29 billion values.",
+            "A current mining machine runs hundreds of trillions of hashes per second. It exhausts the entire nonce space in well under a millisecond."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "If a miner runs out of nonces before the clock ticks, what is it doing for the other 599.999 seconds of a block?",
+          "answer": [
+            "Changing the header some other way. The main trick is an arbitrary field inside the coinbase transaction - an \"extranonce\".",
+            "Change it and the coinbase's id changes, so the merkle root changes, so the header is entirely new and all 4.29 billion nonces are fresh again. The real search space is unbounded; the nonce field is just the innermost loop."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The whole chain of headers is tiny",
+          "text": [
+            "Roughly 52,560 blocks a year at ten minutes each, times 80 bytes: **4.2 MB per year**.",
+            "Every header ever produced, back to the genesis block, fits in about 70 MB. Nora's phone can hold the complete skeleton of bitcoin's history."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The timestamp is not a clock"
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "text": [
+            "Two rules bound it: later than the median of the last 11 blocks, and no more than 2 hours ahead of network time.",
+            "Inside that window a miner may write what it likes. A block's stated time can be wrong by an hour in either direction and still be perfectly valid, so anything needing real order uses height instead."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "3 January 2009",
+          "heading": "The header with nothing behind it",
+          "text": [
+            "The genesis block's previous-hash field is 32 zero bytes - the one place the chain stops.",
+            "Its coinbase carries a line of text: _The Times 03/Jan/2009 Chancellor on brink of second bailout for banks_. A date stamp no one could have faked in advance."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What a header cannot tell you"
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "That the block is valid. A miner can build a perfectly well-formed header over a block full of transactions spending money that does not exist.",
+            "The header commits to them; it does not check them. Only a node that downloads the whole block finds out, which is exactly the gap Nora's phone is living in."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "Eighty bytes is the entire interface between a block's contents and the chain that orders it.",
+            "Change one old transaction and every header after it breaks. That sounds like immutability. Next: why it is not."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Bitcoin developer reference: Block Chain",
+              "url": "https://developer.bitcoin.org/reference/block_chain.html",
+              "note": "the header serialisation and the timestamp rules"
+            },
+            {
+              "title": "BIP-113: Median time-past as endpoint for lock-time calculations",
+              "url": "https://github.com/bitcoin/bips/blob/master/bip-0113.mediawiki",
+              "note": "why height beats timestamps"
+            },
+            {
+              "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+              "url": "https://bitcoin.org/bitcoin.pdf",
+              "note": "section 4, proof of work over the header"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

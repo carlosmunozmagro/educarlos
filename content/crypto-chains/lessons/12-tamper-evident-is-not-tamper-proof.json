@@ -1,0 +1,171 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "12-tamper-evident-is-not-tamper-proof",
+  "courseId": "crypto-chains",
+  "chapterId": "ch2-ledger",
+  "title": "Tamper-evident is not tamper-proof",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 2 - Making a ledger out of it",
+          "heading": "Tamper-evident is not tamper-proof",
+          "text": [
+            "Caleb's payment is now buried under six blocks. Nora has shipped the CS-30.",
+            "Ask the uncomfortable question: what would it actually take to make that payment stop having happened?"
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Start with what breaks",
+          "text": [
+            "Change one amount in an old block. The merkle root changes, so the header changes, so the header's hash changes.",
+            "The block after it stores that old hash in 32 bytes of its own header. It now points at nothing."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Exactly one link, though"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/chain-break.svg",
+          "alt": "Five chained blocks; block 2 is edited and only the link from block 2 to block 3 is marked as no longer matching",
+          "caption": "Not \"everything after it becomes invalid\". One pointer stops matching."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "And then the repair cascades",
+          "text": [
+            "To make the chain consistent again you rewrite block 3's header. That changes block 3's hash, which breaks block 4. And so on to the tip.",
+            "Editing one transaction six blocks back means redoing six headers. That is the real quantity: not impossibility, but work."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Redoing six hashes takes microseconds. So what, in everything you have seen so far, actually stops anyone from doing it?",
+          "answer": [
+            "Nothing. Not one thing in chapters 1 or 2.",
+            "A hash chain makes a rewrite _detectable by someone who already knows the correct tip_. It does not make it hard, and it does not tell you which tip is correct."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "You already use a rewritable one",
+          "text": [
+            "Git is the same structure: each commit names its parent by hash, and the id of a commit covers everything behind it.",
+            "`git rebase` rewrites that history and produces a chain that is perfectly self-consistent. Developers do it before lunch."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "You only notice a rebase if you wrote the old commit hash down somewhere outside the repository.",
+            "That is the whole limitation, stated generally: a hash chain gives evidence **relative to a reference point it cannot supply itself**."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "11 March 2013",
+          "heading": "The day the reference point failed",
+          "text": [
+            "Bitcoin 0.8 accepted a block that 0.7 nodes rejected, over an unintended database lock limit nobody knew was there.",
+            "The network ran as two chains for about six hours. Both were valid to the software holding them."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "warning",
+          "text": [
+            "It was resolved by people. Developers and mining pools agreed to downgrade to 0.7, abandoning the longer chain and roughly 24 blocks with it.",
+            "Anyone whose transaction was in those blocks had it un-happen. The post-mortem is BIP-50, and it is worth reading before using the word immutable."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What the word should mean"
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Immutability here is economic, not mathematical. The chain guarantees a rewrite is visible and expensive - never that it is impossible.",
+            "One- and two-block reorganisations happen routinely, with nobody attacking anything. \"Confirmed\" is a probability, and chapter 3 puts a number on it."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "Everything in the first two chapters detects tampering; nothing in them prevents it, or decides which version of history is the real one.",
+            "That is the hole. Next chapter is the only idea in this course that fills it - and it costs a country's worth of electricity."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "BIP-50: March 2013 Chain Fork Post-Mortem",
+              "url": "https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki",
+              "note": "the six-hour split and how it was ended"
+            },
+            {
+              "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+              "url": "https://bitcoin.org/bitcoin.pdf",
+              "note": "section 11 computes an attacker's chance of catching up"
+            },
+            {
+              "title": "Pro Git: Git Internals - Git Objects",
+              "url": "https://git-scm.com/book/en/v2/Git-Internals-Git-Objects",
+              "note": "the same hash chain, with history rewriting as a feature"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -102,9 +102,15 @@ def check_block(where, b, seen_visuals):
             err(where, "visual has no alt text")
     elif t == "table":
         cols = len(b.get("columns", []))
-        for i, row in enumerate(b.get("rows", [])):
+        rows = b.get("rows", [])
+        for i, row in enumerate(rows):
             if len(row) != cols:
                 err(where, f"table row {i} has {len(row)} cells, {cols} columns")
+        # Below 600px a table of 3+ columns becomes one card per row, so a long
+        # one silently turns a single screen into several of scrolling.
+        if cols > 2 and len(rows) > 4:
+            warn(where, f"{cols}-column table with {len(rows)} rows restacks "
+                        f"into {len(rows)} cards on a phone")
     elif t == "reveal":
         if not b.get("question") or not b.get("answer"):
             err(where, "reveal needs both question and answer")

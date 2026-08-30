@@ -1,0 +1,199 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "09-what-the-signature-covers",
+  "courseId": "crypto-chains",
+  "chapterId": "ch2-ledger",
+  "title": "What the signature covers",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 2 - Making a ledger out of it",
+          "heading": "What the signature covers",
+          "text": [
+            "Caleb's transaction leaves his laptop and passes through a dozen strangers' machines before any miner sees it.",
+            "Every one of them can read it. Whether any of them can rewrite it comes down to a single byte."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The digest is a copy of the transaction",
+          "text": [
+            "Signing does not hash \"the transaction\" as broadcast. It hashes a specially built copy of it.",
+            "A flag byte, carried alongside the signature, decides what goes into that copy."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Three answers to one question"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/sighash-scope.svg",
+          "alt": "Three panels comparing sighash flags: ALL signs inputs and outputs, NONE leaves outputs open, SINGLE signs one output only",
+          "caption": "Same signature algorithm, three different promises about what may still change."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What Caleb's wallet uses",
+          "text": [
+            "`SIGHASH_ALL`, value `0x01`, the default since the beginning. It commits to every input and every output.",
+            "Move one satoshi of the 0.0309 change to a different address and the signature stops verifying. Nora's 0.05 is nailed down by the same byte."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The alternative is a blank cheque",
+          "text": [
+            "`SIGHASH_NONE` signs the inputs and _no outputs at all_. The signature is valid no matter where the money goes.",
+            "Hand that to the network and the first node to receive it can point 0.0812 BTC at itself."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "That sounds indefensible. Why does the flag exist at all?",
+          "answer": [
+            "Because sometimes an incomplete transaction is the point. `SIGHASH_SINGLE` combined with `ANYONECANPAY` signs one input and one output and leaves the rest open - which is exactly \"I will sell this thing for that price, somebody fill in the rest\".",
+            "Atomic swaps and offer protocols are built from it. The flag is not a weakness; using the wrong one is."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "A signature cannot contain itself",
+          "text": [
+            "The signature ends up inside the transaction, so it cannot be part of what it signs.",
+            "The resolution is blunt: before hashing, every input's script field is emptied, and the one being signed is filled with the locking script of the output it spends."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The digest that was a constant",
+          "text": [
+            "`SIGHASH_SINGLE` signs the output at the same index as the input. If input 3 exists and there are only two outputs, there is nothing to sign."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "text": [
+            "Legacy hashing did not reject that. It returned the digest `0x00...01` - a fixed value, identical for every transaction.",
+            "A signature over a constant commits to nothing, and can be lifted and replayed elsewhere."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What BIP-143 fixed",
+          "text": [
+            "Segwit brought a new digest algorithm. It removes the constant-digest case, and it commits to **the value of the input being spent** - which legacy hashing never did."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Why would a signer need the input's amount committed, when it already commits to every output?",
+          "answer": [
+            "Because the fee is the difference, and the input amounts are not in the transaction - they live in the outputs being spent.",
+            "A hardware wallet shown false input values would compute a false fee. It could be told it was sending 0.0812 with a 0.0003 fee while actually authorising almost all of it to the miner. BIP-143 makes that lie invalid."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "It also stopped a quadratic",
+          "text": [
+            "Legacy hashing re-serialised the whole transaction once per input, so signing cost grew with the square of the input count.",
+            "BIP-143 precomputes the shared parts. One large transaction could previously force every node in the world to do minutes of hashing."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The edge of what a signature can do"
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Even `SIGHASH_ALL` covers only this transaction. It says nothing about **when** it happens, **which block** it lands in, or what happens if Caleb signs a second transaction spending the same 0.0812 coin.",
+            "Both would verify perfectly. Cryptography has run out of things to say."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "A signature is only as strong as the scope it commits to, and the scope is a design decision, not a mathematical fact.",
+            "Nora's phone is about to be told the payment arrived. It holds none of the chain, and it is going to check anyway."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "BIP-143: Transaction Signature Verification for Version 0 Witness Program",
+              "url": "https://github.com/bitcoin/bips/blob/master/bip-0143.mediawiki",
+              "note": "the new digest, the input-value commitment, and the quadratic fix"
+            },
+            {
+              "title": "BIP-141: Segregated Witness",
+              "url": "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki"
+            },
+            {
+              "title": "Bitcoin developer reference: Transactions",
+              "url": "https://developer.bitcoin.org/reference/transactions.html",
+              "note": "sighash flag values and the signing serialisation"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "08-there-are-no-balances",
+  "courseId": "crypto-chains",
+  "chapterId": "ch2-ledger",
+  "title": "There are no balances",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 2 - Making a ledger out of it",
+          "heading": "There are no balances",
+          "text": [
+            "Caleb opens his wallet to pay Nora. It says 0.0812 BTC.",
+            "That number is not stored anywhere. His wallet worked it out, and the network has never heard of it."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What is actually stored",
+          "text": [
+            "Every node keeps a set of **unspent outputs**. Each one is an amount and a condition for unlocking it. That set is the entire state of the system.",
+            "A wallet scans it for outputs it can unlock and adds them up. The total is a summary it made for you."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "So he cannot send 0.05",
+          "text": [
+            "He has one output, worth 0.0812, and outputs are consumed whole. There is no way to spend part of one.",
+            "To pay Nora he destroys his coin entirely and creates two new ones."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One in, two out"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/utxo-split.svg",
+          "alt": "One input of 0.0812 BTC splitting into an output of 0.05 to Nora and 0.0309 change to Caleb, with a fee of 0.0003 shown as the remainder",
+          "caption": "0.05 to Nora, 0.0309 back to himself. The 0.0003 that is missing is the fee."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "key",
+          "title": "The fee is not a field",
+          "text": [
+            "Nothing in the transaction states it. There is no `fee:` anywhere in the format.",
+            "The fee is whatever the inputs exceed the outputs by, and the miner takes it. Which means forgetting the change output is not an error - it is a very large tip."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "If nobody writes down the fee, what stops Caleb from creating an output of 0.0812 to Nora _and_ one of 0.03 to himself?",
+          "answer": [
+            "Every node checks that the inputs cover the outputs before relaying anything. It is the one arithmetic rule the whole system rests on: money out cannot exceed money in.",
+            "Fail it and the transaction is not rejected by a referee - it is simply never forwarded by anyone."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The shape of a transaction",
+          "text": [
+            "Inputs are pointers - which earlier output, and which position in it. Outputs are amounts with conditions. Nothing else is needed."
+          ]
+        },
+        {
+          "type": "code",
+          "label": "the payment, stripped to its structure",
+          "code": "in:   (txid 9c1f...4a2b, index 0)     0.0812\nout:  0.05     -> lock to Nora's address\nout:  0.0309   -> lock to Caleb's change address"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "15 August 2010",
+          "heading": "The day the rule held and the code did not",
+          "text": [
+            "Block 74,638 carried a transaction with two outputs of about **92.2 billion BTC** each.",
+            "Added together in a signed 64-bit integer, they overflowed to a negative number. The check `inputs >= outputs` compared against that, and passed."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "warning",
+          "text": [
+            "Patched within hours. The corrected clients rejected the block, and the honest chain overtook the bad one inside a day.",
+            "The rule was right; the arithmetic implementing it was not. That distinction is worth carrying into every security argument in this course."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The one transaction with no inputs",
+          "text": [
+            "Each block begins with a coinbase transaction, which spends nothing and creates the block subsidy plus every fee in that block.",
+            "It is the only place bitcoin comes from. Every other satoshi traces back through a chain of spends to one of these."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What the change output gives away"
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Caleb's 0.0309 goes to a fresh address he controls, which looks like a second payment to a stranger. It is not: it sits in the same transaction as the real one.",
+            "That co-occurrence is exactly what chain-analysis firms exploit. Chapter 5 comes back to it."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "Your balance is a number your wallet computed; what exists on the network is a pile of individually locked coins.",
+            "Caleb's wallet has built the transaction. Now it has to sign it - and what exactly the signature reaches around turns out to be a design decision."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+              "url": "https://bitcoin.org/bitcoin.pdf",
+              "note": "section 9 describes combining and splitting value"
+            },
+            {
+              "title": "Bitcoin developer reference: Transactions",
+              "url": "https://developer.bitcoin.org/reference/transactions.html",
+              "note": "the input and output serialisation"
+            },
+            {
+              "title": "CVE-2010-5139: the value overflow incident",
+              "url": "https://en.bitcoin.it/wiki/Common_Vulnerabilities_and_Exposures#CVE-2010-5139",
+              "note": "block 74,638, 15 August 2010"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
