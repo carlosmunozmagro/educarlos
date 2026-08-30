@@ -13,12 +13,12 @@ import pathlib
 OUT = pathlib.Path(__file__).resolve().parents[2] / "visuals/crypto-chains/keyspace.svg"
 
 ROWS = [
-    ("Debian OpenSSL, 2008", 15, "every key it could make", "hot"),
-    ("A 12-word seed phrase", 128, "the practical floor", ""),
-    ("secp256k1, as designed", 256, "what Nora's wallet drew from", "accent"),
+    ("Debian OpenSSL, 2008", 15, "every key it could make", "accent"),
+    ("A 12-word seed phrase", 128, "the practical floor", "cold"),
+    ("secp256k1, as designed", 256, "what Nora's wallet drew from", "cold"),
 ]
 
-X0, BAR_MAX, ROW_H, TOP = 8, 176, 44, 22
+X0, BAR_MAX, ROW_H, TOP = 8, 176, 50, 26
 
 
 def human(n):
@@ -30,12 +30,12 @@ def human(n):
 
 
 def main():
-    height = TOP + ROW_H * len(ROWS) - 6
+    height = TOP + ROW_H * len(ROWS) - 8
     assert X0 + BAR_MAX + 4 + 100 <= 300, "bars plus counts overflow the canvas"
 
     parts = [f'<svg viewBox="0 0 300 {height}" xmlns="http://www.w3.org/2000/svg">']
-    parts.append(f'  <text class="dim" x="8" y="12" font-size="10">'
-                 f'bar length = bits, so each row is a whole exponent, not a quantity</text>')
+    parts.append('  <text class="dim" x="8" y="12" font-size="10">'
+                 'bar length = bits, not quantity</text>')
 
     for i, (label, bits, note, cls) in enumerate(ROWS):
         y = TOP + i * ROW_H
@@ -43,11 +43,10 @@ def main():
         count = 2 ** bits
         print(f"{label:24} 2^{bits:<4} = {count:,}" if bits <= 64
               else f"{label:24} 2^{bits:<4} ~ {human(count)}")
-        fill = f' class="{cls}"' if cls else ' class="cold"'
         parts.append(f'  <text class="lbl" x="{X0}" y="{y}" font-size="11">{label}</text>')
-        parts.append(f'  <rect{fill} x="{X0}" y="{y + 6}" width="{w}" height="12" rx="2"/>')
-        parts.append(f'  <text x="{X0 + BAR_MAX + 6}" y="{y + 16}" font-size="11">2^{bits}</text>')
-        parts.append(f'  <text class="dim" x="{X0}" y="{y + 31}" font-size="10">{note}</text>')
+        parts.append(f'  <rect class="{cls}" x="{X0}" y="{y + 8}" width="{w}" height="12" rx="2"/>')
+        parts.append(f'  <text x="{X0 + BAR_MAX + 6}" y="{y + 18}" font-size="11">2^{bits}</text>')
+        parts.append(f'  <text class="dim" x="{X0}" y="{y + 34}" font-size="10">{note}</text>')
 
     parts.append("</svg>")
     OUT.write_text("\n".join(parts) + "\n")

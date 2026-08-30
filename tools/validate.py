@@ -198,6 +198,12 @@ def check_course(course):
 
 
 HEX = re.compile(r'(?:fill|stroke|stop-color)\s*[:=]\s*"?\s*(#[0-9a-fA-F]{3,8})')
+TEXT = re.compile(r'<text([^>]*)>([^<]*)</text>')
+ATTR = re.compile(r'(\w[\w-]*)="([^"]*)"')
+# The UI font at font-size F averages a little under 0.55F per character. Close
+# enough to catch a label running off the 300-unit canvas, which is invisible in
+# the source and only shows up as a clipped word on a phone.
+CHAR_W = 0.55
 
 
 def check_svg(rel):
@@ -214,6 +220,18 @@ def check_svg(rel):
     for size in re.findall(r'font-size="(\d+(?:\.\d+)?)"', svg):
         if float(size) < 9:
             err(rel, f"font-size {size} is below the legibility floor of 9")
+
+    for attrs, text in TEXT.findall(svg):
+        a = dict(ATTR.findall(attrs))
+        if not text.strip():
+            continue
+        w = len(text) * CHAR_W * float(a.get("font-size", 11))
+        x = float(a.get("x", 0))
+        anchor = a.get("text-anchor", "start")
+        left = x - w / 2 if anchor == "middle" else x - w if anchor == "end" else x
+        if left < 0 or left + w > 300:
+            warn(rel, f"text may overflow the canvas: {text[:34]!r} "
+                      f"spans about {left:.0f} to {left + w:.0f}")
 
 
 def main():

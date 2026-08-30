@@ -77,21 +77,20 @@ def main():
 
     rows = [("first signature", short(r1), short(s1)),
             ("second signature", short(r2), short(s2))]
-    y0, rh = 34, 40
-    height = y0 + rh * len(rows) + 38
+    y0, rh = 22, 62
+    height = y0 + rh * len(rows) + 24
     out = [f'<svg viewBox="0 0 300 {height}" xmlns="http://www.w3.org/2000/svg">',
            '  <text class="dim" x="8" y="12" font-size="10">'
-           'two different messages, signed moments apart</text>',
-           '  <text class="lbl" x="8" y="26" font-size="11">r</text>',
-           '  <text class="lbl" x="112" y="26" font-size="11">s</text>']
+           'two different messages, signed moments apart</text>']
     for i, (label, r, s) in enumerate(rows):
-        y = y0 + i * rh
-        out.append(f'  <rect class="hot" x="4" y="{y - 12}" width="100" height="20" rx="4"/>')
-        out.append(f'  <text class="lbl" x="8" y="{y + 2}" font-size="11">{r}</text>')
-        out.append(f'  <text x="112" y="{y + 2}" font-size="11">{s}</text>')
-        out.append(f'  <text class="dim" x="8" y="{y + 18}" font-size="10">{label}</text>')
-    out.append(f'  <text class="accent" x="8" y="{height - 12}" font-size="12">'
-               f'identical r means identical k</text>')
+        top = y0 + i * rh
+        out.append(f'  <rect class="box" x="8" y="{top}" width="284" height="54" rx="6"/>')
+        out.append(f'  <text class="dim" x="20" y="{top + 15}" font-size="10">{label}</text>')
+        out.append(f'  <rect class="hot" x="14" y="{top + 21}" width="142" height="17" rx="3"/>')
+        out.append(f'  <text class="lbl" x="20" y="{top + 34}" font-size="11">r  {r}</text>')
+        out.append(f'  <text x="20" y="{top + 50}" font-size="11">s  {s}</text>')
+    out.append(f'  <text class="accent" x="8" y="{height - 6}" font-size="12">'
+               f'identical r, so identical k</text>')
     out.append("</svg>")
     OUT.write_text("\n".join(out) + "\n")
     print(f"\nwrote {OUT.relative_to(OUT.parents[2])} ({height} tall)")
