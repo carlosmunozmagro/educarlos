@@ -5,7 +5,7 @@
   "accent": "#f0a13a",
   "title": "Crypto, from the math up",
   "subtitle": "What hashing, keys and chains actually do - not what the metaphors say.",
-  "description": "Every explanation of blockchain reaches for a metaphor: a ledger, a chain, a village of accountants. This course skips them. You will see the actual mechanisms, one screen at a time.",
+  "description": "Every explanation of blockchain reaches for a metaphor: a ledger, a chain, a village of accountants. This course skips them. One payment - 0.05 BTC for a vintage synthesiser - runs through the first half of the course, and every mechanism arrives because that payment needs it. You will see the actual machinery, one screen at a time, including the parts that have failed in public.",
   "chapters": [
     {
       "id": "ch1-primitives",
@@ -15,6 +15,160 @@
           "id": "01-what-a-hash-does",
           "title": "What a hash actually does",
           "summary": "One-way, fixed-size, wildly sensitive - and why that is enough to build a chain."
+        },
+        {
+          "id": "02-committing-to-a-secret",
+          "title": "Committing to a secret",
+          "summary": "How to prove what you decided without saying what it was - and the salt that stops the trick collapsing."
+        },
+        {
+          "id": "03-where-a-key-comes-from",
+          "title": "Where a key comes from",
+          "summary": "A private key is 256 random bits. Everything rests on the word random, and that word has failed in production."
+        },
+        {
+          "id": "04-the-one-way-street",
+          "title": "The one-way street",
+          "summary": "Multiplying a point on a curve is easy. Dividing is not. That asymmetry is the whole public-key idea."
+        },
+        {
+          "id": "05-what-a-signature-proves",
+          "title": "What a signature proves",
+          "summary": "Two numbers, r and s, and a verification that never sees the private key - nor, importantly, the signer."
+        },
+        {
+          "id": "06-the-number-that-leaked-a-console",
+          "title": "The number that leaked a console",
+          "summary": "Sony signed twice with the same nonce. Two signatures, three lines of algebra, one recovered master key."
+        },
+        {
+          "id": "07-from-a-key-to-an-address",
+          "title": "From a key to an address",
+          "summary": "Hash, hash again, add a checksum: why a mistyped address bounces instead of burning your money."
+        }
+      ]
+    },
+    {
+      "id": "ch2-ledger",
+      "title": "Making a ledger out of it",
+      "lessons": [
+        {
+          "id": "08-there-are-no-balances",
+          "title": "There are no balances",
+          "summary": "Your wallet holds coins the way a pocket holds notes: indivisible, spent whole, with change handed back."
+        },
+        {
+          "id": "09-what-the-signature-covers",
+          "title": "What the signature covers",
+          "summary": "A signature that did not commit to the outputs would be a blank cheque. Sighash is the fine print."
+        },
+        {
+          "id": "10-proving-membership",
+          "title": "Proving membership",
+          "summary": "A Merkle tree lets a phone verify one transaction out of four thousand by downloading twelve hashes."
+        },
+        {
+          "id": "11-eighty-bytes",
+          "title": "Eighty bytes",
+          "summary": "A block header is smaller than this sentence's worth of text, and it is the only part most of the network checks."
+        },
+        {
+          "id": "12-tamper-evident-is-not-tamper-proof",
+          "title": "Tamper-evident is not tamper-proof",
+          "summary": "The chain tells you the history changed. It does not stop anyone changing it - that is a different job entirely."
+        }
+      ]
+    },
+    {
+      "id": "ch3-consensus",
+      "title": "Agreeing without a referee",
+      "lessons": [
+        {
+          "id": "13-the-only-hard-problem",
+          "title": "The only hard problem",
+          "summary": "Copying money is trivially detectable. Ordering two conflicting spends, with no clock and no referee, is not."
+        },
+        {
+          "id": "14-what-the-puzzle-actually-is",
+          "title": "What the puzzle actually is",
+          "summary": "Miners are not solving anything. They are counting, and the target says how low the answer must land."
+        },
+        {
+          "id": "15-the-thermostat",
+          "title": "The thermostat",
+          "summary": "Every 2016 blocks the network re-reads its own clock and changes the difficulty. The clamp matters more than the formula."
+        },
+        {
+          "id": "16-nothing-is-ever-final",
+          "title": "Nothing is ever final",
+          "summary": "Confirmations are not a countdown to certainty. They are a probability curve, and you can read it."
+        },
+        {
+          "id": "17-fifty-one-percent",
+          "title": "Fifty-one percent",
+          "summary": "What a majority of hashpower can actually do to you - and the far shorter list of what it cannot."
+        },
+        {
+          "id": "18-staking-instead",
+          "title": "Staking instead",
+          "summary": "Ethereum swapped electricity for collateral in one block. What that bought, and what it cost."
+        }
+      ]
+    },
+    {
+      "id": "ch4-programmable",
+      "title": "Programmable money",
+      "lessons": [
+        {
+          "id": "19-money-with-conditions",
+          "title": "Money with conditions",
+          "summary": "Bitcoin outputs are locked by a small stack program. Multisig and timelocks are just two ways of writing it."
+        },
+        {
+          "id": "20-two-ways-to-model-the-world",
+          "title": "Two ways to model the world",
+          "summary": "UTXOs versus accounts: the same money, two data structures, and very different failure modes."
+        },
+        {
+          "id": "21-the-dao-and-the-order-of-two-lines",
+          "title": "The DAO and the order of two lines",
+          "summary": "Reentrancy is not an exotic bug. It is sending the money before you write down that you sent it."
+        },
+        {
+          "id": "22-a-token-is-a-mapping",
+          "title": "A token is a mapping",
+          "summary": "There is no coin. There is a table of numbers in one contract, and a rule about who may change it."
+        }
+      ]
+    },
+    {
+      "id": "ch5-leaks",
+      "title": "Where it leaks",
+      "lessons": [
+        {
+          "id": "23-pseudonymous-is-not-anonymous",
+          "title": "Pseudonymous is not anonymous",
+          "summary": "Every payment you ever made is public forever. Two heuristics turn that into a name."
+        },
+        {
+          "id": "24-twelve-words",
+          "title": "Twelve words",
+          "summary": "A seed phrase is not a password. It is your entire key space, compressed into a checksum-protected sentence."
+        },
+        {
+          "id": "25-the-auction-you-are-in",
+          "title": "The auction you are in",
+          "summary": "Block space is a fixed supply sold continuously. Your fee is a bid, and bots can see it."
+        },
+        {
+          "id": "26-the-weakest-link-is-the-bridge",
+          "title": "The weakest link is the bridge",
+          "summary": "The biggest thefts in the field share one shape: the chain held, and the thing beside it did not."
+        },
+        {
+          "id": "27-what-it-cannot-do",
+          "title": "What it cannot do",
+          "summary": "A chain can guarantee a number was not changed. It can never guarantee the number was true."
         }
       ]
     }

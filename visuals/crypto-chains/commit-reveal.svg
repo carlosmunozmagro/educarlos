@@ -1,0 +1,36 @@
+<svg viewBox="0 0 300 214" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="cr-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 1 L7 4 L0 7 z" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <text class="dim" x="8" y="12" font-size="10">Monday - both commit</text>
+
+  <rect class="box" x="8" y="18" width="136" height="44" rx="6"/>
+  <text class="lbl" x="18" y="35" font-size="11">Nora, lowest</text>
+  <text x="18" y="51" font-size="11">d82e95...1e42</text>
+
+  <rect class="box" x="156" y="18" width="136" height="44" rx="6"/>
+  <text class="lbl" x="166" y="35" font-size="11">Caleb, highest</text>
+  <text x="166" y="51" font-size="11">8f0fcd...bde9</text>
+
+  <line class="line" x1="76" y1="64" x2="76" y2="82" marker-end="url(#cr-arrow)"/>
+  <line class="line" x1="224" y1="64" x2="224" y2="82" marker-end="url(#cr-arrow)"/>
+
+  <text class="dim" x="8" y="102" font-size="10">Tuesday - both reveal</text>
+
+  <rect class="box" x="8" y="108" width="136" height="40" rx="6"/>
+  <text class="accent" x="18" y="125" font-size="12">€3,900</text>
+  <text x="18" y="140" font-size="10">+ salt b3f1c0a7...</text>
+
+  <rect class="box" x="156" y="108" width="136" height="40" rx="6"/>
+  <text class="accent" x="166" y="125" font-size="12">€4,400</text>
+  <text x="166" y="140" font-size="10">+ salt 8419e2d5...</text>
+
+  <line class="line" x1="150" y1="150" x2="150" y2="168" marker-end="url(#cr-arrow)"/>
+
+  <rect class="box" x="8" y="174" width="284" height="34" rx="6"/>
+  <text class="lbl" x="150" y="188" font-size="11" text-anchor="middle">Re-hash each reveal</text>
+  <text x="150" y="202" font-size="10" text-anchor="middle">both match Monday, so neither moved</text>
+</svg>

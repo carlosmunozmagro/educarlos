@@ -1,0 +1,186 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "03-where-a-key-comes-from",
+  "courseId": "crypto-chains",
+  "chapterId": "ch1-primitives",
+  "title": "Where a key comes from",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 1 - The primitives",
+          "heading": "Where a key comes from",
+          "text": [
+            "Nora needs somewhere for Caleb's €4,150 to land. Her wallet makes her a key in under a millisecond and does not ask her anything.",
+            "Everything she owns now rests on one word in that sentence."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "It is not a password",
+          "text": [
+            "There is no account, no server, nobody to register with. A private key is **256 random bits**. That is the entire object."
+          ]
+        },
+        {
+          "type": "code",
+          "label": "what a private key looks like (illustrative)",
+          "code": "8f2a c41d 9b03 e7f6 5a18 2c9d 40be 1f77\n3d06 a95e 8214 cb7f 6e30 d5a2 09fc 4b81"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Almost any number will do",
+          "text": [
+            "The key has to be at least 1 and less than the curve's order $n$. Bitcoin's curve, secp256k1, fixes that number in the standard:"
+          ]
+        },
+        {
+          "type": "formula",
+          "tex": "n \\approx 1.158 \\times 10^{77}",
+          "caption": "Just under $2^{256}$. About $2^{-127}$ of random draws land outside the range - a wallet redraws, and in practice never has to."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Nobody registers Nora's key anywhere, so nothing stops another wallet from drawing the same 256 bits. Why is that not a real risk?",
+          "answer": [
+            "Take a billion keys - more than every wallet ever created. The chance that any two of them collide is around one in $10^{59}$.",
+            "The safety does not come from a registry. It comes from the space being far too large to land in twice."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "So where do the bits come from?",
+          "text": [
+            "Not from the wallet. It asks the operating system, which keeps a pool stirred by timing jitter, interrupts, and on modern hardware a dedicated noise circuit.",
+            "The wallet is a thin caller. The quality of Nora's key is decided entirely by that pool."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "13 May 2008",
+          "heading": "The line someone removed",
+          "text": [
+            "A Debian maintainer patched OpenSSL to silence a memory-checker warning. The patched line fed uninitialised memory into the random pool.",
+            "It also happened to be feeding in everything else. What was left seeding the generator was the **process ID**."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Fifteen bits"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/keyspace.svg",
+          "alt": "Three bars whose length is the number of bits: 15, 128 and 256, with the 15-bit bar almost invisible",
+          "caption": "Linux caps process IDs at 32,768. Every key that build could produce fits in a **32,768-row table**."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "warning",
+          "title": "Not a search - a lookup",
+          "text": [
+            "For twenty months, from September 2006 to the advisory, that build shipped. Anyone could generate all 32,768 keys in advance and simply check whether yours was one of them.",
+            "These were SSH and TLS keys; bitcoin did not exist yet. The failure mode is what carries over, not the victims."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "People are worse than a broken PRNG",
+          "text": [
+            "Some early users skipped randomness on purpose: hash a memorised phrase, call it a wallet, keep nothing on disk.",
+            "Attackers pre-computed keys for every phrase they could think of and watched the chain. Funds arrived and left within minutes."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Where this breaks, permanently",
+          "text": [
+            "A key drawn from 15 bits and a key drawn from 256 bits are both 32-byte strings. Nothing you can measure on the key itself tells them apart."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Randomness cannot be audited after the fact. That is why the standards test the _generator_ - NIST SP 800-90A for the construction, 800-90B for the noise source - and never the number that comes out."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "A key is not strong because it is long. It is strong because the process that made it had somewhere unpredictable to draw from.",
+            "Nora's 256 bits are now a secret. Next: how the same number turns into something she can safely email to Caleb."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "SEC 2 v2: Recommended Elliptic Curve Domain Parameters",
+              "url": "https://www.secg.org/sec2-v2.pdf",
+              "note": "section 2.4.1 fixes secp256k1 and its order n"
+            },
+            {
+              "title": "Debian DSA-1571-1: predictable random number generator",
+              "url": "https://www.debian.org/security/2008/dsa-1571",
+              "note": "CVE-2008-0166, the 15-bit collapse"
+            },
+            {
+              "title": "NIST SP 800-90A Rev. 1",
+              "url": "https://csrc.nist.gov/pubs/sp/800/90/a/r1/final",
+              "note": "the approved generator constructions"
+            },
+            {
+              "title": "Vasek, Bonneau, Castellucci, Keith, Moore, \"The Bitcoin Brain Drain\"",
+              "note": "Financial Cryptography 2016 - measurement of brain wallets being drained"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
