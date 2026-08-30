@@ -1,0 +1,145 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "48-cuando-muere-un-socio",
+  "courseId": "sociedades-es",
+  "chapterId": "c12-grupos-y-fronteras",
+  "title": "Cuando muere un socio",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 12 — Grupos y fronteras",
+          "heading": "Cuando muere un socio",
+          "text": [
+            "Muere Antonio y su 55 % pasa a quien nunca ha pisado el taller.",
+            "Elena y Javier no pueden hacer nada. Ya no."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Talleres Rueda, otra vez",
+          "text": [
+            "Mecanizado industrial en Getafe (lección 27): **Antonio** el 55 %, **Elena** el 25 % y la gerencia, **Javier** el 20 %.",
+            "Antonio muere en enero. La empresa sigue funcionando el lunes siguiente, pero ya no es de quien era."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La regla por defecto es la libertad",
+          "text": [
+            "El **artículo 110 LSC**: la adquisición de participaciones **por sucesión hereditaria confiere al heredero o legatario la condición de socio**.",
+            "Sin trámite, sin permiso y sin que los socios que quedan puedan oponerse."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que eso significa aquí",
+          "text": [
+            "Elena lleva veinte años dirigiendo el taller con el 25 %. Desde enero, la mayoría la tienen los herederos de su padre.",
+            "Puede ser la mejor de las situaciones o la peor. Lo que no es, es una decisión de nadie."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Salvo que estuviera escrito"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/muerte-de-un-socio.svg",
+          "alt": "Del fallecimiento de Antonio salen dos caminos: por defecto los herederos son socios y nadie puede oponerse; si los estatutos lo prevén, Elena y Javier pueden adquirir al contado en tres meses",
+          "caption": "La puerta de la derecha se abre años antes. O no se abre."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El derecho que hay que crear",
+          "text": [
+            "El mismo artículo permite que los estatutos establezcan, a favor de los **socios sobrevivientes** —y en su defecto de la sociedad—, un derecho a adquirir las participaciones del fallecido.",
+            "Apreciadas en el **valor razonable** que tuvieran **el día del fallecimiento**, y pagadas **al contado**."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Con reloj y con tasador",
+          "text": [
+            "El plazo para ejercerlo es de **tres meses** desde que se comunica a la sociedad la adquisición hereditaria.",
+            "Y la valoración se rige por las reglas de la separación de socios: a falta de acuerdo, el **experto designado por el registrador mercantil** del art. 353 (lección 32)."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Los estatutos de Talleres Rueda sí tienen la cláusula, y Elena quiere ejercerla. ¿Le basta con querer?",
+          "answer": [
+            "No. Necesita **el dinero, al contado, en tres meses**, por un importe que fija un tercero.",
+            "Una sociedad sin tesorería que active esa cláusula acaba exactamente en la lección 33: sacando de golpe un importe que no tenía previsto.",
+            "Y si quien adquiere es la propia sociedad, entra el art. 140 (lección 44): la autocartera está tasada, y la vía practicable vuelve a ser reducir capital."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Por eso la cláusula sola no basta",
+          "text": [
+            "Hay que financiarla: con un seguro, con reservas, o con lo que se decida años antes de que haga falta.",
+            "La parte fiscal ya la tiene el curso: la reducción de empresa familiar en el Impuesto sobre Sucesiones (lección 27) es lo que evita tener que vender el taller para pagar el impuesto de heredarlo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y aquí termina",
+          "text": [
+            "El curso empezó con Marta transfiriéndose 12.000 € que no eran suyos, porque no distinguía su patrimonio del de su sociedad. Termina con un patrimonio que cambia de manos sin que su titular pueda decidir nada.",
+            "Es la misma línea de la primera lección. Todo lo que hay entre medias —tipos, modelos, plazos, estructuras, fronteras— son maneras de cruzarla a tiempo."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley de Sociedades de Capital (RDL 1/2010)",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2010-10544",
+              "note": "arts. 110, 140 y 353"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

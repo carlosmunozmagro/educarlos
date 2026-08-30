@@ -1,0 +1,145 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "45-cuando-dos-sociedades-son-un-grupo",
+  "courseId": "sociedades-es",
+  "chapterId": "c12-grupos-y-fronteras",
+  "title": "Cuando dos sociedades son un grupo",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 12 — Grupos y fronteras",
+          "heading": "Cuando dos sociedades son un grupo",
+          "text": [
+            "Nortia y NuevaSoft tienen exactamente los mismos socios.",
+            "No son un grupo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Después de la escisión",
+          "text": [
+            "La rama de software salió a **NuevaSoft, SL** (lección 40), y sus participaciones fueron a los mismos socios de Nortia y en la misma proporción: Álvaro 36 %, Rosa 28 %, Vega 20 %, Kenji 16 %.",
+            "Álvaro las llama «las dos empresas del grupo». Es una frase de gestión, no una categoría jurídica."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Quién tiene que controlar a quién",
+          "text": [
+            "El **artículo 42 del Código de Comercio**: hay grupo cuando **una sociedad** ostente o pueda ostentar, directa o indirectamente, **el control de otra u otras**.",
+            "El sujeto de la frase es una sociedad. Nortia no tiene ni una participación de NuevaSoft."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El dibujo lo enseña"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/grupo-o-no.svg",
+          "alt": "Los socios personas físicas arriba, con flechas hacia Nortia y NuevaSoft abajo, y ninguna línea de control entre las dos sociedades",
+          "caption": "El control está arriba, en personas. Entre las dos cajas no hay nada."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Las presunciones de control",
+          "text": [
+            "Se presume que hay control cuando la dominante posee **la mayoría de los derechos de voto**, puede **nombrar o destituir** a la mayoría del órgano de administración, puede disponer de la mayoría de los votos por acuerdos con terceros, o ha designado con sus votos a esa mayoría.",
+            "Ninguna encaja aquí, porque en todas el que controla es una sociedad."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y hay un segundo umbral, distinto",
+          "text": [
+            "Para el **grupo fiscal** el criterio no es el control: el **artículo 58 LIS** exige una entidad dominante con al menos el **75 %** del capital **y** la mayoría de los derechos de voto. El 70 % si las acciones cotizan.",
+            "Se puede ser grupo mercantil y no poder consolidar."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Si no son grupo, ¿pueden Nortia y NuevaSoft fijar entre ellas los precios que quieran?",
+          "answer": [
+            "No.",
+            "La **vinculación** del **artículo 18 LIS** tiene su propia lista y su propio umbral —el **25 %** por la vía del socio, lección 14—, y con socios comunes muy por encima de esa cifra las dos están dentro.",
+            "Tres normas responden a la misma pregunta con tres criterios distintos. Hay que contestarla tres veces."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que se gana y se pierde en cada casilla",
+          "text": [
+            "Sin grupo del art. 42, los intereses de un préstamo participativo entre ellas **sí** serían deducibles (**art. 15.a)**, lección 38).",
+            "Sin dominante al 75 %, no hay consolidación fiscal. Y con vinculación, los precios entre ellas son los de mercado, quieran o no."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "«Somos el mismo grupo» no significa nada por sí solo. Significa tres cosas distintas según qué artículo se esté aplicando."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Si lo quisieran de verdad",
+          "text": [
+            "Habría que interponer una **holding** que tuviera el 75 % de las dos. Es exactamente la estructura de la lección 25, ahora con un propósito nuevo.",
+            "En la siguiente, qué se compra con ese 75 %."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Código de Comercio",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1885-6627",
+              "note": "art. 42"
+            },
+            {
+              "title": "Ley 27/2014, del Impuesto sobre Sociedades",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328",
+              "note": "arts. 15.a), 18 y 58"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

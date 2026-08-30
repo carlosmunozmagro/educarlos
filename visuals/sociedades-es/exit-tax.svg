@@ -1,0 +1,16 @@
+<svg viewBox="0 0 300 176" xmlns="http://www.w3.org/2000/svg">
+<text class="dim" x="6.0" y="13" font-size="10">Puerta 2: más del 25 % y más de 1.000.000 €</text>
+<text x="6.0" y="34" font-size="11">Álvaro  36%</text>
+<rect class="cold" x="6.0" y="38" width="180.0" height="12" rx="2"/>
+<text class="dim" x="212" y="48" font-size="10">900.000 €</text>
+<text x="6.0" y="66" font-size="11">Rosa  28%</text>
+<rect class="cold" x="6.0" y="70" width="140.0" height="12" rx="2"/>
+<text class="dim" x="212" y="80" font-size="10">700.000 €</text>
+<text x="6.0" y="98" font-size="11">Kenji  16%</text>
+<rect class="cold" x="6.0" y="102" width="80.0" height="12" rx="2"/>
+<text class="dim" x="212" y="112" font-size="10">400.000 €</text>
+<line class="line" x1="206.0" y1="20" x2="206.0" y2="120" stroke-dasharray="3 3"/>
+<text class="accent" x="6.0" y="140" font-size="11" font-weight="700">Nadie la cruza — hoy</text>
+<text class="dim" x="6.0" y="154" font-size="10">A Álvaro le faltan 100.000 €</text>
+<text class="dim" x="6.0" y="170" font-size="10">Una ronda a mayor valoración lo mete dentro.</text>
+</svg>

@@ -294,6 +294,32 @@
           "summary": "Por qué la autocartera está tasada en una SL, y por qué reducir capital era la única salida."
         }
       ]
+    },
+    {
+      "id": "c12-grupos-y-fronteras",
+      "title": "Grupos y fronteras",
+      "lessons": [
+        {
+          "id": "45-cuando-dos-sociedades-son-un-grupo",
+          "title": "Cuando dos sociedades son un grupo",
+          "summary": "Grupo mercantil, grupo fiscal y vinculación: tres criterios distintos para la misma pregunta."
+        },
+        {
+          "id": "46-consolidacion-fiscal",
+          "title": "Consolidación fiscal",
+          "summary": "Qué compra el 75 %: no menos impuesto, sino el mismo antes."
+        },
+        {
+          "id": "47-un-socio-se-va-del-pais",
+          "title": "Un socio se va del país",
+          "summary": "El impuesto de salida grava una plusvalía que nadie ha cobrado, y el umbral depende de lo que valga tu empresa."
+        },
+        {
+          "id": "48-cuando-muere-un-socio",
+          "title": "Cuando muere un socio",
+          "summary": "El heredero es socio salvo que los estatutos dijeran otra cosa años antes."
+        }
+      ]
     }
   ]
 }

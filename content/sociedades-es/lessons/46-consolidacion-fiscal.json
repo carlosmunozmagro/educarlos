@@ -1,0 +1,140 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "46-consolidacion-fiscal",
+  "courseId": "sociedades-es",
+  "chapterId": "c12-grupos-y-fronteras",
+  "title": "Consolidación fiscal",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 12 — Grupos y fronteras",
+          "heading": "Consolidación fiscal",
+          "text": [
+            "NuevaSoft pierde 180.000 € y Nortia gana 400.000 €.",
+            "Que eso reste hoy o dentro de cinco años depende de un porcentaje."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Álvaro monta la holding",
+          "text": [
+            "Después de la lección anterior, la estructura cambia: **Nortia Holding, SL** pasa a tener el **100 %** de Nortia y de NuevaSoft.",
+            "Ya hay una sociedad que controla a las otras dos. Ahora sí puede haber grupo fiscal."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El umbral",
+          "text": [
+            "El **artículo 58 LIS** pide que la entidad dominante tenga, directa o indirectamente, al menos el **75 % del capital social** y la **mayoría de los derechos de voto**.",
+            "El 70 % si las acciones cotizan en un mercado regulado. Con el 100 %, la holding va sobrada."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y hay que quererlo",
+          "text": [
+            "El régimen es **voluntario**, y aplicarlo requiere el **acuerdo de todas y cada una** de las sociedades que forman el grupo.",
+            "No se entra por cumplir el porcentaje: se entra por decisión de las tres."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Qué hace con las bases"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/consolidacion.svg",
+          "alt": "La base positiva de Nortia de 400.000 € y la negativa de NuevaSoft de 180.000 € se suman en una base de grupo de 220.000 €, con 36.000 € menos de cuota este año",
+          "caption": "**36.000 €** de cuota, este año y no dentro de cinco."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "En tres movimientos",
+          "text": [
+            "El **artículo 62**: se **suman** las bases individuales, se **eliminan** los resultados de operaciones entre las sociedades del grupo, y se **incorporan** los eliminados en años anteriores cuando la operación llega por fin a un tercero.",
+            "Vender de Nortia a NuevaSoft deja de generar resultado hasta que salga fuera."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Sin consolidar, ¿se pierden los 180.000 € de NuevaSoft?",
+          "answer": [
+            "No. Quedan como **base imponible negativa** y se compensarán en ejercicios futuros, con los límites de la lección 08.",
+            "Lo que cambia no es el importe: es **cuándo**.",
+            "Por eso «consolidar hace pagar menos impuestos» está mal dicho. Hace pagarlos más tarde, que en una empresa que está financiando crecimiento es justo lo escaso."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El detalle que lo permite",
+          "text": [
+            "En las bases individuales que se suman **no** se incluye la compensación de las bases negativas propias de cada entidad.",
+            "Por eso la pérdida de NuevaSoft no se queda esperando en su propia declaración: entra directamente en la agregación y resta contra el beneficio de Nortia."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "text": [
+            "El 75 % es un umbral, no un objetivo aproximado. Con el 74 % no se consolida, por muy grupo que parezca."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que llevarse",
+          "text": [
+            "La consolidación no crea ventajas: adelanta las que ya existían. Es tesorería, no exención.",
+            "Hasta aquí, todo ha pasado dentro de España. En la siguiente, qué ocurre cuando un socio deja de vivir aquí."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 27/2014, del Impuesto sobre Sociedades",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328",
+              "note": "arts. 58 y 62"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

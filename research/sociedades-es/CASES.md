@@ -196,3 +196,41 @@ Este capítulo no introduce hechos nuevos en el Caso A; **reinterpreta** los que
 
 Es deliberado: el capítulo 11 es el que explica decisiones que el curso ya había tomado sin
 justificar del todo. Al escribir aquí, **no inventes hechos nuevos** — busca los que ya están.
+
+---
+
+## Lo que añade el capítulo 12 (lecciones 45–48)
+
+**Caso C**, continuación:
+
+| Hecho | Valor | Lección |
+|---|---|---|
+| **NuevaSoft, SL**, nacida de la escisión de 2033 | mismos socios y proporciones que Nortia: Álvaro 36 %, Rosa 28 %, Vega 20 %, Kenji 16 % | 45 |
+| ¿Nortia y NuevaSoft son grupo del art. 42 CCom? | **No** — quien las controla son personas físicas | 45 |
+| **Nortia Holding, SL**, 2034 | **100 %** de Nortia y de NuevaSoft; las tres acuerdan consolidar | 46 |
+| Bases de 2034 | Nortia **+400.000 €**, NuevaSoft **−180.000 €** → base del grupo **220.000 €** | 46 |
+| Diferencia de caja por consolidar | **36.000 €** al 20 % | 46 |
+| **Kenji** vuelve a Japón, 2034 | 16 %, valor 400.000 € → **no** cruza el art. 95 bis | 47 |
+| Álvaro | 36 %, valor **900.000 €** — a **100.000 €** del umbral del millón | 47 |
+
+**Caso B**, recuperado para cerrar el curso:
+
+| Hecho | Valor | Lección |
+|---|---|---|
+| Muere **Antonio** (55 %) | los herederos adquieren la condición de socio por defecto (art. 110) | 48 |
+| Elena (25 %, gerente) y Javier (20 %) | sólo podrían adquirir si los estatutos lo hubieran previsto | 48 |
+
+**Cuidado al continuar**: la valoración de referencia de Nortia sigue siendo la post-money de
+**2.500.000 €** de la lección 37. Si una lección futura levanta una ronda a valoración mayor,
+Álvaro cruza el umbral del art. 95 bis — y la lección 47 usa exactamente ese margen de
+100.000 € como remate. No lo rompas sin reescribirla.
+
+## El final del curso se ha movido dos veces
+
+La lección **28** cerraba el curso; pasó a cerrar el capítulo 7 al añadirse el capítulo 8.
+La **40** cerró el curso; pasó a cerrar el capítulo 10 al añadirse el 11 y el 12. Ahora cierra
+la **48**.
+
+Cada extensión cuesta reescribir el final anterior. Si el curso va a seguir creciendo, conviene
+decidir antes cuál es su última lección, o aceptar que el cierre viva siempre en la última y
+que las demás terminen en handoff.

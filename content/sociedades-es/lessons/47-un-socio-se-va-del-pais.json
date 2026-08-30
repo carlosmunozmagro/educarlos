@@ -1,0 +1,157 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "47-un-socio-se-va-del-pais",
+  "courseId": "sociedades-es",
+  "chapterId": "c12-grupos-y-fronteras",
+  "title": "Un socio se va del país",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 12 — Grupos y fronteras",
+          "heading": "Un socio se va del país",
+          "text": [
+            "Kenji se vuelve a Japón y no vende nada.",
+            "A Álvaro le faltan 100.000 € para que mudarse le cueste una fortuna."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "2034",
+          "text": [
+            "Kenji lleva quince años en España y vuelve a Osaka por motivos familiares. Conserva su **16 %** de Nortia: no vende, no cobra, no reparte.",
+            "Su gestor le pregunta cuánto valen sus participaciones. Kenji no entiende por qué."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Porque existe el artículo 95 bis",
+          "text": [
+            "Cuando alguien **pierde la residencia fiscal en España**, las ganancias patrimoniales **latentes** de sus participaciones pueden tributar aunque no haya vendido.",
+            "Se integran en la renta del ahorro y se imputan al **último período** que deba declarar por IRPF."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Primero, hay que haber estado",
+          "text": [
+            "El régimen exige haber sido residente en España **al menos 10 de los 15 períodos impositivos anteriores**.",
+            "Kenji lo cumple de sobra. No es una regla contra quien pasa por aquí dos años."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y luego, una de dos puertas",
+          "text": [
+            "**Primera**: el valor de mercado del conjunto de acciones y participaciones supera **4.000.000 €**.",
+            "**Segunda**: la participación en una entidad supera el **25 %** y esa participación vale más de **1.000.000 €**. Basta con cruzar una."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde cae cada uno"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/exit-tax.svg",
+          "alt": "Barras del valor de la participación de Álvaro, Rosa y Kenji frente a la línea del millón de euros; ninguna la alcanza, y a Álvaro le faltan 100.000 €",
+          "caption": "Kenji ni siquiera pasa el 25 %. Álvaro sí, pero se queda **100.000 €** corto del millón."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Nortia levanta una ronda nueva a 3.500.000 € de valoración. ¿Cambia algo para Álvaro?",
+          "answer": [
+            "Su 36 % pasaría a valer **1.260.000 €**.",
+            "Supera el 25 % y supera el millón: cruzaría la segunda puerta **sin haber vendido, cobrado ni movido nada**.",
+            "El umbral no depende de lo que tú hagas. Depende de lo que valga tu empresa el día que te vas — y toda la empresa está trabajando para que valga más."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La dificultad real",
+          "text": [
+            "Que no hay dinero. El impuesto cae sobre una plusvalía **latente**: no se ha vendido y no se ha cobrado.",
+            "Y en una participación no cotizada no hay mercado donde vender un trozo para pagar la cuota."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "text": [
+            "Cabe aplazar el pago cuando el traslado es por motivos laborales a un país con convenio con cláusula de intercambio de información, o que no sea paraíso fiscal."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La misma tensión, al revés",
+          "text": [
+            "En la lección 40, el régimen especial **difería** una plusvalía latente para que una reestructuración fuera posible sin vender nada.",
+            "Aquí, mudarse la **realiza**. Es la misma magnitud —valor de mercado menos valor de adquisición— empujada en direcciones opuestas por dos normas distintas."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y después de irse",
+          "text": [
+            "Kenji deja de ser contribuyente del IRPF y pasa a serlo del **Impuesto sobre la Renta de no Residentes** por lo que gane en España: los dividendos de Nortia llevarán retención, y el convenio con Japón modulará el resultado final.",
+            "Para un socio de control, mudarse es una decisión fiscal antes que logística. En la última, la salida que nadie planifica."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 35/2006, del IRPF",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+              "note": "art. 95 bis"
+            },
+            {
+              "title": "Ley 26/2014, de modificación de la Ley del IRPF",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-12327",
+              "note": "introduce el art. 95 bis"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
