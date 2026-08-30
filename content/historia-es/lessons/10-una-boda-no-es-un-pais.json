@@ -1,0 +1,173 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "10-una-boda-no-es-un-pais",
+  "courseId": "historia-es",
+  "chapterId": "c3-maquina-medieval",
+  "title": "1469: una boda no es un país",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 3 — La máquina medieval",
+          "heading": "1469: una boda no es un país",
+          "text": [
+            "Después de la boda, un comerciante castellano que quería vender en Aragón seguía pagando aduana.",
+            "Siguió pagándola **doscientos treinta y ocho años**.",
+            "Lo interesante de 1469 no es la boda. Es el contrato."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El contrato es anterior",
+          "text": [
+            "Las **Capitulaciones de Cervera** se firman en capítulos provisionales el **7 de enero de 1469** y en su forma definitiva el **5 de marzo**.",
+            "La boda se celebra en Valladolid en octubre. Para entonces el reparto de poder ya estaba decidido por escrito."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Un contrato desigual",
+          "text": [
+            "El texto da a Isabel bastante más de lo que da a Fernando: recibir **todos los homenajes de soberanía**, decidir **todos los nombramientos de oficios**, y percibir rentas de la corona que el futuro rey no podrá quitarle nunca."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Fernando también era heredero de su corona. ¿Por qué el contrato le da menos?",
+          "answer": [
+            "Por una diferencia estrictamente jurídica entre las dos coronas: **la ley castellana permitía reinar a hombres y a mujeres; la aragonesa, sólo a hombres**.",
+            "Isabel es titular por derecho propio en Castilla, y Fernando no puede serlo allí sin ella. Él, en cambio, heredará Aragón en cualquier caso.",
+            "La asimetría del texto no es sentimental ni política: es la consecuencia técnica de que los dos derechos sucesorios no dijeran lo mismo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que sí comparten",
+          "text": [
+            "Administración conjunta de la justicia y **firma conjunta de todos los documentos**.",
+            "Eso convierte el matrimonio en una **monarquía dual**: dos titulares para cada acto de gobierno."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y lo que no se une",
+          "text": [
+            "Cada corona conserva sus Cortes, sus leyes, sus instituciones, su moneda y sus aduanas.",
+            "No hay un Estado nuevo. Hay dos Estados completos con las mismas personas encima."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/una-corona-dos-estados.svg",
+          "alt": "Una caja superior con los titulares comunes y, debajo, dos cajas separadas, Castilla y Aragón, cada una con sus Cortes, leyes, moneda y aduanas",
+          "caption": "Lo compartido son las personas. Lo demás sigue duplicado."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Cuánto dura exactamente",
+          "text": [
+            "Hasta los **Decretos de Nueva Planta** de Felipe V: Aragón y Valencia el **29 de junio de 1707**, Mallorca el **28 de noviembre de 1715** y Cataluña el **16 de enero de 1716**."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/union-238.svg",
+          "alt": "Línea temporal de 1469 a 1716 con la banda de coexistencia de dos legislaciones y los hitos de la Nueva Planta",
+          "caption": "**238 años** desde el contrato de Cervera hasta el primer decreto."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Si en 1469 hubiera nacido un país, ¿qué tendría que haber desaparecido y no desapareció?",
+          "answer": [
+            "Las Cortes, las leyes, la moneda y las aduanas de cada corona.",
+            "Siguieron funcionando dos siglos y medio. La estructura compuesta no es una fase de transición hacia algo: **es el régimen normal** de la Monarquía Hispánica.",
+            "Y no la deshizo ninguna boda ni ninguna herencia. La deshizo una guerra, entre 1707 y 1716."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde falla esto",
+          "text": [
+            "La unión sí tuvo efectos reales, y grandes: política exterior común, ejércitos coordinados y proyectos compartidos — Granada, América, la Inquisición.",
+            "Decir que no se creó un Estado no es decir que no cambiara nada."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Y la Nueva Planta tampoco iguala a todos: Navarra y las provincias vascas conservan sus fueros."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que viene",
+          "text": [
+            "Estos dos titulares, con dos Estados debajo, van a despachar en siete meses tres asuntos que todavía se estudian por separado.",
+            "Y los tres salen del mismo campamento militar."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Capitulaciones de Cervera, 1469 — texto (PDF), Repertorio Mayans, Universidad de Zaragoza",
+              "url": "https://repertoriomayans.unizar.es/wp-content/uploads/2024/04/1469-Capitulaciones-de-Cervera.pdf"
+            },
+            {
+              "title": "Capitulaciones de Cervera — contenido y contexto",
+              "url": "https://es.wikipedia.org/wiki/Capitulaciones_de_Cervera"
+            },
+            {
+              "title": "Decreto de Nueva Planta (16 de enero de 1716), Archivo de la Corona de Aragón",
+              "url": "https://www.cultura.gob.es/archivos-aca/actividades/documentos-para-la-historia-de-europa/nueva-planta.html"
+            },
+            {
+              "title": "Decretos de Nueva Planta — fechas por territorio",
+              "url": "https://es.wikipedia.org/wiki/Decretos_de_Nueva_Planta"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

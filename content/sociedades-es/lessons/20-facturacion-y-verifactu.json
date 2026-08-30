@@ -1,0 +1,153 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "20-facturacion-y-verifactu",
+  "courseId": "sociedades-es",
+  "chapterId": "c5-la-maquina",
+  "title": "Facturación y Verifactu",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 5 — La máquina que hay que alimentar",
+          "heading": "Facturación y Verifactu",
+          "text": [
+            "Antes del 1 de enero de 2027, el programa de facturación de Ámbar tendrá que encadenar sus facturas.",
+            "Encadenar, en el sentido literal del curso de cripto de esta misma app."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "No es un formato de factura",
+          "text": [
+            "El **Real Decreto 1007/2023** no regula qué pone en tus facturas. Regula **cómo debe comportarse el programa** que las emite.",
+            "El objetivo es que un registro emitido no se pueda modificar después sin que se note."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "A quién obliga",
+          "text": [
+            "El **artículo 3.1.a)** empieza por «los **contribuyentes del Impuesto sobre Sociedades**», y sigue con los del IRPF que desarrollen actividades económicas y algunos más.",
+            "Se aplica «aunque solo los usen para una parte de su actividad». Ámbar entra por la letra a)."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y desde cuándo",
+          "text": [
+            "La disposición final cuarta, en su redacción vigente: los del artículo 3.1.a) «deberán tener adaptados los sistemas informáticos […] **antes del 1 de enero de 2027**». El resto, **antes del 1 de julio de 2027**."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "title": "Esta fecha se ha movido dos veces",
+          "text": [
+            "Primero por el RD 254/2025 y después por el Real Decreto-ley 15/2025. Antes de fiarte de ella, mírala en el BOE."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Además de los datos de la factura, ¿qué tiene que contener cada registro de facturación?",
+          "answer": [
+            "La **huella del registro anterior**.",
+            "El **artículo 10** exige incluir «la serie, así como la fecha de expedición de la factura que consta en el registro de facturación […] **inmediatamente anterior**, junto con **parte de la huella o “hash” de dicho registro anterior**».",
+            "El artículo 11 repite la exigencia para las anulaciones. No hay forma de emitir un registro suelto."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Es una cadena de hashes"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/cadena-facturas.svg",
+          "alt": "Tres registros de facturación encadenados, cada uno incorporando la huella del anterior",
+          "caption": "Cada registro incorpora la huella del anterior. Igual que un bloque."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Por qué eso hace inalterable el registro",
+          "text": [
+            "Si modificas una factura antigua, cambia su huella. Y como la siguiente llevaba la huella vieja, deja de cuadrar. Y la siguiente. Y todas.",
+            "No hace falta vigilar las facturas: basta con comprobar la cadena."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "title": "Ya has visto esto",
+          "text": [
+            "Es exactamente el mecanismo de la lección 01 del curso de cripto de esta app: la tamper-evidencia no la da un vigilante, la da la aritmética."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que no es",
+          "text": [
+            "Verifactu **no** es la factura electrónica obligatoria entre empresas. Son dos obligaciones distintas, de normas distintas y con calendarios distintos.",
+            "Se confunden constantemente porque llegaron a la vez."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "Es un requisito sobre tu software, no sobre tu papeleo, y la responsabilidad es tuya aunque el programa lo haga otro.",
+            "Con esto cierra la máquina administrativa. En el capítulo siguiente, cómo se optimiza todo esto sin cruzar la línea."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Real Decreto 1007/2023, texto consolidado",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-24840",
+              "note": "arts. 3, 10 y 11, y disposición final cuarta"
+            },
+            {
+              "title": "Real Decreto-ley 15/2025, de 2 de diciembre",
+              "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2025-24446",
+              "note": "modifica los plazos de adaptación"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "17-la-ilustracion-a-medias",
+  "courseId": "historia-es",
+  "chapterId": "c5-borbones-1808",
+  "title": "La Ilustración a medias",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 5 — Borbones y 1808",
+          "heading": "La Ilustración a medias",
+          "text": [
+            "Madrid se amotina el 23 de marzo de 1766, tres días después de que se prohíban las capas largas y los sombreros de ala ancha.",
+            "Parece causa y efecto.",
+            "Llevaban ocho meses pasando otra cosa."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "15 de julio de 1765",
+          "text": [
+            "Carlos III promulga una **real pragmática** que establece la **libertad de comercio de granos** y **abole la tasa**: el precio máximo del trigo.",
+            "Es una reforma ilustrada de manual. Quitar el control de precios para que el mercado abastezca mejor."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que pasó en su lugar",
+          "text": [
+            "La liberalización **no frenó la especulación**, y coincidió con años de sequía y malas cosechas, cuyos efectos intensificó.",
+            "En los primeros meses de **1766 el precio del pan se dobló**. Subieron también el aceite y el tocino, los otros básicos de la mesa popular."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "text": [
+            "Añade la subida de alquileres provocada por las obras urbanísticas de Madrid y la presión fiscal. El malestar llevaba meses acumulándose."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "20 de marzo de 1766",
+          "text": [
+            "El marqués de **Esquilache** —Leopoldo de Gregorio, napolitano, favorito del rey— dicta un bando: prohibidos los sombreros de ala ancha, y a recortar las capas largas.",
+            "El argumento oficial es que ocultan armas. La intención de fondo es europeizar la ciudad: capa corta y sombrero de tres picos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Tres días después"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/pan-y-sombrero.svg",
+          "alt": "Línea temporal de julio de 1765 a marzo de 1766 con una banda larga de carestía y un tramo final de tres días destacado",
+          "caption": "Ocho meses de causa y tres días de detonante, a escala."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Madrid se amotina del 23 al 26 de marzo, con unos treinta mil participantes. ¿Contra qué, exactamente?",
+          "answer": [
+            "Contra las dos cosas, y no se equivocaron de enemigo.",
+            "La medida de las capas es una reforma de policía urbana impuesta desde arriba sobre una costumbre. La pragmática del grano es una reforma económica impuesta desde arriba sobre un mercado de subsistencia.",
+            "Es la misma lógica aplicada dos veces: decidir por la gente lo que le conviene, sin preguntarle y sin red por si sale mal."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y la respuesta del gobierno",
+          "text": [
+            "Se deroga el bando. Y en **1767** se expulsa a los **jesuitas**, con el pretexto de que habían promovido el motín.",
+            "Lo que no se hace es revisar la pragmática del grano."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "El gobierno concluye que el problema era un sombrero y una orden religiosa. ¿Qué le faltaba para enterarse de otra cosa?",
+          "answer": [
+            "Cualquier cauce por el que el afectado pudiera avisar **antes** del motín.",
+            "Ése es el límite exacto del despotismo ilustrado: reformas para el pueblo, sin el pueblo. Sin representación, sin prensa y sin nadie a quien reclamar, un gobierno sólo se entera de que ha doblado el precio del pan cuando la calle se lo dice a gritos.",
+            "Y como el único mensaje que llega es un motín, se lee como un problema de orden público. El diagnóstico falla porque falla el canal."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde falla esto",
+          "text": [
+            "Esto no demuestra que liberalizar sea malo. El problema fue liberalizar sin red y en años de malas cosechas.",
+            "Y la expulsión de los jesuitas tiene causas propias —el regalismo, el poder de la orden— que van mucho más allá del motín: aquí sólo se dice que el motín fue el pretexto, que es lo que sostienen las fuentes."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "La cifra de treinta mil amotinados es una estimación, como todas las de este tipo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que viene",
+          "text": [
+            "Un Estado que reforma sin preguntar funciona mientras haya alguien claro a quien obedecer.",
+            "En mayo de 1808 dejó de haberlo, y no por una invasión: por unas firmas."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Motín de Esquilache — desarrollo, causas y cifras",
+              "url": "https://es.wikipedia.org/wiki/Mot%C3%ADn_de_Esquilache"
+            },
+            {
+              "title": "«El motín de Esquilache (1766)», Universidad de Sevilla",
+              "url": "https://personal.us.es/alporu/historia/motin_esquilache.htm"
+            },
+            {
+              "title": "«El Motín de Esquilache: causas, consecuencias y conclusiones», UI1",
+              "url": "https://www.ui1.es/blog-ui1/15-de-abril-de-1766-el-motin-de-esquilache-ii-causas-consecuencias-y-conclusiones-del-motin"
+            },
+            {
+              "title": "Cronología 1765–1769, Universitat de València",
+              "url": "https://www.uv.es/ivorra/Historia/SXVIII/1765.htm",
+              "note": "Pragmática del 15 de julio de 1765"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

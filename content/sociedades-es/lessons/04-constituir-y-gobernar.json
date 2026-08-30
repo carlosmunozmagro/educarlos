@@ -1,0 +1,181 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "04-constituir-y-gobernar",
+  "courseId": "sociedades-es",
+  "chapterId": "c1-patrimonio-separado",
+  "title": "Constituir y gobernar",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 1 — La sociedad como patrimonio separado",
+          "heading": "Constituir y gobernar",
+          "text": [
+            "El 3 de marzo, Marta firmó unos estatutos de plantilla sin leerlos.",
+            "Dos cláusulas que no contienen nada van a costarle dinero.",
+            "El silencio de los estatutos también decide."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La escritura y los estatutos",
+          "text": [
+            "La escritura es el acto: quién constituye, con qué aportación, ante qué notario.",
+            "Los estatutos son otra cosa. Son las reglas «que han de regir el funcionamiento» de la sociedad (**art. 23 LSC**), y viven dentro de la escritura."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo mínimo que tienen que decir",
+          "text": [
+            "Denominación, domicilio, capital y participaciones. Y el **objeto social**, «determinando las actividades que lo integran»: no vale una fórmula genérica que lo abarque todo.",
+            "El de Ámbar Estudio es el diseño gráfico y la consultoría de marca."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Cómo se administra",
+          "text": [
+            "El **artículo 210.1** ofrece cuatro modos, y hay que elegir uno en los estatutos."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/modos-administracion.svg",
+          "alt": "Cuatro esquemas: un administrador único, dos solidarios separados, dos mancomunados unidos por una línea, y un consejo de tres dentro de una caja",
+          "caption": "La diferencia que importa está en el medio: quién puede firmar solo."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Solidarios o mancomunados",
+          "text": [
+            "Con administradores **solidarios**, cualquiera obliga a la sociedad él solo. Con **mancomunados**, hacen falta las dos firmas.",
+            "Es la decisión con más consecuencias prácticas del día de la escritura, y la que más se elige por inercia."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y en la anónima, menos margen",
+          "text": [
+            "El **artículo 210.2** sólo se aplica a la sociedad anónima: si la administración conjunta se confía a dos, actúan mancomunadamente; si a más de dos, **constituyen consejo obligatoriamente**.",
+            "La limitada no tiene ese tope."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Entra un socio en Ámbar y quieren pasar a dos administradores mancomunados. ¿Basta con un acuerdo de junta?",
+          "answer": [
+            "Con los estatutos de plantilla de Marta, no: sólo prevén administrador único, así que hace falta una **modificación estatutaria**, con su mayoría reforzada.",
+            "Existe un atajo, pero no el que suele creerse. El **artículo 210.3** permite a la limitada dejar varios modos previstos en estatutos y que la junta elija entre ellos sin modificarlos.",
+            "Aun así, el **artículo 210.4** exige escritura pública e inscripción «constituya o no modificación de los estatutos». El atajo ahorra la mayoría reforzada, no la notaría."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La cláusula que casi ninguna plantilla trae",
+          "text": [
+            "Dejar previstos los cuatro modos desde el principio no cuesta nada el día de la escritura, y ahorra una modificación estatutaria el día que la sociedad cambia.",
+            "Es la decisión más barata de este capítulo, y casi nadie la toma."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La segunda cláusula vacía",
+          "text": [
+            "El **artículo 217.1**: «El cargo de administrador es gratuito, a menos que los estatutos sociales establezcan lo contrario determinando el sistema de remuneración.»",
+            "Los estatutos de Marta no dicen nada. Su cargo de administradora es gratuito."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "title": "No es sólo mercantil",
+          "text": [
+            "Cobrar por un cargo que los estatutos declaran gratuito abre un problema con la deducibilidad del gasto. Es la lección 15."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y no basta con abrir la puerta",
+          "text": [
+            "Si los estatutos sí prevén retribución, el **artículo 217.2** enumera las formas posibles: asignación fija, dietas, participación en beneficios, retribución variable, indemnizaciones por cese.",
+            "Y el **217.3** añade que el importe máximo anual del conjunto de administradores lo aprueba la junta general."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Cuánto dura el cargo",
+          "text": [
+            "En la limitada, los administradores ejercen por **tiempo indefinido**, salvo que los estatutos fijen plazo (**art. 221.1**).",
+            "En la anónima el plazo es obligatorio y **no puede exceder de seis años** (**art. 221.2**), igual para todos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "La ley fija los valores por defecto y varios son restrictivos: cargo gratuito, un solo modo de administración, plazo indefinido. Los estatutos son el único sitio donde se cambian.",
+            "Aquí acaba el capítulo. En el siguiente, por qué el beneficio contable de Ámbar no es lo que paga impuestos."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley de Sociedades de Capital (RDL 1/2010), texto consolidado",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2010-10544",
+              "note": "arts. 23, 210, 217 y 221"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

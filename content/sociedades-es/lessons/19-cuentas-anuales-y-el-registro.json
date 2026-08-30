@@ -1,0 +1,151 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "19-cuentas-anuales-y-el-registro",
+  "courseId": "sociedades-es",
+  "chapterId": "c5-la-maquina",
+  "title": "Cuentas anuales y el Registro",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 5 — La máquina que hay que alimentar",
+          "heading": "Cuentas anuales y el Registro",
+          "text": [
+            "Tres fechas al año, y la última tiene una consecuencia que no es una multa.",
+            "Si Ámbar la falla, el Registro Mercantil deja de inscribir nada suyo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Primera: formular",
+          "text": [
+            "El **artículo 253.1 LSC** obliga a los administradores a formular las cuentas anuales «en el plazo máximo de **tres meses** contados a partir del cierre del ejercicio social».",
+            "Y deben ir firmadas por **todos** los administradores. Si falta una firma, hay que hacer constar por qué."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Segunda: aprobar",
+          "text": [
+            "El **artículo 164.1**: la junta general ordinaria «se reunirá necesariamente dentro de los **seis primeros meses** de cada ejercicio» para aprobar las cuentas del anterior."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "Y aquí la ley se relaja",
+          "text": [
+            "El apartado 2 añade que la junta «será válida aunque haya sido convocada o se celebre fuera de plazo». Celebrarla tarde no la invalida."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Tercera: depositar",
+          "text": [
+            "El **artículo 279.1**: «dentro del **mes siguiente a la aprobación**», hay que presentar en el Registro Mercantil la certificación del acuerdo junto con un ejemplar de las cuentas.",
+            "Esta es la fecha que importa de verdad."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/tres-fechas.svg",
+          "alt": "Línea temporal desde el cierre del ejercicio con tres hitos: tres meses para formular, seis para aprobar y un mes más para depositar",
+          "caption": "Las dos primeras admiten retraso. La tercera, no."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El cierre registral",
+          "text": [
+            "El **artículo 282.1**: no depositar en plazo «dará lugar a que **no se inscriba en el Registro Mercantil documento alguno referido a la sociedad** mientras el incumplimiento persista».",
+            "No es una sanción económica. Es que la sociedad deja de poder cambiar nada."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que eso significa un martes cualquiera",
+          "text": [
+            "No puedes nombrar ni cesar administradores. No puedes cambiar el domicilio. No puedes ampliar capital ni inscribir un poder para que alguien firme por ti.",
+            "La sociedad sigue operando, pero queda congelada en el Registro."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Ámbar lleva dos años sin depositar cuentas y Marta quiere dimitir como administradora. ¿Puede inscribir su dimisión?",
+          "answer": [
+            "Sí. Es una de las excepciones expresas del **artículo 282.2**.",
+            "Quedan fuera del cierre los títulos relativos al **cese o dimisión** de administradores, gerentes y liquidadores, a la revocación o renuncia de poderes, a la **disolución** de la sociedad, y a los asientos ordenados por la autoridad judicial o administrativa.",
+            "Tiene lógica: si el cierre impidiera dimitir, atraparía a los administradores en el cargo del que la ley les hace responder."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "¿Y auditarse?",
+          "text": [
+            "El **artículo 263.2** exceptúa a quien, durante **dos ejercicios consecutivos**, reúna al menos **dos** de estas tres: activo hasta **2.850.000 €**, cifra de negocios hasta **5.700.000 €**, o hasta **50** trabajadores de media."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "title": "Ámbar no se audita",
+          "text": [
+            "Con 180.000 € de cifra de negocios cumple dos de las tres de sobra. La obligación aparece cuando la empresa crece, y se pierde igual de despacio: dos ejercicios seguidos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "Tres meses para formular, seis para aprobar, uno más para depositar. Las dos primeras perdonan el retraso; la tercera cierra el Registro.",
+            "En la lección siguiente, la obligación más nueva de todas: cómo tienen que ser tus facturas."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley de Sociedades de Capital (RDL 1/2010)",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2010-10544",
+              "note": "arts. 164, 253, 263, 279 y 282"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

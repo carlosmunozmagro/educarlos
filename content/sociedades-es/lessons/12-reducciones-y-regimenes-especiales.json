@@ -1,0 +1,176 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "12-reducciones-y-regimenes-especiales",
+  "courseId": "sociedades-es",
+  "chapterId": "c3-irpf",
+  "title": "Reducciones y regímenes especiales",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 3 — Cómo tributas tú",
+          "heading": "Reducciones y regímenes especiales",
+          "text": [
+            "Marta quiere meter 10.000 € en un plan de pensiones y desgravárselos.",
+            "Puede reducir 1.500 €.",
+            "Salvo que Ámbar entre en la operación."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El límite que casi nadie recuerda bien",
+          "text": [
+            "El **artículo 52.1 LIRPF** fija como límite **la menor** de dos cantidades: el **30 %** de los rendimientos netos del trabajo y de actividades económicas, o **1.500 € anuales**.",
+            "Para cualquier renta por encima de 5.000 €, manda el segundo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y el que sí sube",
+          "text": [
+            "El mismo artículo añade que el límite «se incrementará en **8.500 euros anuales**, siempre que tal incremento provenga de **contribuciones empresariales**».",
+            "Diez mil euros de reducción sí existen. Pero no los pones tú solo."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/limite-pensiones.svg",
+          "alt": "Dos barras: una pequeña de 1.500 euros por aportación individual y otra mucho más larga de 8.500 euros que sólo se activa con contribución empresarial",
+          "caption": "La barra larga la abre la empresa, no la persona."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Marta aporta 10.000 € de su bolsillo a un plan de pensiones. ¿Cuánto reduce en su IRPF?",
+          "answer": [
+            "**1.500 €.** Los otros 8.500 € no reducen nada.",
+            "El incremento de 8.500 € exige contribución empresarial. Y aunque Ámbar contribuya, la aportación que ella puede acompañar está limitada por una tabla del propio artículo 52.1.",
+            "Es el primer sitio del curso donde la sociedad y la persona tienen que actuar a la vez para que algo funcione."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La tabla que ata tu parte"
+        },
+        {
+          "type": "table",
+          "columns": [
+            "Contribución de la empresa",
+            "Aportación máxima tuya"
+          ],
+          "rows": [
+            [
+              "Igual o inferior a 500 €",
+              "la contribución × 2,5"
+            ],
+            [
+              "Entre 500,01 y 1.500 €",
+              "1.250 € + 0,25 × (contribución − 500)"
+            ],
+            [
+              "Más de 1.500 €",
+              "la contribución × 1"
+            ]
+          ],
+          "caption": "Y siempre el multiplicador 1 si cobras más de 60.000 € de esa misma empresa."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El caso de Marta",
+          "text": [
+            "Si Ámbar aporta 1.500 € como contribución empresarial, ella puede acompañar con 1.250 € más 0,25 × 1.000, es decir **1.500 €**.",
+            "Entre las dos, 3.000 € — el doble de lo que ella podía sola, y con la mitad saliendo de la sociedad."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Trabajos en el extranjero",
+          "text": [
+            "El **artículo 7.p)** exime los rendimientos por trabajos **efectivamente realizados en el extranjero** para una entidad **no residente**, en un país con impuesto análogo que no sea paraíso fiscal.",
+            "Con un límite de **60.100 € anuales**."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "title": "Efectivamente realizados",
+          "text": [
+            "Teletrabajar desde Madrid para un cliente extranjero no cuenta. La norma exige días de estancia fuera, y la exención se calcula sobre ellos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Impatriados",
+          "text": [
+            "El **artículo 93** permite a quien traslada su residencia fiscal a España tributar por el Impuesto sobre la Renta de no Residentes durante el año del cambio y los **cinco siguientes**.",
+            "Requisito de entrada: **no haber sido residente en España durante los cinco períodos anteriores**."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Cuáles le aplican a Marta",
+          "text": [
+            "Ninguno de los dos últimos. No trabaja fuera y lleva toda la vida en Madrid.",
+            "Le queda el plan de pensiones, y sólo funciona de verdad si Ámbar participa. Ese patrón — la persona sola llega hasta aquí, la persona con su sociedad llega más lejos — es el capítulo 6 entero."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "Por tu cuenta, 1.500 €. Con tu empresa, hasta 10.000 €. Y los regímenes especiales existen, pero tienen puertas estrechas: trabajo físico fuera, o cinco años sin ser residente.",
+            "Aquí cierra tu IRPF. En el capítulo siguiente, las tres vías para sacar dinero de la sociedad, ya con las dos escalas en la mano."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 35/2006, del IRPF, texto consolidado",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+              "note": "arts. 7.p), 51, 52 y 93"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

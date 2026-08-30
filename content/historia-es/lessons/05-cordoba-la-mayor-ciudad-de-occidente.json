@@ -1,0 +1,225 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "05-cordoba-la-mayor-ciudad-de-occidente",
+  "courseId": "historia-es",
+  "chapterId": "c2-711-al-andalus",
+  "title": "Córdoba, la mayor ciudad de Occidente",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 2 — 711 y al-Ándalus",
+          "heading": "Córdoba, la mayor ciudad de Occidente",
+          "text": [
+            "La cifra que has oído es **un millón de habitantes**.",
+            "Vamos a seguirla hacia atrás, eslabón a eslabón, hasta el sitio del que sale.",
+            "No acaba donde esperas."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que sí se sostiene",
+          "text": [
+            "En el **929**, Abd al-Rahman III se proclama califa y rompe con Bagdad. Córdoba pasa a ser capital de califato.",
+            "Que fue la mayor ciudad de la Europa occidental de su tiempo es una afirmación sólida. El problema empieza al ponerle un número."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El rango publicado",
+          "text": [
+            "Los autores más conservadores hablan de **100.000 o 150.000** habitantes. Los más generosos, de **un millón**.",
+            "No es un margen de error. Es un orden de magnitud entero."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/cordoba-rango.svg",
+          "alt": "Barra de escala de cero a un millón, con el tramo de cien a ciento cincuenta mil destacado en un extremo",
+          "caption": "Un **factor de 10** entre el suelo y el techo. Y el techo es el que ha viajado."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "De dónde sale el millón",
+          "text": [
+            "De un censo atribuido a **Almanzor**, que no conservamos.",
+            "Nos llega a través de **al-Maqqari**, historiador argelino que escribe en el **siglo XVII**: seis o siete siglos después de los hechos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que dice el censo",
+          "text": [
+            "Más de **200.000 viviendas**. **60.000 residencias** de aristócratas y oficiales del Estado. Más de **80.000 tiendas**.",
+            "Fíjate en que ninguna de esas tres cifras es una cifra de personas."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "El censo cuenta viviendas. La cifra famosa cuenta habitantes. ¿Qué se ha añadido entre una cosa y la otra?",
+          "answer": [
+            "Un supuesto: **cinco personas por vivienda**.",
+            "200.000 × 5 = un millón. La multiplicación no está en la fuente; la pone quien hace la cuenta, siglos más tarde.",
+            "Puede ser una media razonable. Pero una media razonable aplicada a un dato transmitido en el siglo XVII no produce una medición: produce una estimación con dos incertidumbres encadenadas."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La cadena entera",
+          "text": [
+            "Puesta en fila, se ve lo que es."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/cadena-del-millon.svg",
+          "alt": "Cuatro pasos encadenados: censo atribuido a Almanzor, transmisión por al-Maqqari en el siglo XVII, multiplicación por cinco, y el millón resultante",
+          "caption": "Cada eslabón es defendible. El resultado sigue sin ser una medición."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Una cifra puede ser falsa sin que nadie mienta",
+          "text": [
+            "Al-Maqqari transmite lo que encontró. El censo pudo existir. Cinco personas por vivienda es plausible.",
+            "Y aun así el resultado no vale, porque **la incertidumbre se multiplica igual que los números**."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "La arqueología urbana reciente tiende a rebajar la cifra, no a confirmarla."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Segundo caso: la biblioteca",
+          "text": [
+            "**Al-Hakam II** reina del **961** al **976** y reúne la biblioteca más famosa del Occidente de su siglo.",
+            "La cifra popular es de **400.000 volúmenes**. Otras fuentes dicen **100.000**. Otras, **40.000**.",
+            "Otra vez un factor de diez."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Pero aquí hay otro dato",
+          "text": [
+            "Uno de naturaleza distinta, y mucho más manejable: **el catálogo**.",
+            "Según las fuentes andalusíes, ocupaba **44 cuadernos de 50 folios** cada uno."
+          ]
+        },
+        {
+          "type": "formula",
+          "tex": "44 \\times 50 = 2.200",
+          "caption": "folios de catálogo para describir la biblioteca entera."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "2.200 folios de catálogo. Si la biblioteca tuviera 400.000 volúmenes, ¿qué tendría que caber en cada folio?",
+          "answer": [
+            "Unos **180 títulos por folio**. Para 40.000 volúmenes bastarían unos 18.",
+            "Dieciocho entradas por folio es una densidad de escritura normal. Ciento ochenta, no.",
+            "Esto no demuestra cuál es la cifra buena: no sabemos cuántas entradas cabían. Enseña qué hacer con una cifra sospechosa — buscar otro dato, de otra naturaleza, que tenga que ser compatible con ella."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde falla esto",
+          "text": [
+            "La prueba del catálogo es una comprobación de orden de magnitud, no un cálculo. Presentarla como cálculo sería el mismo error que denuncia.",
+            "Y rebajar una cifra inflada **no rebaja la ciudad**: la comparación —la mayor de Occidente— aguanta sin necesidad de inflar nada."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Estas cifras se usan hoy como munición en las dos direcciones. Eso es un problema del presente, no del siglo X."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que viene",
+          "text": [
+            "Ya has visto lo que le pasa a un número cuando nadie le pide cuentas.",
+            "Ahora toca una palabra a la que tampoco se las han pedido, y que además trae un modelo entero escondido dentro."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "«La ciudad de un millón de habitantes» — origen del censo transmitido por al-Maqqari",
+              "url": "https://www.artencordoba.com/blog/cordoba/la-ciudad-de-millon-de-habitantes/"
+            },
+            {
+              "title": "«La Córdoba califal y Madinat al-Zahra», Memorias Hispánicas",
+              "url": "https://lahistoriaespana.com/la-cordoba-califal-y-madinat-al-zahra/",
+              "note": "Rango de estimaciones de población"
+            },
+            {
+              "title": "Al-Hakam II — reinado (961–976) y biblioteca",
+              "url": "https://en.wikipedia.org/wiki/Al-Hakam_II"
+            },
+            {
+              "title": "«Ibn Hazm de Córdoba y el valor de las ciencias», Dialnet",
+              "url": "https://dialnet.unirioja.es/descarga/articulo/7248039.pdf",
+              "note": "El catálogo de 44 cuadernos"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

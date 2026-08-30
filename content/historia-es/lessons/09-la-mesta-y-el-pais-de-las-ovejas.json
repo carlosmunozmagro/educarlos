@@ -1,0 +1,212 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "09-la-mesta-y-el-pais-de-las-ovejas",
+  "courseId": "historia-es",
+  "chapterId": "c3-maquina-medieval",
+  "title": "La Mesta, o el país de las ovejas",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 3 — La máquina medieval",
+          "heading": "La Mesta, o el país de las ovejas",
+          "text": [
+            "Tienes un pasto arrendado. Crees que la tierra rendiría más arada.",
+            "Nadie te prohíbe ararla.",
+            "Y aun así no vas a poder."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "2 de septiembre de 1273",
+          "text": [
+            "Alfonso X reúne en una sola asociación a los pastores de los reinos de León y Castilla, y le concede carta de privilegio con el título de **«Honrado»**.",
+            "Nace el **Honrado Concejo de la Mesta**. Se disolverá en 1836."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/mesta-563.svg",
+          "alt": "Línea temporal de 1273 a 1836 con el hito del derecho de posesión en el siglo XVI",
+          "caption": "**563 años** de la misma institución, con los mismos privilegios de fondo."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Los privilegios que todo el mundo cita",
+          "text": [
+            "Derecho de paso y de pasto. Ventajas fiscales. Una red de **cañadas reales** que cruza el territorio desde las dehesas extremeñas y manchegas hasta los pastos del norte.",
+            "Y exenciones llamativas: del **servicio militar** y de **testificar en juicio**."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "text": [
+            "Ninguno de ésos es el privilegio que explica el resultado."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El derecho de posesión",
+          "text": [
+            "El ganadero que ha arrendado un pasto adquiere un **derecho preferente a seguir disfrutándolo**. Y a los demás ganaderos **se les prohíbe pujar** por ese mismo pasto mientras dure el arriendo.",
+            "Se fija en su forma básica a comienzos del siglo XVI y sigue vigente hasta mediados del XIX."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Nadie te ha prohibido arar tu tierra. ¿Qué te lo impide entonces?",
+          "answer": [
+            "Que has perdido el mercado.",
+            "Tu arrendatario tiene derecho a seguir, y a los demás ganaderos les está prohibido pujar por tu pasto: no hay nadie que pueda ofrecerte más, así que no puedes subir la renta ni cambiar de arrendatario.",
+            "Añade los límites al cierre de fincas, las restricciones a la roturación y el precio de los pastos regulado. Ninguna de esas normas dice «no ares». Todas juntas hacen que no puedas."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Cuatro piezas, un resultado",
+          "text": [
+            "Por separado, cada una parece una regulación menor. Juntas forman un trinquete: giran en un sentido y no vuelven."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/trinquete-mesta.svg",
+          "alt": "Cuatro cajas —derecho de posesión, prohibido pujar, límite al cierre y precio regulado— con flechas que convergen en una quinta: el suelo no se reasigna",
+          "caption": "Nadie prohibió arar. Se prohibió pujar."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La corrección que importa",
+          "text": [
+            "Se suele decir que la Mesta frenó la agricultura porque **la lana daba más dinero que el trigo**.",
+            "Puede que lo diera y puede que no. Lo que sabemos es que **el sistema impedía averiguarlo**."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "Un suelo con el precio intervenido y el arrendatario fijado no cambia de uso aunque cambiarlo sea mejor negocio. Eso no es una ventaja competitiva: es la ausencia de competencia."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El pleito que no se acaba nunca",
+          "text": [
+            "La dominación mestenna nunca fue pacífica. Los poderes locales chocan con la Mesta desde el principio, y el litigio entre agricultores y ganaderos es continuo durante siglos.",
+            "La tierra de labor va siendo invadida por la de pasto, con una legislación que favorece a la ganadería."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "El conflicto entre agricultores y ganaderos duró siglos y llegó hasta 1836. ¿Qué demuestra esa duración?",
+          "answer": [
+            "Que no era un equilibrio de mercado.",
+            "Un uso del suelo que gana por rentabilidad no necesita pleitear cada generación para conservar su posición: lo conserva solo, porque paga más.",
+            "Que hiciera falta litigar durante cinco siglos es la prueba de que lo que sostenía el sistema era el privilegio, no el precio."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde encaja esto",
+          "text": [
+            "Nada de esto se puede montar en cualquier sitio. Necesita espacio abierto y grandes propiedades.",
+            "Es decir: necesita exactamente lo que el repartimiento y las órdenes militares habían dejado en el sur y en La Mancha. La Mesta se construye **encima** de una estructura de propiedad que ya existía."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde falla esto",
+          "text": [
+            "No cargues cinco siglos de atraso agrario sobre una sola institución. Pesan también el clima, la fiscalidad y el régimen de propiedad heredado.",
+            "Y el retrato clásico de Julius Klein, de 1920, ha sido revisado a fondo."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Circula una cifra de veintiún millones de ovejas en 1521. No la uses: es inverosímil como cabaña trashumante. Esta lección no necesita contar ovejas."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que viene",
+          "text": [
+            "Ya tienes la tierra repartida y su uso congelado.",
+            "Falta la boda que, según casi todos los relatos, convierte todo esto en un país. No lo hizo."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "«Los privilegios de la Mesta de 1273 y 1276», Boletín de la Real Academia de la Historia",
+              "url": "https://www.cervantesvirtual.com/descargaPdf/los-privilegios-de-la-mesta-de-1273-y-1276-0/"
+            },
+            {
+              "title": "«Aspectos histórico-jurídicos de la Mesta en Extremadura (1700–1836): el derecho de posesión mesteño», Dialnet",
+              "url": "https://dialnet.unirioja.es/servlet/tesis?codigo=18732"
+            },
+            {
+              "title": "«La aplicación en la Sierra soriana del derecho de posesión», Ministerio de Agricultura (PDF)",
+              "url": "https://www.mapa.gob.es/ministerio/pags/Biblioteca/Revistas/pdf_reeap/r195_03.pdf"
+            },
+            {
+              "title": "«Sesenta años después: la Mesta de Julius Klein a la luz de la investigación reciente» (PDF)",
+              "url": "https://www.mapa.gob.es/ministerio/pags/biblioteca/fondo/pdf/4388_3.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

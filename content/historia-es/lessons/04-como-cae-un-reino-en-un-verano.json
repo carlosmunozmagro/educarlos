@@ -1,0 +1,221 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "04-como-cae-un-reino-en-un-verano",
+  "courseId": "historia-es",
+  "chapterId": "c2-711-al-andalus",
+  "title": "Cómo cae un reino en un verano",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 2 — 711 y al-Ándalus",
+          "heading": "Cómo cae un reino en un verano",
+          "text": [
+            "El 5 de abril del **713**, un noble godo firma un acuerdo con el hijo del gobernador de África.",
+            "Conserva sus tierras, su cargo, sus iglesias y su religión.",
+            "Sólo tiene que pagar."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El reino ya estaba partido",
+          "text": [
+            "En el **710**, la sucesión al trono visigodo se disputa entre los partidarios de los hijos de Witiza y **Rodrigo**. No era una anomalía: el reino nunca tuvo un modo pacífico de cambiar de rey.",
+            "Un ejército derrotado no es un Estado derrotado, salvo que el Estado ya esté roto por dentro."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Teodomiro capitula por siete ciudades",
+          "text": [
+            "**Teodomiro**, noble visigodo del sureste, negocia con **Abd al-Aziz ibn Musa** en nombre de siete ciudades.",
+            "Entre ellas **Orihuela**, **Lorca** y **Mula**. Las otras cuatro se discuten: las transcripciones árabes no se dejan leer con seguridad."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que el texto le garantiza",
+          "text": [
+            "Que no cambiará su posición ni la de los suyos, y que no se le privará de su dominio. Que no serán matados ni esclavizados. Que no serán separados de sus hijos ni de sus mujeres. Que no serán forzados a abandonar su religión ni les quemarán las iglesias."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/pacto-tudmir.svg",
+          "alt": "Dos paneles: arriba lo que Teodomiro conserva, abajo lo que paga cada año por persona",
+          "caption": "La conquista no le cuesta su tierra, su cargo ni su fe. Le cuesta un impuesto."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que paga",
+          "text": [
+            "Por persona y año: **1 dinar** en metálico, cuatro medidas de trigo, cuatro de cebada, cuatro de zumo de uva y cuatro de vinagre, y dos de miel y dos de aceite de oliva.",
+            "Veinte medidas en especie. Los siervos pagan una sola."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Teodomiro conserva sus tierras, su cargo, sus iglesias y su religión. ¿Qué pierde exactamente?",
+          "answer": [
+            "Dinero y soberanía. Nada más.",
+            "Y fíjate en un detalle del texto: el pacto se molesta en prohibir expresamente que los maten, los esclavicen, los separen de sus familias o les quemen las iglesias.",
+            "Un documento revela lo que se temía por aquello que se toma la molestia de prohibir. Frente a esa alternativa, un dinar al año es barato."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Por eso fue rápido",
+          "text": [
+            "La conquista avanza sobre todo por acuerdos como éste. Al señor local que ya había perdido la partida sucesoria se le ofrece continuidad a cambio de tributo.",
+            "La pregunta deja de ser por qué el reino cayó deprisa. Pasa a ser por qué alguien iba a resistir."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "No hizo falta arrasar. Hizo falta ofrecer un trato mejor que el que ofrecía el bando perdedor de una guerra civil."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y ahora el problema",
+          "text": [
+            "Del pacto **no se conserva el original**.",
+            "Lo que hay son tres copias posteriores, hechas por tres eruditos andalusíes distintos, en tres siglos distintos."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/fuentes-711.svg",
+          "alt": "Línea temporal con el pacto en 713, la Crónica mozárabe en 754 y las tres copias de los siglos XI, XII y XIII",
+          "caption": "Entre el hecho y las copias que lo transmiten pasan **entre tres y cinco siglos**."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Las tres copias, y la crónica",
+          "text": [
+            "El geógrafo **al-Udri** en el siglo XI, el historiador **al-Dabbi** en el XII y el viajero **al-Gharnati** en el XIII.",
+            "La fuente cristiana más antigua sobre la conquista es la **Crónica mozárabe de 754**, escrita cuarenta y tres años después del 711 — y providencialista: lee lo ocurrido como castigo."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "text": [
+            "Ninguna fuente sobre el 711 fue escrita en el 711."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Si ninguna fuente es contemporánea y del pacto no queda el original, ¿por qué damos crédito a su contenido?",
+          "answer": [
+            "Porque **convergen**. Tres copistas de siglos distintos, con oficios y propósitos distintos —un geógrafo, un historiador, un viajero— transmiten lo mismo.",
+            "Y porque el contenido encaja con la práctica de capitulación documentada en otros lugares de la conquista.",
+            "El criterio no es la antigüedad de la copia: es que varias transmisiones independientes coincidan y que el contenido sea coherente con lo que sabemos por otras vías."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde falla esto",
+          "text": [
+            "Hubo violencia y hubo resistencia: hay ciudades tomadas por la fuerza. Los pactos explican la velocidad, no todo lo ocurrido.",
+            "Y Tudmir es el pacto **mejor conservado**, que no es lo mismo que el más representativo."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Las cifras de tropas que circulan proceden de fuentes tardías y no son fiables. Del lugar exacto de la batalla del Guadalete tampoco hay acuerdo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que viene",
+          "text": [
+            "De ese territorio nace, en dos siglos, la ciudad más grande de la Europa occidental.",
+            "Y con ella la cifra peor tratada de toda la historia de España."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "Un reino no cae porque el enemigo sea fuerte. Cae cuando rendirse es, para los suyos, la opción razonable."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Pacto de Teodomiro — texto, condiciones y transmisión",
+              "url": "https://es.wikipedia.org/wiki/Pacto_de_Teodomiro",
+              "note": "Las tres copias: al-Udri, al-Dabbi y al-Gharnati"
+            },
+            {
+              "title": "Comentario del texto: Pacto de Teodomiro con Abd al-Aziz, 713 (PDF)",
+              "url": "http://temasdehistoria.es/2_eso_texto/15_comentario_texto_pacto_teodomiro.pdf"
+            },
+            {
+              "title": "«Dos crónicas mozárabes, fuentes para el estudio de la conquista de al-Ándalus», Dialnet",
+              "url": "https://dialnet.unirioja.es/descarga/articulo/4218278.pdf"
+            },
+            {
+              "title": "Crónica mozárabe de 754",
+              "url": "https://en.wikipedia.org/wiki/Chronicle_of_754",
+              "note": "El testimonio latino más antiguo sobre la conquista"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

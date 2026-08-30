@@ -1,0 +1,226 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "02-la-responsabilidad-que-no-es-limitada",
+  "courseId": "sociedades-es",
+  "chapterId": "c1-patrimonio-separado",
+  "title": "La responsabilidad que no es limitada",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 1 — La sociedad como patrimonio separado",
+          "heading": "La responsabilidad que no es limitada",
+          "text": [
+            "Al tercer año, Ámbar Estudio pierde a su cliente principal y cierra el ejercicio en pérdidas.",
+            "Lo que puede costarle a Marta su propio dinero no son las pérdidas.",
+            "Son los dos meses siguientes."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Los números del cierre",
+          "text": [
+            "Ámbar Estudio se constituyó con un capital social de 3.000 €. Al cerrar el ejercicio, su patrimonio neto es de 900 €.",
+            "Marta lo ve al formular las cuentas. Está preocupada, pero la sociedad sigue facturando y sigue pagando."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/patrimonio-neto.svg",
+          "alt": "Dos barras comparadas: el capital social de 3.000 € y el patrimonio neto de 900 €, con una línea discontinua marcando la mitad del capital",
+          "caption": "El patrimonio neto ha caído por debajo de la mitad del capital."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Eso ya tiene nombre",
+          "text": [
+            "El **artículo 363.1.e) LSC** convierte en causa de disolución las «pérdidas que dejen reducido el patrimonio neto a una cantidad inferior a la mitad del capital social».",
+            "La mitad de 3.000 € son 1.500 €. Ámbar está en 900 €."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dos meses",
+          "text": [
+            "El **artículo 365.1** obliga a los administradores a convocar la junta general en el plazo de dos meses, para disolver o para remover la causa: ampliar capital, reducirlo, o aportar fondos.",
+            "Marta no convoca nada. Sigue trabajando."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que se activa entonces",
+          "text": [
+            "El **artículo 367.1 LSC**: quien incumple ese deber responde **solidariamente** de las obligaciones sociales _posteriores_ al acaecimiento de la causa.",
+            "No es una indemnización proporcional. Es la deuda entera, y el acreedor puede ir directamente a por Marta."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/reloj-367.svg",
+          "alt": "Línea temporal con la causa de disolución, un tramo de dos meses y una zona sombreada a partir de ahí",
+          "caption": "Las deudas anteriores a la causa quedan fuera. Las posteriores, no."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "En mayo un proveedor reclama 20.000 €. Marta sostiene que esa deuda es anterior a las pérdidas. ¿Quién tiene que demostrar la fecha?",
+          "answer": [
+            "Marta. Y es la parte que casi nunca se cuenta.",
+            "El **artículo 367.2** invierte la carga: las obligaciones reclamadas judicialmente «se presumirán de fecha posterior al acaecimiento de la causa de disolución», salvo prueba en contrario.",
+            "El acreedor no tiene que probar cuándo nació la deuda. La administradora sí."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La puerta que dejó abierta la Ley 16/2022",
+          "text": [
+            "El **artículo 367.3** desactiva la responsabilidad si, dentro de esos dos meses, los administradores comunican al juzgado que negocian un plan de reestructuración, o solicitan el concurso."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "El plazo se reanuda",
+          "text": [
+            "Si el plan no se alcanza, los dos meses vuelven a correr desde que esa comunicación deja de producir efectos. La puerta se cierra sola."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La segunda vía: el daño",
+          "text": [
+            "El **artículo 241 LSC** deja a salvo las acciones de indemnización de socios y terceros «por actos de administradores que lesionen directamente los intereses de aquellos».",
+            "Aquí no basta con dejar pasar un plazo: hay que probar el daño y que lo causó su conducta."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La tercera vía: Hacienda",
+          "text": [
+            "El **artículo 43.1 LGT** hace responsables subsidiarios a los administradores de hecho o de derecho por las infracciones tributarias de la sociedad, y por las deudas pendientes cuando la sociedad cesa en su actividad."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "title": "Y alcanza a las sanciones",
+          "text": [
+            "En el supuesto de la letra a), la responsabilidad «también se extenderá a las sanciones». No sólo a la cuota dejada de ingresar."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Tres vías, tres disparadores"
+        },
+        {
+          "type": "table",
+          "columns": [
+            "Vía",
+            "Qué la dispara",
+            "Alcance"
+          ],
+          "rows": [
+            [
+              "Por deudas · art. 367 LSC",
+              "No convocar junta en dos meses",
+              "Solidaria, deudas posteriores"
+            ],
+            [
+              "Por daño · art. 241 LSC",
+              "Acto que lesiona directamente a un tercero",
+              "Indemnización del daño"
+            ],
+            [
+              "Tributaria · art. 43 LGT",
+              "Infracción, o cese con deudas pendientes",
+              "Subsidiaria; alcanza sanciones"
+            ]
+          ],
+          "caption": "Ninguna necesita levantar el velo societario. Y sólo la primera se activa sin que hayas hecho nada mal."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y si el capital fuera de un euro",
+          "text": [
+            "Si Ámbar se hubiera constituido con 1 € de capital, la mitad sería 0,50 €. Esa causa concreta casi nunca se activaría.",
+            "Las demás siguen ahí: el cese de actividad durante más de un año (**art. 363.1.a**) y el deber de instar el concurso."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "La responsabilidad limitada limita lo que arriesgas como **socia**. No limita aquello de lo que respondes como **administradora**.",
+            "Marta no perdió la protección por gestionar mal, sino por no hacer nada durante dos meses. En la lección siguiente, qué forma elegir y qué cuesta de verdad ese capital de un euro."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley de Sociedades de Capital (RDL 1/2010), texto consolidado",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2010-10544",
+              "note": "arts. 241, 363, 365 y 367"
+            },
+            {
+              "title": "Ley 58/2003, General Tributaria",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23186",
+              "note": "art. 43.1, responsables subsidiarios"
+            },
+            {
+              "title": "Ley 16/2022, de reforma del texto refundido de la Ley Concursal",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-14580",
+              "note": "da nueva redacción a los arts. 365 y 367 LSC"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

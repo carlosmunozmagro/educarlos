@@ -1,0 +1,274 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "01-por-que-el-latin-gano",
+  "courseId": "historia-es",
+  "chapterId": "c1-hispania",
+  "title": "Por qué el latín ganó y el resto no",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 1 — Hispania",
+          "heading": "Por qué el latín ganó y el resto no",
+          "text": [
+            "El 15 de mayo del 87 a. C., dos pueblos celtíberos resuelven un pleito por unas aguas.",
+            "El documento que lo recoge está escrito en latín.",
+            "Faltaban sesenta y ocho años para que Roma terminara de conquistar la Península."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Doscientos años, no una invasión",
+          "text": [
+            "Roma desembarca en Emporion en el **218 a. C.** y no acaba las guerras cántabras hasta el **19 a. C.** Son ciento noventa y nueve años: seis o siete generaciones.",
+            "El sur está integrado mucho antes de que el norte esté siquiera sometido."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/hispania-cronologia.svg",
+          "alt": "Línea temporal del 218 a. C. al 74 d. C. con una banda que marca la conquista y cuatro hitos: Emporion, la Tabula Contrebiensis, el fin de las guerras cántabras y el edicto de latinidad",
+          "caption": "El pleito en latín cae **dentro** de la banda de conquista, no después."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El pleito de Salduie contra Alaun",
+          "text": [
+            "**Salduie** (Zaragoza) quiere abrir una canalización de aguas. **Alaun** (Alagón) se considera perjudicada.",
+            "Encomiendan el fallo a los magistrados de **Contrebia Belaisca**, que dan la razón a Salduie. Todo con la sanción del procónsul **Cayo Valerio Flaco**.",
+            "Es el pleito documentado más antiguo de la Península."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "text": [
+            "Veinte líneas sobre una lámina de bronce de unos 41 × 20 cm, halladas en Botorrita a finales de 1979."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Los que pleitean son celtíberos. Los jueces son celtíberos. El conflicto es entre ellos. ¿Por qué el documento está en latín?",
+          "answer": [
+            "Porque el fallo no valía por sí solo: necesitaba la sanción del procónsul romano.",
+            "La lengua del derecho es la lengua de quien garantiza que la sentencia se cumpla. En el mismo yacimiento aparecieron otros tres bronces en lengua celtíbera. El que resuelve un conflicto con efectos reales está en latín.",
+            "El latín entra como lengua jurídica antes que como lengua de calle."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Roma nunca obligó a hablar latín",
+          "text": [
+            "No existe ninguna norma romana que imponga la lengua. No hacía falta.",
+            "Lo que Roma tenía era un sistema en el que el estatuto jurídico —quién eres ante la ley— se ganaba y se documentaba en latín.",
+            "Y ese sistema tenía una escalera."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El escalón intermedio",
+          "text": [
+            "El **derecho latino** no te hace ciudadano romano. Convierte tu ciudad en un municipio organizado a la romana.",
+            "Vespasiano lo concede a toda Hispania, hacia el **74 d. C.** Plinio lo resume en cuatro palabras: _universae Hispaniae … Latium tribuit_."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/escalera-ciudadania.svg",
+          "alt": "Tres cajas de altura creciente: peregrino, ius Latii y ciudadanía romana, con una flecha etiquetada ejerces un cargo entre las dos últimas",
+          "caption": "El derecho latino es la escalera, no el piso."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que se gana con un cargo",
+          "text": [
+            "En ese municipio, quien ejerce una magistratura obtiene la ciudadanía romana. Y con él, sus padres, su mujer y sus hijos.",
+            "Cada año hay magistrados nuevos. La élite local se hace romana cargo a cargo."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "title": "El mecanismo entero",
+          "text": [
+            "Roma no impuso el latín: hizo caro no saberlo. El pleito, el cargo, el censo y la herencia del estatuto pasaban por documentos en latín."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Irni, un pueblo que nadie conocía",
+          "text": [
+            "En la primavera de **1981**, unos buscadores de monedas con detectores desenterraron en **El Saucejo (Sevilla)** seis tablas de bronce.",
+            "Contenían la ley municipal de Irni, del **91 d. C.**, un municipio que no aparecía en ninguna fuente. Es la ley municipal romana más completa que se conoce."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "text": [
+            "Seis tablas de las diez originales: cinco completas y una fragmentaria. El texto entero rondaría unos noventa capítulos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Un pueblo cualquiera, su ley en bronce",
+          "text": [
+            "Irni no era una capital. Era un sitio pequeño de la sierra sevillana, tan menor que su nombre se había perdido.",
+            "Y tenía escritas, en bronce y en latín, sus elecciones, sus juicios, su gasto público y las condiciones para que un vecino se hiciera ciudadano romano."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "De todas las lenguas que se hablaban en la Península antes de Roma, sobrevive exactamente una. Con este mecanismo delante, ¿dónde esperarías encontrarla?",
+          "answer": [
+            "Donde no hubo municipios.",
+            "El euskera sobrevive en la franja de menor densidad urbana y de integración jurídica más tardía. El ibérico, el celtíbero, el lusitano y el tartésico desaparecen: todos ellos se hablaban en zonas que se llenaron de municipios.",
+            "Y ahí está la prueba en contra del modelo intuitivo: esa franja no fue la que menos violencia recibió, sino la que más y durante más tiempo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La lengua sigue al derecho, no a las legiones",
+          "text": [
+            "Si el latín se hubiera impuesto por la fuerza, el euskera no existiría.",
+            "El modelo correcto predice lo que se observa: latín fortísimo donde hubo ciudades con ley propia, débil o nulo donde no las hubo."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/donde-no-hubo-ciudades.svg",
+          "alt": "Dos columnas comparadas: zonas con muchos municipios donde el latín gana, y zonas casi sin municipios donde sobrevive el euskera",
+          "caption": "La única lengua superviviente está donde el incentivo no llegó."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde falla esto",
+          "text": [
+            "El texto de Plinio está discutido: hay dos transcripciones posibles, y cambian el sentido y quizá la fecha. También se debate si el edicto fue realmente universal e inmediato o se aplicó por fases.",
+            "Y el mecanismo explica bien la élite urbana; explica mucho peor el campo."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "La supervivencia del euskera se explica por ausencia de ciudades. Es la hipótesis más aceptada, no una demostración."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Cuando el incentivo deja de hacer falta",
+          "text": [
+            "En el **212 d. C.**, la _Constitutio Antoniniana_ concede la ciudadanía a casi todos los libres del Imperio. La escalera se vuelve innecesaria.",
+            "Para entonces el latín llevaba generaciones ganado."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Qué pasó con las tablas de Irni",
+          "text": [
+            "Hacia los siglos III y IV alguien las llevó a un taller de bronce **para fundirlas**. Nadie llegó a echarlas al horno.",
+            "Se salvaron por accidente y hoy están en el Museo Arqueológico de Sevilla."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "Una lengua no gana porque un ejército la traiga. Gana cuando es la lengua en la que se es alguien ante la ley."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que viene",
+          "text": [
+            "Ya sabes cómo Hispania se hizo romana por dentro. Falta medir cuánto pesaba por fuera — y la mejor prueba no es que diera emperadores, sino un vertedero de Roma con más de cincuenta millones de ánforas."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Plinio el Viejo, Naturalis Historia III, 30",
+              "url": "https://www.thelatinlibrary.com/pliny.nh3.html",
+              "note": "«universae Hispaniae … Latium tribuit»"
+            },
+            {
+              "title": "Lex Irnitana — Museo Arqueológico de Sevilla",
+              "url": "https://www.museosdeandalucia.es/web/museoarqueologicodesevilla/obras-singulares/-/asset_publisher/GRnu6ntjtLfp/content/lex-irnitana",
+              "note": "Datación, hallazgo y tablas conservadas"
+            },
+            {
+              "title": "J. González, «The Lex Irnitana», Journal of Roman Studies 76 (1986)",
+              "url": "https://www.cambridge.org/core/journals/journal-of-roman-studies/article/abs/lex-irnitana-a-new-copy-of-the-flavian-municipal-law/851F61C1F34CA9916989C215C177DD57"
+            },
+            {
+              "title": "Tabula Contrebiensis — Patrimonio Cultural Aragonés",
+              "url": "http://cartografiapatrimoniocultural.unizar.es/lugares-de-memoria/escrito-bronce-contrebia-belaisca",
+              "note": "15 de mayo del 87 a. C."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

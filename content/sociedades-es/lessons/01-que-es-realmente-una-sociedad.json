@@ -1,0 +1,220 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "01-que-es-realmente-una-sociedad",
+  "courseId": "sociedades-es",
+  "chapterId": "c1-patrimonio-separado",
+  "title": "Qué es realmente una sociedad",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 1 — La sociedad como patrimonio separado",
+          "heading": "Qué es realmente una sociedad",
+          "text": [
+            "El 3 de marzo, Marta firma ante notario la escritura de su estudio de diseño, Ámbar Estudio, SL.",
+            "El 5 de marzo firma el alquiler de la oficina.",
+            "Una de esas dos firmas la deja expuesta."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dos patrimonios, no uno",
+          "text": [
+            "Ámbar Estudio tiene su propio CIF y su propia cuenta bancaria. Marta es la única socia y la administradora.",
+            "Aun así son dos patrimonios distintos, y el dinero sólo cruza de uno a otro por una vía reconocida."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/dos-patrimonios.svg",
+          "alt": "Dos cajas, el patrimonio de la sociedad arriba y el de Marta abajo, unidas por cuatro flechas etiquetadas nómina, factura, dividendo y préstamo",
+          "caption": "Ser la única socia no abre una quinta vía."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La sociedad no nace en la notaría",
+          "text": [
+            "El **artículo 20 LSC** exige escritura pública _e_ inscripción en el Registro Mercantil. El **artículo 33** es tajante: la personalidad jurídica se adquiere _con la inscripción_.",
+            "El Registro inscribe Ámbar Estudio el 24 de marzo. Ese día, y no antes, la sociedad existe."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/nacimiento-personalidad.svg",
+          "alt": "Línea temporal: escritura, tramo de sociedad en formación, inscripción y desde ahí personalidad jurídica, con una rama inferior al año sin inscribir",
+          "caption": "Marta firmó el alquiler dentro del tramo gris."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El alquiler del 5 de marzo",
+          "text": [
+            "Marta firmó el arrendamiento diecinueve días antes de la inscripción, cuando la sociedad todavía no era una persona jurídica.",
+            "El **artículo 36 LSC** hace responder solidariamente a quienes celebran actos en nombre de la sociedad antes de inscribirla."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "Hay salida",
+          "text": [
+            "Salvo que la eficacia del contrato quedara condicionada a la inscripción. Y una vez inscrita, la sociedad puede asumir esos actos dentro de **tres meses** (art. 38 LSC)."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "En junio el casero reclama tres meses de impago. Ámbar Estudio no tiene fondos. ¿Puede reclamárselos a Marta personalmente?",
+          "answer": [
+            "Depende de cómo se firmara, y esta es la parte que casi ningún resumen recoge.",
+            "Si el contrato entraba en las facultades que la escritura daba a la administradora para la fase anterior a la inscripción, responde la sociedad en formación con el patrimonio que tuviere, y los socios sólo hasta lo que se obligaron a aportar (**art. 37 LSC**).",
+            "Si no, responde Marta solidariamente (**art. 36**), salvo que la sociedad lo asumiera en los tres meses siguientes a la inscripción."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Julio: 50.000 € en la cuenta",
+          "text": [
+            "Ámbar Estudio factura bien. En julio hay 50.000 € en la cuenta de la sociedad.",
+            "Marta transfiere 12.000 € a su cuenta personal. Es la única socia y el dinero está ahí."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Para que salga dinero, hace falta un título",
+          "text": [
+            "No basta con quererlo. Cada vía exige algo distinto, y sin ese algo no hay vía."
+          ]
+        },
+        {
+          "type": "table",
+          "columns": [
+            "Vía",
+            "Qué exige"
+          ],
+          "rows": [
+            [
+              "Nómina",
+              "Relación laboral o mercantil real"
+            ],
+            [
+              "Factura",
+              "Servicio efectivo a valor de mercado"
+            ],
+            [
+              "Dividendo",
+              "Beneficio y acuerdo de junta"
+            ],
+            [
+              "Préstamo",
+              "Contrato, interés de mercado y devolución"
+            ]
+          ],
+          "caption": "Dónde tributa cada una, y lo que cuesta, en la lección 13."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Los 12.000 €, recalificados",
+          "text": [
+            "Marta no hizo nómina, ni acordó dividendo, ni firmó préstamo. Para el **artículo 25.1.d) LIRPF** son «cualquier otra utilidad procedente de una entidad por la condición de socio»: rendimiento del capital mobiliario."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "title": "Y para la sociedad",
+          "text": [
+            "Retribución de fondos propios: **gasto no deducible**. No reduce su base imponible. Los mismos 12.000 € en nómina sí lo harían."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "No hace falta una transferencia",
+          "text": [
+            "La tarjeta de Ámbar Estudio en la compra del sábado. El coche de la sociedad los fines de semana. El piso a nombre de la sociedad donde vive Marta.",
+            "Ninguno es un truco. Todos son utilidades del artículo 25.1.d) esperando una comprobación."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El final que Marta evitó",
+          "text": [
+            "Supón que el Registro hubiera devuelto la escritura y Marta no hubiera insistido. Pasado **un año** desde el 3 de marzo, con el estudio ya operando, el **artículo 39 LSC** aplica las normas de la sociedad colectiva."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "title": "Sociedad devenida irregular",
+          "text": [
+            "Responsabilidad personal e ilimitada de los socios. La separación que Marta fue a buscar a la notaría desaparece por no terminar el trámite."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "Marta administra un patrimonio que no es el suyo. Entre el 3 y el 24 de marzo ni siquiera existía, y en julio sacó 12.000 € sin título: tributan para ella y no desgravan para la sociedad.",
+            "Y aun con todo inscrito y en orden, la separación tiene grietas. En la lección siguiente, las tres vías por las que respondes con tu patrimonio."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley de Sociedades de Capital (RDL 1/2010), texto consolidado",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2010-10544",
+              "note": "arts. 20, 33, 36, 37, 38 y 39"
+            },
+            {
+              "title": "Ley 35/2006, del IRPF, texto consolidado",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+              "note": "art. 25.1.d), utilidades por la condición de socio"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

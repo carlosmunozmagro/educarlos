@@ -1,0 +1,175 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "12-el-error-de-colon-que-salio-bien",
+  "courseId": "historia-es",
+  "chapterId": "c4-1492-imperio",
+  "title": "El error de Colón que salió bien",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 4 — 1492 y el imperio",
+          "heading": "El error de Colón que salió bien",
+          "text": [
+            "Colón creía que de Canarias a Japón había unos **4.450 km**.",
+            "Hay unos **19.600**.",
+            "Los expertos que le dijeron que no tenían razón, y aun así el viaje funcionó."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Primer error: el tamaño del grado",
+          "text": [
+            "Colón adopta la medida geodésica de **Alfragano**: 56⅔ millas por grado.",
+            "Tal y como él la interpreta, eso son unos **84 km por grado**. El valor real ronda los **111 km**.",
+            "La circunferencia terrestre le queda subestimada en torno a un **25 %**."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Segundo error: la anchura de Asia",
+          "text": [
+            "Sigue a **Toscanelli**, que sitúa la distancia entre Lisboa y Cipango —Japón— en **130 grados** de longitud.",
+            "La distancia real es de **210 grados**."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Ninguno de los dos errores llega a la mitad. ¿Cómo acaba con una distancia más de cuatro veces menor?",
+          "answer": [
+            "Porque **van en el mismo sentido y se multiplican**.",
+            "Grados un 25 % más cortos de lo que son, aplicados a un recorrido con casi un 40 % menos de grados de los que hay. No se suman los dos errores: se compone uno con otro.",
+            "Ése es el mecanismo por el que dos aproximaciones que parecen razonables por separado producen un disparate de orden de magnitud."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Los dos juntos"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/dos-errores-que-se-multiplican.svg",
+          "alt": "Dos cajas, el grado más corto y menos grados de los reales, con flechas que convergen en un océano cuatro veces menor",
+          "caption": "Cada uno por su cuenta sería un error tolerable."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El resultado, a escala"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/distancia-colon.svg",
+          "alt": "Dos barras comparadas: la distancia que Colón calculaba y la distancia real de Canarias a Japón",
+          "caption": "**4.450 km** frente a **19.600 km**: un factor de 4,4."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Por qué le dijeron que no",
+          "text": [
+            "No por creer la Tierra plana. La esfericidad era conocimiento antiguo y asentado, y no estaba en discusión.",
+            "Lo que se discutía era **la distancia**. Y con la tecnología de 1492, un trayecto de 19.600 km sin escalas era inviable: quien lo intentara moriría por el camino."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "text": [
+            "El proyecto de Colón, tal y como él lo defendía, era irrealizable. Los expertos no fallaron en el cálculo: fallaron en no saber que había un continente en medio."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Si la comisión tenía razón, ¿por qué el viaje salió bien?",
+          "answer": [
+            "Porque no tuvo que recorrer los 19.600 km. Había un continente en el camino que no estaba en el mapa de nadie — ni en el suyo ni en el de ellos.",
+            "La objeción era correcta y el viaje también llegó. Las dos cosas a la vez.",
+            "**Tener razón y acertar no son lo mismo**, y ésta es probablemente la ocasión en que más caro salió confundirlos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde falla esto",
+          "text": [
+            "Las cifras de Colón son difíciles de fijar: usaba varias fuentes y varias unidades de milla, y las equivalencias exactas se discuten. Tómalas como aproximaciones.",
+            "Y de la comisión que examinó el proyecto no he podido verificar composición ni actas, así que esta lección no describe la sesión ni cita a ninguno de sus miembros."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Esto no es «la ciencia se equivocó». Es exactamente lo contrario: la ciencia acertó y perdió el debate."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que viene",
+          "text": [
+            "De aquel error salió un continente, y del continente salió plata.",
+            "Muchísima plata. Y ahí empieza el episodio peor entendido de toda la historia económica española."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "«La circunferencia de la Tierra y la ruta del oeste», La Historia en Mapas",
+              "url": "https://www.historia-en-mapas.com/los-grandes-descubrimientos/la-circunferencia-de-la-tierra-y-la-rute-del-oeste"
+            },
+            {
+              "title": "«El imperdonable error de cálculo que valió un mundo», Universidad de Sevilla",
+              "url": "https://institucional.us.es/blogimus/en/2016/11/the-unforgivable-miscalculation-that-was-worth-a-world/"
+            },
+            {
+              "title": "«La ciencia y la técnica en el descubrimiento de América», Biblioteca Virtual Miguel de Cervantes",
+              "url": "https://cervantesvirtual.com/obra-visor/la-ciencia-y-la-tecnica-en-el-descubrimiento-de-america--0/html/ff8cdf10-82b1-11df-acc7-002185ce6064_5.html"
+            },
+            {
+              "title": "Paolo dal Pozzo Toscanelli — los 130 grados hasta Cipango",
+              "url": "https://www.biografiasyvidas.com/biografia/t/toscanelli.htm"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

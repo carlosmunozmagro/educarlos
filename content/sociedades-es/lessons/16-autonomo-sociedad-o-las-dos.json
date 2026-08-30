@@ -1,0 +1,185 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "16-autonomo-sociedad-o-las-dos",
+  "courseId": "sociedades-es",
+  "chapterId": "c4-sacar-dinero",
+  "title": "¿Autónomo, sociedad, o las dos?",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 4 — Sacar dinero de la sociedad",
+          "heading": "¿Autónomo, sociedad, o las dos?",
+          "text": [
+            "Es la pregunta con la que casi todo el mundo llega a este curso.",
+            "La respuesta no es una cifra de facturación.",
+            "Es cuánto dinero necesitas sacar."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Las tres piezas",
+          "text": [
+            "Comparar tipos no sirve. Hay que partir del mismo beneficio y ver qué queda después de **cotización**, **Impuesto sobre Sociedades** e **IRPF**.",
+            "La pieza que más gente olvida es la primera."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El suelo que no se ve",
+          "text": [
+            "El autónomo ordinario cotiza por tramos, según lo que gana. El **societario no**: la **LGSS, art. 308.1.a) regla 4.ª** le impone una base mínima ligada al grupo 7 del Régimen General.",
+            "En 2026 son **1.424,40 €/mes**. Al 30,50 %, **5.213,30 € al año**, gane lo que gane la sociedad."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "title": "Cuidado con lo que se lee por ahí",
+          "text": [
+            "Se lee a menudo que ese suelo ronda los 1.000 € de base. Es una cifra de ejercicios anteriores."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Primer escenario: sacarlo todo",
+          "text": [
+            "Marta se paga como sueldo todo lo que la sociedad gana, para que no quede beneficio.",
+            "El punto de cruce con ser autónoma aparece cerca de los **79.000 €** de beneficio anual. Y pasado ese punto, la ventaja es de unos **25 €**."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Veinticinco euros",
+          "text": [
+            "No es un error de cálculo. Si sacas todo el dinero, la sociedad no compensa **por vía de tipos**: pagas IRPF sobre lo mismo, más un suelo de cotización más alto y unos costes de estructura.",
+            "Quien te venda una SL por el ahorro fiscal, con este escenario en la cabeza, se equivoca."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Con 80.000 € de beneficio anual, ¿cuánto gana Marta por tener sociedad en lugar de ser autónoma?",
+          "answer": [
+            "Depende de algo que la pregunta no dice: **cuánto necesita sacar**.",
+            "Si lo saca todo como sueldo, gana **25 €**. Anecdótico.",
+            "Si se paga 30.000 € y deja el resto dentro de Ámbar, gana **7.863 €**. Con 120.000 € de beneficio, gana 16.803 €.",
+            "La ventaja no está en el tipo de lo que sacas. Está en la **opción de no sacarlo**."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Los dos escenarios, juntos"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/punto-de-cruce.svg",
+          "alt": "Dos curvas de ventaja de la sociedad frente al autónomo según el beneficio anual: una casi plana pegada al cero cuando se saca todo, y otra que cruza antes y sube con fuerza cuando se retiene el excedente",
+          "caption": "Misma sociedad, mismo beneficio. Lo único que cambia es cuánto sale."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Por qué funciona retener",
+          "text": [
+            "El excedente que se queda dentro tributa al **19 %** de la escala de microempresa. Si Marta se lo pagara como sueldo, ese mismo dinero entraría en su marginal, que a partir de 35.425,68 € es del **35,90 %**.",
+            "Casi diecisiete puntos de diferencia sobre cada euro que no necesita este año."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y la trampa de esa ventaja",
+          "text": [
+            "Ese dinero **no es tuyo todavía**. Es de la sociedad, como en la lección 01, y sacarlo más adelante pagará su impuesto.",
+            "No es una exención: es un **diferimiento**, y vale mucho si lo reinviertes y bastante menos si sólo lo aparcas."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "title": "La regla corta",
+          "text": [
+            "La sociedad compensa cuando ganas más de lo que necesitas gastar. Si necesitas cada euro, eres autónomo con pasos extra."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "¿Y las dos a la vez?",
+          "text": [
+            "Se puede, pero suma el suelo societario del RETA a tu actividad como autónomo, y obliga a que las dos actividades sean realmente distintas.",
+            "Si lo que buscas es facturarte a ti misma, eso ya lo miramos: es el artículo 18 de la lección 14."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Los supuestos, en voz alta",
+          "text": [
+            "Este cálculo es para Madrid, con la escala de 2026, sin mínimo personal, y con un coste de estructura **supuesto** de 1.800 € al año.",
+            "Cambia cualquiera de ellos y el cruce se mueve. Lo que no se mueve es el método: mismo beneficio, y mira qué queda."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Orden PJC/297/2026, de cotización para 2026",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2026-7296",
+              "note": "arts. 3 y 18"
+            },
+            {
+              "title": "Ley General de la Seguridad Social (RDL 8/2015)",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724",
+              "note": "art. 308.1.a) regla 4.ª, base mínima del societario"
+            },
+            {
+              "title": "Ley 27/2014, del Impuesto sobre Sociedades",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328",
+              "note": "art. 29 y DT 44.ª"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

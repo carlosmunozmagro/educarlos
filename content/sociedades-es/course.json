@@ -1,0 +1,195 @@
+{
+  "$schema": "../../schema/course.schema.json",
+  "id": "sociedades-es",
+  "lang": "es",
+  "accent": "#1f9e8d",
+  "title": "Sociedades, bien usadas",
+  "subtitle": "Cómo funciona una sociedad española de verdad, y cómo combinarla con tu IRPF.",
+  "description": "Un curso sobre sociedades mercantiles en España: qué separa realmente tu patrimonio del de tu empresa, cómo tributa cada una, y cómo se combinan sin cruzar la línea. Escrito para la Comunidad de Madrid, con la norma citada.",
+  "needsSources": true,
+  "disclaimer": "Material educativo, no asesoramiento fiscal ni jurídico. Está escrito para España y, donde la norma es autonómica, para la Comunidad de Madrid: si tributas en otra comunidad, las escalas y las reducciones cambian. La normativa fiscal se modifica cada ejercicio; cada lección lleva su fecha de revisión y sus fuentes. Antes de tomar una decisión, contrasta con un asesor que conozca tu caso.",
+  "chapters": [
+    {
+      "id": "c1-patrimonio-separado",
+      "title": "La sociedad como patrimonio separado",
+      "lessons": [
+        {
+          "id": "01-que-es-realmente-una-sociedad",
+          "title": "Qué es realmente una sociedad",
+          "summary": "Personalidad jurídica, patrimonio propio, y por qué el dinero de la sociedad no es tuyo."
+        },
+        {
+          "id": "02-la-responsabilidad-que-no-es-limitada",
+          "title": "La responsabilidad que no es limitada",
+          "summary": "Las tres vías por las que respondes con tu patrimonio, y qué dispara cada una."
+        },
+        {
+          "id": "03-sl-sa-slu-y-el-capital-de-un-euro",
+          "title": "SL, SA, SLU y el capital de un euro",
+          "summary": "El menú real de formas, y las dos ataduras del capital de un euro."
+        },
+        {
+          "id": "04-constituir-y-gobernar",
+          "title": "Constituir y gobernar",
+          "summary": "Escritura, estatutos, órgano de administración y lo que queda congelado desde el día uno."
+        }
+      ]
+    },
+    {
+      "id": "c2-tributacion-sociedad",
+      "title": "Cómo tributa la sociedad",
+      "lessons": [
+        {
+          "id": "05-del-resultado-contable-a-la-base-imponible",
+          "title": "Del resultado contable a la base imponible",
+          "summary": "Por qué el beneficio de tu cuenta de resultados no es lo que tributa."
+        },
+        {
+          "id": "06-el-tipo-no-es-el-25-por-ciento",
+          "title": "El tipo no es el 25 %",
+          "summary": "Microempresas, entidades de reducida dimensión y entidades nuevas: cuál es tu tipo real."
+        },
+        {
+          "id": "07-el-calendario-del-impuesto",
+          "title": "El calendario del impuesto",
+          "summary": "Modelo 200, modelo 202 y los dos sistemas de pago fraccionado."
+        },
+        {
+          "id": "08-perdidas-y-bases-negativas",
+          "title": "Pérdidas y bases imponibles negativas",
+          "summary": "Cuánto vale una pérdida, y qué limita su compensación."
+        }
+      ]
+    },
+    {
+      "id": "c3-irpf",
+      "title": "Cómo tributas tú",
+      "lessons": [
+        {
+          "id": "09-dos-bases-dos-mundos",
+          "title": "Dos bases, dos mundos",
+          "summary": "Base general frente a base del ahorro: la distinción de la que cuelga todo lo demás."
+        },
+        {
+          "id": "10-la-escala-y-donde-vives",
+          "title": "La escala y dónde vives",
+          "summary": "Tramo estatal y tramo autonómico en Madrid: tu marginal real, no el titular."
+        },
+        {
+          "id": "11-rendimientos-de-actividades-economicas",
+          "title": "Rendimientos de actividades económicas",
+          "summary": "Estimación directa, modelo 130 y qué gasto es deducible de verdad."
+        },
+        {
+          "id": "12-reducciones-y-regimenes-especiales",
+          "title": "Reducciones y regímenes especiales",
+          "summary": "Planes de pensiones, trabajos en el extranjero e impatriados: cuáles te aplican."
+        }
+      ]
+    },
+    {
+      "id": "c4-sacar-dinero",
+      "title": "Sacar dinero de la sociedad",
+      "lessons": [
+        {
+          "id": "13-nomina-dividendo-o-factura",
+          "title": "Nómina, dividendo o factura",
+          "summary": "Las tres vías y lo que cuesta de verdad cada euro que sacas."
+        },
+        {
+          "id": "14-operaciones-vinculadas",
+          "title": "Operaciones vinculadas",
+          "summary": "Valor de mercado, el umbral del 25 % y cuándo tu propia factura es un riesgo."
+        },
+        {
+          "id": "15-la-retribucion-del-administrador",
+          "title": "La retribución del administrador",
+          "summary": "Gratuidad estatutaria y teoría del vínculo: por qué Hacienda tumba sueldos legítimos."
+        },
+        {
+          "id": "16-autonomo-sociedad-o-las-dos",
+          "title": "¿Autónomo, sociedad, o las dos?",
+          "summary": "El punto de cruce calculado, y qué cuesta mantener las dos figuras a la vez."
+        }
+      ]
+    },
+    {
+      "id": "c5-la-maquina",
+      "title": "La máquina que hay que alimentar",
+      "lessons": [
+        {
+          "id": "17-el-iva-no-es-tu-dinero",
+          "title": "El IVA no es tu dinero",
+          "summary": "Repercutido, soportado y por qué tener caja no es tener beneficio."
+        },
+        {
+          "id": "18-retenciones",
+          "title": "Retenciones",
+          "summary": "Modelos 111, 190, 115 y 180: eres recaudador antes que contribuyente."
+        },
+        {
+          "id": "19-cuentas-anuales-y-el-registro",
+          "title": "Cuentas anuales y el Registro",
+          "summary": "Las tres fechas, el cierre registral y los umbrales de auditoría."
+        },
+        {
+          "id": "20-facturacion-y-verifactu",
+          "title": "Facturación y Verifactu",
+          "summary": "Registros encadenados e inalterables: qué debe hacer tu software, y desde cuándo."
+        }
+      ]
+    },
+    {
+      "id": "c6-optimizar",
+      "title": "Optimizar de verdad",
+      "lessons": [
+        {
+          "id": "21-las-cuatro-palancas",
+          "title": "Las cuatro palancas",
+          "summary": "Diferir, convertir, deducir y elegir forma: el marco al que se reduce todo lo demás."
+        },
+        {
+          "id": "22-retribucion-flexible-y-en-especie",
+          "title": "Retribución flexible y en especie",
+          "summary": "La combinación empresa-persona más limpia, y la más desaprovechada."
+        },
+        {
+          "id": "23-incentivos-de-la-sociedad",
+          "title": "Incentivos de la sociedad",
+          "summary": "Reserva de capitalización, I+D+i, amortizaciones y el momento de usarlas."
+        },
+        {
+          "id": "24-donde-esta-la-raya",
+          "title": "Dónde está la raya",
+          "summary": "Economía de opción, simulación y conflicto en la aplicación de la norma."
+        }
+      ]
+    },
+    {
+      "id": "c7-combinar",
+      "title": "Combinar estructuras",
+      "lessons": [
+        {
+          "id": "25-la-holding",
+          "title": "La holding",
+          "summary": "El 5 %, el año de tenencia, la exención del 95 % y el 5 % que casi nadie menciona."
+        },
+        {
+          "id": "26-patrimonial-o-actividad-economica",
+          "title": "Patrimonial o actividad económica",
+          "summary": "El test de la jornada completa, y qué pierdes si tu sociedad es patrimonial."
+        },
+        {
+          "id": "27-empresa-familiar",
+          "title": "Empresa familiar",
+          "summary": "Participación, funciones de dirección y remuneración: el triple test y qué lo rompe."
+        },
+        {
+          "id": "28-salir",
+          "title": "Salir",
+          "summary": "Venta, liquidación y las responsabilidades que sobreviven a la sociedad."
+        }
+      ]
+    }
+  ]
+}

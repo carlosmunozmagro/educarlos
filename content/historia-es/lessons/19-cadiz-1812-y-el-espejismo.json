@@ -1,0 +1,160 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "19-cadiz-1812-y-el-espejismo",
+  "courseId": "historia-es",
+  "chapterId": "c5-borbones-1808",
+  "title": "Cádiz 1812 y el espejismo",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 5 — Borbones y 1808",
+          "heading": "Cádiz 1812 y el espejismo",
+          "text": [
+            "La primera constitución española duró **veintiséis meses**.",
+            "Su apuesta más ambiciosa era conservar el imperio.",
+            "Fue una de las cosas que ayudaron a disolverlo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que escribe el artículo 3",
+          "text": [
+            "Aprobada el **19 de marzo de 1812**, en unas Cortes reunidas en Cádiz en plena guerra.",
+            "«**La soberanía reside esencialmente en la Nación, y por lo mismo pertenece a ésta exclusivamente el derecho de establecer sus leyes fundamentales.**»"
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "No es una idea nueva en 1812. Es lo que las juntas llevaban cuatro años haciendo sin decirlo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La apuesta americana",
+          "text": [
+            "La Nación del texto **incluye a los americanos**: los antiguos súbditos y territorios del rey se incorporan como ciudadanos y provincias **en igualdad de derechos**.",
+            "Y no es sólo generosidad. Es una estrategia: una gran monarquía constitucional a los dos lados del Atlántico era la apuesta de los liberales para **evitar que el imperio se desintegrara**."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "El texto hace ciudadanos de pleno derecho a los americanos precisamente para que el imperio no se rompa. ¿Por qué acelera lo que quería impedir?",
+          "answer": [
+            "Porque para retenerlos hubo que reconocerles la condición de iguales.",
+            "La Carta, y el propio proceso de redactarla, estimularon la autoconciencia de los americanos y sus afanes autonómicos hasta hacer inviable la continuidad del imperio.",
+            "La concesión que iba a atarlos les dio el lenguaje para marcharse. Ése es el espejismo del título."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y vuelve el rey",
+          "text": [
+            "Fernando VII firma en **Valencia el 4 de mayo de 1814** un real decreto que restablece la monarquía absoluta y declara **nula y sin efecto toda la obra de las Cortes de Cádiz**.",
+            "No se publica hasta el 11 de mayo. Del 19 de marzo de 1812 al 4 de mayo de 1814: veintiséis meses."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y sin embargo"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/cadiz-26-meses.svg",
+          "alt": "Línea temporal de 1810 a 1860 con tres marcas: 1812, 1820 y 1836, las tres veces que la Constitución entró en vigor",
+          "caption": "Como norma vigente, un fracaso repetido. Como molde, otra cosa."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Se deroga en 1814 declarando nula toda la obra de las Cortes. ¿Cuántas veces más llegó a estar en vigor?",
+          "answer": [
+            "Dos: en **1820** y en **1836**.",
+            "Y su alcance fue mucho mayor que su vigencia. Trascendió a varias constituciones europeas e influyó en los orígenes constitucionales y parlamentarios de la mayor parte de los estados americanos, durante y después de su independencia.",
+            "Un texto puede perder todas sus batallas y aun así fijar el vocabulario en el que se dan las siguientes."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde falla esto",
+          "text": [
+            "La independencia americana no la causa Cádiz: tiene causas propias y anteriores, y el vacío de 1808 pesa más. Aquí se dice que contribuyó, no que la provocara.",
+            "Y «estuvo en vigor» simplifica: la vigencia real fue muy desigual por territorios y periodos."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Tampoco la idealices. No había sufragio universal ni libertad religiosa. Fue la primera constitución liberal española, no una constitución moderna."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que viene",
+          "text": [
+            "El rey vuelve, deroga y muere sin hijo varón.",
+            "Y entonces se abre una guerra que la gente recuerda como un pleito de familia y que en realidad era sobre qué clase de Estado debía ser éste."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Constitución española de 1812 — portal y texto",
+              "url": "https://www.cervantesvirtual.com/portales/constitucion_1812/"
+            },
+            {
+              "title": "Real Decreto de Fernando VII derogando la Constitución (Valencia, 4 de mayo de 1814)",
+              "url": "https://www.cervantesvirtual.com/portales/constitucion_1812/obra/real-decreto-de-fernando-vii-derogando-la-constitucion-valencia-4-mayo-1814/"
+            },
+            {
+              "title": "«La Constitución de 1812 y su repercusión en América y Europa», Centro Virtual Cervantes",
+              "url": "https://cvc.cervantes.es/lengua/anuario/anuario_12/ramos/p03.htm"
+            },
+            {
+              "title": "Constitución española de 1812 — vigencias de 1812, 1820 y 1836",
+              "url": "https://es.wikipedia.org/wiki/Constituci%C3%B3n_espa%C3%B1ola_de_1812"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

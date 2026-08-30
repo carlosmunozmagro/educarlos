@@ -1,0 +1,176 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "13-potosi-la-plata-que-empobrecio",
+  "courseId": "historia-es",
+  "chapterId": "c4-1492-imperio",
+  "title": "Potosí: la plata que empobreció",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 4 — 1492 y el imperio",
+          "heading": "Potosí: la plata que empobreció",
+          "text": [
+            "Entre 1500 y 1650 llegaron oficialmente a España **16.886 toneladas de plata**.",
+            "En ese siglo y medio los precios se sextuplicaron.",
+            "La explicación evidente es la equivocada. O al menos, la insuficiente."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La tesis",
+          "text": [
+            "**Earl J. Hamilton** la formula en **1934**, en _El tesoro americano y la revolución de los precios en España, 1501-1650_. Es él quien acuña la expresión.",
+            "El razonamiento es la teoría cuantitativa del dinero: entra metal, crece la masa monetaria, suben los precios. Potosí se explota a gran escala desde **1545**."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y lo habían visto aquí, antes",
+          "text": [
+            "**Martín de Azpilcueta**, en pleno siglo XVI, ya relaciona la abundancia de metales del Nuevo Mundo con la subida de precios.",
+            "El diagnóstico es español y contemporáneo de los hechos. Hamilton, cuatro siglos después, le pone nombre y estadística."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "text": [
+            "El análisis monetario más citado sobre este episodio se hizo mientras ocurría, y en Salamanca."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El problema es una fecha",
+          "text": [
+            "La entrada masiva de remesas se produce en la **segunda mitad** del siglo XVI.",
+            "Los mayores aumentos de precios ocurren en la **primera**."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/desajuste-precios.svg",
+          "alt": "Dos bandas superpuestas: la mayor subida de precios entre 1500 y 1550 y la entrada masiva de remesas entre 1550 y 1650",
+          "caption": "Se objetó ya en 1959, y no hace falta discutir ni una tonelada."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Los precios de los alimentos se disparan; los de las manufacturas suben mucho menos. ¿Por qué eso es un problema para la explicación monetaria?",
+          "answer": [
+            "Porque si el motor fuera sólo más dinero persiguiendo los mismos bienes, la subida debería ser bastante pareja en todo.",
+            "Que se disparen precisamente los productos de primera necesidad apunta a la **oferta**: más población presionando sobre los recursos, tierras peores puestas en cultivo, y una tecnología agraria que no da más de sí.",
+            "Es una inflación con forma, y la forma señala a otra causa."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y la masa monetaria ya crecía",
+          "text": [
+            "La minería de plata y cobre del sur de Alemania y de Centroeuropa vive su auge entre **1460 y 1540**.",
+            "Es decir, antes de que la plata americana fuera relevante. El dinero europeo ya estaba aumentando cuando Potosí todavía no existía como mina."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que se añade hoy",
+          "text": [
+            "**Pierre Vilar** señala que lo decisivo no fue sólo la cantidad de metal, sino **lo barato que era extraerlo**: en América el oro y la plata estaban mucho más al alcance que en las minas europeas.",
+            "No es sólo más plata. Es plata que cuesta menos producir."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Entonces, ¿la plata no tuvo nada que ver?",
+          "answer": [
+            "Sí tuvo. La conclusión no es que Hamilton se equivocara, sino que su explicación es **insuficiente**.",
+            "La plata es un factor probablemente importante dentro de un proceso con varias causas: coste de extracción, presión demográfica sobre los alimentos y una masa monetaria que ya venía creciendo.",
+            "Y hay un eslabón más, específicamente español: buena parte de esa plata **no llegaba a quedarse**. Venía comprometida antes de zarpar."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde falla esto",
+          "text": [
+            "Las 16.886 toneladas son el metal **registrado oficialmente**. El contrabando no está contado, y su cuantía no se puede conocer.",
+            "Y hay trabajos posteriores que confirman parcialmente a Hamilton: esto es un debate abierto, no una refutación cerrada."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "No conviertas «revolución de los precios» en «decadencia de España». Son dos discusiones distintas, y la segunda es mucho más resbaladiza."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que viene",
+          "text": [
+            "Si la plata llegaba comprometida, ¿comprometida con quién?",
+            "Con unos banqueros a los que el rey más poderoso de Europa suspendió pagos tres veces — y que al día siguiente le volvían a prestar."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Earl J. Hamilton, «El tesoro americano y la revolución de los precios en España, 1501-1650»",
+              "url": "https://books.google.com/books/about/El_tesoro_americano_y_la_revoluci%C3%B3n_de.html?hl=es&id=bz8TDROuHqQC"
+            },
+            {
+              "title": "«Revolución de los precios» — estado de la cuestión y objeciones",
+              "url": "https://es.wikipedia.org/wiki/Revoluci%C3%B3n_de_los_precios"
+            },
+            {
+              "title": "«La revolución de precios del siglo XVI. Una explicación histórica y económica»",
+              "url": "https://www.researchgate.net/publication/373330771_LA_REVOLUCION_DE_PRECIOS_DEL_SIGLO_XVI_UNA_EXPLICACION_HISTORICA_Y_ECONOMICA"
+            },
+            {
+              "title": "Revista de Historia Económica, Universidad Complutense (PDF)",
+              "url": "https://webs.ucm.es/centros/cont/descargas/documento6137.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

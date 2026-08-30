@@ -1,0 +1,164 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "23-1898-perder-el-imperio-encontrar-la-nacion",
+  "courseId": "historia-es",
+  "chapterId": "c6-siglo-que-no-cuaja",
+  "title": "1898: perder el imperio, encontrar la nación",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 6 — El siglo que no cuaja",
+          "heading": "1898: perder el imperio, encontrar la nación",
+          "text": [
+            "España envió a Cuba y Filipinas unos **220.000 soldados**.",
+            "Murió más de la mitad.",
+            "El enemigo mató a unos diez mil."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La cifra que casi nunca se da",
+          "text": [
+            "Entre 1895 y 1898, para defender sus últimas posesiones de ultramar, España hizo uno de los mayores esfuerzos bélicos que había afrontado hasta entonces una potencia colonial.",
+            "De los muertos, **sólo unos 10.000 cayeron frente al enemigo o por sus heridas**."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/soldados-98.svg",
+          "alt": "Tres barras comparadas: los 220.000 enviados, los 10.000 muertos en combate y los 100.000 muertos por enfermedad",
+          "caption": "**Diez veces más** muertos por enfermedad que por el enemigo."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "De qué murieron",
+          "text": [
+            "En torno a **100.000** murieron de **fiebre amarilla, paludismo, disentería y tuberculosis**.",
+            "Muchos murieron durante el viaje de repatriación, hecho en condiciones lamentables, o poco después de pisar tierra española."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Con esas proporciones, ¿qué clase de desastre fue realmente el del 98?",
+          "answer": [
+            "Administrativo y sanitario antes que militar.",
+            "Un ejército que pierde diez hombres por enfermedad por cada uno que pierde en combate no está siendo derrotado en el campo de batalla: está siendo destruido por su propia intendencia — alojamiento, alimentación, sanidad y transporte.",
+            "Y el hecho de que muchos murieran **en el viaje de vuelta**, ya terminada la guerra, dice exactamente lo mismo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El Tratado de París",
+          "text": [
+            "Firmado el **10 de diciembre de 1898**. España abandona sus demandas sobre **Cuba, Puerto Rico, Filipinas y Guam**.",
+            "Cuba se declara nación independiente. Filipinas, Guam y Puerto Rico pasan a ser posesiones norteamericanas, a cambio de una compensación económica."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y entonces empieza el debate",
+          "text": [
+            "La derrota da lugar a la expresión **«Desastre del 98»**, y con ella a una pregunta que ya no se va: qué le pasa a este país.",
+            "**Joaquín Costa** se convierte en la cabeza visible del **regeneracionismo**, y lo resume en dos palabras: **«escuela y despensa»**."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "Sin una educación sólida y sin garantizar un mínimo de bienestar material, decía Costa, España no podía regenerarse. La receta ya no mira hacia fuera."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "El país acaba de perder sus últimas colonias. ¿Por qué el debate que se abre no va sobre el imperio?",
+          "answer": [
+            "Porque al perder el imperio deja de haber a qué atribuir la grandeza — y hay que mirar hacia dentro por primera vez.",
+            "El regeneracionismo no propone recuperar nada: propone escuelas, agua, alimentación y administración. La unidad de medida deja de ser el mapa y pasa a ser el ciudadano.",
+            "Ahí nace «el problema de España» como género. Y todo el siglo XX peninsular se va a discutir dentro de ese marco."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde falla esto",
+          "text": [
+            "Las cifras de muertos del 98 son estimaciones y varían entre estudios; se dan aquí con «en torno a», como las dan las fuentes.",
+            "Y el regeneracionismo no es una sola cosa: hay versiones autoritarias y versiones democráticas, y algunas de las autoritarias tendrán consecuencias."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Tampoco conviertas 1898 en el origen de todo. Los problemas que el regeneracionismo nombra llevaban un siglo ahí; lo que cambia es que ya no hay imperio con el que taparlos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que viene",
+          "text": [
+            "Un país que se ha quedado mirándose a sí mismo y no le gusta lo que ve.",
+            "Veinticinco años después, un general propondrá arreglarlo suspendiendo la Constitución. Y le saldrá bien durante un tiempo."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Tratado de París (1898) — contenido y firmantes",
+              "url": "https://es.wikipedia.org/wiki/Tratado_de_Par%C3%ADs_(1898)"
+            },
+            {
+              "title": "«Nuestros soldados fallecidos y repatriados (1895-1898)», Dialnet (PDF)",
+              "url": "https://dialnet.unirioja.es/descarga/articulo/2240228.pdf"
+            },
+            {
+              "title": "«La repatriación desde Cuba de los soldados», Revista de Estudios Extremeños (PDF)",
+              "url": "https://www.dip-badajoz.es/cultura/ceex/reex_digital/reex_LXXVII/2021/T.%20LXXVII%20numero%20extraordinario%202021/00123743.pdf"
+            },
+            {
+              "title": "«Joaquín Costa y el regeneracionismo», INTEF",
+              "url": "https://descargas.intef.es/recursos_educativos/RED_ES/04_Bachillerato/2/B_2_063_2025_1167/joaqun_costa_y_el_regeneracionismo.html"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

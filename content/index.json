@@ -1,0 +1,30 @@
+{
+  "courses": [
+    "crypto-chains",
+    "sociedades-es",
+    "historia-es"
+  ],
+  "sections": [
+    {
+      "id": "en",
+      "badge": "EN",
+      "title": "Courses in English",
+      "subtitle": "Mechanism first. No metaphors.",
+      "lang": "en"
+    },
+    {
+      "id": "es",
+      "badge": "ES",
+      "title": "Cursos en español",
+      "subtitle": "Escritos para España, con la norma citada.",
+      "lang": "es"
+    },
+    {
+      "id": "misterio",
+      "badge": "?",
+      "title": "Mystery",
+      "subtitle": "Something else entirely. Not decided yet.",
+      "courses": []
+    }
+  ]
+}

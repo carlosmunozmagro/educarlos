@@ -1,0 +1,172 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "20-los-carlistas-la-guerra-que-vuelve",
+  "courseId": "historia-es",
+  "chapterId": "c6-siglo-que-no-cuaja",
+  "title": "Los carlistas: la guerra que vuelve",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 6 — El siglo que no cuaja",
+          "heading": "Los carlistas: la guerra que vuelve",
+          "text": [
+            "La primera guerra carlista terminó con una frase de trece palabras.",
+            "Una frase que cada bando pudo leer a su favor.",
+            "Por eso se firmó la paz. Y por eso hubo dos guerras más."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El pretexto",
+          "text": [
+            "El **29 de marzo de 1830**, Fernando VII promulga la **Pragmática Sanción**, que deja sin validez la ley que anteponía el derecho al trono de los hombres al de las mujeres.",
+            "Muere el **29 de septiembre de 1833**. Empieza la guerra entre **isabelinos**, partidarios de su hija Isabel II, y **carlistas**, partidarios de su hermano Carlos María Isidro."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El fondo",
+          "text": [
+            "Sobre el papel es un pleito dinástico. Debajo hay **dos modelos de Estado**.",
+            "El carlismo agrupa a quienes defienden los **fueros**, el orden tradicional y el poder local frente a un Estado liberal, centralizador y uniformador."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "Una disputa por la corona se acaba cuando muere un candidato. Una disputa sobre la forma del Estado, no. Por eso vuelve tres veces."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El bloqueo",
+          "text": [
+            "Todas las negociaciones de paz habían naufragado por el mismo obstáculo: **la mayoría de las tropas carlistas no estaba dispuesta a entregar las armas hasta que las Cortes garantizaran el establecimiento foral**.",
+            "Los liberales no podían garantizarlo sin renunciar a su propio proyecto de Estado."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "26 de agosto de 1839",
+          "text": [
+            "Espartero presenta un artículo que confirma los Fueros **«en cuanto sean conciliables con las instituciones y leyes de la nación»**.",
+            "Cinco días después, el **31 de agosto**, se firma el **Convenio de Vergara** en Oñate, entre Espartero y trece representantes del general carlista Maroto."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Esa frase desbloquea en cinco días lo que llevaba años atascado. ¿Por qué funciona?",
+          "answer": [
+            "Porque cada bando puede leerla a su favor.",
+            "El carlista ve **los fueros confirmados**. El liberal ve **los fueros subordinados** a las leyes de la nación — que además es quien decide qué resulta conciliable.",
+            "La ambigüedad no es un descuido de redacción: es la tecnología que permite firmar sin que ninguno tenga que admitir que ha cedido en lo esencial."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Las dos lecturas, del mismo texto"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/la-frase-de-vergara.svg",
+          "alt": "La cláusula foral de Vergara arriba y, saliendo de ella, dos cajas con la lectura carlista y la lectura liberal",
+          "caption": "Se firma porque nadie tiene que admitir que cede. Y por eso el asunto sigue abierto."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Si la ambigüedad permite firmar la paz, ¿cuál es su precio?",
+          "answer": [
+            "Que el conflicto no se resuelve: se aplaza.",
+            "Vergara cierra una guerra y deja intacta la pregunta que la causó. Hubo dos guerras carlistas más, y la cuestión foral siguió viva mucho después de que se apagara el último frente.",
+            "Guárdate esta técnica. Volverá a aparecer, con otro nombre y otra letra, en 1978."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde falla esto",
+          "text": [
+            "El carlismo no es sólo foralismo: hay religión, campo frente a ciudad y redes de clientela local. Esta lección se centra en el eje Estado-fueros porque es el que explica la repetición.",
+            "Y que un conflicto reaparezca no significa que sea el mismo conflicto: no proyectes 1936 automáticamente sobre 1833."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Aquí sólo se desarrolla la primera guerra. La segunda y la tercera se mencionan sin detalle porque no las he verificado."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que viene",
+          "text": [
+            "Esa guerra costaba dinero, y el Estado no lo tenía.",
+            "La solución fue poner a la venta media España. Y quien la compró no fue quien se suponía."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Pragmática Sanción de 1830",
+              "url": "https://es.wikipedia.org/wiki/Pragm%C3%A1tica_Sanci%C3%B3n_de_1830"
+            },
+            {
+              "title": "Convenio de Vergara, agosto de 1839 — texto (PDF)",
+              "url": "https://luis-vives.es/docs/aula-virtual/historia/doc/convenio_vergara.pdf"
+            },
+            {
+              "title": "Convenio de Vergara, 1839 — PARES, Ministerio de Cultura",
+              "url": "https://pares.mcu.es/ParesBusquedas20/catalogo/autoridad/158298"
+            },
+            {
+              "title": "Abrazo de Vergara — negociación, firmantes y cláusula foral",
+              "url": "https://es.wikipedia.org/wiki/Abrazo_de_Vergara"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

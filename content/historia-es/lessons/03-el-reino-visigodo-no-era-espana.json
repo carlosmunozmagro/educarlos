@@ -1,0 +1,257 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "03-el-reino-visigodo-no-era-espana",
+  "courseId": "historia-es",
+  "chapterId": "c1-hispania",
+  "title": "El reino visigodo no era España",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 1 — Hispania",
+          "heading": "El reino visigodo no era España",
+          "text": [
+            "En octubre del **680**, un rey visigodo pierde el conocimiento y despierta destronado.",
+            "Nadie ha combatido. Nadie ha tomado el palacio.",
+            "Y seis meses después, una asamblea de obispos declara que todo fue legal."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La pócima",
+          "text": [
+            "**Wamba** reina desde el 672. El magnate **Ervigio** le administra una bebida con una sustancia hipnótica —las fuentes mencionan la esparteína— que lo deja inconsciente y con aspecto de moribundo.",
+            "Se avisa al obispo de Toledo, **Julián**."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "text": [
+            "Las fechas conservadas oscilan entre el 14 y el 15 de octubre del 680. La pócima procede de la tradición cronística, no de un acta."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El rito que se aplica a los que van a morir",
+          "text": [
+            "Julián aplica el **Ordo Poenitentiae**, el rito de penitencia reservado a los enfermos antes de morir, e impone al rey la **tonsura penitencial**.",
+            "Wamba no muere. Despierta.",
+            "Pero la penitencia pública no se deshace."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Ervigio no tenía fuerza para vencer a Wamba en el campo de batalla. ¿Cómo lo destrona sin combatir?",
+          "answer": [
+            "Convirtiéndolo en penitente.",
+            "Quien ha entrado en penitencia pública queda inhabilitado para ejercer el cargo. No es el corte de pelo: es la categoría jurídico-canónica que la tonsura hace visible ante todos.",
+            "Basta con administrarla y con que después alguien la declare válida. El poder de decidir eso no estaba en el ejército."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Enero del 681: la ratificación",
+          "text": [
+            "El **XII Concilio de Toledo** se reúne del **9 al 25 de enero del 681** con treinta y ocho obispos, cuatro abades y quince oficiales palatinos.",
+            "Confirma como válida la penitencia recibida sin conciencia, libera a la población del juramento prestado a Wamba y reconoce rey a Ervigio, con anatema contra quien se le oponga."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El reino hacía bien casi todo",
+          "text": [
+            "En el **589**, el III Concilio de Toledo lleva el reino del arrianismo al catolicismo.",
+            "En el **654**, Recesvinto promulga el **Liber Iudiciorum**: un código único para godos e hispanorromanos, que sobrevivirá siglos.",
+            "Capital fija, concilios regulares, moneda propia. No es un reino improvisado."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/visigodos-cronologia.svg",
+          "alt": "Línea temporal del 589 al 710 con cinco hitos y un arco que mide los cuarenta y siete años entre el canon 75 y la deposición de Wamba",
+          "caption": "Entre la norma que debía impedirlo y el golpe que bendijo el concilio pasan **47 años**."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que no tenía",
+          "text": [
+            "Un modo pacífico de cambiar de rey.",
+            "La sucesión no estaba regulada, y convivían a la vez cuatro vías: herencia, asociación al trono en vida, elección y usurpación por golpe.",
+            "Cuando todas las vías son posibles, ninguna legitima por sí sola."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El intento de arreglarlo",
+          "text": [
+            "**IV Concilio de Toledo, 633**, con Isidoro de Sevilla presidiendo. El **canon 75** fija que el rey será elegido entre los godos, por los obispos y los magnates, y lanza anatema contra quien usurpe el trono.",
+            "Es el intento más antiguo de regular una sucesión regia en el mundo posromano, después de la ley vándala."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "El canon 75 dice quién puede ser elegido y quién elige. Casi nunca se cumplió. ¿Qué le falta para funcionar?",
+          "answer": [
+            "Decir **quiénes** exactamente son los electores, **cuándo** se reúnen y **qué mayoría** decide.",
+            "Un procedimiento sin electorado cerrado, sin convocatoria y sin quórum no resuelve una disputa: sólo obliga a los bandos a fabricar la legitimidad después del hecho consumado.",
+            "Por eso el arma decisiva del reino no fue el ejército, sino el concilio que ratifica lo ya ocurrido."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El bucle",
+          "text": [
+            "El mismo instrumento creado en el 633 para impedir usurpaciones sirve en el 681 para legalizar una."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/bucle-sucesorio.svg",
+          "alt": "Cuatro cajas en ciclo: muere o cae el rey, nadie sabe quién elige, hecho consumado, el concilio lo ratifica, y vuelta a empezar",
+          "caption": "No es una avería del sistema. Es el sistema."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Por eso el 711 no es una sorpresa",
+          "text": [
+            "En el **710**, la sucesión se disputa entre los partidarios de los hijos de **Witiza** y **Rodrigo**.",
+            "Eso no es una anomalía previa al desastre. Es el funcionamiento normal del reino — sólo que esta vez coincide con un desembarco."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y por qué no era España",
+          "text": [
+            "Tres razones concretas, ninguna retórica."
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            {
+              "title": "No cubría el territorio",
+              "text": "Los bizantinos no son expulsados del sureste hasta hacia el 625, y hay campañas contra los vascones hasta el final del reino."
+            },
+            {
+              "title": "No dejó continuidad",
+              "text": "En el 711 el aparato de Estado desaparece. Lo que viene después no lo hereda."
+            },
+            {
+              "title": "La identificación es posterior",
+              "text": "La idea de un reino godo como «España» previa la construyen reinos medievales e historiografías posteriores, para justificar una continuidad."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde falla esto",
+          "text": [
+            "Quien narra la caída de Wamba es Julián de Toledo, que participó en ella. Los detalles novelescos vienen de esa tradición y hay que leerlos como lo que las fuentes cuentan.",
+            "Y el modelo explica la fragilidad **en el punto de sucesión**, no una decadencia continua: hubo reinados largos y transiciones ordenadas."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "No proyectes el 711 hacia atrás. El reino no estaba esperando caer."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que viene",
+          "text": [
+            "Un reino sin regla de sucesión, en plena disputa, en el 710.",
+            "Al verano siguiente desembarca un contingente en el sur. Lo que pasa después se cuenta casi siempre mal, y el mejor documento para corregirlo es un pacto firmado con un noble godo que conservó sus tierras."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "Un Estado no cae por no saber ganar batallas. Cae por no saber cambiar de rey."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Real Academia de la Historia, Diccionario Biográfico electrónico — «Ervigio»",
+              "url": "https://dbe.rah.es/biografias/6816/ervigio",
+              "note": "Deposición de Wamba, octubre del 680"
+            },
+            {
+              "title": "IV Concilio de Toledo (633), canon 75 — texto de las actas",
+              "url": "https://clasicoshistoria.blogspot.com/2022/12/concilio-iv-de-toledo-633.html"
+            },
+            {
+              "title": "XII Concilio de Toledo (681)",
+              "url": "https://es.wikipedia.org/wiki/XII_Concilio_de_Toledo",
+              "note": "Composición y acuerdos — pendiente de contrastar con la edición de Vives"
+            },
+            {
+              "title": "«Royal succession in the Visigothic kingdom: from 418 to the IV Council of Toledo of 633», Univ. de Lisboa",
+              "url": "https://repositorio.ulisboa.pt/entities/publication/7cf0fce3-7697-4350-8919-f4454acf380f"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "27-empresa-familiar",
+  "courseId": "sociedades-es",
+  "chapterId": "c7-combinar",
+  "title": "Empresa familiar",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 7 — Combinar estructuras",
+          "heading": "Empresa familiar",
+          "text": [
+            "Antonio fundó Talleres Rueda hace treinta años y conserva el 55 %.",
+            "Que sus hijos hereden el taller al 5 % de su valor o al 100 % depende de tres requisitos.",
+            "El más frágil no tiene nada que ver con la empresa."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Un caso nuevo",
+          "text": [
+            "Marta y Ámbar se quedan aquí: un estudio de diseño unipersonal no tiene sucesión familiar.",
+            "**Talleres Rueda, SL**, mecanizado industrial en Getafe. Antonio tiene el 55 %; sus hijos Elena y Javier, el 25 % y el 20 %. Elena es la gerente; Javier trabaja en otra empresa."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El triple test"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/triple-test.svg",
+          "alt": "El grupo familiar con sus porcentajes y los tres requisitos cumplidos: no patrimonial, más del 20 por ciento conjunto, y una persona que dirige y cobra por ello",
+          "caption": "Art. 4.Ocho.Dos de la Ley del Impuesto sobre el Patrimonio."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Primero: que la empresa haga algo",
+          "text": [
+            "La entidad no puede tener «por actividad principal la gestión de un patrimonio mobiliario o inmobiliario».",
+            "Se mide **durante más de 90 días del ejercicio**, igual que en la lección anterior: no es una foto del 31 de diciembre."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Segundo: participación suficiente",
+          "text": [
+            "«Al menos del **5 por 100** computado de forma individual, o del **20 por 100** conjuntamente con su cónyuge, ascendientes, descendientes o **colaterales de segundo grado**».",
+            "El grupo de Antonio suma el 100 %. Sobra."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Tercero: dirigir y cobrar por ello",
+          "text": [
+            "Que el titular «ejerza **efectivamente funciones de dirección**, percibiendo por ello una remuneración que represente **más del 50 por 100** de la totalidad de sus rendimientos empresariales, profesionales y de trabajo personal»."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "title": "Y basta con uno",
+          "text": [
+            "Cuando la participación es conjunta, esas funciones «deberán de cumplirse **al menos en una de las personas del grupo de parentesco**, sin perjuicio de que todas ellas tengan derecho a la exención». Elena lo cumple por los tres."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Elena acepta un trabajo mejor pagado en otra empresa, pero sigue dirigiendo el taller los viernes. ¿Cambia algo?",
+          "answer": [
+            "Sí, y mucho más de lo que parece.",
+            "El requisito se mide **sobre la persona**: su remuneración por dirigir tiene que superar el **50 %** de todos sus rendimientos del trabajo y de actividades. Con un sueldo mayor fuera, deja de superarlo.",
+            "Y como es el único del grupo que cumplía la letra c), la exención decae **para los tres**. Antonio y Javier pierden algo por una decisión laboral de Elena."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Por qué esto vale dinero de verdad",
+          "text": [
+            "El **artículo 20.2.c) de la Ley 29/1987** concede una reducción del **95 %** en Sucesiones sobre el valor de las participaciones «a los que sea de aplicación la exención regulada en el apartado octavo del artículo 4 de la Ley 19/1991».",
+            "El vínculo es literal: sin el test de Patrimonio, no hay reducción en Sucesiones."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y con una atadura de diez años",
+          "text": [
+            "La reducción exige que «la adquisición se mantenga durante los **diez años** siguientes al fallecimiento del causante, salvo que falleciera el adquirente dentro de ese plazo».",
+            "Vender antes deshace el beneficio."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "title": "Mira también tu comunidad",
+          "text": [
+            "Las comunidades autónomas tienen sus propias bonificaciones en Sucesiones y en Patrimonio, y en Madrid son notables. El efecto práctico depende mucho de dónde se tribute."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "Tres requisitos, y el frágil es el personal: quién dirige y de dónde viene la mayor parte de su sueldo. Se rompe con un cambio de trabajo, no con un cambio de balance.",
+            "En la última lección, cómo se sale de una sociedad y qué te sobrevive."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 19/1991, del Impuesto sobre el Patrimonio",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1991-14392",
+              "note": "art. 4.Ocho.Dos"
+            },
+            {
+              "title": "Ley 29/1987, del Impuesto sobre Sucesiones y Donaciones",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1987-28141",
+              "note": "art. 20.2.c)"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

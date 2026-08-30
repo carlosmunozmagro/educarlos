@@ -1,0 +1,250 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "02-la-provincia-que-exportaba-emperadores",
+  "courseId": "historia-es",
+  "chapterId": "c1-hispania",
+  "title": "La provincia que exportaba emperadores",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 1 — Hispania",
+          "heading": "La provincia que exportaba emperadores",
+          "text": [
+            "Hay una colina en Roma que no es una colina.",
+            "Son más de cincuenta y tres millones de ánforas rotas, apiladas junto al Tíber.",
+            "Más de cuatro de cada cinco vienen del valle del Guadalquivir."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El argumento débil, primero",
+          "text": [
+            "Trajano nace en **Itálica** (Santiponce, Sevilla) en el **53 d. C.** y es el primer emperador nacido fuera de Italia. Adriano viene del mismo sitio. Séneca y Lucano, de Córdoba. Marcial, de Bílbilis.",
+            "Impresiona. Y no demuestra nada."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "text": [
+            "Las élites provinciales se movían por todo el Imperio. Un lugar de nacimiento no es una estadística económica."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La prueba que sí se puede contar",
+          "text": [
+            "El **Monte Testaccio** se formó entre los siglos I y III d. C. y ocupa una base de más de **2 hectáreas**.",
+            "Está hecho sólo de ánforas de aceite. Y cada una llevaba escrito de dónde venía."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/testaccio-escala.svg",
+          "alt": "Rejilla de cincuenta y tres cuadros, cada uno un millón de ánforas; cuarenta y dos aparecen destacados como béticos",
+          "caption": "**42 de los 53 millones** son béticos, tomando el suelo del rango publicado (80–85 %)."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "No es el basurero de Roma",
+          "text": [
+            "Un basurero general no permitiría contar nada. Aquí hay un solo producto y un solo circuito.",
+            "Las ánforas están colocadas en orden y consolidadas con cal, junto al puerto fluvial. Alguien gestionaba el descarte."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Lo que parece un vertedero es, en la práctica, un archivo administrativo convertido en colina."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El envase",
+          "text": [
+            "Tipo **Dressel 20**, catalogada por el arqueólogo alemán Heinrich Dressel. Globular, de pared gruesa, hecha en los alfares del Guadalquivir.",
+            "Pesa unos **30 kg vacía** y transporta hasta unos **70 litros** de aceite."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Un ánfora entera, vacía y en buen estado, ha llegado al puerto de Roma tras cruzar medio Mediterráneo. La rompen. ¿Por qué?",
+          "answer": [
+            "Porque devolverla no compensa. El envase pesa 30 kg y la carga son unos 70 litros: el barro pesa casi la mitad que lo que lleva dentro.",
+            "Pagar el flete de vuelta de 30 kg de cerámica cuesta más que fabricar una nueva junto al olivar.",
+            "Romperla es la decisión correcta. Repetida cincuenta y tres millones de veces, produce una colina de más de dos hectáreas."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que llevaban pintado en el cuello",
+          "text": [
+            "Cada ánfora iba rotulada a pincel, en rojo o negro, en posiciones fijas que los epigrafistas designan con letras griegas."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/titulus-pictus.svg",
+          "alt": "Silueta de un ánfora Dressel 20 con cuatro etiquetas: alfa la tara, beta el comerciante, gamma el peso neto y delta el origen y el año",
+          "caption": "Las cuatro posiciones no son decorativas: son campos de un registro."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Los cuatro campos"
+        },
+        {
+          "type": "table",
+          "columns": [
+            "Posición",
+            "Qué registra"
+          ],
+          "rows": [
+            [
+              "α",
+              "El peso del ánfora vacía"
+            ],
+            [
+              "β",
+              "El comerciante"
+            ],
+            [
+              "γ",
+              "El peso neto del aceite"
+            ],
+            [
+              "δ",
+              "Ciudad de origen, peso neto y datación consular"
+            ]
+          ],
+          "caption": "Tara, contenido, responsable, procedencia y fecha."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Trazabilidad en el siglo II",
+          "text": [
+            "Con esos cuatro campos, el Estado romano podía saber ánfora a ánfora cuánto aceite bético entraba en Roma, quién lo había puesto ahí y en qué año.",
+            "No es una metáfora moderna: es literalmente un sistema de control, escrito sobre cerámica, mil ochocientos años antes de la etiqueta."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "De un ánfora del Testaccio sólo se conserva el cuello. ¿Cuánto del expediente puedes reconstruir?",
+          "answer": [
+            "Casi todo: la tara, el peso neto, el comerciante, la ciudad de origen y el año consular.",
+            "Por eso el Testaccio se lee y no sólo se excava. Un montón de barro roto que conserva fechas y nombres deja de ser basura y pasa a ser una serie documental.",
+            "Es la razón de que podamos afirmar el porcentaje bético con un rango, en vez de con una impresión."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que esta colina no mide",
+          "text": [
+            "Mide el aceite bético que llegaba **a Roma**, buena parte por vía fiscal. No mide el vino, ni el garum, ni el comercio con otras provincias, ni el consumo interno peninsular."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "text": [
+            "Y no se puede convertir en toneladas: haría falta suponer el llenado medio y el ritmo de depósito. Cualquier cifra de producción total que veas citada es una estimación con supuestos dentro."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Vuelta a Trajano",
+          "text": [
+            "El orden causal va del aceite al trono, no al revés.",
+            "Cuando una provincia lleva un siglo alimentando a la capital, sus propietarios acumulan dinero, cargos y clientelas en Roma. Que uno de esos linajes acabe dando un emperador es el **síntoma** de ese peso, no su causa."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "Itálica no explica el aceite. El aceite explica que Itálica importara."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que viene",
+          "text": [
+            "Esta Hispania —urbanizada, fiscalizada, contable— dura siglos y luego se rompe.",
+            "Lo que viene después se llama a menudo «la primera España». Ninguna de esas dos palabras aguanta el examen."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Amphorae ex Hispania — Dressel 20 (Guadalquivir Valley), ICAC",
+              "url": "http://amphorae.icac.cat/amphora/dressel-20-guadalquivir-valley",
+              "note": "Tipología, capacidad y peso"
+            },
+            {
+              "title": "CEIPAC, Universitat de Barcelona — Las ánforas Dressel 20 y su sistema epigráfico",
+              "url": "http://ceipac.ub.edu/biblio/Data/A/0379.pdf",
+              "note": "Las posiciones α, β, γ y δ de los tituli picti"
+            },
+            {
+              "title": "Mercati di Traiano, Museo dei Fori Imperiali — restauración de ánforas Dressel 20",
+              "url": "https://www.mercatiditraiano.it/es/infopage/restauro-anfore-dressel-20"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

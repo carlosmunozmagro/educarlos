@@ -1,0 +1,167 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "11-rendimientos-de-actividades-economicas",
+  "courseId": "sociedades-es",
+  "chapterId": "c3-irpf",
+  "title": "Rendimientos de actividades económicas",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 3 — Cómo tributas tú",
+          "heading": "Rendimientos de actividades económicas",
+          "text": [
+            "Antes de constituir Ámbar, Marta facturaba como autónoma.",
+            "En 2022 ingresó 62.000 € y se dedujo 18.000 € de gastos.",
+            "Su rendimiento neto no fueron 44.000 €."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Se calcula como una empresa",
+          "text": [
+            "El **artículo 28 LIRPF** remite a las normas del Impuesto sobre Sociedades. Ingresos menos gastos, con las mismas reglas de deducibilidad de la lección 05.",
+            "Un autónomo no tiene un régimen de gastos distinto. Tiene el mismo, sin sociedad."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dos modalidades",
+          "text": [
+            "El **artículo 30.1** admite estimación directa **normal** y **simplificada**. La simplificada se aplica si la cifra de negocios del año anterior no supera **600.000 €**.",
+            "Marta facturaba 62.000 €. Simplificada, sin discusión."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "title": "Renunciar ata",
+          "text": [
+            "Quien renuncia a la simplificada, o queda excluido, tributa en la modalidad normal **durante los tres años siguientes**. No es una decisión anual."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La ventaja de la simplificada",
+          "text": [
+            "El **artículo 30 del Reglamento**, regla 2.ª, permite deducir «las provisiones deducibles y los gastos de difícil justificación» aplicando un **5 %** sobre el rendimiento neto.",
+            "Sin factura, sin justificante. Ese es el punto."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "El rendimiento previo de Marta es 44.000 €. El 5 % son 2.200 €. ¿Cuánto se deduce?",
+          "answer": [
+            "**2.000 €.** No 2.200 €.",
+            "La misma regla continúa: «sin que la cuantía resultante pueda superar **2.000 euros anuales**».",
+            "Es un porcentaje con techo absoluto. A partir de 40.000 € de rendimiento neto, deja de crecer para siempre."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El codo de los 40.000 €"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/dificil-justificacion.svg",
+          "alt": "Una línea que sube al 5 % hasta los 40.000 euros de rendimiento neto y a partir de ahí se vuelve horizontal en el tope de 2.000 euros",
+          "caption": "El 5 % sólo es un porcentaje hasta que topa. Después es una cantidad fija."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El rendimiento de Marta en 2022",
+          "text": [
+            "62.000 € de ingresos, menos 18.000 € de gastos justificados, menos 2.000 € de difícil justificación.",
+            "**Rendimiento neto: 42.000 €.** Y va íntegro a la base general, donde se encuentra con la escala de la lección anterior."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y hay que ir pagando",
+          "text": [
+            "El **artículo 110 del Reglamento**: en estimación directa se ingresa el **20 %** del rendimiento neto acumulado «desde el primer día del año hasta el último día del trimestre», restando los pagos anteriores.",
+            "Es el **modelo 130**, trimestral."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y aquí está la diferencia con la sociedad",
+          "text": [
+            "El modelo 130 mira al ejercicio **en curso**: pagas sobre lo que llevas ganado este año.",
+            "El modelo 202 de una sociedad mira **hacia atrás**, a una cuota ya declarada (lección 07). Misma idea, dirección opuesta, y consecuencias de caja distintas."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "title": "Guárdalo para la lección 16",
+          "text": [
+            "Cuando comparemos autónomo y sociedad, esta diferencia de calendario cuenta tanto como la diferencia de tipos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "Como autónoma, Marta calculaba su rendimiento igual que una empresa, con un extra del 5 % sin justificar que topa en 2.000 € al año.",
+            "Ya sabes cómo se calcula tu renta. En la lección siguiente, lo que puedes restarle."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 35/2006, del IRPF, texto consolidado",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+              "note": "arts. 28 y 30"
+            },
+            {
+              "title": "Real Decreto 439/2007, Reglamento del IRPF",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820",
+              "note": "arts. 30 regla 2.ª y 110.1.a)"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

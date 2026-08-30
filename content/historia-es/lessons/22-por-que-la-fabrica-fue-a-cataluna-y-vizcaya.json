@@ -1,0 +1,157 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "22-por-que-la-fabrica-fue-a-cataluna-y-vizcaya",
+  "courseId": "historia-es",
+  "chapterId": "c6-siglo-que-no-cuaja",
+  "title": "Por qué la fábrica fue a Cataluña y Vizcaya",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 6 — El siglo que no cuaja",
+          "heading": "Por qué la fábrica fue a Cataluña y Vizcaya",
+          "text": [
+            "A finales del siglo XIX, alrededor del **94 %** del algodón español se producía en Cataluña.",
+            "No es una cuestión de carácter, ni de laboriosidad, ni de suerte.",
+            "Es una cuestión de carbón."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El obstáculo",
+          "text": [
+            "La siderurgia necesita fuertes inversiones y **carbón de calidad**, con alto poder calorífico.",
+            "El de la mayor parte de las minas españolas no lo tenía. Ése es el cuello de botella que decide dónde puede haber industria pesada y dónde no."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Cataluña: no necesitarlo",
+          "text": [
+            "La industrialización española arranca en Cataluña con el **textil algodonero**, en el segundo tercio del siglo.",
+            "Es una industria que consume mucha menos energía que la siderurgia, y que vende **dentro**: creció sobre el mercado interno y sobre una política **arancelaria proteccionista** creciente."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Vizcaya: traerlo",
+          "text": [
+            "La explotación del mineral de hierro de Vizcaya y Santander es la aportación española más importante a la industria europea, y en particular a la inglesa.",
+            "El mineral sale hacia **Gran Bretaña**, que lo demanda para su propia industria. Ese tráfico permanente es lo que pone el buen carbón al alcance."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/dos-soluciones-al-carbon.svg",
+          "alt": "Una caja superior con el problema del carbón español y dos cajas debajo con la solución catalana y la vizcaína",
+          "caption": "Dos maneras de rodear el mismo obstáculo."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "España tenía hierro, tenía capital disponible en el resto del país y tenía mercado. ¿Por qué la industria pesada no aparece también en otra parte?",
+          "answer": [
+            "Porque faltaba lo que no se puede improvisar: **carbón bueno y una burguesía dispuesta a invertir**.",
+            "Fuera de Cataluña y Vizcaya no había una burguesía fuerte, el interés inversor era escaso, y la sociedad seguía siendo mayoritariamente agraria — con la estructura de propiedad que ya conoces.",
+            "Las dos regiones que se industrializan no son las que tenían más recursos. Son las dos que encontraron cómo saltarse el cuello de botella."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y el arancel tiene factura",
+          "text": [
+            "El algodón catalán floreció **gracias a la protección arancelaria** y a un mercado cautivo que incluía las colonias.",
+            "Una industria que crece detrás de un arancel depende de que el arancel —y el mercado que protege— sigan ahí."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "A finales de siglo, el sector algodonero catalán entra en crisis. ¿Qué ha pasado, y no es una crisis de demanda interna?",
+          "answer": [
+            "Se han perdido las colonias, y muy especialmente Cuba.",
+            "Eso **encareció las materias primas** y descolocó al sector de golpe.",
+            "Es la factura del modelo: el mercado protegido que permitió crecer era también una dependencia, y cuando desapareció no había con qué sustituirlo. La industria y el imperio estaban atados por el mismo arancel."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde falla esto",
+          "text": [
+            "Esto explica los dos focos principales, no todo el mapa industrial: hubo minería en Asturias, en Río Tinto y en Almadén, y actividad en otras regiones.",
+            "Y el 94 % es una cifra de concentración a final de siglo, no una constante del periodo."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Que el mineral vizcaíno saliera hacia Gran Bretaña está documentado; que el buen carbón llegara aprovechando ese mismo tráfico es la explicación habitual, pero no la he verificado en fuente primaria."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que viene",
+          "text": [
+            "La pérdida de Cuba no sólo rompe una industria.",
+            "Rompe también la idea que el país tenía de sí mismo — y produce las cifras más incómodas de todo este capítulo."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Revolución industrial en España — focos, aranceles y obstáculos",
+              "url": "https://es.wikipedia.org/wiki/Revoluci%C3%B3n_industrial_en_Espa%C3%B1a"
+            },
+            {
+              "title": "«Primera industrialización, desequilibrios territoriales y Estado», Historia Contemporánea, UPV/EHU (PDF)",
+              "url": "https://ojs.ehu.eus/index.php/HC/article/download/19947/17804"
+            },
+            {
+              "title": "«Evolución histórica de la industria española», Atlas Didáctico, Instituto Geográfico Nacional",
+              "url": "https://educativo.ign.es/atlas-didactico/actividades-industriales-bach/evolucin_histrica_de_la_industria_espaola.html"
+            },
+            {
+              "title": "«Describe la evolución de la industria textil catalana, la siderurgia y la minería a lo largo del siglo XIX»",
+              "url": "http://hablemosdehistorias.blogspot.com/2019/02/bloque-82-describe-la-evolucion-de-la.html"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

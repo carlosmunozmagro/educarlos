@@ -1,0 +1,192 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "05-del-resultado-contable-a-la-base-imponible",
+  "courseId": "sociedades-es",
+  "chapterId": "c2-tributacion-sociedad",
+  "title": "Del resultado contable a la base imponible",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 2 — Cómo tributa la sociedad",
+          "heading": "Del resultado contable a la base imponible",
+          "text": [
+            "Ámbar Estudio cerró su segundo ejercicio con 40.000 € de beneficio.",
+            "Hacienda calculó sobre 41.400 €.",
+            "Ninguna de las dos cifras está mal."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "No hay dos contabilidades",
+          "text": [
+            "El **artículo 10.3 LIS** dice cómo se calcula la base imponible: **corrigiendo** el resultado contable determinado según el Código de Comercio.",
+            "La contabilidad manda. Lo fiscal son correcciones encima de ella."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/de-contable-a-fiscal.svg",
+          "alt": "Tres cajas encadenadas: resultado contable, base previa tras los ajustes, y base imponible tras compensar bases negativas",
+          "caption": "Los ajustes se llaman extracontables porque no tocan tus libros."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Los ajustes están tasados",
+          "text": [
+            "No es discrecional. El **artículo 15** enumera qué gastos no son fiscalmente deducibles, y si tu gasto no aparece ahí ni en otra regla de la Ley, se deduce.",
+            "Ámbar tuvo dos que sí aparecen."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El primero: una sanción",
+          "text": [
+            "Marta pagó 200 € de multa de tráfico con la tarjeta de la empresa.",
+            "El **artículo 15.c)** excluye «las multas y sanciones penales y administrativas, los recargos del período ejecutivo y el recargo por declaración extemporánea sin requerimiento previo»."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El segundo: las comidas",
+          "text": [
+            "Ámbar gastó 3.000 € en comidas con clientes. Y aquí casi todo el mundo se equivoca en la dirección contraria.",
+            "El **artículo 15.e)** excluye del concepto de liberalidad las atenciones a clientes o proveedores. Sí se deducen."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Ámbar facturó 180.000 € y gastó 3.000 € en atenciones a clientes. ¿Cuánto puede deducir?",
+          "answer": [
+            "1.800 €. El mismo artículo 15.e) pone un techo: las atenciones a clientes o proveedores son deducibles «con el límite del **1 por ciento del importe neto de la cifra de negocios** del período impositivo».",
+            "El 1 % de 180.000 € son 1.800 €. Los otros 1.200 € se ajustan.",
+            "Fíjate en la base del cálculo: es la **facturación**, no el beneficio. Una empresa con mucha cifra y poco margen tiene más techo del que cree."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La cuenta de Ámbar"
+        },
+        {
+          "type": "table",
+          "columns": [
+            "Concepto",
+            "Importe"
+          ],
+          "rows": [
+            [
+              "Resultado contable",
+              "40.000 €"
+            ],
+            [
+              "+ Sanción de tráfico (art. 15.c)",
+              "200 €"
+            ],
+            [
+              "+ Exceso de atenciones (art. 15.e)",
+              "1.200 €"
+            ],
+            [
+              "**Base imponible**",
+              "**41.400 €**"
+            ]
+          ],
+          "caption": "Dos ajustes de nada convierten 40.000 € en 41.400 €."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El impuesto no se deduce a sí mismo",
+          "text": [
+            "El **artículo 15.b)** excluye «los derivados de la contabilización del Impuesto sobre Sociedades».",
+            "Por eso se parte del resultado **antes de impuestos**: si no, el cálculo se mordería la cola."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que no es liberalidad",
+          "text": [
+            "El artículo 15.e) también deja fuera los gastos según usos y costumbres con el personal, los de promoción de ventas, y los que estén «correlacionados con los ingresos».",
+            "Y añade una frase que dará mucho de sí: tampoco lo son «las retribuciones a los administradores por el desempeño de funciones de alta dirección»."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "Se retoma en la lección 15",
+          "text": [
+            "Esa frase se introdujo para zanjar la deducibilidad del sueldo del administrador. No la zanjó."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y una letra que conviene conocer",
+          "text": [
+            "El **artículo 15.f)** excluye «los gastos de actuaciones contrarias al ordenamiento jurídico».",
+            "No es lo mismo que una multa: alcanza al gasto de la actuación en sí, no sólo a su sanción."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "Tu contabilidad es el punto de partida y casi todo se deduce. Lo que no, está en una lista cerrada, y casi siempre son multas, liberalidades por encima de su techo, y el propio impuesto.",
+            "Ya sabes sobre cuánto tributa Ámbar. En la lección siguiente, a qué tipo — que no es el 25 %."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 27/2014, del Impuesto sobre Sociedades, texto consolidado",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328",
+              "note": "arts. 10 y 15"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

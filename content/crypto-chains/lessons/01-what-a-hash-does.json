@@ -1,0 +1,203 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "01-what-a-hash-does",
+  "courseId": "crypto-chains",
+  "chapterId": "ch1-primitives",
+  "title": "What a hash actually does",
+  "reviewedOn": "2026-08-28",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 1 - The primitives",
+          "heading": "What a hash actually does",
+          "text": [
+            "Bitcoin, Git, and the login you used this morning all rest on the same function.",
+            "It is simpler than it looks, and stranger."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "A fixed-size fingerprint",
+          "text": [
+            "A hash function takes input of **any** size and returns a number of **fixed** size. Four bytes or nine gigabytes, the answer is always 256 bits."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/hash-funnel.svg",
+          "alt": "Inputs of three different sizes all feeding into SHA-256 and producing one fixed-width output",
+          "caption": "Information is destroyed on purpose. That is the point, not a flaw."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Same in, same out",
+          "text": [
+            "It is not random. The same input always gives the same digest, on any machine, forever."
+          ]
+        },
+        {
+          "type": "code",
+          "label": "sha256, hex-encoded",
+          "code": "\"hello\"  ->  2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824\n\"hellp\"  ->  fdd7585e08c4e2afd71dcabdb4636c89d557a3f42db9e2040c8bbd1708aa4ce7"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Change one letter",
+          "text": [
+            "Those two inputs differ by a single character. The outputs have nothing in common."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/avalanche.svg",
+          "alt": "Two rows of bits; roughly half of the second row is highlighted as flipped",
+          "caption": "Across the full digest, **131 of 256 bits** flipped - almost exactly half."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "key",
+          "title": "The avalanche property",
+          "text": [
+            "Every input bit affects every output bit, about half the time. So the digest tells you _nothing_ about the input - not its length, not its content, not whether you were close."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Why you cannot go backwards",
+          "text": [
+            "There is no clever inverse. To reverse a digest you would have to guess inputs until one matches, and the space you are guessing in is this big:"
+          ]
+        },
+        {
+          "type": "formula",
+          "tex": "2^{256} \\approx 1.16 \\times 10^{77}",
+          "caption": "Roughly the number of atoms in the observable universe."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "There are infinitely many possible inputs but only $2^{256}$ possible digests. So collisions must exist. Why is SHA-256 still considered safe?",
+          "answer": [
+            "Because existing is not the same as findable. The birthday bound says you would need about $2^{128}$ attempts to stumble on any collision.",
+            "At a trillion hashes per second, that is far longer than the age of the universe. The collisions are real and permanently out of reach."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Three properties, three attacks",
+          "text": [
+            "A hash is only useful while all three hold. Each one has a name for how it breaks."
+          ]
+        },
+        {
+          "type": "table",
+          "columns": [
+            "Property",
+            "Means",
+            "Broken when someone can"
+          ],
+          "rows": [
+            [
+              "Pre-image",
+              "Digest reveals nothing about input",
+              "Find _any_ input producing a given digest"
+            ],
+            [
+              "Second pre-image",
+              "Your document is the only one with its digest",
+              "Find a second input matching _your_ input"
+            ],
+            [
+              "Collision",
+              "No two inputs share a digest",
+              "Find _any_ two inputs that agree"
+            ]
+          ],
+          "caption": "MD5 and SHA-1 are broken in the third sense, which is why signatures moved on."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "This is what makes a chain"
+        },
+        {
+          "type": "steps",
+          "items": [
+            {
+              "title": "Each block stores the previous block's digest",
+              "text": "A single 32-byte field, nothing more."
+            },
+            {
+              "title": "Change any old transaction",
+              "text": "That block's digest changes completely - the avalanche property guarantees it."
+            },
+            {
+              "title": "Now every later block is wrong",
+              "text": "Each one points at a digest that no longer matches, all the way to the tip."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The chain is the hash",
+          "text": [
+            "There is no glue holding blocks together. The link **is** the digest, and tamper-evidence falls out of the maths for free.",
+            "Next: how a key proves _who_ wrote a transaction."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "FIPS 180-4: Secure Hash Standard",
+              "url": "https://csrc.nist.gov/pubs/fips/180-4/upd1/final",
+              "note": "the SHA-256 specification"
+            },
+            {
+              "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+              "url": "https://bitcoin.org/bitcoin.pdf",
+              "note": "section 2 describes the hash chain"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

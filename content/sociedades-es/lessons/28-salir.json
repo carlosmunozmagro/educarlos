@@ -1,0 +1,151 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "28-salir",
+  "courseId": "sociedades-es",
+  "chapterId": "c7-combinar",
+  "title": "Salir",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 7 — Combinar estructuras",
+          "heading": "Salir",
+          "text": [
+            "La primera lección decía que el dinero de la sociedad no era tuyo.",
+            "La última dice que las deudas, en parte, siguen siéndolo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dos maneras"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/salir.svg",
+          "alt": "Dos cajas, vender y liquidar, y debajo lo que sobrevive a cada una: los socios hasta su cuota y los administradores por la vía tributaria",
+          "caption": "Ninguna de las dos cierra el riesgo del todo."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Vender, si eres persona",
+          "text": [
+            "La ganancia por transmitir participaciones va a la **base del ahorro** (lección 09), con la escala del 19 % al 30 %.",
+            "Es de las pocas rentas grandes que un socio puede obtener sin pasar por la escala general."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Vender, si vende una sociedad",
+          "text": [
+            "Si quien vende es una holding, puede aplicar la exención del **artículo 21 LIS**, que alcanza también «la renta positiva obtenida en la **transmisión** de la participación».",
+            "Mismos requisitos: 5 % y un año. Y la misma reducción del 5 % por gastos de gestión."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "Pero hay que tenerla antes",
+          "text": [
+            "La holding no se improvisa el día de la venta: el artículo 21 exige un año de tenencia. Es la decisión de la lección 25, tomada con años de antelación."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Liquidar",
+          "text": [
+            "El **artículo 395 LSC** exige escritura pública de extinción en la que los liquidadores manifiesten que se ha procedido «al **pago de los acreedores** o a la consignación de sus créditos» y que se ha satisfecho a los socios su cuota de liquidación.",
+            "En el papel, la sociedad desaparece."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Marta liquida Ámbar, cobra su cuota de liquidación, y un año después aparece una deuda que nadie había contabilizado. ¿Responde?",
+          "answer": [
+            "Sí.",
+            "El **artículo 399.1** —«pasivo sobrevenido»— es explícito: «Los **antiguos socios responderán solidariamente** de las deudas sociales no satisfechas **hasta el límite de lo que hubieran recibido como cuota de liquidación**».",
+            "No responde con todo su patrimonio: responde hasta lo que cobró. Pero responde. Y el 399.2 añade que eso es «sin perjuicio de la responsabilidad de los liquidadores»."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y por el lado fiscal",
+          "text": [
+            "El **artículo 43.1.b) LGT** que vimos en la lección 02 sigue esperando: hace responsables subsidiarios a los administradores de sociedades «que hayan **cesado en sus actividades**, por las obligaciones tributarias devengadas […] que se encuentren pendientes en el momento del cese».",
+            "Cerrar sin pagar a Hacienda no cierra nada."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que esto significa",
+          "text": [
+            "Disolver no es una salida de emergencia. Limita el riesgo al importe que te llevaste, y deja intacta la vía tributaria contra quien administraba.",
+            "Si la sociedad tiene deudas, liquidarla ordenadamente es correcto; liquidarla para huir de ellas, no funciona."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y aquí termina",
+          "text": [
+            "Empezamos con dos patrimonios separados por una línea y cuatro maneras de cruzarla. Hemos visto qué tributa a cada lado, cómo se mueve el dinero entre ellos, qué papeles lo sostienen y dónde está el límite.",
+            "La línea sigue ahí al final. Sólo que ahora sabes exactamente dónde está dibujada."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley de Sociedades de Capital (RDL 1/2010)",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2010-10544",
+              "note": "arts. 395 y 399"
+            },
+            {
+              "title": "Ley 27/2014, del Impuesto sobre Sociedades",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328",
+              "note": "art. 21"
+            },
+            {
+              "title": "Ley 58/2003, General Tributaria",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23186",
+              "note": "art. 43.1.b)"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

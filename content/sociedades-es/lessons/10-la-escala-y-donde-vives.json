@@ -1,0 +1,185 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "10-la-escala-y-donde-vives",
+  "courseId": "sociedades-es",
+  "chapterId": "c3-irpf",
+  "title": "La escala y dónde vives",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 3 — Cómo tributas tú",
+          "heading": "La escala y dónde vives",
+          "text": [
+            "Marta cobra 30.000 € de nómina y vive en Madrid.",
+            "Su tipo marginal no es el 30 %, ni el 45 %, ni el 47 % del titular.",
+            "Es el 27,80 %."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "No hay una escala. Hay dos",
+          "text": [
+            "La base liquidable general se grava con la escala **estatal** del artículo 63 y con la escala **autonómica** de tu comunidad. Se suman.",
+            "El Estado fija la mitad para todos. La otra mitad la decide Madrid."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La mitad madrileña"
+        },
+        {
+          "type": "table",
+          "columns": [
+            "Base liquidable",
+            "Tipo autonómico"
+          ],
+          "rows": [
+            [
+              "Hasta 13.362,22 €",
+              "8,50 %"
+            ],
+            [
+              "13.362,22 – 19.004,63 €",
+              "10,70 %"
+            ],
+            [
+              "19.004,63 – 35.425,68 €",
+              "12,80 %"
+            ],
+            [
+              "35.425,68 – 57.320,40 €",
+              "17,40 %"
+            ],
+            [
+              "Más de 57.320,40 €",
+              "20,50 %"
+            ]
+          ],
+          "caption": "Art. 1 del Decreto Legislativo 1/2010, en la redacción de la Ley 13/2023."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Fíjate en las cifras",
+          "text": [
+            "13.362,22 €. 19.004,63 €. 35.425,68 €.",
+            "No son números redondos porque son la escala anterior **deflactada** un 3,1 %. Y no coinciden con los cortes de la escala estatal, que sí son redondos: 12.450, 20.200, 35.200."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que pasa al sumarlas"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/marginal-madrid.svg",
+          "alt": "Gráfico escalonado del tipo marginal combinado desde 0 hasta 70.000 euros de base liquidable, con nueve escalones y el punto de Marta marcado en el 27,80 por ciento",
+          "caption": "Cada escalón es un corte de una de las dos escalas. Ninguna de las dos, sola, dice la verdad."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Entre 0 y 70.000 € de base liquidable, ¿cuántas veces cambia tu tipo marginal en Madrid?",
+          "answer": [
+            "**Nueve veces.** No cinco, que son los tramos de Madrid, ni seis, que son los del Estado.",
+            "Como los cortes de una escala caen en sitios distintos que los de la otra, cada corte de cualquiera de las dos crea un escalón nuevo en la suma.",
+            "Tu marginal cambia más veces de las que cambia ninguna de las dos tablas que lo componen."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El escalón de 225 euros",
+          "text": [
+            "Entre **35.200,00 €** y **35.425,68 €** el marginal combinado es del **31,30 %**.",
+            "Ese tramo mide 225,68 € y existe sólo porque el Estado corta en 35.200 y Madrid en 35.425,68. Es un accidente aritmético, no una decisión de política fiscal."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El marginal de Marta",
+          "text": [
+            "Sus 30.000 € caen en el tramo estatal del 15,00 % y en el autonómico del 12,80 %.",
+            "**27,80 %.** Es lo que se lleva Hacienda del próximo euro que Ámbar le pague como nómina."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "Marginal no es medio",
+          "text": [
+            "El 27,80 % es lo que paga el **último** euro. Lo que paga de media es bastante menos, porque los tramos anteriores tributaron más barato."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y el techo",
+          "text": [
+            "Por encima de 300.000 € de base liquidable, el marginal en Madrid es **45,00 %**: 24,50 % estatal más 20,50 % autonómico.",
+            "El techo depende de dónde tributes, porque la mitad autonómica la fija cada comunidad."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "Tu tipo no está en ninguna tabla: es la suma de dos, con cortes que no encajan. Y en Madrid, para un sueldo normal, ronda el 27–28 %, no el 45 %.",
+            "Guarda ese 27,80 %. En el capítulo 4 se compara con el 20,4 % que pagaba el dividendo, y ahí empieza a decidirse cómo sacas el dinero."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 35/2006, del IRPF, texto consolidado",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+              "note": "art. 63, escala general estatal"
+            },
+            {
+              "title": "Ley 13/2023 de la Comunidad de Madrid, que deflacta la escala autonómica",
+              "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2024-5610",
+              "note": "art. 1, escala autonómica vigente"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

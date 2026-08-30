@@ -1,0 +1,165 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "18-1808-el-ano-que-partio-el-pais",
+  "courseId": "historia-es",
+  "chapterId": "c5-borbones-1808",
+  "title": "1808: el año que partió el país",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 5 — Borbones y 1808",
+          "heading": "1808: el año que partió el país",
+          "text": [
+            "El 6 de mayo de 1808, la corona española es legalmente de Napoleón, cedida por su propio titular.",
+            "Todo en orden sobre el papel.",
+            "Y no sirve absolutamente de nada."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Bayona, 5 y 6 de mayo",
+          "text": [
+            "**Fernando VII devuelve la corona a su padre**, la que había obtenido con el motín de Aranjuez.",
+            "**Carlos IV cede esos derechos a Napoleón.** Un mes después, Napoleón designa rey de España e Indias a su hermano, que reina como **José I**.",
+            "El 12 de mayo renuncian en Burdeos los demás posibles sucesores."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La cadena entera, vacía",
+          "text": [
+            "Las renuncias se han considerado forzadas, aunque algunos historiadores señalan que ni Carlos IV ni Fernando VII estuvieron a la altura frente a las presiones de Napoleón.",
+            "Sea como sea, el resultado es que **no queda nadie en la cadena sucesoria** que no haya firmado."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/el-trono-vacio.svg",
+          "alt": "Tres cajas encadenadas con las cesiones de la corona, una línea de puntos que las corta bajo el rótulo nadie lo reconoce, y debajo las juntas gobernando",
+          "caption": "Las firmas transfieren el título. La obediencia, no."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Jurídicamente la operación es impecable: el titular cede, el cesionario nombra. ¿Por qué no funciona?",
+          "answer": [
+            "Porque **nadie lo reconoce**, ni en la Península ni en la América española. El rechazo a José I y la lealtad al Fernando VII cautivo son generales en todos los territorios de la monarquía.",
+            "Y sin reconocimiento no hay obediencia; sin obediencia no hay impuestos, ni reclutas, ni administración.",
+            "Un título se transfiere con una firma. La autoridad, no: hay que tenerla."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Entonces, ¿de dónde sale el poder?",
+          "text": [
+            "No había respuesta prevista. La que se improvisa es que la autoridad la asumen **juntas locales y provinciales**, en nombre del rey ausente. En el otoño de 1808 se coordinan en una Junta Central.",
+            "Formalmente gobiernan «por Fernando». Materialmente gobierna un conjunto de asambleas a las que nadie ha coronado."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Las juntas se declaran fernandinas y no quieren ninguna revolución. ¿Qué están haciendo, entonces?",
+          "answer": [
+            "Ejerciendo la soberanía.",
+            "No las ha coronado nadie: se legitiman por representar a su territorio. Y eso, se diga o no, es la idea de que el poder reside en la nación y no en la persona del rey.",
+            "No llega de Francia dentro de un libro. **Se practica aquí por necesidad administrativa cuatro años antes de escribirse en Cádiz.** Hacen la revolución por el procedimiento, no por el programa."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y lo mismo al otro lado del Atlántico",
+          "text": [
+            "El vacío es idéntico en América, y allí también se forman juntas en nombre de Fernando VII.",
+            "Ésa es la raíz institucional de los procesos de independencia: **no empiezan como ruptura, empiezan como suplencia**."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "Cuando el rey vuelva, se encontrará con territorios que llevan años gobernándose solos y habiendo descubierto que podían."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde falla esto",
+          "text": [
+            "Hubo guerra, y durísima. Este modelo explica de dónde salió el poder; no sustituye a la guerra ni la minimiza.",
+            "Y las juntas no eran democráticas ni pretendían serlo: se formaron con notables locales. No proyectes 1978 sobre 1808."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "La independencia americana tiene causas propias y anteriores. El vacío de 1808 es el detonante institucional, no la causa única."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que viene",
+          "text": [
+            "Cuatro años gobernando en nombre de un rey ausente terminan en un texto que lo escribe.",
+            "Durará dos años, y perderá un continente por el camino."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Abdicaciones de Bayona — desarrollo y falta de reconocimiento",
+              "url": "https://es.wikipedia.org/wiki/Abdicaciones_de_Bayona"
+            },
+            {
+              "title": "Texto de las Abdicaciones de Bayona, 5 de mayo de 1808 (PDF)",
+              "url": "https://www.luis-vives.es/docs/aula-virtual/historia/doc/abdicaciones_de_bayona.pdf"
+            },
+            {
+              "title": "«Las abdicaciones de Bayona», Recursos Académicos",
+              "url": "https://www.recursosacademicos.net/las-abdicaciones-de-bayona/"
+            },
+            {
+              "title": "«Carlos IV abdica a favor de Fernando VII, 19 de marzo de 1808»",
+              "url": "https://elhistoriador.com.ar/carlos-iv-abdica-a-favor-de-fernando-vii-19-de-marzo-de-1808/"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

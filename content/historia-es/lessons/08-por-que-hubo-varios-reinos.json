@@ -1,0 +1,233 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "08-por-que-hubo-varios-reinos",
+  "courseId": "historia-es",
+  "chapterId": "c3-maquina-medieval",
+  "title": "Por qué hubo varios reinos",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 3 — La máquina medieval",
+          "heading": "Por qué hubo varios reinos",
+          "text": [
+            "Dos tierras del mismo tamaño. Una se repuebla en el Duero del siglo IX; la otra se reparte en el Guadalquivir del XIII.",
+            "Cinco siglos después siguen siendo distintas.",
+            "Y lo que las diferencia no es el clima."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La pregunta está mal hecha",
+          "text": [
+            "«¿Por qué tardó tanto España en unirse?» presupone que la unión era el estado natural y que algo la retrasaba.",
+            "Los núcleos cristianos **nacen separados**, avanzan por frentes distintos y ocupan la tierra de maneras distintas. No son fragmentos de nada anterior."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Cuatro modos de ocupar la tierra"
+        },
+        {
+          "type": "table",
+          "columns": [
+            "Modelo",
+            "Cuándo",
+            "Qué propiedad deja"
+          ],
+          "rows": [
+            [
+              "Presura o aprisio",
+              "s. VIII–X",
+              "Pequeña y mediana"
+            ],
+            [
+              "Concejil",
+              "s. XI–XII",
+              "Mediana, con mucho comunal"
+            ],
+            [
+              "Órdenes militares",
+              "s. XIII",
+              "Latifundio en encomiendas"
+            ],
+            [
+              "Repartimiento",
+              "s. XIII en adelante",
+              "Latifundio en grandes lotes"
+            ]
+          ],
+          "caption": "El orden de la tabla es cronológico, y también es el orden en que crece la parcela."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La presura",
+          "text": [
+            "Apropiación por ocupación, sobre un principio de derecho romano: **quien cultiva una tierra despoblada se convierte en su propietario**.",
+            "Se da en los valles vacíos del Duero y del Ebro. Ocupación espontánea, parcelas pequeñas, muchísimos dueños."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El repartimiento",
+          "text": [
+            "Lo contrario. La tierra tomada al enemigo se concede **en grandes lotes** a señores de la guerra y a eclesiásticos.",
+            "Después ellos repueblan con colonos, cediéndoles parcelas pequeñas. Pero la propiedad se queda arriba."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/misma-parcela-dos-caminos.svg",
+          "alt": "Arriba, una extensión dividida en doce parcelas iguales; abajo, la misma extensión como un único bloque",
+          "caption": "La misma superficie. Doce dueños o uno, según el siglo en que se conquistó."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Es el mismo reino y la misma corona. ¿Por qué no usó siempre el mismo sistema de reparto?",
+          "answer": [
+            "Porque cambió **la velocidad**.",
+            "Repoblar despacio un valle vacío admite que la gente vaya ocupando parcelas por su cuenta. Repartir de golpe un reino entero recién conquistado, no: hay que entregar lotes grandes a quienes pusieron y pagaron los ejércitos.",
+            "El tamaño de la propiedad acabó dependiendo del ritmo de la campaña militar, no de ninguna decisión sobre cómo debía ser el campo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y esa diferencia dura",
+          "text": [
+            "El norte queda minifundista; el sur, latifundista. Con modificaciones, esa estructura sigue reconocible hasta el siglo XX.",
+            "No la crea el carácter ni la geografía: la crea una serie de decisiones administrativas con fecha."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "Cuando en el siglo XIX se pongan a la venta millones de hectáreas, y cuando en el XX se intente una reforma agraria, el mapa sobre el que actúan ya está dibujado desde el siglo XIII."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Las dos coronas",
+          "text": [
+            "Sobre esa base salen dos proyectos distintos.",
+            "**Castilla** mira a la meseta y al Atlántico. **Aragón** es en realidad una confederación —cada territorio conserva sus fueros, sus Cortes y sus instituciones, y el monarca gobierna pactando— y mira al Mediterráneo."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/dos-coronas-dos-mares.svg",
+          "alt": "Dos cajas, Castilla y Aragón, cada una con una flecha hacia su orientación: la lana a Flandes y el Mediterráneo",
+          "caption": "Dos economías, dos formas de gobernar y dos fronteras exteriores."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Por qué Castilla acaba en la lana",
+          "text": [
+            "Exportar lana a Flandes exige espacio abierto y grandes extensiones de pasto.",
+            "Justo lo que el repartimiento y las órdenes militares habían creado en el sur y en La Mancha. La estructura de propiedad no sólo se hereda: **habilita** el negocio siguiente."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "El modelo concejil deja en el mapa una cosa que ni la presura ni el repartimiento dejan. ¿Cuál, y por qué importará seis siglos después?",
+          "answer": [
+            "Tierras **comunales**, administradas por el concejo: ni de un particular ni de un señor, sino del municipio.",
+            "Son enormes, y durante siglos sostienen al vecino que no tiene tierra propia — pastos, leña, caza.",
+            "Y son exactamente lo que el Estado del siglo XIX pondrá a la venta para pagar sus deudas. Cuando llegue esa subasta, el vecino sin tierra descubrirá que lo que se vende también era suyo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde falla esto",
+          "text": [
+            "La correspondencia entre modelo y estructura es una **tendencia**, no una ley: hay latifundio en el norte y minifundio en el sur, y el mapa real está mucho más moteado.",
+            "Las fases se solapan, no son cuatro etapas limpias."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Y no lo conviertas en determinismo. La estructura condiciona; no decide. Lo que pase en el siglo XIX dependerá de decisiones políticas concretas."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que viene",
+          "text": [
+            "Sobre ese sur de grandes propiedades se monta, en 1273, una institución ganadera que durará más de cinco siglos.",
+            "Y su privilegio más importante no es el que todo el mundo cita."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "«Presura» — apropiación por ocupación y su base en derecho romano",
+              "url": "https://es.wikipedia.org/wiki/Presura"
+            },
+            {
+              "title": "«Las formas de ocupación del territorio y su influencia en la estructura de la propiedad»",
+              "url": "https://blogtodohistoriaymas.over-blog.es/article-las-formas-de-ocupacion-del-territorio-y-su-influencia-en-la-estructura-de-la-propiedad-modelos-de-121511293.html"
+            },
+            {
+              "title": "«Sistemas de repoblación», Occidental College",
+              "url": "https://sites.oxy.edu/guillenf/espanol302/recursos/mapas/sistemas%20de%20repoblaci%C3%B3n.html"
+            },
+            {
+              "title": "«Minifundio versus latifundio», Ministerio de Agricultura (PDF)",
+              "url": "https://www.mapa.gob.es/ministerio/pags/biblioteca/fondo/pdf/11797_23.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

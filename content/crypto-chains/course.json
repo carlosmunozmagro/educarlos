@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schema/course.schema.json",
+  "id": "crypto-chains",
+  "lang": "en",
+  "accent": "#f0a13a",
+  "title": "Crypto, from the math up",
+  "subtitle": "What hashing, keys and chains actually do - not what the metaphors say.",
+  "description": "Every explanation of blockchain reaches for a metaphor: a ledger, a chain, a village of accountants. This course skips them. You will see the actual mechanisms, one screen at a time.",
+  "chapters": [
+    {
+      "id": "ch1-primitives",
+      "title": "The primitives",
+      "lessons": [
+        {
+          "id": "01-what-a-hash-does",
+          "title": "What a hash actually does",
+          "summary": "One-way, fixed-size, wildly sensitive - and why that is enough to build a chain."
+        }
+      ]
+    }
+  ]
+}

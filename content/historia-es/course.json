@@ -1,0 +1,230 @@
+{
+  "$schema": "../../schema/course.schema.json",
+  "id": "historia-es",
+  "lang": "es",
+  "accent": "#b8434a",
+  "title": "España, caso por caso",
+  "subtitle": "Veinte siglos contados como enigmas con solución.",
+  "description": "De la Hispania romana a la España de hoy, en treinta y dos enigmas. Cada lección abre con una pregunta que casi puedes contestar, sigue un caso real con nombres y cifras, y termina con la respuesta y con lo que la respuesta rompe. Sin épica, sin adjetivos, con la fuente delante.",
+  "needsSources": true,
+  "disclaimer": "Material educativo sobre historia de España, no un manual académico ni un texto de referencia para citar. Muchas de las cifras que verás (población, producción de plata, víctimas) son estimaciones discutidas entre especialistas: cuando existe rango, se da el rango y se nombra de dónde sale. Donde no hay consenso académico se dice que no lo hay, en lugar de elegir un bando. El último capítulo toca normativa vigente en España, sujeta a cambios: cada lección lleva su fecha de revisión y sus fuentes.",
+  "chapters": [
+    {
+      "id": "c1-hispania",
+      "title": "Hispania",
+      "lessons": [
+        {
+          "id": "01-por-que-el-latin-gano",
+          "title": "Por qué el latín ganó y el resto no",
+          "summary": "Doscientos años de conquista desigual, y qué quedó grabado para siempre: lengua, derecho y carreteras."
+        },
+        {
+          "id": "02-la-provincia-que-exportaba-emperadores",
+          "title": "La provincia que exportaba emperadores",
+          "summary": "Un monte de cincuenta millones de ánforas rotas en Roma mide el peso real de Hispania."
+        },
+        {
+          "id": "03-el-reino-visigodo-no-era-espana",
+          "title": "El reino visigodo no era España",
+          "summary": "Toledo, el Liber Iudiciorum y una corona electiva: la grieta estructural del reino."
+        }
+      ]
+    },
+    {
+      "id": "c2-711-al-andalus",
+      "title": "711 y al-Ándalus",
+      "lessons": [
+        {
+          "id": "04-como-cae-un-reino-en-un-verano",
+          "title": "Cómo cae un reino en un verano",
+          "summary": "El Tratado de Teodomiro explica la conquista mejor que cualquier batalla: pactos sobre un reino ya roto."
+        },
+        {
+          "id": "05-cordoba-la-mayor-ciudad-de-occidente",
+          "title": "Córdoba, la mayor ciudad de Occidente",
+          "summary": "Qué cifras de la Córdoba califal se sostienen, cuáles son propaganda medieval y cuáles invento moderno."
+        },
+        {
+          "id": "06-la-palabra-reconquista",
+          "title": "La palabra «Reconquista»",
+          "summary": "Ocho siglos de fronteras, parias y taifas, contra un concepto acuñado en el siglo XIX."
+        },
+        {
+          "id": "07-tres-religiones-convivencia-o-eslogan",
+          "title": "Tres religiones: ¿convivencia o eslogan?",
+          "summary": "La dimma, el impuesto, las aljamas y 1391: qué era exactamente convivir."
+        }
+      ]
+    },
+    {
+      "id": "c3-maquina-medieval",
+      "title": "La máquina medieval",
+      "lessons": [
+        {
+          "id": "08-por-que-hubo-varios-reinos",
+          "title": "Por qué hubo varios reinos",
+          "summary": "Repoblación, geografía y dos modelos opuestos: Castilla mira a la lana, Aragón al Mediterráneo."
+        },
+        {
+          "id": "09-la-mesta-y-el-pais-de-las-ovejas",
+          "title": "La Mesta, o el país de las ovejas",
+          "summary": "Un privilegio ganadero de 1273 y la sombra que proyecta sobre el campo durante cinco siglos."
+        },
+        {
+          "id": "10-una-boda-no-es-un-pais",
+          "title": "1469: una boda no es un país",
+          "summary": "Isabel y Fernando unen coronas, no Estados: leyes, monedas y fronteras siguen separadas."
+        }
+      ]
+    },
+    {
+      "id": "c4-1492-imperio",
+      "title": "1492 y el imperio",
+      "lessons": [
+        {
+          "id": "11-tres-cosas-el-mismo-ano",
+          "title": "1492: tres cosas el mismo año",
+          "summary": "Granada, el decreto de expulsión y Colón no coinciden por azar: comparten una misma lógica."
+        },
+        {
+          "id": "12-el-error-de-colon-que-salio-bien",
+          "title": "El error de Colón que salió bien",
+          "summary": "La Junta de Salamanca tenía razón en los números; Colón se equivocaba en un tercio de la Tierra."
+        },
+        {
+          "id": "13-potosi-la-plata-que-empobrecio",
+          "title": "Potosí: la plata que empobreció",
+          "summary": "La revolución de los precios, los arbitristas, y por qué la versión simple de esta historia falla."
+        },
+        {
+          "id": "14-las-bancarrotas-de-felipe-ii",
+          "title": "Las bancarrotas de Felipe II",
+          "summary": "1557, 1575 y 1596: cómo se suspende pagos tres veces sin dejar de ser la primera potencia."
+        },
+        {
+          "id": "15-leyenda-negra-que-parte-es-cierta",
+          "title": "Leyenda negra: qué parte es cierta",
+          "summary": "Las Leyes de Burgos, Las Casas y Vitoria: la crítica más dura al imperio se escribió dentro."
+        }
+      ]
+    },
+    {
+      "id": "c5-borbones-1808",
+      "title": "Borbones y 1808",
+      "lessons": [
+        {
+          "id": "16-una-guerra-mundial-por-una-corona",
+          "title": "Una guerra mundial por una corona",
+          "summary": "La Guerra de Sucesión y los Decretos de Nueva Planta fabrican, de golpe, el Estado centralizado."
+        },
+        {
+          "id": "17-la-ilustracion-a-medias",
+          "title": "La Ilustración a medias",
+          "summary": "El motín de Esquilache marca hasta dónde llegaban las reformas de Carlos III y quién las frenó."
+        },
+        {
+          "id": "18-1808-el-ano-que-partio-el-pais",
+          "title": "1808: el año que partió el país",
+          "summary": "Bayona vacía el trono, y la soberanía cae en manos de unas juntas que nadie había previsto."
+        },
+        {
+          "id": "19-cadiz-1812-y-el-espejismo",
+          "title": "Cádiz 1812 y el espejismo",
+          "summary": "La primera constitución dura dos años, pierde América por el camino y aun así deja el molde."
+        }
+      ]
+    },
+    {
+      "id": "c6-siglo-que-no-cuaja",
+      "title": "El siglo que no cuaja",
+      "lessons": [
+        {
+          "id": "20-los-carlistas-la-guerra-que-vuelve",
+          "title": "Los carlistas: la guerra que vuelve",
+          "summary": "Tres guerras civiles en cuarenta años por un conflicto que reaparece intacto en 1936."
+        },
+        {
+          "id": "21-desamortizaciones-quien-compro",
+          "title": "Desamortizaciones: ¿quién compró?",
+          "summary": "Mendizábal y Madoz sacan media España al mercado; los compradores no son los que esperas."
+        },
+        {
+          "id": "22-por-que-la-fabrica-fue-a-cataluna-y-vizcaya",
+          "title": "Por qué la fábrica fue a Cataluña y Vizcaya",
+          "summary": "Carbón, hierro, aranceles y mercado colonial: la industrialización eligió dos esquinas del mapa."
+        },
+        {
+          "id": "23-1898-perder-el-imperio-encontrar-la-nacion",
+          "title": "1898: perder el imperio, encontrar la nación",
+          "summary": "Cuba se pierde en diez semanas y nace un debate sobre España que todavía no ha terminado."
+        }
+      ]
+    },
+    {
+      "id": "c7-dos-espanas",
+      "title": "Las dos Españas",
+      "lessons": [
+        {
+          "id": "24-de-la-dictadura-a-la-republica",
+          "title": "De la dictadura a la República en 48 horas",
+          "summary": "Unas elecciones municipales que la monarquía gana en votos y pierde en ciudades.",
+          "status": "planned"
+        },
+        {
+          "id": "25-la-republica-tuvo-prisa",
+          "title": "La República tuvo prisa",
+          "summary": "Cada reforma del primer bienio crea un apoyo y un enemigo, y ninguno se queda quieto.",
+          "status": "planned"
+        },
+        {
+          "id": "26-por-que-un-golpe-se-convierte-en-guerra",
+          "title": "Por qué un golpe se convierte en guerra",
+          "summary": "Julio de 1936: el golpe triunfa en media España y fracasa en la otra media. Eso es la guerra.",
+          "status": "planned"
+        },
+        {
+          "id": "27-la-guerra-por-dentro",
+          "title": "La guerra por dentro",
+          "summary": "El Comité de No Intervención, lo que dejó pasar y lo que no: la neutralidad tuvo bando.",
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "id": "c8-franquismo-transicion-hoy",
+      "title": "Franquismo, Transición y hoy",
+      "lessons": [
+        {
+          "id": "28-cuarenta-anos-no-fueron-iguales",
+          "title": "Cuarenta años no fueron iguales",
+          "summary": "El Plan de Estabilización de 1959 parte el régimen en dos economías que no se parecen en nada.",
+          "status": "planned"
+        },
+        {
+          "id": "29-la-espana-que-hizo-las-maletas",
+          "title": "La España que hizo las maletas",
+          "summary": "Millones de personas se mueven del campo a la ciudad y de España a Europa: el país cambia de forma.",
+          "status": "planned"
+        },
+        {
+          "id": "30-la-transicion-no-fue-magia",
+          "title": "La Transición no fue magia",
+          "summary": "La Ley para la Reforma Política: el mecanismo legal por el que un régimen se vota a sí mismo el final.",
+          "status": "planned"
+        },
+        {
+          "id": "31-1978-el-pacto-y-sus-costuras",
+          "title": "1978: el pacto y sus costuras",
+          "summary": "Qué se acordó, qué se aplazó y qué se dejó ambiguo a propósito en la Constitución.",
+          "status": "planned"
+        },
+        {
+          "id": "32-la-historia-que-todavia-se-discute",
+          "title": "La historia que todavía se discute",
+          "summary": "Fosas, Cuelgamuros y la Ley 20/2022: qué sigue jurídicamente abierto en 2026.",
+          "status": "planned"
+        }
+      ]
+    }
+  ]
+}

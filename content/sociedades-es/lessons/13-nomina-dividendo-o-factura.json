@@ -1,0 +1,179 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "13-nomina-dividendo-o-factura",
+  "courseId": "sociedades-es",
+  "chapterId": "c4-sacar-dinero",
+  "title": "Nómina, dividendo o factura",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 4 — Sacar dinero de la sociedad",
+          "heading": "Nómina, dividendo o factura",
+          "text": [
+            "Ámbar tiene 20.000 € de beneficio y Marta quiere sacarlos.",
+            "El dividendo tributa al 19 %. La nómina, al 27,80 %.",
+            "La nómina le deja 1.522 € más."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La pregunta está mal planteada",
+          "text": [
+            "«¿Qué tipo pago?» no sirve, porque las tres vías no tratan igual a la sociedad.",
+            "La pregunta buena es: por cada euro de **beneficio antes de impuestos**, ¿cuánto acaba en tu bolsillo?"
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dos vías reducen el impuesto de la sociedad",
+          "text": [
+            "La **nómina** y la **factura** son gasto deducible: bajan la base imponible de Ámbar. El beneficio que sale por ahí no llega a tributar en el Impuesto sobre Sociedades.",
+            "Sólo pagan un impuesto: el tuyo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y una no",
+          "text": [
+            "El **artículo 15.a) LIS** excluye de los gastos deducibles «los que representen una **retribución de los fondos propios**». El dividendo es exactamente eso.",
+            "La sociedad paga su impuesto sobre ese beneficio, y después tú pagas sobre lo que queda."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "title": "Dos impuestos, no uno",
+          "text": [
+            "El 19 % de la base del ahorro no se aplica sobre el beneficio: se aplica sobre lo que sobrevive al Impuesto sobre Sociedades."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Ámbar tiene 20.000 € de beneficio antes de impuestos. ¿Qué vía deja más dinero en el bolsillo de Marta?",
+          "answer": [
+            "La **nómina**, por 1.522 €.",
+            "Como nómina, los 20.000 € son deducibles: Ámbar no paga IS y Marta tributa al 27,80 %. Le llegan **14.440 €**.",
+            "Como dividendo, Ámbar paga primero el 19 % (3.800 €) y reparte 16.200 €, sobre los que Marta paga 3.282 € de base del ahorro. Le llegan **12.918 €**."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El coste real de cada vía"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/tres-vias-coste.svg",
+          "alt": "Dos barras de 20.000 euros de beneficio: la de nómina con la parte neta ocupando el 72,2 por ciento y la de dividendo sólo el 64,6 por ciento",
+          "caption": "El dividendo tiene el tipo nominal más bajo y el coste total más alto."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Los números",
+          "text": [
+            "Sumando los dos impuestos, el dividendo cuesta un **35,41 %** del beneficio. La nómina, un **27,80 %**.",
+            "Siete puntos y medio de diferencia, en el sentido contrario al que sugiere el titular."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La retención no es un impuesto más",
+          "text": [
+            "Al repartir dividendo, Ámbar retiene el **19 %** (**art. 101.4 LIRPF**) y lo ingresa a cuenta.",
+            "No se suma a nada: se descuenta de la cuota final de Marta. Si retuvo de más, se lo devuelven."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y la factura tiene su propia condición",
+          "text": [
+            "Facturar a tu sociedad también es deducible, pero el **artículo 18 LIS** exige que sea a **valor de mercado** por un servicio real.",
+            "Es la vía con más margen y con más riesgo. Es la lección siguiente."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que este cálculo deja fuera",
+          "text": [
+            "La Seguridad Social. Marta cotiza en el RETA como socia administradora, y esa cuota existe reparta dividendos o no.",
+            "Meterla cambia la comparación, y es lo que hace la lección 16."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "title": "No memorices el resultado",
+          "text": [
+            "Con otro tipo de sociedad o con otro marginal, el orden puede invertirse. Lo que hay que llevarse es el método: siempre desde el beneficio antes de impuestos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "Compara siempre desde el beneficio antes de impuestos, no desde tipos nominales. La vía deducible paga un impuesto; el dividendo paga dos.",
+            "En la lección siguiente, por qué la factura a tu propia sociedad tiene que resistir una comprobación."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 27/2014, del Impuesto sobre Sociedades",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328",
+              "note": "arts. 15.a) y 18"
+            },
+            {
+              "title": "Ley 35/2006, del IRPF",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+              "note": "arts. 46, 66, 76 y 101.4"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

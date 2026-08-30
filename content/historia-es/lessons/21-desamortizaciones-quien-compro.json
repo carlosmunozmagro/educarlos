@@ -1,0 +1,179 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "21-desamortizaciones-quien-compro",
+  "courseId": "historia-es",
+  "chapterId": "c6-siglo-que-no-cuaja",
+  "title": "Desamortizaciones: ¿quién compró?",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 6 — El siglo que no cuaja",
+          "heading": "Desamortizaciones: ¿quién compró?",
+          "text": [
+            "Se vendió alrededor del **62 %** del patrimonio de la Iglesia. Tres quintos del total.",
+            "A precio de saldo.",
+            "Y el campesino sin tierra salió de la operación con menos de lo que tenía."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "1836: Mendizábal",
+          "text": [
+            "El Gobierno nacionaliza los bienes de las órdenes religiosas y los vende **a precios muy bajos**.",
+            "El objetivo no era social. Era fiscal y político: hacía falta dinero para la guerra carlista, y hacía falta crear propietarios con interés en que el régimen liberal no volviera atrás."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "text": [
+            "Si volvían los absolutistas, las compras se anulaban. Comprar era, literalmente, comprometerse con el bando."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Cuánto se vendió"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/desamortizacion-62.svg",
+          "alt": "Una barra con el 62 por ciento del patrimonio eclesiástico destacado y, debajo, una segunda barra con los bienes municipales de 1855",
+          "caption": "Y en 1855 se añadió algo que no era de la Iglesia."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "1855: Madoz",
+          "text": [
+            "La **ley de 1 de mayo de 1855** amplía la operación: vuelve sobre bienes de la Iglesia y les suma **los bienes municipales**.",
+            "Los bienes municipales son los **comunales**: pastos, leña y montes de aprovechamiento vecinal."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Al vender el comunal, alguien pierde su medio de vida sin aparecer en ningún registro de propiedad. ¿Quién?",
+          "answer": [
+            "El campesino sin tierra.",
+            "No era dueño de nada, así que no consta como expropiado en ninguna parte. Pero vivía de los pastos, de la leña y del monte del municipio: lo que perdió fue un **derecho de uso**.",
+            "Es una pérdida invisible para la contabilidad y decisiva para la historia social del siglo XIX. Y era, además, la única pieza que amortiguaba los efectos del latifundio."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Ese comunal ya lo conocías",
+          "text": [
+            "Viene del modelo de repoblación **concejil** del siglo XII: tierras administradas por el concejo, ni de un particular ni de un señor.",
+            "Sobrevivió setecientos años y se liquidó en una subasta."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "El objetivo declarado era crear propietarios nuevos. ¿Por qué acaba comprando quien ya tenía?",
+          "answer": [
+            "Porque el precio pagado por las tierras fue **muy inferior** a su valor, y eso favorece a los grandes inversores.",
+            "Para pujar hacía falta capital líquido y acceso a la subasta. El jornalero no tenía ninguna de las dos cosas.",
+            "Una ganga sólo es una ganga para quien puede pagarla al contado."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El resultado",
+          "text": [
+            "La mayor transferencia de propiedad de la historia de España pasa de la Iglesia y del municipio a la burguesía con dinero y a la nobleza.",
+            "No corrige la estructura latifundista del sur: **la refuerza**, y encima borra el comunal."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "Una reforma puede ser progresista en su intención y regresiva en su resultado. Ésta lo fue."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde falla esto",
+          "text": [
+            "La variación regional fue enorme: el resultado en el norte minifundista no se parece al del sur latifundista.",
+            "Y la desamortización no es la única causa de la cuestión agraria: pesan también la estructura previa, la fiscalidad y la demografía."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "No doy superficie total desamortizada ni número de compradores: no he podido verificar esas cifras. El 62 % sí, y conviene contrastarlo antes de publicar."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que viene",
+          "text": [
+            "Con el campo así, la fábrica tenía que ir a alguna parte.",
+            "Y fue a dos esquinas del mapa, por razones que no tienen nada que ver con el carácter de sus habitantes."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Desamortización española — Mendizábal, Madoz y sus efectos",
+              "url": "https://es.wikipedia.org/wiki/Desamortizaci%C3%B3n_espa%C3%B1ola"
+            },
+            {
+              "title": "«Desamortización de Mendizábal (1836)», Junta de Andalucía",
+              "url": "https://blogsaverroes.juntadeandalucia.es/oscarprofesociales/2016/12/03/desamortizacion-de-mendizabal-1836/"
+            },
+            {
+              "title": "«Los foros en la desamortización: etapas de Mendizábal y Madoz», Universidade de Santiago de Compostela",
+              "url": "https://investigacion.usc.gal/documentos/5f0a474f299952723f77222e?lang=en"
+            },
+            {
+              "title": "«Compara las desamortizaciones de Mendizábal y Madoz» — objetivos de una y otra",
+              "url": "http://hablemosdehistorias.blogspot.com/2019/02/bloque-65-compara-las-desamortizaciones.html"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

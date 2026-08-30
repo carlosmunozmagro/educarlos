@@ -1,0 +1,141 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "25-la-holding",
+  "courseId": "sociedades-es",
+  "chapterId": "c7-combinar",
+  "title": "La holding",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 7 — Combinar estructuras",
+          "heading": "La holding",
+          "text": [
+            "Si Ámbar repartiera 50.000 € a una holding de Marta, el 95 % quedaría exento.",
+            "Marta no vería un euro."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Las dos condiciones",
+          "text": [
+            "El **artículo 21.1.a) LIS** exige participación de «al menos, del **5 por ciento**», poseída «de manera **ininterrumpida durante el año anterior** al día en que sea exigible el beneficio».",
+            "Cinco por ciento y un año. Eso es todo lo que pide para el dividendo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y el 5 % que casi nadie menciona",
+          "text": [
+            "La exención no es del 100 %. El **artículo 21.10** ordena reducir el importe exento «en un **5 por ciento en concepto de gastos de gestión** referidos a dichas participaciones».",
+            "De ahí sale el 95 % que se cita siempre sin explicar de dónde viene."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Qué significa en euros",
+          "text": [
+            "De 50.000 € de dividendo, 47.500 € quedan exentos y **2.500 €** entran en la base imponible de la holding.",
+            "Si la holding tributa al 25 %, eso son 625 € por mover 50.000 € entre dos sociedades tuyas."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Ámbar reparte 50.000 € a la holding de Marta. ¿Cuánto paga Marta en su IRPF?",
+          "answer": [
+            "Nada. Todavía.",
+            "La exención del artículo 21 es **de la sociedad**, no suya. Los 50.000 € han pasado de una sociedad a otra y siguen sin ser de Marta (lección 01).",
+            "Para que lleguen a su bolsillo hay un segundo salto, y ese paga base del ahorro como cualquier dividendo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Los dos saltos"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/holding-dos-saltos.svg",
+          "alt": "Tres cajas verticales: sociedad operativa, holding y bolsillo, con el primer salto casi exento y el segundo pagando IRPF",
+          "caption": "La holding abarata el primer salto. El segundo cuesta lo mismo de siempre."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Entonces, ¿difiere o exime?",
+          "text": [
+            "**Difiere.** Es la palanca 1 de la lección 21 con otro nombre.",
+            "El dinero se concentra arriba sin peaje y puede reinvertirse. Pero el IRPF no ha desaparecido: está esperando al segundo salto."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "title": "La frase que ahorra dinero",
+          "text": [
+            "Con una holding pagas menos al mover dinero **entre tus sociedades**. No pagas menos al llevártelo a casa."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Cuándo sí compensa",
+          "text": [
+            "Cuando hay **varias** sociedades y el dinero tiene que circular entre ellas. Cuando se prevé **vender** una participación, porque la exención también alcanza a la renta de la transmisión.",
+            "Y cuando quieres concentrar caja para reinvertir sin pasar por el IRPF de los socios."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Para Marta, hoy, no",
+          "text": [
+            "Ámbar es una sola sociedad operativa y Marta necesita el dinero para vivir. Una holding le añadiría una sociedad más que mantener, con sus cuentas y su asesoría, para abaratar un salto que no da.",
+            "En la lección siguiente, la pregunta que decide si tu sociedad conserva sus ventajas: si hace o no actividad económica."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 27/2014, del Impuesto sobre Sociedades",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328",
+              "note": "art. 21"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

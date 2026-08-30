@@ -1,0 +1,182 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "11-tres-cosas-el-mismo-ano",
+  "courseId": "historia-es",
+  "chapterId": "c4-1492-imperio",
+  "title": "1492: tres cosas el mismo año",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 4 — 1492 y el imperio",
+          "heading": "1492: tres cosas el mismo año",
+          "text": [
+            "Entre el edicto de expulsión y el contrato con Colón pasan **diecisiete días**.",
+            "Y se firman prácticamente en el mismo sitio.",
+            "No es una coincidencia de calendario."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Siete meses",
+          "text": [
+            "El **2 de enero** entran en Granada. El **31 de marzo** firman el edicto de expulsión. El **17 de abril** firman con Colón. El **31 de julio** vence el plazo de salida, prorrogado hasta el **2 de agosto**."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/anno-1492.svg",
+          "alt": "Línea temporal de 1492 en escala de meses, con la entrada en Granada, el edicto, las capitulaciones con Colón y el fin del plazo",
+          "caption": "El eje no es de siglos. Es de un año."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El campamento",
+          "text": [
+            "**Santa Fe**, donde se firma con Colón, es el campamento levantado para el asedio de Granada.",
+            "El mismo aparato de Estado, en el mismo lugar, despachando asuntos consecutivos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La lógica que los une",
+          "text": [
+            "Cerrada la unidad territorial con Granada, se pasa a imponer la **uniformidad religiosa**. Y en paralelo se busca una ruta propia hacia Oriente.",
+            "Territorio, después religión, después comercio. Es una agenda de gobierno."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "La expulsión se firma en 1492, pero el problema que la produce se abre un siglo antes. ¿Qué ocurrió?",
+          "answer": [
+            "1391 y su ola de conversiones.",
+            "De aquellos motines salió una población conversa numerosa e imposible de distinguir por fuera de los cristianos viejos. Esa indistinción es lo que la sociedad castellana no supo resolver.",
+            "La Inquisición primero, y el edicto después, son intentos de resolverla por eliminación: si los judíos que quedan son la fuente de recaída de los conversos, se elimina la fuente."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Qué dice el edicto",
+          "text": [
+            "Lo firman Isabel I de Castilla y Fernando II de Aragón el **31 de marzo de 1492**. Ordena la salida de los judíos **no conversos** de las Coronas de Castilla y Aragón y de sus territorios.",
+            "El plazo vence el 31 de julio y se prorroga al 2 de agosto por razones logísticas."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "text": [
+            "Fíjate en la palabra «no conversos». La conversión seguía siendo una salida — y ése es exactamente el mecanismo que crea el problema siguiente."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Cuántos salieron",
+          "text": [
+            "Se estima que entre **50.000 y 150.000** personas abandonaron la Península en los meses siguientes.",
+            "Un rango con un factor de tres, porque depende de cuántos se convirtieron en vez de partir y de cuántos regresaron después."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "Con ello termina la presencia continuada de una comunidad que llevaba en la Península al menos mil quinientos años."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Los tres hechos se suelen estudiar por separado. ¿Qué se pierde al hacerlo?",
+          "answer": [
+            "Que son consecutivos y del mismo despacho.",
+            "Granada no es «el final de la Edad Media»: es el paso que libera al Estado para el siguiente, la uniformidad religiosa. Y Colón no es un aventurero al que le hacen caso por casualidad: es un proyecto comercial firmado por un poder que acaba de ganar una guerra y necesita una ruta propia.",
+            "Aislados parecen tres efemérides. Juntos son un programa."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde falla esto",
+          "text": [
+            "Explicar la lógica administrativa de una expulsión no es justificarla. Son cosas distintas y conviene decirlo en voz alta.",
+            "Y no proyectes la palabra «España» sobre 1492: siguen siendo dos coronas con dos legislaciones."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "La cifra de expulsados es un rango amplio, no un dato. Trátala como la cifra de Córdoba."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que viene",
+          "text": [
+            "De los tres asuntos de aquel año, el que menos prometía era el contrato con el genovés.",
+            "Y su proyecto, tal y como lo defendía, era inviable. Los expertos que se lo dijeron tenían razón."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Edicto de Granada (Decreto de la Alhambra) — texto y alcance",
+              "url": "https://es.wikipedia.org/wiki/Edicto_de_Granada"
+            },
+            {
+              "title": "«La expulsión de los judíos el 31 de marzo de 1492», The Conversation",
+              "url": "https://theconversation.com/la-expulsion-de-los-judios-el-31-de-marzo-de-1492-una-fecha-historica-olvidada-157702"
+            },
+            {
+              "title": "Alhambra Decree — plazo del 31 de julio y prórroga al 2 de agosto",
+              "url": "https://en.wikipedia.org/wiki/Alhambra_Decree"
+            },
+            {
+              "title": "Expulsion of Jews from Spain — estimaciones de salida",
+              "url": "https://en.wikipedia.org/wiki/Expulsion_of_Jews_from_Spain"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "26-patrimonial-o-actividad-economica",
+  "courseId": "sociedades-es",
+  "chapterId": "c7-combinar",
+  "title": "Patrimonial o actividad económica",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 7 — Combinar estructuras",
+          "heading": "Patrimonial o actividad económica",
+          "text": [
+            "Una sociedad con cuatro pisos alquilados y una gestoría que lo lleva todo no hace actividad económica.",
+            "Y perder esa etiqueta cierra puertas por toda la ley."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La definición",
+          "text": [
+            "El **artículo 5.1 LIS**: actividad económica es «la **ordenación por cuenta propia de los medios de producción y de recursos humanos o de uno de ambos** con la finalidad de intervenir en la producción o distribución de bienes o servicios».",
+            "Ordenar. No poseer."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y una regla especial que lo decide casi todo",
+          "text": [
+            "«En el caso de **arrendamiento de inmuebles**, se entenderá que existe actividad económica, **únicamente cuando** para su ordenación se utilice, al menos, **una persona empleada con contrato laboral y jornada completa**.»"
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/test-patrimonial.svg",
+          "alt": "Árbol de dos preguntas: si ordenas medios o personas, y si en caso de arrendamiento tienes una persona empleada a jornada completa",
+          "caption": "El test del arrendamiento es binario y formal."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Una sociedad tiene cuatro pisos alquilados y contrata a una gestoría que se ocupa de todo. ¿Hace actividad económica?",
+          "answer": [
+            "No.",
+            "El artículo 5.1 exige **una persona empleada con contrato laboral y jornada completa**. Los tres requisitos son acumulativos y formales.",
+            "Una gestoría externa no es una persona empleada. Un autónomo que gestione, tampoco. Media jornada, tampoco. Y «lo llevo yo» mucho menos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Entonces es patrimonial",
+          "text": [
+            "El **artículo 5.2** define entidad patrimonial —la que **no** realiza actividad económica— como aquella en la que «**más de la mitad de su activo** esté constituido por **valores** o **no esté afecto** a una actividad económica»."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y no se arregla en diciembre",
+          "text": [
+            "El valor del activo se toma «de la **media de los balances trimestrales** del ejercicio».",
+            "No sirve reordenar el balance el 31 de diciembre: la norma mira el año entero, trimestre a trimestre."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "title": "Detalle que se pasa por alto",
+          "text": [
+            "Mucha planificación de última hora asume que cuenta el balance de cierre. Aquí no: cuenta la media."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Qué se pierde",
+          "text": [
+            "Ser patrimonial cierra puertas repartidas por toda la ley: el régimen de entidades de reducida dimensión, aspectos de la exención del artículo 21 al vender participaciones, y es una de las circunstancias que bloquean la compensación de bases negativas adquiridas (lección 08).",
+            "No es una etiqueta contable. Es un interruptor."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Ámbar está del lado bueno",
+          "text": [
+            "Ámbar ordena medios y personas para producir un servicio de diseño: actividad económica sin discusión.",
+            "Pero si Marta metiera dentro el local que compró y dejara de diseñar, con más de la mitad del activo en inmuebles no afectos, Ámbar cruzaría la línea sin hacer nada aparentemente raro."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "Poseer no es ordenar, y en arrendamiento el test es una persona con contrato laboral a jornada completa. La media trimestral decide, no el cierre.",
+            "En la lección siguiente, la estructura donde esta distinción vale más dinero: la empresa familiar."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 27/2014, del Impuesto sobre Sociedades",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328",
+              "note": "arts. 5 y 26.4"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

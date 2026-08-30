@@ -1,0 +1,182 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "09-dos-bases-dos-mundos",
+  "courseId": "sociedades-es",
+  "chapterId": "c3-irpf",
+  "title": "Dos bases, dos mundos",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 3 — Cómo tributas tú",
+          "heading": "Dos bases, dos mundos",
+          "text": [
+            "En 2026, Marta saca 50.000 € de Ámbar: 30.000 € de nómina y 20.000 € de dividendo.",
+            "Los dos importes van al mismo IRPF y no se encuentran nunca."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La ley parte tu renta en dos",
+          "text": [
+            "El **artículo 46 LIRPF** define qué es renta del ahorro. El **artículo 45** define la renta general como todo lo demás.",
+            "No es una clasificación contable. Cada mitad tiene su propia escala."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/dos-bases.svg",
+          "alt": "Dos cajas separadas por una línea discontinua: a la izquierda la base general con nómina, actividad económica y alquileres; a la derecha la base del ahorro con dividendos, intereses y plusvalías",
+          "caption": "El muro del medio es lo importante."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Qué cae en el ahorro",
+          "text": [
+            "Sólo dos cosas, según el artículo 46: los rendimientos del capital mobiliario de los apartados 1, 2 y 3 del artículo 25 — **dividendos e intereses** —, y las ganancias y pérdidas «que se pongan de manifiesto con ocasión de **transmisiones** de elementos patrimoniales»."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El detalle de «transmisiones»",
+          "text": [
+            "Una ganancia sólo va al ahorro si viene de transmitir algo. Vender participaciones, un piso, unas acciones.",
+            "Un premio, una subvención o una indemnización que no derive de una transmisión van a la **base general**, con todo lo demás."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Marta ya cobra 30.000 € de nómina. Cuando reparte 20.000 € de dividendo, ¿tributa a su tipo marginal del trabajo?",
+          "answer": [
+            "No. Y esta es la idea de la que cuelga medio curso.",
+            "El dividendo no se apila encima de la nómina para empujarla a un tramo superior. Va a la base del ahorro, que tiene **su propia escala y empieza otra vez desde cero**.",
+            "Los primeros 6.000 € de renta del ahorro tributan al 19 % aunque la nómina esté en el tramo más alto de la base general."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La escala del ahorro"
+        },
+        {
+          "type": "table",
+          "columns": [
+            "Base liquidable del ahorro",
+            "Tipo"
+          ],
+          "rows": [
+            [
+              "Hasta 6.000 €",
+              "19 %"
+            ],
+            [
+              "6.000 – 50.000 €",
+              "21 %"
+            ],
+            [
+              "50.000 – 200.000 €",
+              "23 %"
+            ],
+            [
+              "200.000 – 300.000 €",
+              "27 %"
+            ],
+            [
+              "Más de 300.000 €",
+              "30 %"
+            ]
+          ],
+          "caption": "Cada tipo es la suma de dos mitades idénticas: art. 66 estatal y art. 76 autonómica."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Los 20.000 € de Marta",
+          "text": [
+            "Los primeros 6.000 € al 19 % son 1.140 €. Los 14.000 € restantes al 21 % son 2.940 €.",
+            "Total: **4.080 €**, un tipo efectivo del **20,4 %**. Progresivo por tramos, igual que el Impuesto sobre Sociedades de la lección 06."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Por qué la mitad autonómica no cambia esto",
+          "text": [
+            "La escala del ahorro está partida en dos mitades **idénticas**, y las comunidades no las tocan.",
+            "En la base general es al revés: cada comunidad fija la suya. Por eso la lección siguiente es sobre Madrid."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La puerta que ya está cerrada",
+          "text": [
+            "Si el ahorro tributa menos, la tentación es convertir el sueldo en intereses de un préstamo del socio a su propia sociedad.",
+            "El **artículo 46.a)** lo corta: los intereses que excedan de **tres veces los fondos propios** de la entidad vinculada, en la parte proporcional a tu participación, vuelven a la base general."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "Es un patrón que verás repetido",
+          "text": [
+            "Cada vez que una vía tributa menos, la ley pone un umbral. Reconocerlos es media lección del capítulo 6."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "Antes de preguntarte cuánto pagas, pregúntate en qué base cae cada euro. Trabajo y actividad económica a un lado; dividendos, intereses y plusvalías por transmisión al otro.",
+            "Ya sabes que hay dos escalas. En la lección siguiente, cuánto vale la tuya según dónde vivas."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 35/2006, del IRPF, texto consolidado",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+              "note": "arts. 45, 46, 63, 66 y 76"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

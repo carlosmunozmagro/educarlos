@@ -1,0 +1,148 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "24-donde-esta-la-raya",
+  "courseId": "sociedades-es",
+  "chapterId": "c6-optimizar",
+  "title": "Dónde está la raya",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 6 — Optimizar de verdad",
+          "heading": "Dónde está la raya",
+          "text": [
+            "Ahorrar impuestos es legítimo. Ese no es el criterio.",
+            "El criterio es si lo que haces tiene algún efecto real además del ahorro."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Tres nombres, tres distancias"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/la-raya.svg",
+          "alt": "Una línea con tres posiciones: economía de opción, conflicto en la aplicación de la norma y simulación, con lo que distingue a cada una",
+          "caption": "El mismo ahorro puede caer en cualquiera de las tres."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Economía de opción",
+          "text": [
+            "Elegir entre alternativas que la propia ley te ofrece. No tiene artículo porque no lo necesita: es lo que queda cuando ninguna norma antiabuso aplica.",
+            "Todo el capítulo 6 vive aquí. Retener beneficio, repartir dividendo, montar retribución flexible: son opciones, y elegir la barata es legítimo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Conflicto en la aplicación de la norma",
+          "text": [
+            "El **artículo 15 LGT** exige **dos** circunstancias a la vez: que los actos sean «notoriamente **artificiosos o impropios** para la consecución del resultado obtenido», y que «no resulten efectos jurídicos o económicos relevantes, **distintos del ahorro fiscal**»."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "Los actos son válidos",
+          "text": [
+            "El artículo 15 no se aplica a lo ilegal. Se aplica a negocios perfectamente válidos cuyo único efecto relevante es fiscal. La validez civil no es el criterio."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y no lo declara cualquiera",
+          "text": [
+            "El **artículo 15.2** exige, antes de poder declarar el conflicto, «el previo **informe favorable de la Comisión consultiva** a que se refiere el artículo 159».",
+            "Es un filtro: la Administración no puede recalificar una operación por conflicto sin pasar por ahí."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Simulación",
+          "text": [
+            "El **artículo 16.1** es de otra naturaleza: «En los actos o negocios en los que exista simulación, el **hecho imponible gravado será el efectivamente realizado** por las partes.»",
+            "Aquí no hay rodeo. Hay una apariencia: lo que se documenta no es lo que ocurre."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "title": "Y aquí sí se nombra la sanción",
+          "text": [
+            "El artículo 16.3: «se exigirán los **intereses de demora** y, en su caso, la **sanción pertinente**». Se declara en la propia liquidación, sin Comisión previa."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Dos sociedades. Una tiene oficina, empleados y varios clientes. La otra no tiene medios y factura lo que su socio hace personalmente para un único cliente. ¿Dónde cae cada una?",
+          "answer": [
+            "La primera es **economía de opción**. Hay una empresa que hace cosas: tiene efectos económicos reales muy distintos del ahorro fiscal.",
+            "La segunda es donde empiezan a ser relevantes los artículos 15 y 16. Si la sociedad no aporta nada —ni medios, ni riesgo, ni organización—, su única función observable es que la renta tribute a un tipo más bajo.",
+            "Fíjate en que es exactamente el requisito del puerto seguro de la lección 14: **medios materiales y humanos adecuados**. No está ahí por casualidad."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El test, en una pregunta",
+          "text": [
+            "Ante cualquier estructura: **¿qué efecto económico real tiene, además del ahorro fiscal?**",
+            "Si hay respuesta —cambia quién asume el riesgo, quién contrata, quién responde, cómo se organiza el trabajo—, estás en economía de opción. Si no la hay, no."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "La raya no la marca cuánto ahorras, sino cuánta sustancia hay debajo. Actos artificiosos sin efecto propio: artículo 15. Apariencia que no corresponde con la realidad: artículo 16.",
+            "Aquí cierra el capítulo. En el último, cómo se combinan varias sociedades sin cruzar esta línea."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 58/2003, General Tributaria",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23186",
+              "note": "arts. 15 y 16"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

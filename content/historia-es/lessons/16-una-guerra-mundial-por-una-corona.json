@@ -1,0 +1,152 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "16-una-guerra-mundial-por-una-corona",
+  "courseId": "historia-es",
+  "chapterId": "c5-borbones-1808",
+  "title": "Una guerra mundial por una corona",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 5 — Borbones y 1808",
+          "heading": "Una guerra mundial por una corona",
+          "text": [
+            "Doscientos treinta y ocho años de unión dinástica no habían creado un Estado.",
+            "Una guerra lo creó en nueve.",
+            "Y el criterio para aplicarlo no fue administrativo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dos guerras a la vez",
+          "text": [
+            "Por fuera, una coalición europea contra la posibilidad de que Francia y España queden bajo la misma dinastía.",
+            "Por dentro, una guerra civil: la Corona de Aragón se inclina mayoritariamente por el candidato austracista y Castilla por el borbónico.",
+            "No es una invasión. Es una división interna con apoyos exteriores."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Utrecht",
+          "text": [
+            "El **11 de abril de 1713** se firma el primero de los acuerdos que forman el Tratado de Utrecht.",
+            "Inglaterra obtiene **Menorca** y **Gibraltar**, ocupadas durante la guerra, y con esas dos bases pasa a dominar el Mediterráneo occidental."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "text": [
+            "Menorca volvería a manos españolas casi un siglo después. Gibraltar no se recuperó nunca."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y dentro, la Nueva Planta",
+          "text": [
+            "Los decretos abolen las instituciones propias de los territorios que apoyaron al perdedor: **Aragón y Valencia** el 29 de junio de 1707, **Mallorca** el 28 de noviembre de 1715 y **Cataluña** el 16 de enero de 1716.",
+            "Con ellos termina la estructura compuesta que venía de 1469."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/una-guerra-tres-resultados.svg",
+          "alt": "Una caja superior, la Guerra de Sucesión, con tres flechas hacia dinastía nueva, pérdida de Gibraltar y Menorca, y Estado centralizado",
+          "caption": "Tres resultados de la misma guerra, y el tercero es el que dura."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Los decretos suprimen los fueros de Aragón, Valencia, Mallorca y Cataluña, y dejan intactos los de Navarra y las provincias vascas. ¿Qué tienen en común los que sobreviven?",
+          "answer": [
+            "Que estuvieron del lado ganador.",
+            "El criterio no fue la eficiencia administrativa ni la coherencia jurídica: fue el bando en la guerra. La misma clase de institución se suprime o se conserva según cómo votara su territorio con las armas.",
+            "Por eso el Estado centralizado español no nace de un proyecto nacional ni de una unificación pactada: nace como **premio de un bando**, aplicado sobre el otro."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La respuesta a la lección 10",
+          "text": [
+            "Allí quedó una pregunta: si la boda de 1469 no creó un país, ¿qué lo creó?",
+            "Esto. No una herencia ni un matrimonio: unos decretos, entre 1707 y 1716, después de una guerra que se perdió en la mitad del territorio."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde falla esto",
+          "text": [
+            "La Nueva Planta también trajo unificación fiscal y administrativa reales, y en eso fue una modernización.",
+            "Y el mapa de bandos no coincide limpiamente con el de territorios: hubo austracistas en Castilla y borbónicos en Aragón."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Esta lección da fechas y decretos y evita adjetivos, porque el asunto tiene hoy un uso político intenso. No se dan porcentajes de apoyo por territorio: no los he podido verificar."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que viene",
+          "text": [
+            "Con el Estado ya centralizado llega el siglo de las reformas desde arriba.",
+            "Y con él, un motín que todo el mundo recuerda por un sombrero y que en realidad fue por el precio del pan."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Tratado de Utrecht — fecha, cesiones y consecuencias",
+              "url": "https://es.wikipedia.org/wiki/Tratado_de_Utrecht"
+            },
+            {
+              "title": "«El Tratado de Utrecht (1713)», CATEDU",
+              "url": "https://e-ducativa.catedu.es/44700165/aula/archivos/repositorio/3750/3889/html/22_el_tratado_de_utrecht_1713.html"
+            },
+            {
+              "title": "Decretos de Nueva Planta — fechas por territorio",
+              "url": "https://es.wikipedia.org/wiki/Decretos_de_Nueva_Planta"
+            },
+            {
+              "title": "Decreto de Nueva Planta (16 de enero de 1716), Archivo de la Corona de Aragón",
+              "url": "https://www.cultura.gob.es/archivos-aca/actividades/documentos-para-la-historia-de-europa/nueva-planta.html"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

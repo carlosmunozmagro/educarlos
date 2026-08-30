@@ -1,0 +1,157 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "17-el-iva-no-es-tu-dinero",
+  "courseId": "sociedades-es",
+  "chapterId": "c5-la-maquina",
+  "title": "El IVA no es tu dinero",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 5 — La máquina que hay que alimentar",
+          "heading": "El IVA no es tu dinero",
+          "text": [
+            "En 2025, Ámbar facturó 30.000 € más 6.300 € de IVA a un cliente que tardó meses en pagar.",
+            "Ese trimestre tuvo que ingresar 4.200 € que todavía no había cobrado."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Eres recaudador antes que contribuyente",
+          "text": [
+            "El **artículo 90.Uno LIVA** fija el tipo general: «El Impuesto se exigirá al tipo del **21 por ciento**».",
+            "Ese 21 % que añades a tus facturas no es tuyo en ningún momento. Lo cobras por cuenta de la Hacienda pública."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y también deduces",
+          "text": [
+            "Los **artículos 92 y 94** permiten restar el IVA que has soportado en tus compras, siempre que los bienes y servicios se usen en operaciones «sujetas y no exentas».",
+            "Lo que ingresas cada trimestre es la diferencia."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/iva-liquidacion.svg",
+          "alt": "Tres barras: el IVA repercutido de 6.300 euros, el soportado de 2.100 y la diferencia a ingresar de 4.200",
+          "caption": "Nada de esto depende de haber cobrado la factura."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "El cliente de Ámbar no ha pagado la factura. ¿Tiene que ingresar Ámbar el IVA de todos modos?",
+          "answer": [
+            "Sí.",
+            "El **artículo 75.Uno.2.º** fija el devengo en las prestaciones de servicios «cuando se **presten, ejecuten o efectúen** las operaciones gravadas».",
+            "No dice cuando se cobren. Prestaste el servicio, emitiste la factura, el impuesto se devengó. Que el cliente pague o no es un problema tuyo, no de Hacienda."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El devengo, esa palabra",
+          "text": [
+            "Devengo es el momento en que nace la obligación. Para las entregas de bienes, cuando se ponen a disposición del comprador; para los servicios, cuando se prestan.",
+            "El cobro no aparece en ninguna de las dos definiciones."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Por eso un impago duele dos veces",
+          "text": [
+            "Primero porque no entra el dinero. Y después porque tienes que adelantar a Hacienda el IVA de ese dinero que no ha entrado.",
+            "Financias tú el impuesto de una venta que todavía no has cobrado."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "title": "No es un caso raro",
+          "text": [
+            "Es la situación normal de cualquier empresa que factura a plazo. Con 60 o 90 días de cobro, siempre hay un trimestre por delante del cobro."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Hay una salida, y es opcional",
+          "text": [
+            "Existe el **régimen especial del criterio de caja**, que retrasa el devengo al momento del cobro.",
+            "No es automático: hay que acogerse, cumplir requisitos y asumir que también retrasa la deducción del IVA soportado hasta que pagas a tus proveedores."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Caja no es beneficio",
+          "text": [
+            "Esta es la lección de fondo. El saldo de tu cuenta contiene IVA repercutido que no es tuyo, y no contiene facturas emitidas y no cobradas que sí son ingreso.",
+            "Mirar el banco para saber si vas bien es mirar la cifra equivocada."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Los papeles",
+          "text": [
+            "La liquidación se presenta **trimestralmente** en el **modelo 303**, y hay un **resumen anual**, el **modelo 390**.",
+            "Además existen declaraciones informativas para operaciones intracomunitarias y para operaciones con terceros por encima de cierto importe."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "El IVA nunca fue tuyo, y lo debes desde que prestas el servicio, no desde que cobras.",
+            "En la lección siguiente, el otro dinero que pasa por tu cuenta sin ser tuyo: las retenciones."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 37/1992, del Impuesto sobre el Valor Añadido",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740",
+              "note": "arts. 75, 90, 92 y 94"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

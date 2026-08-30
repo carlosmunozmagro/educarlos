@@ -1,0 +1,140 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "21-las-cuatro-palancas",
+  "courseId": "sociedades-es",
+  "chapterId": "c6-optimizar",
+  "title": "Las cuatro palancas",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 6 — Optimizar de verdad",
+          "heading": "Las cuatro palancas",
+          "text": [
+            "Todo lo legítimo que puedes hacer con los impuestos de tu sociedad cabe en cuatro movimientos.",
+            "Si alguien te ofrece un quinto, te está ofreciendo un problema."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El mapa completo"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/cuatro-palancas.svg",
+          "alt": "Cuatro cajas: diferir, convertir, deducir y elegir forma, cada una con las lecciones donde se explica",
+          "caption": "Cada lección de este curso mueve una de las cuatro."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Diferir",
+          "text": [
+            "Pagar más tarde. Marta ya lo hizo sin llamarlo así: dejó beneficio dentro de Ámbar en lugar de repartirlo, y ese dinero tributó al 19 % en vez de a su marginal.",
+            "También difieren la reserva de capitalización y el momento de compensar bases negativas."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Convertir",
+          "text": [
+            "Mover renta de una base a otra. Es la palanca con más recorrido del sistema español, porque las dos bases tienen escalas independientes (lección 09).",
+            "Un euro que llega como dividendo empieza en el 19 %; el mismo euro como nómina se apila sobre lo que ya ganas."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Deducir",
+          "text": [
+            "Reducir la base imponible: gastos que superan el filtro del artículo 15 (lección 05), retribución en especie exenta, incentivos del Impuesto sobre Sociedades.",
+            "Es la palanca más conocida y la que menos margen tiene, porque la lista está tasada."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Elegir forma",
+          "text": [
+            "Cambiar el envase: autónomo o sociedad, un régimen u otro, una estructura de grupo.",
+            "Es la de mayor efecto y la más lenta de mover. Marta eligió la suya el 3 de marzo, sin saber que estaba eligiendo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Alguien te propone una estructura que «hace que no pagues». ¿En cuál de las cuatro palancas cae?",
+          "answer": [
+            "En ninguna, y ese es exactamente el problema.",
+            "Las cuatro mueven el **cuándo**, el **dónde** o el **cuánto se resta**. Ninguna borra el hecho imponible: si has ganado una renta, la renta existe.",
+            "Cuando una propuesta no encaja en ninguna de las cuatro, normalmente es porque su único efecto es el ahorro fiscal. Y eso tiene nombre y artículo, que es la lección 24."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La pregunta que hay que hacer",
+          "text": [
+            "Ante cualquier propuesta: **¿qué efecto económico real tiene, además del ahorro de impuestos?**",
+            "Si la respuesta es «ninguno», no estás optimizando. Estás construyendo algo que la Administración puede deshacer."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "title": "El criterio, en una línea",
+          "text": [
+            "Una palanca legítima cambia lo que haces. Una estructura artificiosa sólo cambia cómo lo llamas."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "Diferir, convertir, deducir, elegir forma. Cuatro. Cuando te cuenten algo, clasifícalo antes de evaluarlo.",
+            "En las tres lecciones siguientes, la palanca más desaprovechada, los incentivos que sí existen, y dónde está exactamente la raya."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Lección de síntesis",
+              "note": "las fuentes son las de las lecciones 05, 08, 09, 16, 22, 23 y 24"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "15-leyenda-negra-que-parte-es-cierta",
+  "courseId": "historia-es",
+  "chapterId": "c4-1492-imperio",
+  "title": "Leyenda negra: qué parte es cierta",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 4 — 1492 y el imperio",
+          "heading": "Leyenda negra: qué parte es cierta",
+          "text": [
+            "En 1550, en Valladolid, se celebra el primer debate público europeo sobre los derechos de los pueblos conquistados.",
+            "Dura meses.",
+            "Y termina sin que nadie gane."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La crítica se escribió dentro",
+          "text": [
+            "Los **dominicos** denuncian el maltrato a los indígenas —el sermón de fray **Antonio de Montesinos** es el hito citado— y la Corona no lo entierra: convoca.",
+            "En **1512**, en el convento de San Pablo de **Burgos**, se reúnen teólogos y juristas a estudiar esas denuncias."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y llegó a ser ley",
+          "text": [
+            "El **27 de diciembre de 1512**, Fernando II firma las **Leyes de Burgos**: las primeras ordenanzas de la corona castellana que establecen el **estatuto jurídico de los indígenas**.",
+            "Treinta años después, una reunión en Salamanca encabezada por **Francisco de Vitoria** desemboca en las **Leyes Nuevas de 1542**."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/cadena-de-la-queja.svg",
+          "alt": "Cuatro cajas encadenadas: la denuncia dominica, la junta de Burgos de 1512, las Leyes de Burgos y las Leyes Nuevas de 1542",
+          "caption": "La biografía de una queja que sube por la cadena institucional."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Valladolid, 1550",
+          "text": [
+            "En el **Colegio de San Gregorio** se enfrentan **Juan Ginés de Sepúlveda**, que defiende la conquista y la evangelización por la espada, y **Bartolomé de las Casas**, que defiende la conversión pacífica.",
+            "La fuente lo describe como el primer debate público de la historia europea sobre la moralidad, los derechos y el trato a los pueblos indígenas."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Sepúlveda y Las Casas discuten durante meses ante una junta de jueces. ¿Quién gana?",
+          "answer": [
+            "Nadie. Los jueces deliberaron entre sí y **se dispersaron sin ninguna decisión definitiva**.",
+            "Los argumentos de ambos quedaron abstractos, apoyados en autoridades teóricas muy parecidas, interpretadas en sentidos opuestos.",
+            "No fue un juicio y no había sentencia que dictar. El primer gran debate europeo sobre los derechos de los conquistados termina en empate técnico — y ése es el dato, no el fallo de la fuente."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La otra mitad, que también hay que decir",
+          "text": [
+            "Que exista la ley no prueba que se cumpliera.",
+            "Lo documentado es que hubo norma, hubo debate y hubo disidencia interna reconocida por la Corona. El grado de aplicación efectiva es otra cuestión, y esta lección no la afirma en ninguna dirección."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "text": [
+            "Usar las Leyes de Burgos como coartada es tan deshonesto como ignorarlas."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y la palabra, otra vez",
+          "text": [
+            "«Leyenda negra» se difunde con el libro de **Julián Juderías**, publicado en Madrid en **1914**.",
+            "No inventó la expresión, pero fue el primero en definir el concepto y quien más contribuyó a extenderlo."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/expediente-1512.svg",
+          "alt": "Línea temporal con las Leyes de Burgos de 1512, las Leyes Nuevas de 1542, la Junta de Valladolid de 1551 y, muy a la derecha, 1914",
+          "caption": "Trescientos sesenta y tres años entre el debate y la palabra que lo nombra."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Es la tercera vez en este curso que aparece el mismo mecanismo. ¿Cuál es?",
+          "answer": [
+            "Una palabra muy posterior colocada encima de los siglos que pretende describir, y que trae un modelo metido dentro.",
+            "«Reconquista» es del siglo XIX. «Convivencia», del XX. «Leyenda negra», de 1914.",
+            "Ninguna de las tres es falsa por ser tardía. El problema es que cada una da por supuesto lo que habría que demostrar, y ese supuesto viaja sin que nadie lo revise."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde falla esto",
+          "text": [
+            "No he verificado el grado de aplicación de las Leyes de Burgos ni de las Leyes Nuevas, ni la reacción de los encomenderos, y esta lección no da ninguna cifra de población indígena.",
+            "Lo de «primer debate público de la historia europea» es la formulación de la fuente, no un cálculo propio."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Este asunto se usa hoy como munición en las dos direcciones. La única salida honesta es describir documentos y fechas y no arbitrar."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que viene",
+          "text": [
+            "El imperio que discutía su propia legitimidad se acaba, y no por un debate: por una guerra de sucesión.",
+            "De ella sale, por primera vez, un Estado centralizado."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "La crítica más severa a la conquista se escribió en castellano, en el siglo XVI, y una parte de ella se convirtió en ley."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "«Leyes de Burgos» — fecha, contenido y contexto",
+              "url": "https://es.wikipedia.org/wiki/Leyes_de_Burgos"
+            },
+            {
+              "title": "«Las leyes de Burgos de 1512 y la doctrina jurídica de la conquista», Junta de Castilla y León",
+              "url": "https://www.jcyl.es/web/jcyl/AdministracionPublica/es/Plantilla100Detalle/1248367026092/Publicacion/1284233984600/Redaccion"
+            },
+            {
+              "title": "Junta de Valladolid (1550–1551) — desarrollo y ausencia de decisión",
+              "url": "https://en.wikipedia.org/wiki/Valladolid_debate"
+            },
+            {
+              "title": "«Leyenda negra: la obra de Julián Juderías», DHIAL",
+              "url": "https://www.dhial.org/diccionario/index.php?title=LEYENDA_NEGRA%3B_La_obra_de_Juli%C3%A1n_Juder%C3%ADas"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

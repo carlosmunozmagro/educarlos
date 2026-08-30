@@ -1,0 +1,202 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "14-las-bancarrotas-de-felipe-ii",
+  "courseId": "historia-es",
+  "chapterId": "c4-1492-imperio",
+  "title": "Las bancarrotas de Felipe II",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 4 — 1492 y el imperio",
+          "heading": "Las bancarrotas de Felipe II",
+          "text": [
+            "El **17 de abril de 1557**, el rey más poderoso de Europa suspende pagos.",
+            "Lo volverá a hacer en 1575 y en 1596.",
+            "Y los mismos banqueros le seguirán prestando cada vez."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "No eran quiebras",
+          "text": [
+            "El rey declaraba la suspensión, pero **dependía por completo de los préstamos de los asentistas** para la campaña siguiente. Un impago total era imposible en la práctica.",
+            "Lo que había detrás de la palabra «bancarrota» era una **reestructuración pactada de la deuda**."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dos clases de deuda"
+        },
+        {
+          "type": "table",
+          "columns": [
+            "",
+            "Asiento",
+            "Juro"
+          ],
+          "rows": [
+            [
+              "Plazo",
+              "Corto",
+              "Largo"
+            ],
+            [
+              "Interés",
+              "Alto",
+              "Menor"
+            ],
+            [
+              "Quién presta",
+              "Banqueros internacionales",
+              "Inversores castellanos e italianos"
+            ]
+          ],
+          "caption": "El asiento financia la campaña de este año. El juro se arrastra durante décadas."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La operación",
+          "text": [
+            "Una bancarrota consistía en convertir lo primero en lo segundo: tomar la deuda flotante, cara y de vencimiento inmediato, y transformarla en títulos a plazo más largo y menor tipo."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/asiento-a-juro.svg",
+          "alt": "Dos cajas unidas por una flecha etiquetada bancarrota: el asiento de corto plazo y caro se convierte en juro de largo plazo y barato",
+          "caption": "No es dejar de pagar. Es cambiar el calendario y el precio del dinero."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "1557: la herencia envenenada",
+          "text": [
+            "Felipe II llega al trono con **todos los ingresos empeñados** por la política de Carlos I: nada libre sobre lo que emitir deuda nueva.",
+            "Entre el verano de 1557 y el otoño de **1560** se resuelve consolidando: las deudas viejas se devuelven con títulos al **7,14 %**, amortizables entre inversores castellanos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Acaban de suspenderle los pagos. ¿Por qué los banqueros vuelven a prestarle al año siguiente?",
+          "answer": [
+            "Porque no perdieron el dinero: lo cambiaron de forma. Salen de papel arriesgado a corto plazo y entran en renta a largo plazo con respaldo.",
+            "Y porque no tenían alternativa: un banquero cuyo negocio principal es prestar a la Corona **no puede permitirse que la Corona quiebre de verdad**.",
+            "El rey estaba atrapado por sus acreedores, y sus acreedores por él. Eso es lo que convierte cada bancarrota en una negociación y no en un impago."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "1575: la grande",
+          "text": [
+            "La de **1575-76** es la más importante. Golpea de forma extraordinaria a Amberes y a la banca de los **Fugger**.",
+            "El rey consigue subir impuestos en Castilla y una **quita de entre el 30 % y el 60 %**."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "text": [
+            "Esa quita arruinó a acreedores reales. Que la operación fuera técnica no la hace indolora."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "¿Tres o cuatro?",
+          "text": [
+            "Verás citadas tres bancarrotas y verás citadas cuatro. La diferencia está en si se cuenta **1560** como episodio propio o como el cierre de la de 1557.",
+            "La tercera, en cualquier recuento, se declara el **29 de noviembre de 1596**."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Si la bancarrota no arruina al rey ni a los banqueros, ¿a quién arruina?",
+          "answer": [
+            "A quien cobra un salario.",
+            "Lo que cada suspensión sí paralizaba eran los pagos, y con ellos la marcha de la guerra. El daño no aparece en el balance del rey, que se recomponía, sino en los ejércitos que dejaban de cobrar y en los impuestos que subían en Castilla.",
+            "Ahí está también la respuesta a la lección anterior: la plata no se quedaba porque llegaba comprometida con estos contratos antes de que el barco zarpara."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde falla esto",
+          "text": [
+            "Se cita mucho la relación entre la bancarrota de 1575 y los motines de tropas impagadas en Flandes. Es verosímil, pero no la he podido verificar y esta lección no la afirma.",
+            "Las cifras concretas —el 7,14 %, la quita del 30-60 %— proceden en parte de fuentes divulgativas."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que viene",
+          "text": [
+            "Un imperio que discute su propia legitimidad mientras se financia así.",
+            "Porque la crítica más dura a la conquista no vino de fuera: se escribió aquí, muy pronto, y llegó a ser ley."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "«Quiebras de Felipe II» — fechas, mecanismo y naturaleza de las reestructuraciones",
+              "url": "https://es.wikipedia.org/wiki/Quiebras_de_Felipe_II"
+            },
+            {
+              "title": "«Crisis financieras y deuda dinástica, 1557-1627», Cuadernos de Historia Moderna, UCM (PDF)",
+              "url": "https://revistas.ucm.es/index.php/CHMO/article/download/58072/52251/118254"
+            },
+            {
+              "title": "C. J. de Carlos Morales, «El precio del \"dinero político\" y el crédito de Castilla», Centro Virtual Cervantes",
+              "url": "https://cvc.cervantes.es/literatura/espana_flandes/1_morales.htm"
+            },
+            {
+              "title": "«¿Por qué los banqueros seguían prestando dinero a Felipe II después de tres bancarrotas?»",
+              "url": "https://historiasdelahistoria.com/2020/05/13/por-que-los-banqueros-seguian-prestando-dinero-a-felipe-ii-despues-de-3-bancarrotas"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

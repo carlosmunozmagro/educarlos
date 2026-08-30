@@ -1,0 +1,214 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "07-tres-religiones-convivencia-o-eslogan",
+  "courseId": "historia-es",
+  "chapterId": "c2-711-al-andalus",
+  "title": "Tres religiones: ¿convivencia o eslogan?",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 2 — 711 y al-Ándalus",
+          "heading": "Tres religiones: ¿convivencia o eslogan?",
+          "text": [
+            "La matanza de judíos más citada de la Edad Media peninsular ocurrió en Sevilla, en **1391**.",
+            "Para entonces Sevilla llevaba **ciento cuarenta y tres años** siendo cristiana.",
+            "El episodio que más se usa para hablar de al-Ándalus no ocurrió en al-Ándalus."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La palabra tampoco es medieval",
+          "text": [
+            "«Convivencia» la desarrolla **Américo Castro** en el siglo XX, para explicar la identidad española como producto del cruce de tres religiones.",
+            "Es una tesis influyente y discutida. Cuando hoy se usa en el ámbito académico, se usa con muchas precauciones."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La distinción que sí funciona",
+          "text": [
+            "**Maribel Fierro**, una de las mayores especialistas del periodo andalusí, separa dos cosas: hay fundamento histórico para hablar de **coexistencia** de las tres comunidades, y ése es un concepto distinto del más cargado de «convivencia».",
+            "Porque la coexistencia no era un clima. Era un estatuto."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La dimma",
+          "text": [
+            "Los cristianos y judíos que no se convertían entraban en un pacto con el Estado islámico y pasaban a ser **protegidos**: _dimmíes_.",
+            "El contenido del estatuto es preciso, y no se parece ni a la igualdad ni a la persecución."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/estatuto-dimmi.svg",
+          "alt": "Una caja con lo que el dimmí conserva —religión, bienes, ley propia, jerarquías, protección— y debajo lo que paga: la capitación y la sumisión política",
+          "caption": "Protección y autonomía interna a cambio de tributo y subordinación."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Ya lo has visto por escrito",
+          "text": [
+            "El Pacto de Teodomiro del **713** es exactamente esto: conserva su religión, sus iglesias, sus bienes y su posición; paga un dinar y veinte medidas al año.",
+            "La lección no te presenta un concepto nuevo. Le pone nombre a un documento que ya leíste."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Si la dimma garantizaba los bienes, la religión, la ley propia y la protección, ¿por qué no es igualdad?",
+          "answer": [
+            "Porque el estatuto **es de subordinación**, y lo dice en sus propios términos.",
+            "Se paga una capitación por profesar otra fe. Se queda sometido a la autoridad política musulmana. Y hay restricciones sociales y legales que forman parte del pacto, no que lo incumplan.",
+            "La protección es real y la desigualdad también. Ninguna de las dos cancela a la otra, y por eso las dos versiones simplificadas fallan."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y variaba muchísimo",
+          "text": [
+            "El cumplimiento del estatuto **cambia notablemente según el periodo y la dinastía**. No es un régimen estable durante ocho siglos.",
+            "Hacia el siglo X, la arabización de las comunidades judías les permite desarrollarse en distintos niveles de la administración, en los servicios, en el comercio y en la medicina."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "Eso no ocurre bajo persecución continua. Y tampoco ocurre en régimen de igualdad. La variabilidad es el dato, no la excepción."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "1391",
+          "text": [
+            "**Ferrán Martínez**, arcediano de Écija, es considerado el principal instigador.",
+            "El **15 de mayo de 1391** hay un primer motín, que las autoridades municipales sofocan. El **6 de junio** los estratos más humildes se alzan de nuevo, y esta vez no se contiene."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/matanzas-1391.svg",
+          "alt": "Línea temporal de 1248 a 1391 con la banda de dominio cristiano y las dos fechas de los motines de Sevilla",
+          "caption": "Ciento cuarenta y tres años de dominio cristiano antes del primer motín."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que pasó y lo que dejó",
+          "text": [
+            "Dos sinagogas se convierten en iglesias y otras se queman. Las fuentes hablan de unas **cuatrocientas** muertes — cifra quizá exagerada, pero indicativa del horror.",
+            "La violencia se extiende por la Península."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "La consecuencia histórica principal de 1391 no fueron las muertes. ¿Cuál fue?",
+          "answer": [
+            "La **gran ola de conversiones** al cristianismo que siguió.",
+            "De ahí sale una población nueva y numerosa de conversos, y con ella una pregunta que la sociedad castellana no sabrá responder: cómo distinguir al converso sincero del que no lo es.",
+            "Esa pregunta, y no la teología, es la que desemboca un siglo después en 1492."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde falla esto",
+          "text": [
+            "La cifra de cuatrocientos muertos es de crónica, y las propias fuentes secundarias la marcan como posiblemente exagerada.",
+            "Y la dimma es la **norma**, no siempre la práctica: hubo periodos de aplicación dura, con los almohades como el caso más citado."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Estas cuestiones se usan hoy como munición política en las dos direcciones. Describir el estatuto no es tomar partido; dar una nota media a ocho siglos, sí."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que viene",
+          "text": [
+            "Has visto cómo se gobernaba la diferencia religiosa. Falta ver cómo se ocupaba el suelo.",
+            "Y ahí hay una decisión del siglo XIII que todavía se ve en un mapa de propiedad del siglo XX."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "La coexistencia no era un ambiente. Era un contrato desigual, con cláusulas escritas, que cada dinastía cumplía a su manera."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "«La dhimma o el estatuto legal de los protegidos», Universidad de Zaragoza (PDF)",
+              "url": "https://zaguan.unizar.es/record/75125/files/TAZ-TFG-2018-2120.pdf"
+            },
+            {
+              "title": "«La convivencia en al-Ándalus: malentendidos históricos y usos políticos», The Conversation",
+              "url": "https://theconversation.com/la-convivencia-en-al-andalus-malentendidos-historicos-y-usos-politicos-154811",
+              "note": "Recoge la distinción de Maribel Fierro"
+            },
+            {
+              "title": "K. B. Wolf, «Convivencia in Medieval Spain: A Brief History of an Idea», Religion Compass (2009)",
+              "url": "https://compass.onlinelibrary.wiley.com/doi/10.1111/j.1749-8171.2008.00119.x"
+            },
+            {
+              "title": "«Las matanzas de 1391», Universidad de Alicante",
+              "url": "https://blogs.ua.es/judiosmedievales/la-edad-conflictiva/las-matanzas-de-1391/"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

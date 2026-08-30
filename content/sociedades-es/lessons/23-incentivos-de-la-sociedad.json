@@ -1,0 +1,141 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "23-incentivos-de-la-sociedad",
+  "courseId": "sociedades-es",
+  "chapterId": "c6-optimizar",
+  "title": "Incentivos de la sociedad",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 6 — Optimizar de verdad",
+          "heading": "Incentivos de la sociedad",
+          "text": [
+            "Hay un incentivo que premia exactamente lo que la lección 16 recomendaba: no repartir.",
+            "Y viene con un candado de tres años."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La reserva de capitalización",
+          "text": [
+            "El **artículo 25 LIS** permite reducir la base imponible en el **20 %** del **incremento de los fondos propios**.",
+            "No es una deducción en cuota: es una reducción de base. Y no premia ganar, premia **no repartir**."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Los dos requisitos",
+          "text": [
+            "Primero, que el incremento «se mantenga durante un plazo de **3 años** desde el cierre del período impositivo», salvo pérdidas contables.",
+            "Segundo, dotar una reserva por el importe de la reducción, que figure en el balance «con absoluta separación y título apropiado» y sea **indisponible** esos tres años."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y sube si contratas"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/reserva-capitalizacion.svg",
+          "alt": "Cuatro barras crecientes: 20 por ciento sin incremento de plantilla, 23 entre el 2 y el 5, 26,5 entre el 5 y el 10, y 30 por encima del 10",
+          "caption": "El incremento de plantilla también hay que mantenerlo tres años."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Los tramos",
+          "text": [
+            "Con un incremento de plantilla media de entre el **2 % y el 5 %**, la reducción sube al **23 %**. Entre el **5 % y el 10 %**, al **26,5 %**. Por encima del **10 %**, al **30 %**.",
+            "Es de los pocos sitios del sistema donde contratar tiene premio fiscal directo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Ámbar quiere aplicar la reserva de capitalización y además repartir dividendo ese mismo año. ¿Puede hacer las dos cosas?",
+          "answer": [
+            "En la parte repartida, no.",
+            "La reducción se calcula sobre el **incremento de fondos propios**, y repartir dividendo es precisamente lo contrario: reduce los fondos propios.",
+            "Y si el incremento no se mantiene tres años, la reducción aplicada se deshace. El incentivo y el reparto tiran en direcciones opuestas."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El techo",
+          "text": [
+            "La reducción no puede superar el **20 %** de la base imponible positiva del período, previa a la propia reducción y a la compensación de bases negativas.",
+            "La norma contempla además un supuesto con techo del 25 %."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "Un incentivo con candado",
+          "text": [
+            "Tres años de fondos propios mantenidos, tres años de reserva indisponible y, si has usado el tramo de plantilla, tres años de plantilla. Es diferimiento, no regalo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y los otros",
+          "text": [
+            "Existen también la deducción por **investigación, desarrollo e innovación tecnológica** y regímenes de **amortización acelerada** para entidades de reducida dimensión.",
+            "No se cuantifican aquí: sus requisitos son largos y merecen mirarse caso a caso con la norma delante."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "El incentivo principal de una sociedad pequeña premia retener y contratar, y ata las dos cosas tres años.",
+            "Ya tienes las palancas. En la lección siguiente, dónde dejan de serlo."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 27/2014, del Impuesto sobre Sociedades",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328",
+              "note": "art. 25"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

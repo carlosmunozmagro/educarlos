@@ -1,0 +1,169 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "08-perdidas-y-bases-negativas",
+  "courseId": "sociedades-es",
+  "chapterId": "c2-tributacion-sociedad",
+  "title": "Pérdidas y bases imponibles negativas",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 2 — Cómo tributa la sociedad",
+          "heading": "Pérdidas y bases imponibles negativas",
+          "text": [
+            "En 2025, Ámbar Estudio perdió dinero. Su base imponible fue negativa: 28.000 €.",
+            "Esa pérdida vale dinero. Pero sólo si la sociedad vuelve a ganar."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Una pérdida es un derecho",
+          "text": [
+            "El **artículo 26.1 LIS** permite compensar las bases imponibles negativas «con las rentas positivas de los períodos impositivos **siguientes**».",
+            "No es un cobro. Es un descuento sobre beneficios que todavía no existen."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y no caduca",
+          "text": [
+            "Circula mucho que las pérdidas prescriben a los cuatro años. Desde 2015 **no hay límite temporal** para compensarlas.",
+            "Ámbar podría usar la BIN de 2025 dentro de quince años si le hiciera falta."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El límite del que todos hablan",
+          "text": [
+            "El mismo artículo pone un tope: el **70 %** de la base imponible previa a la reserva de capitalización y a la propia compensación.",
+            "Con 88.000 € de renta en 2026, ese 70 % serían 61.600 €."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y la frase que lo desactiva",
+          "text": [
+            "A continuación, el artículo 26.1 añade: «**En todo caso, se podrán compensar en el período impositivo bases imponibles negativas hasta el importe de 1 millón de euros.**»",
+            "Un suelo, no un techo. Y para casi cualquier sociedad española se traga el porcentaje entero."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "La BIN de Ámbar es de 28.000 € y su renta de 2026 es de 88.000 €. ¿Cuánto puede compensar?",
+          "answer": [
+            "Los **28.000 € completos**.",
+            "El 70 % daría 61.600 €, pero da igual: el suelo del millón permite compensar hasta esa cifra en todo caso, y 28.000 € cabe de sobra.",
+            "El porcentaje sólo empieza a importar cuando tienes más de un millón de euros de pérdidas pendientes. Si no es tu caso, el titular del 70 % no va contigo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La cuenta de 2026"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/compensacion-bin.svg",
+          "alt": "Una barra con la renta de 88.000 €, el tramo compensado de 28.000 € destacado, y la línea discontinua del límite del 70 % situada muy por encima",
+          "caption": "Los 60.000 € de base imponible de la lección 06 ya venían de aquí."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Por partida doble",
+          "text": [
+            "Ámbar tiene además otra razón para que el 70 % no le aplique: el **artículo 26.3** exceptúa a las entidades de nueva creación en los **tres primeros períodos** con base imponible positiva.",
+            "2023, 2024 y 2026 son exactamente esos tres."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que no puedes hacer",
+          "text": [
+            "Comprar una sociedad por sus pérdidas no funciona. El **artículo 26.4** bloquea la compensación cuando concurren **tres** circunstancias a la vez."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "title": "Las tres, acumulativas",
+          "text": [
+            "Que se adquiera la mayoría **después** del año de la pérdida; que el comprador tuviera menos del **25 %** entonces; y que la sociedad estuviera parada, cambiara de actividad, o fuera patrimonial."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Diez años, no cuatro",
+          "text": [
+            "El **artículo 26.5**: el derecho de la Administración a comprobar las BIN compensadas o pendientes «prescribirá a los **10 años**».",
+            "Guarda la documentación de un año malo mucho más tiempo del que crees. Pasado ese plazo, acreditar la pérdida es cosa tuya."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "Una pérdida no caduca, pero tampoco se cobra: sólo vale contra beneficios futuros. Y el famoso 70 % no te afecta salvo que arrastres más de un millón.",
+            "Aquí cierra el impuesto de la sociedad. En el capítulo siguiente, cómo tributas **tú** — que es otra mecánica distinta."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 27/2014, del Impuesto sobre Sociedades, texto consolidado",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328",
+              "note": "arts. 10, 26 y disposición adicional decimoquinta"
+            },
+            {
+              "title": "Ley 7/2024, de 20 de diciembre",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-26694",
+              "note": "disposición final 8.5, límites de grandes empresas"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

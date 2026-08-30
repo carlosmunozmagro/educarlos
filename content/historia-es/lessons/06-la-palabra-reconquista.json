@@ -1,0 +1,220 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "06-la-palabra-reconquista",
+  "courseId": "historia-es",
+  "chapterId": "c2-711-al-andalus",
+  "title": "La palabra «Reconquista»",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 2 — 711 y al-Ándalus",
+          "heading": "La palabra «Reconquista»",
+          "text": [
+            "Siglo XI. El califato ha caído, al-Ándalus está roto en taifas y los reinos cristianos son militarmente superiores.",
+            "Es el momento perfecto para recuperar el territorio.",
+            "Y lo que hacen es cobrar."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Primero, una distinción",
+          "text": [
+            "Nadie discute que hubo conquistas cristianas. Las hubo, y muchas.",
+            "Lo que se discute es que formaran **una sola empresa**, continuada durante ocho siglos, con un objetivo estable: recuperar algo perdido en el 711."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "text": [
+            "Hubo conquistas. Lo que no hubo fue una Reconquista con mayúscula."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La palabra no es medieval",
+          "text": [
+            "Se acuña y se consolida en el **siglo XIX**, al calor del nacionalismo romántico.",
+            "Nadie en el 711, ni en el 1085, ni en el 1492 se levantó pensando que participaba en la Reconquista."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/reconquista-hueco.svg",
+          "alt": "Arriba, una barra del 711 al 1492 rotulada como lo que la palabra nombra; abajo, un punto en el siglo XIX marcando cuándo aparece la palabra",
+          "caption": "El nombre llega **más de tres siglos** después del último hecho que describe."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El siglo que lo desmonta",
+          "text": [
+            "El califato se deshace y al-Ándalus se fragmenta en **taifas**. Los reinos cristianos tienen la ventaja militar.",
+            "Si el programa fuera recuperar el territorio, sería ahora. En vez de eso montan un sistema de tributos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Las parias",
+          "text": [
+            "Pagos anuales en oro que las taifas entregan a los reyes cristianos a cambio de protección y de no ser atacadas.",
+            "Zaragoza paga a Castilla. Toledo, a León. Badajoz y Sevilla, hacia el noroeste."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/historia-es/circuito-parias.svg",
+          "alt": "Dos cajas, taifa y rey cristiano, unidas por dos flechas: oro en un sentido y protección en el otro",
+          "caption": "La prosperidad de la España cristiana del siglo XI se financia con ese oro."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Un rey cristiano conquista la taifa que le paga parias. ¿Qué acaba de perder?",
+          "answer": [
+            "El cobro. Una taifa conquistada deja de pagar.",
+            "Mientras el sistema aguante, cobrar rinde más que conquistar: el tributo llega todos los años y no cuesta un ejército en campaña.",
+            "Esto no convierte a nadie en pacifista. Convierte la frontera en algo que se gestiona, no en un frente que se empuja."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El testamento de Fernando I",
+          "text": [
+            "Al repartir la herencia entre sus hijos, **Fernando I** les reparte territorios.",
+            "Y les reparte también **el cobro de las parias**, en el mismo acto."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "Un flujo de tributo musulmán se hereda igual que una provincia. Eso no es el botín transitorio de una guerra santa: es patrimonio ordinario de la Corona."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Alfonso VI lo usa como arma",
+          "text": [
+            "Incapaz de conquistar al-Ándalus de una vez, emplea las parias para asfixiar económicamente a las taifas, provocarles conflictos internos por la subida de impuestos que necesitan para pagarlas, y enfrentarlas entre sí.",
+            "Es política exterior, no cruzada."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y por qué se rompe",
+          "text": [
+            "Las parias dependían de una superioridad militar **circunstancial**.",
+            "Cuando la presión se hace insoportable, las taifas llaman a los almorávides desde el norte de África. El equilibrio se acaba, y la frontera vuelve a moverse a saltos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Si el problema no es que la palabra sea fea, ¿qué es exactamente lo que trae metido dentro?",
+          "answer": [
+            "Tres cosas que hay que demostrar por separado y que la palabra da por supuestas: **continuidad** (que fue un proceso seguido), **plan** (que hubo un objetivo compartido) y **motivo religioso** (que ese objetivo era recuperar una unidad cristiana perdida).",
+            "El siglo XI falla en las tres. Y es justo el siglo en que ejecutar ese programa habría sido más fácil."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde falla esto",
+          "text": [
+            "No conviertas la corrección en la corrección contraria. Hubo guerra, hubo conquista y hubo retórica religiosa explícita, sobre todo desde el siglo XII y con las cruzadas de fondo.",
+            "Las parias son **un siglo**, no ocho. Sirven para refutar la continuidad, no para describir toda la Edad Media."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "El debate está vivo: hay especialistas que defienden el término como convención útil. Esto es un estado de la cuestión, no una sentencia."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que viene",
+          "text": [
+            "Si la frontera se gestionaba y el tributo se heredaba, la pregunta siguiente es cómo se convivía de verdad.",
+            "Y ahí hay otra palabra esperando, con el mismo problema y la carga cambiada de signo."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "Una palabra no es una etiqueta neutra sobre los hechos. Es un modelo de los hechos, y los modelos se comprueban."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "A. García Sanjuán, «La Reconquista en el debate público y académico actual», infoLibre",
+              "url": "https://www.infolibre.es/opinion/plaza-publica/reconquista-debate-publico-academico-actual_129_1766832.html"
+            },
+            {
+              "title": "«Las parias pagadas a Castilla por la taifa aftasí de Badajoz», Dialnet",
+              "url": "https://dialnet.unirioja.es/descarga/articulo/10423757.pdf"
+            },
+            {
+              "title": "«La Reconquista a través de los libros de texto», Dialnet",
+              "url": "https://dialnet.unirioja.es/descarga/articulo/9655385.pdf"
+            },
+            {
+              "title": "«El sistema de parias», La Crisis de la Historia",
+              "url": "https://www.lacrisisdelahistoria.com/el-sistema-de-parias/",
+              "note": "Testamento de Fernando I y uso por Alfonso VI"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

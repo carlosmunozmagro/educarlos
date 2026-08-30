@@ -1,0 +1,177 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "15-la-retribucion-del-administrador",
+  "courseId": "sociedades-es",
+  "chapterId": "c4-sacar-dinero",
+  "title": "La retribución del administrador",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 4 — Sacar dinero de la sociedad",
+          "heading": "La retribución del administrador",
+          "text": [
+            "Marta cobra 30.000 € de Ámbar como administradora.",
+            "Sus estatutos de plantilla no dicen ni una palabra sobre retribución.",
+            "Ese sueldo tiene un problema, y no empezó en Hacienda."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Empieza en la notaría",
+          "text": [
+            "El **artículo 217.1 LSC** ya lo vimos en la lección 04: «El cargo de administrador es **gratuito**, a menos que los estatutos sociales establezcan lo contrario **determinando el sistema de remuneración**.»",
+            "Los de Marta callan. Por defecto, su cargo es gratuito."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y no basta con abrir la puerta",
+          "text": [
+            "Decir «el cargo será retribuido» no cumple el artículo: hay que **determinar el sistema**. Asignación fija, dietas, participación en beneficios, retribución variable.",
+            "Y el **artículo 217.3** añade otro eslabón: el importe máximo anual lo aprueba la **junta general**."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/cadena-retribucion.svg",
+          "alt": "Cadena vertical de cuatro eslabones: los estatutos lo prevén, determinan el sistema, la junta aprueba el máximo, y el gasto queda defendible",
+          "caption": "Es una cadena. Falla un eslabón y no hay nada que sostener."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que la ley fiscal sí resolvió",
+          "text": [
+            "Durante años se discutió si el sueldo del administrador era una **liberalidad** no deducible.",
+            "El **artículo 15.e) LIS** lo zanjó: «Tampoco se entenderán comprendidos en esta letra e) las retribuciones a los administradores por el desempeño de funciones de alta dirección, u otras funciones derivadas de un contrato de carácter laboral»."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Si los estatutos no prevén retribución, ¿puede Ámbar deducirse los 30.000 € que le paga a Marta?",
+          "answer": [
+            "Es terreno discutido, y conviene decirlo así en lugar de fingir seguridad.",
+            "Por un lado, el artículo 15.e) deja claro que **no es una liberalidad**: esa puerta está cerrada.",
+            "Por otro, sigue abierta la del **artículo 15.f)**, «gastos de actuaciones contrarias al ordenamiento jurídico», porque pagar por un cargo que los estatutos declaran gratuito incumple la LSC.",
+            "La forma de no pisar ese terreno es no llegar a él: cumplir la cadena del artículo 217."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La teoría del vínculo",
+          "text": [
+            "La salida intuitiva es firmar un contrato laboral de alta dirección. No funciona.",
+            "La doctrina jurisprudencial del **vínculo** sostiene que, cuando la misma persona es administradora y alta directiva, el vínculo mercantil **absorbe** al laboral: esas funciones se entienden retribuidas por el cargo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que sí puede coexistir",
+          "text": [
+            "Una relación laboral **común**, por funciones distintas de las de dirección.",
+            "Marta administra Ámbar, pero también diseña. Ese trabajo técnico es separable de sus funciones de administradora, y ahí sí cabe una nómina ordinaria."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "Separable de verdad",
+          "text": [
+            "La separación tiene que sostenerse en los hechos: funciones distintas, retribuciones distintas y, a ser posible, documentadas por separado."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La salida limpia para Marta"
+        },
+        {
+          "type": "steps",
+          "items": [
+            {
+              "title": "Modificar los estatutos",
+              "text": "Prever la retribución del cargo y determinar el sistema, no sólo declararla."
+            },
+            {
+              "title": "Aprobar el máximo en junta",
+              "text": "El importe anual del conjunto de administradores, art. 217.3."
+            },
+            {
+              "title": "Separar los dos papeles",
+              "text": "Su trabajo de diseño por un lado; sus funciones de administradora por otro."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y una cosa menos de la que preocuparse",
+          "text": [
+            "La retribución del administrador por el ejercicio de sus funciones queda **fuera** de las operaciones vinculadas, por la salvedad del **artículo 18.2.b)** que vimos en la lección anterior.",
+            "No hay que valorarla a mercado. Hay que preverla en estatutos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "El sueldo del administrador no se defiende con un contrato: se defiende con una cláusula estatutaria, un sistema determinado y un acuerdo de junta.",
+            "Ya conoces las tres vías y sus condiciones. En la lección siguiente, la pregunta con la que llegaste al curso: ¿compensa tener sociedad?"
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley de Sociedades de Capital (RDL 1/2010)",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2010-10544",
+              "note": "art. 217"
+            },
+            {
+              "title": "Ley 27/2014, del Impuesto sobre Sociedades",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328",
+              "note": "arts. 15.e), 15.f) y 18.2.b)"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

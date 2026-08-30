@@ -1,0 +1,177 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "22-retribucion-flexible-y-en-especie",
+  "courseId": "sociedades-es",
+  "chapterId": "c6-optimizar",
+  "title": "Retribución flexible y en especie",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 6 — Optimizar de verdad",
+          "heading": "Retribución flexible y en especie",
+          "text": [
+            "Ámbar puede gastar 1.000 € en Marta de dos maneras.",
+            "En una le llegan 722 €. En la otra, los 1.000.",
+            "El coste para la empresa es idéntico."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Por qué funciona"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/euro-en-especie.svg",
+          "alt": "Dos barras de 1.000 euros de coste para la empresa: como nómina llegan 722 euros al trabajador, como retribución exenta llegan los 1.000",
+          "caption": "Mismo gasto deducible para la sociedad. Distinto destino."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "No es un truco: es una lista",
+          "text": [
+            "El **artículo 42.3 LIRPF** enumera qué rendimientos del trabajo en especie están exentos. Fuera de esa lista, la retribución en especie **tributa** como cualquier otra.",
+            "Lo que hay es una lista tasada con límites exactos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Los seis conceptos"
+        },
+        {
+          "type": "table",
+          "columns": [
+            "Concepto",
+            "Límite"
+          ],
+          "rows": [
+            [
+              "Comedor de empresa o vale de comida",
+              "el que fija el reglamento"
+            ],
+            [
+              "Guardería y servicios sociales",
+              "sin límite expreso"
+            ],
+            [
+              "Seguro de enfermedad",
+              "500 € al año por persona"
+            ],
+            [
+              "Educación de los hijos, en centros autorizados",
+              "gratuita o bajo precio"
+            ],
+            [
+              "Transporte público colectivo",
+              "1.500 € al año"
+            ],
+            [
+              "Entrega de acciones o participaciones",
+              "12.000 € al año"
+            ]
+          ],
+          "caption": "Art. 42.3 LIRPF, letras a) a f)."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dos detalles que importan",
+          "text": [
+            "El seguro de enfermedad son **500 € por persona**, no por póliza: cubre al trabajador, y también a su cónyuge y descendientes, cada uno con su límite.",
+            "Y el transporte tiene que ser **colectivo y público**. El coche de empresa no entra por esta puerta."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "¿Puede Ámbar entregar participaciones sólo a Marta, por 12.000 €, y que estén exentas?",
+          "answer": [
+            "No.",
+            "La letra f) exige que «**la oferta se realice en las mismas condiciones para todos los trabajadores** de la empresa, grupo o subgrupos de empresa».",
+            "No es un instrumento para retribuir al socio: es un instrumento para retribuir a la plantilla. Si sólo lo cobra quien manda, deja de estar exento."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El teletrabajo, previsto",
+          "text": [
+            "La letra a) se actualizó para el trabajo a distancia: la entrega puede hacerse «en el lugar elegido por aquel para desarrollar su trabajo en los días en que este se realice a distancia o mediante teletrabajo».",
+            "El **artículo 45 del Reglamento** añade dos condiciones: días hábiles, y que no coincida con días de dietas de manutención exentas."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Por qué es la combinación más limpia del curso",
+          "text": [
+            "La sociedad deduce exactamente lo mismo que si pagara nómina. La persona no tributa nada.",
+            "No hay diferimiento que devolver después ni estructura que defender. Es la única palanca del capítulo que no deja deuda pendiente."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "Y la más desaprovechada",
+          "text": [
+            "Requiere montar la retribución flexible con la asesoría laboral, no con la fiscal. Por eso mucha gente que optimiza bien sus impuestos no la tiene."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "Seis conceptos, con límites exactos, que llegan íntegros al trabajador y siguen siendo gasto deducible.",
+            "En la lección siguiente, los incentivos que la sociedad tiene por su cuenta."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 35/2006, del IRPF, texto consolidado",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+              "note": "art. 42.3"
+            },
+            {
+              "title": "Real Decreto 439/2007, Reglamento del IRPF",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820",
+              "note": "art. 45"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

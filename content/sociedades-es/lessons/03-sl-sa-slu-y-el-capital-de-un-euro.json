@@ -1,0 +1,213 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "03-sl-sa-slu-y-el-capital-de-un-euro",
+  "courseId": "sociedades-es",
+  "chapterId": "c1-patrimonio-separado",
+  "title": "SL, SA, SLU y el capital de un euro",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 1 — La sociedad como patrimonio separado",
+          "heading": "SL, SA, SLU y el capital de un euro",
+          "text": [
+            "Marta constituyó Ámbar Estudio con 3.000 € de capital social.",
+            "Desde 2022 podría haberlo hecho con 1 €.",
+            "La diferencia no son 2.999 €. Es cuándo los pone."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Sólo hay dos formas que importen"
+        },
+        {
+          "type": "table",
+          "columns": [
+            "Concepto",
+            "Limitada",
+            "Anónima"
+          ],
+          "rows": [
+            [
+              "Capital mínimo",
+              "1 € (art. 4.1)",
+              "60.000 € (art. 4.2)"
+            ],
+            [
+              "Desembolso al constituir",
+              "Íntegro (art. 78)",
+              "Una cuarta parte (art. 79)"
+            ],
+            [
+              "Las partes",
+              "Participaciones",
+              "Acciones"
+            ]
+          ],
+          "caption": "El capital mínimo explica por qué casi nadie elige la anónima."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El desembolso invierte la comparación",
+          "text": [
+            "La anónima pide 60.000 € de capital, pero permite poner sólo una cuarta parte al constituir. La limitada pide muchísimo menos, y lo pide **entero** desde la escritura.",
+            "Para Marta: 3.000 € en la cuenta antes de firmar."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Participaciones no son acciones",
+          "text": [
+            "El **artículo 92.2 LSC** es rotundo: las participaciones «no podrán estar representadas por medio de títulos o de anotaciones en cuenta, ni denominarse acciones, y en ningún caso tendrán el carácter de valores».",
+            "No hay título que entregar, ni mercado donde venderlas."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Un competidor le ofrece a Marta comprar el 40 % de Ámbar Estudio. ¿Puede vendérselo mañana?",
+          "answer": [
+            "No sin más. El **artículo 107.1** deja libre la transmisión entre socios, al cónyuge, a ascendientes y descendientes, y a sociedades del grupo. Un tercero no está en esa lista.",
+            "A falta de regla en los estatutos, la venta queda sometida al consentimiento de la junta general (**art. 107.2**), y la sociedad sólo puede denegarlo si presenta otro comprador.",
+            "Marta es socia única, así que la junta es ella. Con socios, esto es la diferencia entre poder salir y no poder."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El capital de un euro",
+          "text": [
+            "La **Ley 18/2022** bajó el mínimo de la limitada de 3.000 € a 1 €, y suprimió el régimen de formación sucesiva.",
+            "Pero no lo dejó ahí. El propio **artículo 4.1** añade dos reglas mientras el capital no llegue a 3.000 €."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Primera: la reserva legal",
+          "text": [
+            "«Deberá destinarse a la reserva legal una cifra al menos igual al 20 por ciento del beneficio hasta que dicha reserva junto con el capital social alcance el importe de tres mil euros.»",
+            "Ese 20 % no se reparte como dividendo hasta llegar."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Segunda: la liquidación",
+          "text": [
+            "«Si el patrimonio de la sociedad fuera insuficiente para atender el pago de las obligaciones sociales, los socios responderán solidariamente de la diferencia entre el importe de tres mil euros y la cifra del capital suscrito.»"
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/hueco-3000.svg",
+          "alt": "Dos barras: el capital de 3.000 € totalmente desembolsado, y el capital de 1 € como una línea mínima dentro de un contorno discontinuo que representa la diferencia contingente",
+          "caption": "Con 1 € de capital, lo que no pones sigue existiendo."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que compras con un euro",
+          "text": [
+            "No te ahorras 2.999 €. Los conviertes en una obligación contingente que aparece exactamente cuando la sociedad no puede pagar."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "Y hay un efecto lateral",
+          "text": [
+            "Con 1 € de capital, la mitad son 0,50 €. La causa de disolución por pérdidas de la lección anterior (**art. 363.1.e**) casi nunca llega a activarse."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Ámbar es unipersonal",
+          "text": [
+            "Marta es la única socia, así que Ámbar es una **SLU**. El **artículo 13.2** obliga a hacer constar esa condición «en toda su documentación, correspondencia, notas de pedido y facturas».",
+            "Por eso sus facturas dicen _Ámbar Estudio, SLU_."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El reloj que Marta no tiene que temer",
+          "text": [
+            "Si una sociedad **pasa a ser** unipersonal y no lo inscribe en seis meses, el socio único responde «personal, ilimitada y solidariamente» de las deudas de ese período (**art. 14.1**).",
+            "Ámbar nació unipersonal y consta en la escritura. El riesgo es de quien compra la participación de su socio y no lo inscribe."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/reloj-unipersonalidad.svg",
+          "alt": "Línea temporal con el momento en que la sociedad pasa a ser unipersonal, un tramo sombreado de seis meses y el punto en que vence el plazo",
+          "caption": "Inscrita la unipersonalidad, el socio único no responde de las deudas posteriores."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "La forma se elige una vez y condiciona lo demás: cuánto pones, a quién puedes vender, y qué responsabilidad queda latente esperando a la liquidación.",
+            "Marta eligió bien para lo que hace. En la lección siguiente, lo que queda congelado en los estatutos el día de la escritura."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley de Sociedades de Capital (RDL 1/2010), texto consolidado",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2010-10544",
+              "note": "arts. 4, 13, 14, 78, 79, 92 y 107"
+            },
+            {
+              "title": "Ley 18/2022, de creación y crecimiento de empresas",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-15818",
+              "note": "art. 2: nueva redacción del art. 4 y supresión del art. 4 bis"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

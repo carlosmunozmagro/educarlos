@@ -1,0 +1,196 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "06-el-tipo-no-es-el-25-por-ciento",
+  "courseId": "sociedades-es",
+  "chapterId": "c2-tributacion-sociedad",
+  "title": "El tipo no es el 25 %",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 2 — Cómo tributa la sociedad",
+          "heading": "El tipo no es el 25 %",
+          "text": [
+            "Ámbar Estudio lleva cuatro ejercicios y nunca ha pagado el 25 %.",
+            "No es una excepción. Es lo normal en una sociedad pequeña."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El 25 % es el tipo general",
+          "text": [
+            "Y «general» significa el que se aplica cuando no aplica ningún otro. El **artículo 29.1 LIS** abre tres puertas antes de llegar a él.",
+            "Ámbar ha pasado por dos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Primera puerta: nueva creación",
+          "text": [
+            "Las entidades de nueva creación que realicen actividades económicas tributan al **15 %** «en el primer período impositivo en que la base imponible resulte positiva y en el siguiente».",
+            "Ámbar cerró 2023 en positivo. Así que 2023 y 2024 fueron al 15 %."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que pagó en 2024",
+          "text": [
+            "La base imponible de 2024 fueron los 41.400 € de la lección anterior.",
+            "Al 15 %, la cuota íntegra fue de **6.210 €**. Al tipo general habrían sido 10.350 €."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "title": "La puerta tiene cerrojo",
+          "text": [
+            "No se entiende iniciada una actividad si ya la venía realizando una persona o entidad **vinculada** y se transmitió a la sociedad nueva. Cerrar y reabrir no reinicia el contador."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Segunda puerta: microempresa",
+          "text": [
+            "Si el importe neto de la cifra de negocios del **período anterior** fue inferior a 1 millón de euros, no hay un tipo único: hay una escala por tramos.",
+            "En 2025 Ámbar perdió dinero, así que no hubo cuota. En 2026 volvió a ganar: 60.000 € de base imponible."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La escala de 2026"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/escala-microempresa.svg",
+          "alt": "Una barra dividida en dos tramos: los primeros 50.000 € al 19 % y los 10.000 € restantes al 21 %, con la cuota resultante",
+          "caption": "El tipo efectivo cae entre los dos tramos, nunca es el del tramo alto."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Ámbar cierra 2026 con 60.000 € de base imponible. ¿Cuánto paga?",
+          "answer": [
+            "11.600 €. Los primeros 50.000 € al 19 % son 9.500 €, y los 10.000 € restantes al 21 % son 2.100 €.",
+            "El tipo efectivo es del **19,33 %**, no del 21 %: la escala es progresiva por tramos, igual que el IRPF.",
+            "Al 25 % que todo el mundo cita habrían sido 15.000 €. La diferencia son 3.400 €."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Pero esos tipos caducan",
+          "text": [
+            "El 19 % y el 21 % no están en el artículo 29. Están en la **disposición transitoria cuadragésima cuarta**, que la Ley 7/2024 añadió con efectos desde 2025.",
+            "Es una senda: los tipos bajan cada ejercicio hasta llegar al régimen definitivo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La senda de las entidades de reducida dimensión"
+        },
+        {
+          "type": "table",
+          "columns": [
+            "Ejercicio",
+            "Tipo"
+          ],
+          "rows": [
+            [
+              "2025",
+              "24 %"
+            ],
+            [
+              "2026",
+              "23 %"
+            ],
+            [
+              "2027",
+              "22 %"
+            ],
+            [
+              "2028",
+              "21 %"
+            ],
+            [
+              "2029 en adelante",
+              "20 %"
+            ]
+          ],
+          "caption": "Reducida dimensión es la del art. 101: cifra de negocios por debajo de 10 millones."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y la de las microempresas",
+          "text": [
+            "Para las microempresas la transición es más corta: 21 % y 22 % en 2025, 19 % y 21 % en 2026, y desde 2027 ya el régimen definitivo del artículo 29.1: **17 % y 20 %**.",
+            "Si Ámbar repite 60.000 € en 2027, pagará 10.500 € en lugar de 11.600 €."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "Antes de dar por hecho el 25 %, mira tres cosas: si eres entidad nueva, cuál fue tu cifra de negocios del año pasado, y en qué ejercicio de la senda estás.",
+            "Ya sabes cuánto debe Ámbar. En la lección siguiente, cuándo lo paga — que no es cuando crees."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 27/2014, del Impuesto sobre Sociedades, texto consolidado",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328",
+              "note": "art. 29 y disposición transitoria cuadragésima cuarta"
+            },
+            {
+              "title": "Ley 7/2024, de 20 de diciembre",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-26694",
+              "note": "disposición final 8.8, que añade la DT 44ª"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

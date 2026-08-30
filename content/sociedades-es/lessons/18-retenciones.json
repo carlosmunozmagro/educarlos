@@ -1,0 +1,167 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "18-retenciones",
+  "courseId": "sociedades-es",
+  "chapterId": "c5-la-maquina",
+  "title": "Retenciones",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 5 — La máquina que hay que alimentar",
+          "heading": "Retenciones",
+          "text": [
+            "Ámbar paga 1.000 € al mes por la oficina que Marta alquiló el 5 de marzo.",
+            "Al arrendador sólo le llegan 810 €.",
+            "Y si Ámbar le paga los 1.000, pagará dos veces."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Otra vez recaudador",
+          "text": [
+            "Igual que con el IVA, hay pagos en los que la sociedad no entrega todo el importe: retiene una parte y la ingresa en Hacienda a cuenta del impuesto del que cobra.",
+            "La diferencia es que aquí la retención cambia según **qué** estés pagando."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Los tipos"
+        },
+        {
+          "type": "table",
+          "columns": [
+            "Qué pagas",
+            "Retención"
+          ],
+          "rows": [
+            [
+              "Nómina",
+              "variable, según el perceptor"
+            ],
+            [
+              "Factura de un profesional",
+              "15 %"
+            ],
+            [
+              "Profesional en sus primeros años",
+              "7 %"
+            ],
+            [
+              "Dividendos e intereses",
+              "19 %"
+            ],
+            [
+              "Alquiler de inmueble urbano",
+              "19 %"
+            ]
+          ],
+          "caption": "Art. 101 LIRPF. La del trabajo la calcula el reglamento según circunstancias personales."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Ámbar paga 1.000 € al mes por su oficina a un particular. ¿Tiene que retener algo?",
+          "answer": [
+            "Sí: el **19 %**, por el **artículo 101.8 LIRPF**, que grava «los rendimientos procedentes del arrendamiento o subarrendamiento de bienes inmuebles urbanos».",
+            "Ámbar paga **810 €** al arrendador e ingresa **190 €** a Hacienda.",
+            "Es uno de los olvidos más frecuentes en sociedades pequeñas: la nómina y las facturas de profesionales se recuerdan; el alquiler, no."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y si no retienes"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/retencion-alquiler.svg",
+          "alt": "Una barra de 1.000 euros dividida en 190 para Hacienda y 810 para el arrendador, y debajo la consecuencia de no retener",
+          "caption": "El pagador acaba asumiendo la retención entera."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Pagas dos veces",
+          "text": [
+            "El **artículo 99.4** es tajante: los obligados a retener «asumirán la obligación de efectuar el ingreso en el Tesoro, **sin que el incumplimiento de aquella obligación pueda excusarles de ésta**».",
+            "Le pagaste 1.000 € al arrendador, y Hacienda te sigue reclamando los 190 €."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y el otro se los deduce igual",
+          "text": [
+            "El **artículo 99.5** remata: si no se practicó la retención «por causa imputable exclusivamente al retenedor», el perceptor «**deducirá de la cuota la cantidad que debió ser retenida**»."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "title": "Como si la hubieras practicado",
+          "text": [
+            "El arrendador declara los 1.000 € íntegros y se descuenta 190 € que nunca le retuviste. Hacienda cobra una vez, tú pagas dos."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Los papeles",
+          "text": [
+            "Las retenciones de trabajo y de actividades económicas van en el **modelo 111**, con resumen anual en el **190**.",
+            "Las de arrendamientos, en el **modelo 115**, con resumen anual en el **180**."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "La retención es una obligación tuya, no del que cobra, y no se arregla pagando de más: el importe hay que ingresarlo igualmente.",
+            "En la lección siguiente, la obligación que más se olvida de todas, con una sanción que cierra el Registro."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 35/2006, del IRPF, texto consolidado",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+              "note": "arts. 99 y 101"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

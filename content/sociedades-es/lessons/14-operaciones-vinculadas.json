@@ -1,0 +1,182 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "14-operaciones-vinculadas",
+  "courseId": "sociedades-es",
+  "chapterId": "c4-sacar-dinero",
+  "title": "Operaciones vinculadas",
+  "reviewedOn": "2026-08-29",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 4 — Sacar dinero de la sociedad",
+          "heading": "Operaciones vinculadas",
+          "text": [
+            "Marta puede facturarle a Ámbar por su trabajo de diseño.",
+            "Lo que no puede es elegir el precio."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La regla, en una frase",
+          "text": [
+            "**Artículo 18.1 LIS**: «Las operaciones efectuadas entre personas o entidades vinculadas se valorarán por su **valor de mercado**».",
+            "Y lo define como el que habrían acordado partes independientes «en condiciones que respeten el principio de libre competencia»."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Por qué existe",
+          "text": [
+            "Cuando quien vende y quien compra son la misma persona, el precio no lo fija un mercado: lo fija la conveniencia.",
+            "La ley no presume mala fe. Presume que no hubo negociación."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Quién está vinculado",
+          "text": [
+            "El **artículo 18.2** enumera: la entidad y sus socios; la entidad y sus administradores, de derecho **y de hecho**; los cónyuges y parientes hasta el **tercer grado** de unos y otros; las entidades de un mismo grupo.",
+            "Para la vía del socio hay umbral: participación **igual o superior al 25 %**."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Marta tiene el 100 %"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/arbol-vinculadas.svg",
+          "alt": "Árbol de decisión de tres pasos: si participas al menos el 25 por ciento, si es retribución por el cargo, y finalmente la obligación de valorar a mercado",
+          "caption": "Dos preguntas antes de llegar a la obligación."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Marta cobra de Ámbar una nómina como administradora y además le factura por diseño. ¿Cuál de los dos cobros es operación vinculada?",
+          "answer": [
+            "Sólo la **factura**.",
+            "El artículo 18.2.b) considera vinculadas «una entidad y sus consejeros o administradores, **salvo en lo correspondiente a la retribución por el ejercicio de sus funciones**».",
+            "El sueldo por ser administradora queda fuera del artículo 18. Tiene otro problema, y es la lección siguiente."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El puerto seguro de los socios profesionales",
+          "text": [
+            "El **artículo 18.6** permite dar por bueno el precio convenido cuando un socio profesional presta servicios a su entidad.",
+            "Pero exige tres condiciones, y hay que cumplirlas **a la vez**."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Las tres condiciones"
+        },
+        {
+          "type": "table",
+          "columns": [
+            "Condición",
+            "Umbral"
+          ],
+          "rows": [
+            [
+              "Ingresos de actividades profesionales",
+              "más del 75 % del total"
+            ],
+            [
+              "Retribución del conjunto de socios profesionales",
+              "al menos el 75 % del resultado previo"
+            ],
+            [
+              "Retribución de cada socio",
+              "1,5 × el salario medio de funciones análogas"
+            ]
+          ],
+          "caption": "Y si no hay asalariados con funciones análogas, no menos de 5 veces el IPREM."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La condición que casi nadie cumple",
+          "text": [
+            "La letra c) exige además que la retribución de cada socio se fije por su contribución a la marcha de la entidad, «siendo necesario que **consten por escrito** los criterios cualitativos y/o cuantitativos aplicables»."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "title": "Un documento, no una intención",
+          "text": [
+            "Es el requisito más barato de cumplir y el que más se incumple. Escribir los criterios cuesta una tarde; sin ellos el puerto seguro no existe."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y si no lo cumples",
+          "text": [
+            "No significa que tu precio sea incorrecto. Significa que te toca demostrarlo: comparables, método de valoración y documentación a disposición de la Administración.",
+            "El puerto seguro no cambia la regla. Cambia quién tiene que probar."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que hay que recordar",
+          "text": [
+            "Facturar a tu propia sociedad es legítimo y deducible, pero el precio no es tuyo: es el de mercado. Y con el 25 % ya estás dentro.",
+            "Tu nómina de administradora se libra de esta regla. En la lección siguiente, por qué se enfrenta a una peor."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 27/2014, del Impuesto sobre Sociedades",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328",
+              "note": "art. 18, apartados 1, 2 y 6"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
