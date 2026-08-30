@@ -1,0 +1,165 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "36-sancionar-y-recurrir",
+  "courseId": "sociedades-es",
+  "chapterId": "c9-cuando-algo-va-mal",
+  "title": "Sancionar y recurrir",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 9 — Cuando algo va mal",
+          "heading": "Sancionar y recurrir",
+          "text": [
+            "La sanción de Ámbar son 2.400 €.",
+            "Si Marta la acepta, paga 1.008 €. Si la discute, vuelve a 2.400 €."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dos cartas, no una",
+          "text": [
+            "De la comprobación sale una **liquidación**: **4.800 €** de cuota que Ámbar no ingresó por la entrega de participaciones a Nuria.",
+            "La **sanción** es un expediente distinto, con su propia notificación. Se pueden aceptar por separado, y ahí está todo el margen."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Cómo se califica",
+          "text": [
+            "El **artículo 191 LGT** sanciona dejar de ingresar en plazo la deuda que debiera resultar de la correcta autoliquidación."
+          ]
+        },
+        {
+          "type": "table",
+          "columns": ["Calificación", "Cuándo", "Sanción"],
+          "rows": [
+            ["Leve", "base ≤ 3.000 €, o mayor sin ocultación", "50 %"],
+            ["Grave", "con ocultación, entre otros", "50 % a 100 %"],
+            ["Muy grave", "medios fraudulentos", "100 % a 150 %"]
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "La base de Ámbar son 4.800 €, más de los 3.000 € del umbral. ¿Es grave?",
+          "answer": [
+            "No. Es **leve**.",
+            "El umbral de 3.000 € cierra la calificación por abajo, pero por encima lo que decide es la **ocultación**. Ámbar declaró la entrega: lo que hay es una discrepancia de valoración.",
+            "Es la diferencia entre el 50 % y una horquilla que llega al 100 %, y depende de un hecho, no de una cifra."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Las dos reducciones",
+          "text": [
+            "El **artículo 188 LGT**, en la redacción de la **Ley 11/2021**: un **30 %** por conformidad, y un **40 %** adicional por conformidad con liquidación y sanción más pronto pago.",
+            "Se aplican en cascada, no se suman."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que queda"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/reducciones-sancion.svg",
+          "alt": "Tres barras decrecientes: la sanción de 2.400 €, 1.680 € tras la reducción del 30 % por conformidad, y 1.008 € tras el 40 % adicional por pronto pago",
+          "caption": "**58 %** de reducción acumulada. Recurrir la devuelve entera."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y hay una tercera",
+          "text": [
+            "Las **actas con acuerdo** del artículo 155 reducen un **65 %**. Es la mayor de las tres y la menos disponible: exige que Inspección quiera cerrar así, y no se recurre después.",
+            "La Ley 11/2021 subió esa reducción del 50 % al 65 %, y el pronto pago del 25 % al 40 %."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Si Marta quiere discutir",
+          "text": [
+            "El **recurso de reposición** es potestativo: **un mes** desde el día siguiente a la notificación. Si lo usa, tiene que agotarlo antes de ir al TEAR; pasado un mes sin respuesta, se entiende desestimado.",
+            "Después, **reclamación económico-administrativa** ante el TEAR, también en **un mes** (**art. 235**)."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La pregunta que hay que hacerse",
+          "text": [
+            "No es «¿tengo razón?». Es «¿tengo razón por más de **1.392 €**?», que es lo que cuesta discutir antes de que nadie decida nada.",
+            "Y hay algo que no está en la cuenta: aceptar la valoración es aceptar un criterio que volverá en la próxima entrega."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "text": [
+            "«Recurro, que no pierdo nada» es falso por escrito: se pierden las dos reducciones el día que se presenta el recurso."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Fin del capítulo",
+          "text": [
+            "Ámbar ha pagado una salida, ha estado a un mes del concurso y ha discutido con Hacienda un número que se inventó en 2027 sin querer.",
+            "Sigue viva y sin colchón. En el capítulo siguiente, cómo se financia lo que viene después."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 58/2003, General Tributaria",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23186",
+              "note": "arts. 188, 191, 222 a 225 y 235"
+            },
+            {
+              "title": "Ley 11/2021, de prevención y lucha contra el fraude fiscal",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2021-11473",
+              "note": "nueva redacción del art. 188"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

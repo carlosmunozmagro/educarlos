@@ -104,3 +104,31 @@ intereses distintos. **No** lo estires a temas fiscales de estudio pequeño.
 dar entrada a un socio, tener un mal año— pero no puede cambiar de sector ni de
 tamaño para encajar en una lección. El día que una lección exija una empresa que
 Ámbar no es, se retira entre capítulos y se presenta un caso nuevo entero.
+
+---
+
+## Lo que añade el capítulo 9 (lecciones 33–36)
+
+| Hecho | Valor | Lección |
+|---|---|---|
+| Valoración del 30 % de Diego por el experto del Registro | **66.000 €** | 33 |
+| Patrimonio neto de Ámbar antes de pagarle | 3.000 € de capital + 78.000 € de reservas = **81.000 €** | 33 |
+| Patrimonio neto después | **15.000 €** | 33 |
+| Reserva del art. 332 | **no dotada** — Diego responde hasta 66.000 € hasta 2034 | 33 |
+| Cliente que entra en concurso, marzo de 2030 | debía **48.000 €**; no paga | 34 |
+| Ámbar conoce su insolvencia actual | **15 de marzo de 2030** | 34 |
+| Límite del art. 5 TRLC | 15 de mayo de 2030 | 34 |
+| Con comunicación del 585 y prórroga | hasta el **15 de octubre de 2030** | 34 |
+| Salida del preconcurso | acuerdo de pago en 2030; Ámbar sobrevive | 35 |
+| Comprobación limitada, febrero de 2031 | sobre el ejercicio **2027**: el valor del 4 % de Nuria | 35 |
+| Liquidación | **4.800 €** de cuota no ingresada | 36 |
+| Sanción | leve, 50 % = **2.400 €**; con conformidad y pronto pago, **1.008 €** | 36 |
+
+**Hilo del capítulo**: cada golpe viene de una decisión anterior. La salida de Diego viene
+del 348 bis (lección 32); la insolvencia, de haber pagado esa salida; y la comprobación, del
+número que nadie pudo justificar en la lección 31.
+
+**Estado al empezar el capítulo 10**: ejercicio **2031**. Ámbar viva, sin colchón, con Marta
+al 66 %, Nuria al 4 % y el 30 % de Diego amortizado. Aquí es donde el Caso A deja de dar de
+sí: lo que viene —financiación, salir fuera, reestructurar— exige una empresa que Ámbar no
+es. El capítulo 10 presenta un caso nuevo.

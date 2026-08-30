@@ -1,0 +1,140 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "35-cuando-hacienda-llama",
+  "courseId": "sociedades-es",
+  "chapterId": "c9-cuando-algo-va-mal",
+  "title": "Cuando Hacienda llama",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 9 — Cuando algo va mal",
+          "heading": "Cuando Hacienda llama",
+          "text": [
+            "Llega una carta sobre el ejercicio 2027.",
+            "Lo primero que hay que leer no es qué piden: es con qué procedimiento."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Febrero de 2031",
+          "text": [
+            "Ámbar salió del preconcurso el año anterior con un acuerdo de pago. Ahora Gestión abre una **comprobación limitada** sobre 2027.",
+            "El objeto: el **4 %** que Marta entregó a Nuria valorado en **6.000 €** (lección 31)."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "No discuten la exención",
+          "text": [
+            "Discuten el **número**. Si aquellas participaciones valían más, parte de la entrega dejó de estar exenta y Ámbar debió practicar ingreso a cuenta.",
+            "Es justo el punto que la lección 31 dejó señalado: en una SL sin rondas de inversión, «valor de mercado» es lo que puedas defender."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Tres procedimientos, no uno"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/tres-procedimientos.svg",
+          "alt": "Tres barras de anchura creciente: verificación de datos, comprobación limitada y inspección, la última destacada con su plazo de 18 o 27 meses",
+          "caption": "Cada uno lo lleva un órgano distinto y puede hacer cosas distintas."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y no son intercambiables",
+          "text": [
+            "La **verificación de datos** es la más estrecha: discrepancias y errores en lo declarado.",
+            "Los tribunales han sido firmes en que no puede usarse para hacer el trabajo de una comprobación limitada. Usar el procedimiento estrecho para una cuestión de fondo vicia la actuación."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La protección real",
+          "text": [
+            "El **artículo 140 LGT**: terminada una comprobación limitada, la Administración no puede volver sobre el mismo objeto salvo que descubra **hechos o circunstancias nuevos** que resulten de actuaciones distintas.",
+            "No caben dos procedimientos sucesivos sobre lo mismo."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "El Supremo ha extendido ese efecto a los elementos que pudieron regularizarse y no se regularizaron, no sólo a los resueltos expresamente."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Si escala a Inspección",
+          "text": [
+            "El **artículo 150** da **18 meses** con carácter general, y **27** cuando la cifra de negocios obliga a auditar cuentas o hay consolidación fiscal.",
+            "Ámbar factura 180.000 €: los suyos serían 18."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "La inspección se alarga y llega al mes veinte. ¿Se cae?",
+          "answer": [
+            "No. **No hay caducidad**: el procedimiento continúa hasta su terminación.",
+            "Lo que se pierde es otra cosa: **no se considera interrumpida la prescripción** por las actuaciones desarrolladas durante ese plazo. Eso puede dejar prescritos los ejercicios más antiguos, y a veces es decisivo — pero no anula la actuación.",
+            "«Se les ha pasado el plazo, esto se cae» es la frase que más veces se dice y menos veces es cierta."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dónde se juega de verdad",
+          "text": [
+            "No en el calendario, sino en el objeto: qué se comprueba, con qué procedimiento, y si ya hubo un pronunciamiento anterior sobre lo mismo.",
+            "Gestión termina en junio de 2031 con una liquidación. Detrás de toda liquidación viene una segunda carta."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley 58/2003, General Tributaria",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23186",
+              "note": "arts. 136 a 140 y 150"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

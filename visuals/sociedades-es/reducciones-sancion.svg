@@ -1,0 +1,14 @@
+<svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
+<text class="dim" x="6.0" y="14" font-size="10">Sobre 4.800 € dejados de ingresar</text>
+<rect class="hot" x="6.0" y="24.0" width="150.0" height="22.0" rx="3"/>
+<text class="dim" x="12" y="39.0" font-size="10">Sanción del 50 %</text>
+<text class="accent" x="164" y="39.0" font-size="11" font-weight="700">2.400 €</text>
+<rect class="hot" x="6.0" y="58.0" width="105.0" height="22.0" rx="3"/>
+<text class="dim" x="12" y="73.0" font-size="10">−30 % conformidad</text>
+<text class="accent" x="164" y="73.0" font-size="11" font-weight="700">1.680 €</text>
+<rect class="cold" x="6.0" y="92.0" width="63.0" height="22.0" rx="3"/>
+<text class="dim" x="12" y="107.0" font-size="10">−40 % pronto pago</text>
+<text class="accent" x="164" y="107.0" font-size="11" font-weight="700">1.008 €</text>
+<text class="lbl" x="6.0" y="140" font-size="11">Recurrir devuelve la sanción a 2.400 €</text>
+<text class="dim" x="6.0" y="154" font-size="10">La diferencia, 1.392 €, es el precio de discutir.</text>
+</svg>

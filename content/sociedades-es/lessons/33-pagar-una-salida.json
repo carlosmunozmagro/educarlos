@@ -1,0 +1,140 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "33-pagar-una-salida",
+  "courseId": "sociedades-es",
+  "chapterId": "c9-cuando-algo-va-mal",
+  "title": "Pagar una salida",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 9 — Cuando algo va mal",
+          "heading": "Pagar una salida",
+          "text": [
+            "Diego cobra 66.000 € y se marcha.",
+            "Seguirá respondiendo de las deudas de Ámbar hasta 2034."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El número llega de fuera",
+          "text": [
+            "El experto designado por el registrador mercantil (lección 32) valora el **30 %** de Diego en **66.000 €**.",
+            "No lo decidió Marta ni lo decidió él. Y hay que pagarlo."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que le hace al balance",
+          "text": [
+            "Ámbar tenía **81.000 €** de patrimonio neto: 3.000 € de capital y 78.000 € de reservas acumuladas en seis ejercicios.",
+            "Después de pagar a Diego le quedan **15.000 €**. La sociedad sigue viva, pero se ha quedado seca."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "text": [
+            "No se activa la causa de disolución del art. 363.1.e): la mitad del capital son 1.500 €. Con un capital de 3.000 €, esa causa casi nunca llega (lección 02). El problema es otro."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El problema es de Diego",
+          "text": [
+            "El **artículo 331 LSC**: los socios a quienes se les haya restituido el valor de sus aportaciones responden **solidariamente entre sí y con la sociedad** de las deudas contraídas **antes** de que la reducción fuera oponible a terceros.",
+            "Con un límite: lo que cobró. Y un plazo: **cinco años**."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dos finales para el mismo pago"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/dos-finales-del-mismo-pago.svg",
+          "alt": "Los 66.000 € que salen se bifurcan en dos cajas: sin la reserva del artículo 332 responde Diego hasta 66.000 € durante cinco años; con ella responde Ámbar, con 66.000 € bloqueados durante cinco años",
+          "caption": "El **artículo 332** deja elegir quién queda atado. No deja que no lo quede nadie."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "La reserva que lo desactiva",
+          "text": [
+            "Si al acordar la reducción se dota una reserva con cargo a beneficios o reservas libres **por un importe igual al restituido**, no hay responsabilidad solidaria de los socios.",
+            "A cambio, esa reserva es **indisponible cinco años** desde la publicación en el BORME, salvo que antes se paguen todas las deudas anteriores."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Ámbar acaba de pagar 66.000 €. ¿Por qué no dota simplemente la reserva del 332 y deja a Diego tranquilo?",
+          "answer": [
+            "Porque tendría que inmovilizar **otros 66.000 €** de reservas libres, y son justo los que se acaban de ir por la puerta.",
+            "Le quedan 15.000 €.",
+            "Ésa es la trampa del artículo: la puerta existe para las sociedades que no necesitan usarla. La que acaba de pagar una salida es, por definición, la que no puede dotarla."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que Diego no sabe todavía",
+          "text": [
+            "Firmó, cobró y se fue creyendo que había terminado.",
+            "Si en 2031 aparece una deuda de 2028 que nadie provisionó, el acreedor puede reclamársela **a él**, hasta los 66.000 € que se llevó."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El patrón, otra vez",
+          "text": [
+            "Es la misma regla que cierra el curso en la lección 28 con el pasivo sobrevenido del **art. 399**: el dinero que sale de una sociedad arrastra responsabilidad detrás, hasta el importe que salió.",
+            "Ámbar sobrevive con 15.000 € de patrimonio neto y sin colchón. En la siguiente, qué pasa cuando ni eso alcanza."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ley de Sociedades de Capital (RDL 1/2010)",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2010-10544",
+              "note": "arts. 331, 332 y 363.1.e)"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

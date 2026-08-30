@@ -1,0 +1,162 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "34-cuando-no-puedes-pagar",
+  "courseId": "sociedades-es",
+  "chapterId": "c9-cuando-algo-va-mal",
+  "title": "Cuando no puedes pagar",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Capítulo 9 — Cuando algo va mal",
+          "heading": "Cuando no puedes pagar",
+          "text": [
+            "Ámbar cerró 2029 con beneficio.",
+            "El 15 de marzo de 2030 no puede pagar la nómina."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Cómo se llega aquí",
+          "text": [
+            "Después de pagarle 66.000 € a Diego le quedaban 15.000 € de patrimonio neto y ningún colchón.",
+            "En marzo, un cliente que le debe **48.000 €** entra a su vez en concurso. Ámbar no cobra, y con eso no llega ni a la nómina de Nuria ni al modelo 303 del trimestre."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El disparador no es la pérdida",
+          "text": [
+            "Insolvencia es no poder cumplir **regular y puntualmente** las obligaciones exigibles.",
+            "Una sociedad con beneficio contable y sin caja es insolvente. Una con pérdidas y tesorería, no. Ámbar es lo primero."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Tres estados, en este orden"
+        },
+        {
+          "type": "table",
+          "columns": ["Estado", "Qué es", "Qué abre"],
+          "rows": [
+            ["Probabilidad de insolvencia", "es previsible que no podrá cumplir", "preconcurso; no cabe concurso"],
+            ["Insolvencia inminente", "prevé que en tres meses no podrá cumplir", "preconcurso o concurso voluntario"],
+            ["Insolvencia actual", "ya no puede cumplir", "el deber de pedir el concurso"]
+          ],
+          "caption": "La Ley 16/2022 los ordenó así, del más leve al más grave."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "El deber",
+          "text": [
+            "El **artículo 5 TRLC**: el deudor debe solicitar el concurso dentro de los **dos meses** siguientes a la fecha en que **conoció o debió conocer** su insolvencia actual."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "«Debió conocer» es la parte que muerde. El plazo no empieza el día que el administrador se lo cree: empieza el día que los números lo decían."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y el escudo",
+          "text": [
+            "El **artículo 585** deja comunicar al juzgado la apertura de negociaciones con los acreedores. Es **potestativo**, al revés que el deber.",
+            "El **artículo 607** le da **tres meses** de protección, prorrogables hasta tres más."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Los dos relojes de Marta"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/sociedades-es/reloj-insolvencia.svg",
+          "alt": "Dos líneas de tiempo que arrancan el 15 de marzo de 2030: la del deber termina el 15 de mayo; la del escudo llega al 15 de septiembre con prórroga, y un mes más hasta el 15 de octubre",
+          "caption": "Cinco meses de aire — si se usan para negociar de verdad."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Marta presenta la comunicación del 585 el 15 de marzo y respira. ¿Hasta cuándo puede seguir sin pedir el concurso?",
+          "answer": [
+            "Hasta el **15 de junio**, o el **15 de septiembre** si obtiene la prórroga.",
+            "Y si al terminar sigue en insolvencia actual sin plan de reestructuración, tiene **un mes más** para solicitarlo: **15 de octubre de 2030**.",
+            "El escudo no borra el deber. Lo aplaza, y con fecha de caducidad escrita."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Lo que esto no es",
+          "text": [
+            "«Concurso» no equivale a cierre. La **Ley 16/2022** permite homologar un plan de reestructuración **aunque no lo aprueben todas las clases** de acreedores.",
+            "El marco existe para reestructurar lo viable y liquidar sólo lo que no lo es."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Y el otro lado de la misma moneda",
+          "text": [
+            "El **art. 367.3 LSC** de la lección 02 hacía esto mismo desde el lado societario: comunicar la negociación desactiva la responsabilidad del administrador por las deudas posteriores.",
+            "Marta lo tiene todo a la vez. En la siguiente, el otro acreedor — el que no negocia."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Texto refundido de la Ley Concursal (RDL 1/2020)",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2020-4859",
+              "note": "arts. 2, 5, 585 y 607"
+            },
+            {
+              "title": "Ley 16/2022, de reforma del TRLC",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-14580",
+              "note": "planes de reestructuración"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

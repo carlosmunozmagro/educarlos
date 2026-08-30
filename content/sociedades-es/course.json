@@ -216,6 +216,32 @@
           "summary": "Vender, separarse o ser excluido: las tres puertas, y quién acaba poniendo el precio."
         }
       ]
+    },
+    {
+      "id": "c9-cuando-algo-va-mal",
+      "title": "Cuando algo va mal",
+      "lessons": [
+        {
+          "id": "33-pagar-una-salida",
+          "title": "Pagar una salida",
+          "summary": "El socio que cobra y se va sigue respondiendo cinco años, salvo que la sociedad bloquee el mismo importe."
+        },
+        {
+          "id": "34-cuando-no-puedes-pagar",
+          "title": "Cuando no puedes pagar",
+          "summary": "Los tres estados de insolvencia, los dos meses del deber y los tres más tres del escudo."
+        },
+        {
+          "id": "35-cuando-hacienda-llama",
+          "title": "Cuando Hacienda llama",
+          "summary": "Verificación, comprobación limitada e inspección: qué puede hacer cada una, y por qué pasarse del plazo no anula nada."
+        },
+        {
+          "id": "36-sancionar-y-recurrir",
+          "title": "Sancionar y recurrir",
+          "summary": "Cómo se califica una sanción, las dos reducciones en cascada, y lo que cuesta discutirla."
+        }
+      ]
     }
   ]
 }
