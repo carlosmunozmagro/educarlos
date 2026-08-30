@@ -1,0 +1,193 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "15-the-thermostat",
+  "courseId": "crypto-chains",
+  "chapterId": "ch3-consensus",
+  "title": "The thermostat",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 3 - Agreeing without a referee",
+          "heading": "The thermostat",
+          "text": [
+            "Between 2009 and today the hashing behind bitcoin grew by a factor in the trillions.",
+            "A block still takes about ten minutes. Nobody arranged that, and nobody can adjust it."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Every 2016 blocks, everyone recomputes",
+          "text": [
+            "2016 blocks at ten minutes is exactly two weeks: **1,209,600 seconds**.",
+            "At the end of each window, every node looks at how long those blocks really took and scales the target by the ratio."
+          ]
+        },
+        {
+          "type": "formula",
+          "tex": "\\text{new target} = \\text{old target} \\times \\frac{\\text{actual seconds}}{1{,}209{,}600}"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Too fast means harder"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/retarget.svg",
+          "alt": "Four bars diverging from a no-change line, showing difficulty multipliers for windows that took 10, 14, 20 and 70 days, the last one clamped",
+          "caption": "Blocks arriving in ten days instead of fourteen make the next 2016 blocks **1.4x harder**."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Who computes this, and how does everyone end up with the same target when nobody announces it?",
+          "answer": [
+            "Nobody computes it, in the sense of being in charge. Each node runs the same arithmetic on the same block headers it already stores.",
+            "There is no message, no vote, no announcement, and nothing to disagree about. Determinism is doing the coordination that a committee would otherwise have to do."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "With a hard limit on the swing",
+          "text": [
+            "The measured timespan is clamped to between a quarter and four times the target before it is used.",
+            "So no single adjustment can change difficulty by more than a factor of four in either direction, whatever the timestamps claim."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "The bug nobody fixed",
+          "heading": "It counts 2015 gaps",
+          "text": [
+            "The timespan is measured between the first and last blocks of the window. Between 2016 blocks there are 2015 intervals, not 2016.",
+            "So the target is set for a slightly faster network than intended:"
+          ]
+        },
+        {
+          "type": "formula",
+          "tex": "600 \\times \\frac{2015}{2016} \\approx 599.70 \\text{ seconds}"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "note",
+          "text": [
+            "About 0.05% fast, permanently. Fixing it means a hard fork to correct half a thousandth of the block interval, so it stays.",
+            "It has one visible consequence: halvings are counted in blocks, every 210,000 of them, so they arrive slightly earlier than \"every four years\" suggests."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The thermostat is slow on purpose",
+          "text": [
+            "It only reads the room every two weeks, and it can only turn the dial so far.",
+            "Which is fine when hashrate drifts upward, and much less fine when a large part of it disappears in a week."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "3 July 2021",
+          "heading": "When a country switched off",
+          "text": [
+            "Mining was banned in China, and a large share of the world's hashrate went offline in weeks.",
+            "Blocks slowed to well over ten minutes, so the window itself took longer to finish. The adjustment, when it arrived, cut difficulty by about **28%** - the largest drop in bitcoin's history."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "warning",
+          "title": "The recovery is bounded too",
+          "text": [
+            "Because a single adjustment cannot exceed a factor of four, a catastrophic loss of hashrate cannot be corrected in one step - and the slower the blocks, the longer the fix takes to arrive.",
+            "The system is stable, not responsive. Those are different properties."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "And why ten minutes?"
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "There is no derivation. It is a trade: a block has to reach the whole network in a small fraction of the interval, or miners keep working on histories that are already stale and the work is thrown away.",
+            "Ten minutes was a conservative choice by one person in 2008. Everything since has been built on it."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "The block interval is not a property of the machines; it is a set point the network re-derives from its own history, twice a month, without speaking.",
+            "Nora still has not shipped the synthesiser. Next: exactly how sure she can be, expressed as a number."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Bitcoin developer reference: Block Chain",
+              "url": "https://developer.bitcoin.org/reference/block_chain.html",
+              "note": "the retarget interval and the clamp"
+            },
+            {
+              "title": "Bitcoin Core, src/pow.cpp",
+              "url": "https://github.com/bitcoin/bitcoin/blob/master/src/pow.cpp",
+              "note": "CalculateNextWorkRequired - the 2015-interval arithmetic in the source"
+            },
+            {
+              "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+              "url": "https://bitcoin.org/bitcoin.pdf",
+              "note": "section 4 introduces the moving average target"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

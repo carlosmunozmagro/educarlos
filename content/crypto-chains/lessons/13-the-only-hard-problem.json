@@ -1,0 +1,179 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "13-the-only-hard-problem",
+  "courseId": "crypto-chains",
+  "chapterId": "ch3-consensus",
+  "title": "The only hard problem",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 3 - Agreeing without a referee",
+          "heading": "The only hard problem",
+          "text": [
+            "Caleb pays Nora 0.05 BTC. Ninety seconds later he signs a second transaction spending the same coin back to himself.",
+            "Both are valid. That sentence is the reason this chapter exists."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "First, what is _not_ hard",
+          "text": [
+            "Spending a coin twice in sequence is trivial to catch. The second transaction names an input that is already gone, and every node rejects it without asking anyone.",
+            "Digital money is not hard to protect from copying. Hashes and signatures already did that."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The hard case",
+          "text": [
+            "Two transactions spending the same coin, where nobody has seen both."
+          ]
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/conflicting-spends.svg",
+          "alt": "One coin feeding two conflicting transactions, one seen first in Lisbon and one in Toronto, both marked as verifying",
+          "caption": "Caleb sends one to a peer in Lisbon and one to a peer in Toronto. Neither is malformed."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Nora's node is not confused",
+          "text": [
+            "It saw the payment, it verified, it is correct. A node in Toronto saw the other one, verified it, and is also correct.",
+            "There is no disagreement about the mathematics. The disagreement is about **which came first**, and neither of them can settle that."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "There is no clock to appeal to",
+          "text": [
+            "Timestamps are written by whoever made the message. The 2-hour window from lesson 11 is a sanity check, not a clock.",
+            "Across a network with real latency, \"first\" is not a property of the world. It is a property of where you were standing."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Why not just have the nodes vote, and take the transaction the majority saw first?",
+          "answer": [
+            "Because identities are free. Nothing stops Caleb running ten thousand nodes on rented machines, all voting for his version.",
+            "Any scheme where votes cost nothing is decided by whoever can be bothered to create the most participants. A vote has to be attached to something scarce, or it means nothing."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The problem has a name and a literature",
+          "text": [
+            "Lamport, Shostak and Pease posed it in 1982 as the Byzantine Generals Problem: reaching agreement when some participants send different messages to different peers.",
+            "Caleb is not a faulty node. He is a lying one, and lying deliberately in two directions at once."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "And a proof that it cannot be done"
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "title": "FLP, 1985",
+          "text": [
+            "Fischer, Lynch and Paterson proved that in an asynchronous network, no deterministic protocol guarantees agreement if even one process may fail.",
+            "Not \"nobody has found one\". There is not one. Any design claiming to decide, definitively, at a moment in time, is wrong about something."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Bitcoin is an asynchronous network full of failing and lying nodes. So how does it get around a theorem?",
+          "answer": [
+            "It does not. It changes the goal.",
+            "Bitcoin never decides anything at an instant. It makes disagreement progressively more expensive to sustain, so the probability of a reversal falls towards zero without ever reaching it. Agreement becomes something you get _more of_ by waiting."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "So this is the shape of what is needed",
+          "text": [
+            "A tiebreak that cannot be forged, cannot be created for free, and that everyone arrives at independently without talking to each other."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "Signatures cannot do it - Caleb signed both. Hashes cannot do it - both hash fine. Voting cannot do it - identities are free.",
+            "What is left is to make ordering cost something real."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "The problem was never forgery. It was that \"first\" has no meaning in a network, until somebody pays to give it one.",
+            "Nora is standing in her workshop with a synthesiser in a crate, deciding whether to ship it. Next: what the machines competing to answer her are actually doing."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+              "url": "https://bitcoin.org/bitcoin.pdf",
+              "note": "sections 1, 2 and 5 state the ordering problem directly"
+            },
+            {
+              "title": "Lamport, Shostak, Pease, \"The Byzantine Generals Problem\"",
+              "note": "ACM TOPLAS 4(3), 1982"
+            },
+            {
+              "title": "Fischer, Lynch, Paterson, \"Impossibility of Distributed Consensus with One Faulty Process\"",
+              "note": "Journal of the ACM 32(2), 1985"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

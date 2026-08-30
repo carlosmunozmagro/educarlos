@@ -1,0 +1,193 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "16-nothing-is-ever-final",
+  "courseId": "crypto-chains",
+  "chapterId": "ch3-consensus",
+  "title": "Nothing is ever final",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 3 - Agreeing without a referee",
+          "heading": "Nothing is ever final",
+          "text": [
+            "The CS-30 is crated. Nora's wallet says one confirmation.",
+            "She wants to know if she can ship it. There is no yes available, but there is a number."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "A confirmation is not a checkmark",
+          "text": [
+            "It means one block was found on top of the block holding the payment. That is all it means.",
+            "Nothing was approved, nobody signed anything off. Some strangers built on this version of history rather than another."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What reversing it would take",
+          "text": [
+            "Caleb - or someone helping him - mines privately from the block _before_ the payment, on a chain containing his conflicting spend instead.",
+            "When his private chain is longer than the public one, he publishes. Nora's payment vanishes: not cancelled, never having happened."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "So it is a race he starts behind",
+          "text": [
+            "With a fraction $q$ of the hashrate he falls further behind on average - but only on average.",
+            "Section 11 of the whitepaper works out the chance he ever catches up from $z$ blocks down. It is a Poisson process, and the answer is a curve."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The curve"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/confirmations.svg",
+          "alt": "Probability of reversal against number of confirmations, on a log scale, for attackers holding 10% and 30% of hashrate",
+          "caption": "Straight lines on a log scale. Each block divides the risk, and never reaches zero."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The number that should worry you",
+          "text": [
+            "Against an attacker with 10% of the hashrate, **one confirmation still leaves a 1 in 5 chance** of reversal. Two leaves 1 in 20.",
+            "Six is where the paper's own table reaches about 1 in 4,000."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "He has a tenth of the hashrate and he is a whole block behind. Why is that a 20% chance and not a hopeless one?",
+          "answer": [
+            "Because he did not start when the block was found. He has been mining his private chain since before he ever sent the payment, so \"one block behind\" is the score, not the head start.",
+            "And every hash is memoryless. Being behind carries no penalty - he needs one lucky run, and one lucky run is not rare."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "key",
+          "title": "Where \"six confirmations\" comes from",
+          "text": [
+            "A row in a table in a 2008 paper, for one assumed attacker size, chosen because the number in it looked small.",
+            "It is a convention, not a threshold, and there is nothing magic on either side of it."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The model leaves out the only question that matters",
+          "text": [
+            "It takes $q$ as given. But an attacker does not find 10% of the world's hashing lying around - they buy or rent it, at a cost that has nothing to do with the size of your payment.",
+            "Nobody is assembling that to reverse €4,150 of synthesiser."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "So the real rule is economic",
+          "text": [
+            "Confirmations should scale with what is at risk, not with tradition. A café taking one confirmation on a coffee is being sensible. An exchange crediting a large deposit at one confirmation is not."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "And zero confirmations got worse, on purpose"
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "text": [
+            "BIP-125 lets a sender replace their own unconfirmed transaction with a higher-fee version, and nodes prefer the replacement.",
+            "So an unconfirmed payment is not \"almost there\". It is an offer the sender is explicitly allowed to withdraw, and no amount of waiting at zero confirmations changes that."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Nora ships",
+          "text": [
+            "She waits for the second confirmation, which arrives twelve minutes after the first, and takes the crate to the courier on 16 March.",
+            "She has not achieved certainty. She has decided that one chance in twenty of a 10% attacker existing at all, times the odds above, is not worth another hour of her afternoon."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "Finality here is a probability that decays geometrically and never reaches zero, so \"how many confirmations\" is a question about money, not about mathematics.",
+            "All of which assumed the attacker is a minority. Next: what changes when they are not."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+              "url": "https://bitcoin.org/bitcoin.pdf",
+              "note": "section 11 - the calculation this lesson's curve reproduces"
+            },
+            {
+              "title": "BIP-125: Opt-in Full Replace-by-Fee Signaling",
+              "url": "https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki"
+            },
+            {
+              "title": "Meni Rosenfeld, \"Analysis of Hashrate-Based Double Spending\"",
+              "url": "https://arxiv.org/abs/1402.2009",
+              "note": "2014, extends the model to an attacker who starts early"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

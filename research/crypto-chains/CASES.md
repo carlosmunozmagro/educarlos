@@ -6,7 +6,7 @@ than starting a fresh case.
 
 ---
 
-## Case A — the CS-30 payment (chapters 1 and 2)
+## Case A — the CS-30 payment (chapters 1 to 3)
 
 **Nora Almeida** restores vintage synthesisers in a ground-floor workshop in
 Lisbon. She has done it for eleven years, alone, and sells maybe forty
@@ -26,6 +26,7 @@ and never will. They have exchanged eighteen emails.
 | The payment splits into | **0.05** to Nora, **0.0309** change to Caleb, **0.0003** fee |
 | Nora's address | `bc1qsc53s4qr9x7n8m7w0pd9mmh8wdvz6d6e80rn8a` — derived for real by `tools/visuals/address.py`, from a teaching key, not a wallet |
 | The block it lands in | referred to as "the block", height never stated |
+| How it ends | Nora waits for **two confirmations** and ships on **16 March 2026** |
 
 Arithmetic that must hold everywhere: `0.05 + 0.0309 + 0.0003 = 0.0812`.
 
@@ -44,6 +45,19 @@ would date the course.
 | 05-what-a-signature-proves | Caleb signs; Nora verifies without ever holding his key |
 | 06-the-number-that-leaked-a-console | Caleb's wallet almost signs twice with one nonce (the PS3 story carries the real failure) |
 | 07-from-a-key-to-an-address | Nora's mistyped address, and the checksum that rejects it |
+| 08-there-are-no-balances | the 0.0812 coin splits into 0.05, 0.0309 change and a 0.0003 fee |
+| 09-what-the-signature-covers | SIGHASH_ALL nails down Nora's output and Caleb's change |
+| 10-proving-membership | Nora's phone verifies with a Merkle proof and no chain |
+| 11-eighty-bytes | the header her phone downloaded |
+| 12-tamper-evident-is-not-tamper-proof | what it would take to un-happen the payment |
+| 13-the-only-hard-problem | Caleb signs a conflicting spend and sends it the other way |
+| 16-nothing-is-ever-final | Nora decides how many confirmations €4,150 is worth, and ships |
+
+**Case A is closed after lesson 16.** Lessons 14, 15, 17 and 18 are about the
+network rather than the payment, and lean on documented real events instead.
+Do not revive Nora after this: a Lisbon workshop has no opinion about staking
+economics or bridge custody, and forcing her there would produce exactly the
+fake the style guide warns about.
 
 ## Real failures used as anchors
 
@@ -55,3 +69,9 @@ dates right.
 | fail0verflow present the PS3 ECDSA key recovery at 27C3 | 29 December 2010 | 06 |
 | Android `SecureRandom` weakness, Bitcoin.org advisory | 11 August 2013 | 03, 06 |
 | RFC 6979, deterministic ECDSA nonces, published | August 2013 | 06 |
+| Value overflow incident, block 74,638 (CVE-2010-5139) | 15 August 2010 | 08 |
+| Merkle duplicate-transaction DoS (CVE-2012-2459) | May 2012 | 10 |
+| Chain fork over a Berkeley DB lock limit (BIP-50) | 11–12 March 2013 | 12 |
+| Largest downward difficulty adjustment, about 28 % | 3 July 2021 | 15 |
+| Ethereum Classic 51 % attacks | January 2019, August 2020 | 17 |
+| Ethereum's Merge to proof of stake | 15 September 2022 | 18 |

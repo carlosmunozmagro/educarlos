@@ -1,0 +1,180 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "14-what-the-puzzle-actually-is",
+  "courseId": "crypto-chains",
+  "chapterId": "ch3-consensus",
+  "title": "What the puzzle actually is",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 3 - Agreeing without a referee",
+          "heading": "What the puzzle actually is",
+          "text": [
+            "Somewhere a warehouse of machines is deciding whether Nora gets paid.",
+            "They are not solving anything. They are counting, and it is worth seeing exactly what they count."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The whole rule, in one comparison",
+          "text": [
+            "Hash the 80-byte header. Read the result as a number. Is it below the target?",
+            "If not, change the nonce and hash again. There is no third step."
+          ]
+        },
+        {
+          "type": "code",
+          "label": "the entirety of mining",
+          "code": "while sha256(sha256(header)) > target:\n    header.nonce += 1"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The target is a ceiling on the answer",
+          "text": [
+            "Digests are spread evenly across all of $2^{256}$. Demanding one below a threshold means demanding leading zeros.",
+            "Every extra zero bit halves the acceptable region, so it doubles the expected number of tries."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Mined for real, on one core"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/mining-ladder.svg",
+          "alt": "Five bars showing hashes tried for targets of 4, 8, 12, 16 and 20 leading zero bits, each roughly double the last",
+          "caption": "Note how badly the counts miss their expectations. 16 zeros should cost 65,536 and cost **145,648**."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "That miss is not sloppiness",
+          "text": [
+            "20 zero bits should have taken about a million attempts. It took 505,395 - roughly half.",
+            "Finding a block is not a task with a duration. It is a lottery with a draw every hash, and lotteries land where they like."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "A mining farm has been hashing this same block for nine minutes. You switch on a laptop. How far behind are you?",
+          "answer": [
+            "Not at all. Every hash is an independent trial with no state carried between attempts, so nine minutes of failures leave you exactly where you started.",
+            "There is no partial progress to accumulate and nothing to catch up on. The farm's advantage is that it buys millions of times more tickets per second - never that its tickets are worth more."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "key",
+          "title": "Memorylessness",
+          "text": [
+            "This is why a miner with 1% of the network's hashing finds about 1% of blocks, and why pools exist.",
+            "A pool does not improve anyone's odds. It converts a rare enormous payout into a frequent small one - it sells variance reduction, nothing else."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "How hard is it right now?",
+          "text": [
+            "The header stores the target compactly in four bytes. Difficulty is just how many times harder than the easiest allowed target:"
+          ]
+        },
+        {
+          "type": "formula",
+          "tex": "\\text{expected hashes} \\approx \\text{difficulty} \\times 2^{32}",
+          "caption": "Exact, and it never goes out of date - unlike any hashrate figure."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What the work is for",
+          "text": [
+            "Not security theatre and not a proof of anything mathematical. It is a way of making \"which transaction came first\" cost money.",
+            "Caleb can sign two conflicting payments for free. He cannot produce two blocks for free."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The phrase that never survived"
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "The whitepaper says \"one CPU one vote\". That has not been true since about 2011.",
+            "CPUs lost to GPUs, GPUs to FPGAs, FPGAs to chips that can do nothing but this. The vote is now denominated in capital and electricity, and it concentrates in the places where both are cheap."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "Mining is a memoryless lottery whose ticket price is energy, and the only thing it buys is the right to say what happened first.",
+            "Which leaves an obvious question: if the machines keep getting faster, why is a block still ten minutes?"
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+              "url": "https://bitcoin.org/bitcoin.pdf",
+              "note": "section 4, proof of work"
+            },
+            {
+              "title": "Bitcoin developer reference: Block Chain",
+              "url": "https://developer.bitcoin.org/reference/block_chain.html",
+              "note": "the nBits encoding and the difficulty-1 target"
+            },
+            {
+              "title": "FIPS 180-4: Secure Hash Standard",
+              "url": "https://csrc.nist.gov/pubs/fips/180-4/upd1/final",
+              "note": "the function being counted with"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
