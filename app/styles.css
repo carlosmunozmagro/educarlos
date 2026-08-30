@@ -513,7 +513,8 @@ code, pre, .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, 
 .hero-def .d1 { grid-row: 1; grid-column: 2; color: var(--text); font-size: 1.06rem; }
 .hero-def .d2 { grid-row: 2; grid-column: 2; color: var(--text-dim); font-size: 1.02rem; }
 
-/* Past the hero the field is backdrop, not headline. */
+/* Past the hero the field is backdrop, not headline. The opacity step is the
+   floor; the scroll-linked rules further down do the rest. */
 .punfield { transition: opacity .5s var(--ease); }
 #app.past-hero .punfield { opacity: .32; }
 
@@ -720,3 +721,67 @@ code, pre, .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, 
 
 /* The toggle rides at the end of a topbar row, clear of the count. */
 .topbar .theme-toggle { margin-left: .35rem; margin-right: -4px; }
+
+/* ============================================================
+   The first swipe — hero handing over to the shelves
+   ============================================================ */
+/* --p is how far the reader is between the two home screens, 0 to 1, written
+   by wireHome() on every frame of the scroll. Everything here is a function of
+   that one number, so the whole handover tracks the finger: push halfway and
+   stop, and it sits halfway. */
+@media (prefers-reduced-motion: no-preference) {
+  /* The lockup lifts, shrinks a little and blurs out of the way. It is the
+     thing being left behind, so it leads. */
+  .deck.home .wrap.hero {
+    transform: translateY(calc(var(--p, 0) * -9vh)) scale(calc(1 - var(--p, 0) * .09));
+    opacity: clamp(0, calc(1 - var(--p, 0) * 1.45), 1);
+    filter: blur(calc(var(--p, 0) * 3px));
+    will-change: transform, opacity;
+  }
+  /* Its clearing in the pun field closes as it goes. */
+  .deck.home .screen[data-kind="hero"]::before { opacity: calc(1 - var(--p, 0)); }
+
+  /* The field drifts the other way and swells slightly: the parallax that
+     tells the eye the two screens are at different depths. */
+  .punfield {
+    transform: translateY(calc(var(--p, 0) * 7vh)) scale(calc(1 + var(--p, 0) * .07));
+    will-change: transform;
+  }
+
+  /* The shelves arrive a beat behind the scroll, then settle - the small lag
+     is what makes the swipe feel like it has weight. */
+  .deck.home .screen[data-kind="shelves"] > .wrap {
+    transform: translateY(calc((1 - var(--p, 0)) * 5vh));
+  }
+  .deck.home .screen[data-kind="shelves"] .sec-head { opacity: var(--p, 0); }
+
+  /* The hint fades as soon as the swipe starts - it has been answered. */
+  .deck.home .hint { opacity: calc(1 - var(--p, 0) * 2.6); }
+}
+
+/* The cue reads as a direction, not a caption. The bob moves to the chevron
+   so the label can be faded by --p - an animation would outrank that. */
+.deck.home .hint {
+  display: flex; flex-direction: column; align-items: center; gap: .45rem;
+  animation: none;
+}
+.deck.home .hint::after {
+  content: ""; width: 9px; height: 9px;
+  border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+  rotate: -135deg;                       /* a chevron, pointing up */
+  animation: chev 2.2s ease-in-out infinite;
+}
+/* rotate and translate are separate properties here, so the bob does not
+   have to carry the chevron's rotation with it. */
+@keyframes chev {
+  0%, 100% { translate: 0 3px; opacity: .5; }
+  50%      { translate: 0 -2px; opacity: 1; }
+}
+
+/* Each shelf lands with a little overshoot, one after the other. */
+.section-card[data-anim] {
+  transition: opacity .5s var(--ease),
+              transform .62s cubic-bezier(.2, .9, .25, 1.08);
+  transform: translateY(22px) scale(.97);
+}
+.screen.in .section-card[data-anim] { transform: none; }

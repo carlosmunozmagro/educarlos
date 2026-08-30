@@ -196,7 +196,14 @@ async function viewHome() {
 
 /* The field is the hero's backdrop; it steps back once you swipe past it.
    Driven by scroll position rather than an observer: the shelves start
-   hidden for their entrance, and must never depend on a callback to appear. */
+   hidden for their entrance, and must never depend on a callback to appear.
+
+   The swipe itself is animated from the same reading. One number - how far
+   between the two screens the reader is - goes out as --p, and the stylesheet
+   spends it: the lockup lifts and softens, the pun field slides the other way,
+   the shelves rise into place. Because it is scroll-linked rather than timed,
+   it tracks the finger both ways, including a half-swipe that changes its
+   mind. */
 function wireHome() {
   const home = document.getElementById('home');
   const screens = [...home.querySelectorAll('.screen')];
@@ -205,11 +212,19 @@ function wireHome() {
   // it cannot be starved the way a frame callback can.
   const update = () => {
     const y = home.scrollTop, h = home.clientHeight || 1;
-    app.classList.toggle('past-hero', y > h * 0.25);
+    const p = Math.max(0, Math.min(1, y / h));
+    app.style.setProperty('--p', p.toFixed(3));
+    app.classList.toggle('past-hero', p > 0.25);
     for (const s of screens) if (s.offsetTop < y + h * 0.75) s.classList.add('in');
   };
 
-  home.addEventListener('scroll', update, { passive: true });
+  // One read per frame at most: scroll fires far faster than the screen draws.
+  let queued = false;
+  home.addEventListener('scroll', () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => { queued = false; update(); });
+  }, { passive: true });
   update();
 }
 

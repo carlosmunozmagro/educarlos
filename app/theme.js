@@ -7,7 +7,13 @@
    paint so the dark theme never flashes white on the way in. */
 
 const KEY = 'educarlos:theme';
-const ORDER = ['system', 'light', 'dark'];
+
+/* Light first, and light by default: a reader who has never touched the
+   toggle gets the paper theme the icon promises, whatever the phone is set
+   to. "System" is the third stop, for anyone who wants the app to follow the
+   phone after all. */
+const ORDER = ['light', 'dark', 'system'];
+const DEFAULT = 'light';
 
 /* Painted behind the status bar and in the iOS app switcher. Matches --bg. */
 const BAR = { light: '#fbfbfa', dark: '#0b0d10' };
@@ -15,8 +21,8 @@ const BAR = { light: '#fbfbfa', dark: '#0b0d10' };
 export function stored() {
   try {
     const v = localStorage.getItem(KEY);
-    return ORDER.includes(v) ? v : 'system';
-  } catch { return 'system'; }
+    return ORDER.includes(v) ? v : DEFAULT;
+  } catch { return DEFAULT; }
 }
 
 /* What the reader actually sees, once "system" is resolved. */
@@ -39,8 +45,8 @@ export function set(pref) {
   apply(pref);
 }
 
-/* system -> light -> dark -> system. Cycling beats a binary switch here:
-   it keeps "follow the phone" reachable instead of stranding the reader on
+/* light -> dark -> system -> light. Cycling beats a binary switch here: it
+   keeps "follow the phone" reachable instead of stranding the reader on
    whichever side they last tapped. */
 export function next(pref = stored()) {
   return ORDER[(ORDER.indexOf(pref) + 1) % ORDER.length];
