@@ -59,6 +59,41 @@ Do not revive Nora after this: a Lisbon workshop has no opinion about staking
 economics or bridge custody, and forcing her there would produce exactly the
 fake the style guide warns about.
 
+## Case B — the mastering escrow (chapters 4 and 5)
+
+**Teodora Ilić** runs **Kutija Records** in Belgrade with one other person, Vuk.
+Four releases a year, mostly vinyl, all of it hand-to-mouth. She is competent
+with computers and impatient with anything that requires faith.
+
+**Ines Haddad** masters records in Berlin. They have worked together twice
+before and it went fine both times, which is exactly why neither wants to be
+the one who brings up what happens if it does not.
+
+| Fact | Value |
+|---|---|
+| The job | mastering six tracks for one release |
+| The fee | **0.012 BTC**, agreed on **4 May 2026** |
+| The escrow | 2-of-3: Teodora, Ines, and **Dragan**, a mutual friend who is not paid |
+| The fallback | after **30 days**, Teodora can take it back alone |
+| Her backup | twelve words, written once, on paper |
+
+Why this case and not Nora: an escrow needs a job that can be disputed and a
+third party who is plausible. A restored synthesiser arrives or it does not; a
+master is a matter of opinion, which is the whole point.
+
+**Do not** give Kutija Records employees it does not have, a legal department,
+or a treasury. It is two people and a bank account.
+
+### Where the case has been used
+
+| Lesson | What it did there |
+|---|---|
+| 19-money-with-conditions | the 2-of-3 script and the 30-day refund path |
+| 20-two-ways-to-model-the-world | the same escrow, rebuilt on an account model |
+| 23-pseudonymous-is-not-anonymous | the label's address, and what one payment reveals |
+| 24-twelve-words | the paper in the drawer |
+| 25-the-auction-you-are-in | paying during a fee spike |
+
 ## Real failures used as anchors
 
 These are not the case — they are documented events the case leans on. Keep the

@@ -1,0 +1,200 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "20-two-ways-to-model-the-world",
+  "courseId": "crypto-chains",
+  "chapterId": "ch4-programmable",
+  "title": "Two ways to model the world",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 4 - Programmable money",
+          "heading": "Two ways to model the world",
+          "text": [
+            "Teodora's escrow is five opcodes in bitcoin. The same arrangement on Ethereum is about twenty lines of Solidity.",
+            "The difference is not the language. It is what each chain thinks exists."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One stores coins",
+          "text": [
+            "Bitcoin's entire state is a set of unspent outputs. Each is an amount and a lock, independent of every other, consumed whole (lesson 08).",
+            "There is no record of Teodora anywhere in it. There are coins she happens to be able to open."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The other stores a table",
+          "text": [
+            "Ethereum's state is a map from address to account, and an account holds a balance, a counter, and - if it is a contract - code and its own storage.",
+            "A transfer does not move an object. It decreases one number and increases another."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Side by side"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/two-models.svg",
+          "alt": "Left panel of separate coin amounts labelled outputs; right panel of addresses with balances and a contract with storage",
+          "caption": "On the left nothing is shared. On the right, one contract's storage is written by everyone who calls it."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "That sharing is the whole point",
+          "text": [
+            "A lending pool, an exchange, a token - all of them are one object that thousands of strangers modify.",
+            "You cannot build that from independent coins. The account model exists to make shared mutable state possible."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Which reopens a door bitcoin nailed shut",
+          "text": [
+            "Bitcoin's Script has no loops, so cost is known before execution. The EVM is Turing-complete, so a contract can run forever.",
+            "Ethereum does not solve that. It **prices** it: every operation costs gas, the sender caps how much, and execution halts at the cap."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "A contract call runs out of gas halfway through. The state changes are undone. Do you get the gas back?",
+          "answer": [
+            "No. The state reverts; the gas is gone.",
+            "Every node in the network really did execute those operations, and they are paid for the work, not the result. If failure were free, filling the network with deliberately failing transactions would cost nothing - and that is a denial of service, not an edge case."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The counter in each account",
+          "text": [
+            "Every account carries a nonce that increments with each transaction it sends, so transaction 7 cannot be processed before 6, and none can be replayed.",
+            "Bitcoin needs no such field. An output exists once and is destroyed when spent, so replay is impossible by construction rather than by bookkeeping."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The honest comparison"
+        },
+        {
+          "type": "table",
+          "columns": [
+            "Outputs",
+            "Accounts"
+          ],
+          "rows": [
+            [
+              "Coins are independent",
+              "State is shared"
+            ],
+            [
+              "Replay impossible by structure",
+              "Replay blocked by a nonce"
+            ],
+            [
+              "Cost known before running",
+              "Cost metered while running"
+            ],
+            [
+              "Validate in parallel",
+              "Calls contend on storage"
+            ]
+          ],
+          "caption": "Every advantage on the right is the same fact as the disadvantage beside it."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What Teodora would gain",
+          "text": [
+            "The Solidity version could release half the fee on delivery, take a platform cut, be upgraded later, and emit events her accounting software could read.",
+            "Each of those is also a thing that can be written wrong, and it will still be there, unowned and running, in ten years."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Neither model is the safe one. Bitcoin bought a small, checkable surface by refusing to express most things.",
+            "Ethereum bought expressiveness, and with it the possibility that the order in which a contract does two things is a security question. The next lesson is what that cost, once, in public."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "The choice is not coins versus balances; it is whether strangers are allowed to write to the same object, and every difference follows from that.",
+            "In June 2016 somebody read a contract that let them do exactly that, in the wrong order."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Gavin Wood, Ethereum Yellow Paper",
+              "url": "https://ethereum.github.io/yellowpaper/paper.pdf",
+              "note": "the formal account state and the gas metering rules"
+            },
+            {
+              "title": "ethereum.org: Accounts",
+              "url": "https://ethereum.org/en/developers/docs/accounts/",
+              "note": "balance, nonce, code hash, storage root"
+            },
+            {
+              "title": "ethereum.org: Gas and fees",
+              "url": "https://ethereum.org/en/developers/docs/gas/",
+              "note": "why an out-of-gas failure still costs"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -25,15 +25,16 @@ to `localStorage` and mid-lesson resume.
 
 | Course | Outlined | Written |
 |---|---|---|
-| `crypto-chains` (EN) | 27 lessons, 5 chapters | chapters 1-3 complete (18) |
+| `crypto-chains` (EN) | 27 lessons, 5 chapters | chapters 1-4 complete (22) |
 | `sociedades-es` (ES) | 28 lessons | 28 |
 | `historia-es` (ES) | 32 lessons | 23 |
 
-`crypto-chains` runs one case through chapters 1 to 3: Nora in Lisbon sells a
+`crypto-chains` runs cases rather than examples. Case A, chapters 1 to 3: Nora in Lisbon sells a
 restored Yamaha CS-30 to Caleb in Toronto for 0.05 BTC on 14 March 2026, and
-every mechanism arrives because that payment needs it. The established facts of
-the case live in `research/crypto-chains/CASES.md` — read it before writing a
-lesson there, and update it after.
+every mechanism arrives because that payment needs it. Case B, chapters 4 and
+5: Teodora's record label in Belgrade pays a mastering engineer through an
+escrow. The established facts of both live in `research/crypto-chains/CASES.md`
+— read it before writing a lesson there, and update it after.
 
 Verified: snap scrolling, entrance animations, KaTeX inline and display, reveal
 toggle, resume-after-reload, deep links with storage cleared, light and dark,

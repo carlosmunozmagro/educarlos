@@ -1,0 +1,193 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "21-the-dao-and-the-order-of-two-lines",
+  "courseId": "crypto-chains",
+  "chapterId": "ch4-programmable",
+  "title": "The DAO and the order of two lines",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 4 - Programmable money",
+          "heading": "The DAO and the order of two lines",
+          "text": [
+            "On 17 June 2016 somebody began emptying a contract holding over 12 million ether.",
+            "No key was stolen. No cryptography broke. They used the published interface, correctly."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "A fund with no directors",
+          "text": [
+            "The DAO took money from thousands of people - roughly 150 million dollars at the prices of the time - and let token holders vote on where it went.",
+            "Anyone outvoted could **split**: leave, taking their share of the ether with them."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Splitting does three things",
+          "text": [
+            "Check that you have a balance. Send you the ether. Set your balance to zero.",
+            "All three are correct. Only the order is wrong."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The shape of the bug"
+        },
+        {
+          "type": "code",
+          "label": "check, interaction, effect - in that order",
+          "code": "require(balances[msg.sender] >= amount);\nmsg.sender.call.value(amount)(\"\");   // control leaves here\nbalances[msg.sender] -= amount;      // and does not come back in time"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Sending ether is calling code",
+          "text": [
+            "This is the fact the whole incident rests on. An Ethereum address may be a contract, and sending it ether runs its code.",
+            "So line two does not simply transfer value. It hands control to the recipient, in the middle of a function, before line three has run."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "So the attacker called back in"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/reentrancy.svg",
+          "alt": "Four nested calls, each checking a balance of 100 and sending 100, with the line that zeroes the balance never reached",
+          "caption": "Each frame passes the same check, because the line that would fail it is still waiting below."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "The second call checks the balance and passes. Why? The money has already been sent.",
+          "answer": [
+            "Sent, but not recorded. The subtraction is on the line after the send, and that line has not executed yet - the function is suspended at line two, four levels deep.",
+            "The contract's memory of what it owes you is only updated when it gets around to it, and the attacker never lets it get around to it."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "key",
+          "title": "Checks, effects, interactions",
+          "text": [
+            "Write the state **before** handing control to anyone. Move line three above line two and the entire incident does not happen.",
+            "That is the whole fix, and it was known practice before June 2016."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "About 3.6 million ether left",
+          "text": [
+            "It went into a \"child DAO\" - a copy of the same contract, which inherited the same **28-day** holding period before anything could be withdrawn.",
+            "The attacker's money was frozen by the attacker's own exploit. That accident is the only reason there was time to argue."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "20 July 2016",
+          "heading": "And then people voted",
+          "text": [
+            "A hard fork at block **1,920,000** moved the funds to a recovery contract. Most of the network took it.",
+            "Nodes that refused kept running the original history. That chain is **Ethereum Classic** - the one attacked in lesson 17."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Nothing in Ethereum malfunctioned. The EVM ran the contract exactly as written, which is what it promises.",
+            "\"The code is the agreement\" was tested against 150 million dollars, and what actually settled it was a fortnight of argument and a coordinated software release."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Why the obvious fix went stale",
+          "text": [
+            "For years the advice was to use `transfer()`, which forwards only 2,300 gas - too little to re-enter.",
+            "Then gas costs were repriced, 2,300 stopped being enough for legitimate recipients, and contracts relying on the stipend broke. Ordering is durable; gas allowances are not."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "On a chain where sending money executes the recipient's code, the order of your statements is a security boundary.",
+            "Next: what a token actually is, which is less than almost anyone assumes."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Ethereum Foundation, \"CRITICAL UPDATE Re: DAO Vulnerability\"",
+              "url": "https://blog.ethereum.org/2016/06/17/critical-update-re-dao-vulnerability",
+              "note": "published the day of the attack"
+            },
+            {
+              "title": "EIP-779: Ethereum DAO fork",
+              "url": "https://eips.ethereum.org/EIPS/eip-779",
+              "note": "the fork at block 1,920,000, documented after the fact"
+            },
+            {
+              "title": "ethereum.org: Smart contract security",
+              "url": "https://ethereum.org/en/developers/docs/smart-contracts/security/",
+              "note": "checks-effects-interactions, and the later reentrancy variants"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

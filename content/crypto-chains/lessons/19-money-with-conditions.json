@@ -1,0 +1,206 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "19-money-with-conditions",
+  "courseId": "crypto-chains",
+  "chapterId": "ch4-programmable",
+  "title": "Money with conditions",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 4 - Programmable money",
+          "heading": "Money with conditions",
+          "text": [
+            "Teodora runs a two-person record label in Belgrade. On 4 May 2026 she agrees to pay Ines, a mastering engineer in Berlin, 0.012 BTC for six tracks.",
+            "They have worked together twice. Neither wants to be the one who says \"and what if you don't\"."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Pay first or deliver first",
+          "text": [
+            "Pay up front and Teodora is trusting Ines. Deliver first and Ines is trusting Teodora. There is no third option between two strangers on a wire.",
+            "Unless the money can be sent somewhere neither of them controls."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "An output is not \"owned\"",
+          "text": [
+            "Every output carries a small program that says what unlocking it requires. The ordinary one asks for a signature matching a hash - that is all an address is."
+          ]
+        },
+        {
+          "type": "code",
+          "label": "the script behind a normal address",
+          "code": "OP_DUP OP_HASH160 <20-byte hash> OP_EQUALVERIFY OP_CHECKSIG"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "So ask for something else",
+          "text": [
+            "Nothing privileges \"one signature\". The language can ask for two out of three."
+          ]
+        },
+        {
+          "type": "code",
+          "label": "2-of-3",
+          "code": "OP_2 <Teodora> <Ines> <Dragan> OP_3 OP_CHECKMULTISIG"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Dragan is not a company",
+          "text": [
+            "He is a mutual friend who mixes live sound, is not paid for this, and will never touch the money on his own - two keys are needed, and he only has one.",
+            "His entire power is to break a tie by siding with whoever he thinks is right."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "And a way out if everyone vanishes"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/escrow-paths.svg",
+          "alt": "A locked output with two spending paths: any two of three signatures, or a refund to Teodora after thirty days",
+          "caption": "`OP_CHECKSEQUENCEVERIFY` puts the deadline in the output itself, where nobody can decline to honour it."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "A transaction already has an `nLockTime` field meaning \"not valid before then\". Why did bitcoin need a whole new opcode for timelocks?",
+          "answer": [
+            "Because `nLockTime` is set by the person spending, and they can simply not set it. It constrains a transaction you are already writing - it cannot constrain a future spender.",
+            "BIP-65 and BIP-112 moved the condition into the **output**, so it binds whoever comes to unlock it. The receiver of the coin inherits the rule instead of choosing it."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The bug she has to work around",
+          "text": [
+            "`OP_CHECKMULTISIG` pops one item more off the stack than it needs - a mistake in the 2009 implementation.",
+            "It cannot be fixed, because changing it would split the network. Every multisig spend to this day pushes a dummy `OP_0` for the operator to throw away."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "note",
+          "text": [
+            "Worth sitting with. A consensus rule is not code you maintain - it is code every participant must agree to change simultaneously.",
+            "So an obvious one-line bug becomes a permanent feature of the format, and everything built afterwards accommodates it."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Teodora only sends to an address",
+          "text": [
+            "She does not put that whole script in the transaction. She pays to a **hash** of it, and whoever spends must reveal the script and satisfy it.",
+            "Pay-to-script-hash, BIP-16: her label's bank transfer screen sees a normal-length address, and the complexity is entirely on the spending side."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What Script deliberately cannot do",
+          "text": [
+            "There are no loops. No recursion, no jumps backwards, no unbounded anything.",
+            "The cost of running a script is known from its length before it runs, which is why no bitcoin transaction can ever make a node spin forever."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "And what it cannot do by accident"
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "The script checks signatures and elapsed blocks. It has no idea whether the master was delivered, whether it was any good, or whether Ines answered her email.",
+            "Every dispute worth having is outside what the machine can see. That is precisely why the third key belongs to a person - and it is the hole chapter 5 ends on."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "A condition on money can only ever be about things the chain can observe, which is signatures and time, and nothing else whatsoever.",
+            "Ethereum looked at that constraint and removed it. Next: what the other model buys, and what it costs."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "BIP-16: Pay to Script Hash",
+              "url": "https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki"
+            },
+            {
+              "title": "BIP-65: OP_CHECKLOCKTIMEVERIFY",
+              "url": "https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki",
+              "note": "absolute timelocks, enforced by the output"
+            },
+            {
+              "title": "BIP-112: CHECKSEQUENCEVERIFY",
+              "url": "https://github.com/bitcoin/bips/blob/master/bip-0112.mediawiki",
+              "note": "the relative timelock behind the 30-day refund"
+            },
+            {
+              "title": "Bitcoin developer reference: Transactions",
+              "url": "https://developer.bitcoin.org/reference/transactions.html",
+              "note": "the opcode list, including the CHECKMULTISIG dummy"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

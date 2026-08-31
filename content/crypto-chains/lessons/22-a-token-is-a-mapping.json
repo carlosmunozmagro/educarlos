@@ -1,0 +1,190 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "22-a-token-is-a-mapping",
+  "courseId": "crypto-chains",
+  "chapterId": "ch4-programmable",
+  "title": "A token is a mapping",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 4 - Programmable money",
+          "heading": "A token is a mapping",
+          "text": [
+            "Your wallet lists a balance of some token. It feels like the wallet contains it.",
+            "The wallet contains a key. The token is a row in a table you do not control."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The whole standard is six functions",
+          "text": [
+            "EIP-20 does not describe a coin. It describes an interface that a contract must answer to."
+          ]
+        },
+        {
+          "type": "code",
+          "label": "EIP-20, in full",
+          "code": "totalSupply()          balanceOf(owner)\ntransfer(to, value)    transferFrom(from, to, value)\napprove(spender, v)    allowance(owner, spender)"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "And the state behind it is one line",
+          "text": [
+            "Everything a token _is_ lives in a single mapping inside a single contract."
+          ]
+        },
+        {
+          "type": "code",
+          "label": "the token",
+          "code": "mapping(address => uint256) balances;"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "So where is it?"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/token-mapping.svg",
+          "alt": "Two wallets pointing at one contract that holds a table of addresses and amounts",
+          "caption": "Both wallets are reading the same table. Neither contains anything but a key."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Sending is not moving",
+          "text": [
+            "A transfer is a call to that contract, which subtracts from one row, adds to another, and emits an event.",
+            "Nothing travelled. Two numbers changed, in a place neither party owns."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Unfamiliar tokens sometimes appear in a wallet nobody sent them to. Has the wallet been compromised?",
+          "answer": [
+            "No. Anyone can call `transfer` and credit any address, and there is no acceptance step to decline it. The arrival proves nothing about your keys.",
+            "The danger is the next step: these are usually bait, and the contract you interact with to \"claim\" or sell them is the attack. Receiving is harmless; touching it is not."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The mirror image of that",
+          "text": [
+            "Send tokens to a contract that was never written to handle them, and the table records that contract as the holder.",
+            "If it has no code that moves them, nothing ever will. They are not burned - they still count in the supply. They are simply unreachable forever."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The second mapping",
+          "text": [
+            "Contracts cannot take your tokens without permission, so the standard adds `approve`: you record an allowance, and the spender calls `transferFrom` later.",
+            "Two steps, with a gap between them. The gap is public."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "warning",
+          "title": "The approve race",
+          "text": [
+            "Lower an existing allowance from 100 to 50 and a spender watching the mempool can spend the 100 first, then the 50 after your change lands. 150 from an allowance you were trying to reduce.",
+            "The standard itself notes this. The workaround is to set it to zero first - two transactions, two fees, for one change of mind."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "And the habit that makes it worse",
+          "text": [
+            "Approving an unlimited amount once is convenient, and it is what most interfaces ask for by default.",
+            "It means a contract that is later compromised or upgraded can take the whole balance, not the amount you were spending that afternoon."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Whose table is it, though"
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Nothing in EIP-20 forbids privileged functions, and large issued tokens have them: minting, pausing, and address blacklists held by the issuer.",
+            "Whether your balance is really yours is a fact about that one contract's code. Not about the standard, and not about the chain underneath it."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "A token is an entry in one contract's table, and \"self-custody\" only ever meant custody of the key that entry is filed under.",
+            "That table is public, and so is every payment in this course. The last chapter is about what that costs."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "EIP-20: Token Standard",
+              "url": "https://eips.ethereum.org/EIPS/eip-20",
+              "note": "the interface, and its own note on the approve race"
+            },
+            {
+              "title": "ethereum.org: ERC-20 Token Standard",
+              "url": "https://ethereum.org/en/developers/docs/standards/tokens/erc-20/"
+            },
+            {
+              "title": "ethereum.org: Smart contract security",
+              "url": "https://ethereum.org/en/developers/docs/smart-contracts/security/",
+              "note": "allowance hygiene and unlimited approvals"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
