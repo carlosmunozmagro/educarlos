@@ -1,0 +1,179 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "27-what-it-cannot-do",
+  "courseId": "crypto-chains",
+  "chapterId": "ch5-leaks",
+  "title": "What it cannot do",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 5 - Where it leaks",
+          "heading": "What it cannot do",
+          "text": [
+            "Teodora's escrow has three keys, and one of them belongs to a man who mixes live sound.",
+            "Dragan is not a compromise or a convenience. He is standing exactly where the technology stops."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What twenty-six lessons built",
+          "text": [
+            "A hash gave evidence of change. A key gave authority without an authority. Work gave ordering with no referee. A script gave conditions.",
+            "Each one is real, checkable, and cost something to obtain. None of them is about truth."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The line, drawn"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/the-boundary.svg",
+          "alt": "An upper box listing what a chain can prove, an accent line marked where a person types, and a lower box of what it cannot know",
+          "caption": "Everything above the line is settled by mathematics. Everything below it is settled by somebody."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The claim, stated precisely",
+          "text": [
+            "A chain can prove a record has not changed since it was written.",
+            "It can never prove the record was **true when it was written**. Not with better hashing, not with faster finality, not with any construction at all."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Which turns a virtue into a problem",
+          "text": [
+            "Put a land registry on a chain and a fraudulent registration becomes a permanent fraudulent record - harder to correct than the paper one it replaced.",
+            "Immutability protects whatever is written, including the mistakes and the lies."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Oracles exist precisely to bring outside facts on-chain. Do they not close this gap?",
+          "answer": [
+            "They move it. Whoever writes the fact is trusted about the fact, and the chain's guarantee starts _after_ the write - it faithfully preserves whatever was claimed.",
+            "You can decentralise an oracle into a committee with stake at risk, which genuinely helps. It is also a committee holding concentrated power over a lot of value, which is the exact shape of the previous lesson."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The same test, everywhere",
+          "text": [
+            "\"Organic\". \"Conflict-free\". \"Never flooded\". Every provenance claim on a chain reduces to one question: **who typed it, and what did they check?**",
+            "The chain preserves the scan of the box. It has never seen the box."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Garbage in is worse here than in an ordinary database, for two reasons: the output is permanent, and it arrives wearing an authority it did not earn.",
+            "\"It's on the blockchain\" tells you a claim was recorded. It tells you nothing whatsoever about the claim."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "And now say the fair thing",
+          "text": [
+            "What was achieved is narrow, and it is real. Ordering without a referee. Tamper-evidence anyone can check on a phone. Assets held by whoever holds a key, with no custodian to ask.",
+            "Nobody had those before 2009. They are worth understanding precisely, which is the only reason this course exists."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "19 May 2026",
+          "heading": "What happened to Teodora",
+          "text": [
+            "Ines delivers the masters on the fifteenth day of the thirty. They are good. Teodora and Ines both sign, and the 0.012 BTC moves.",
+            "Dragan is never contacted. He does not know any of this happened."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "That is what a working mechanism looks like. The refund path went unused, the arbiter went uncalled, and two people who did not have to trust each other did not have to find out whether they could.",
+            "The machinery earns its keep on the days nothing goes wrong."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "A chain settles what can be settled by arithmetic, and hands everything else back to people - which is most of what matters, and always was.",
+            "Nora shipped a synthesiser. Teodora got her record mastered. Neither needed to believe anything, and both still had to decide who to trust."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Nick Szabo, \"Formalizing and Securing Relationships on Public Networks\"",
+              "url": "https://firstmonday.org/ojs/index.php/fm/article/view/548",
+              "note": "First Monday, 1997 - smart contracts, and their boundary, twelve years early"
+            },
+            {
+              "title": "ethereum.org: Oracles",
+              "url": "https://ethereum.org/en/developers/docs/oracles/",
+              "note": "the standard framing of the problem, and of what oracles do and do not fix"
+            },
+            {
+              "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+              "url": "https://bitcoin.org/bitcoin.pdf",
+              "note": "section 1 - the claim actually made, which is narrower than the one usually repeated"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

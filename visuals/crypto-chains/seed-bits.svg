@@ -1,0 +1,19 @@
+<svg viewBox="0 0 300 178" xmlns="http://www.w3.org/2000/svg">
+  <defs><marker id="sb-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 1 L7 4 L0 7 z" fill="currentColor"/></marker></defs>
+  <text class="dim" x="8" y="12" font-size="10">from a sentence to every key you own</text>
+  <rect class="box" x="8" y="24" width="284" height="28" rx="5"/>
+  <text class="lbl" x="18" y="36" font-size="11">twelve words</text>
+  <text class="dim" x="18" y="48" font-size="10">12 x 11 bits</text>
+  <line class="line" x1="150" y1="52" x2="150" y2="62" marker-end="url(#sb-arrow)"/>
+  <rect class="box" x="8" y="64" width="284" height="28" rx="5"/>
+  <text class="accent" x="18" y="76" font-size="11">128 bits of entropy</text>
+  <text class="dim" x="18" y="88" font-size="10">+ 4-bit checksum</text>
+  <line class="line" x1="150" y1="92" x2="150" y2="102" marker-end="url(#sb-arrow)"/>
+  <rect class="box" x="8" y="104" width="284" height="28" rx="5"/>
+  <text class="lbl" x="18" y="116" font-size="11">PBKDF2, 2048 rounds</text>
+  <text class="dim" x="18" y="128" font-size="10">salt: 'mnemonic' + passphrase</text>
+  <line class="line" x1="150" y1="132" x2="150" y2="142" marker-end="url(#sb-arrow)"/>
+  <rect class="box" x="8" y="144" width="284" height="28" rx="5"/>
+  <text class="lbl" x="18" y="156" font-size="11">512-bit seed</text>
+  <text class="dim" x="18" y="168" font-size="10">one master key, every address</text>
+</svg>

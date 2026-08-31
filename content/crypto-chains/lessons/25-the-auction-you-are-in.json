@@ -1,0 +1,179 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "25-the-auction-you-are-in",
+  "courseId": "crypto-chains",
+  "chapterId": "ch5-leaks",
+  "title": "The auction you are in",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 5 - Where it leaks",
+          "heading": "The auction you are in",
+          "text": [
+            "Teodora pays the pressing plant and her transaction sits unconfirmed for six hours.",
+            "She paid the largest fee in the mempool. Transactions broadcast after hers confirmed while she waited."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The supply is fixed by rule",
+          "text": [
+            "A block holds at most **4,000,000 weight units** - roughly a million virtual bytes - and one arrives every ten minutes whatever happens.",
+            "Demand has no such limit. So this is a fixed supply, sold continuously, and a fee is not a payment. It is a bid."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "And miners are not sentimental",
+          "text": [
+            "They are selling space, so they sort by what each transaction pays **per byte**, not by what it pays in total.",
+            "A large generous transaction and a small stingy one are not comparable on the number Teodora was looking at."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The block, packed"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/fee-auction.svg",
+          "alt": "Five transactions sorted by fee rate, with the largest total fee marked as too big and left out while a smaller one gets in",
+          "caption": "14,000 satoshis, left behind. The coffee paying 1,520 confirmed."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Why is Teodora's transaction 1,400 bytes when the coffee's is 190?",
+          "answer": [
+            "Because of lesson 08. Her wallet holds dozens of small outputs, one per record sold, and spending them means naming every one as an input - each with its own signature.",
+            "Size is driven by input count, and the fee is charged on bytes rather than on amount. A wallet full of small payments is expensive to spend from, no matter how much it holds."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The fix has a price attached",
+          "text": [
+            "She should consolidate: sweep the small outputs into one, on a quiet Sunday when rates are low.",
+            "Which publishes, in a single transaction, that all forty-one of them share an owner."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Lesson 23 says do not merge your outputs. This lesson says merge them or pay for it forever.",
+            "There is no setting that satisfies both. Privacy and fee efficiency are in direct conflict here, and every wallet quietly picks one for you."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Ethereum's answer to the guessing",
+          "text": [
+            "Under EIP-1559 the protocol sets a **base fee** per unit of gas, adjusts it by up to 12.5% per block to keep blocks about half full, and **burns** it.",
+            "You add a tip for the proposer. The base fee is knowable before you send, instead of guessed against an invisible field of rivals."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "But the bid is still public",
+          "text": [
+            "A pending transaction is a statement of exactly what you intend to do, published, before it has happened.",
+            "For a payment that is merely a privacy leak. For a trade, it is an invitation."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "warning",
+          "title": "Sandwiching",
+          "text": [
+            "A bot sees your pending trade, buys ahead of it at a higher fee, lets your trade move the price, and sells into it - all in the same block, all with public information.",
+            "The 2019 paper _Flash Boys 2.0_ named and measured this. Nothing was hacked; the mempool did what it is for."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What she does at 4pm",
+          "text": [
+            "She rebroadcasts with a higher fee. BIP-125 replace-by-fee - the same mechanism that made zero confirmations unsafe in lesson 16 - is here the tool that gets her unstuck.",
+            "The transaction confirms in the next block, and the plant ships the test pressings."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "You are not paying a fee, you are bidding in a public auction, and the bid that wins is per byte rather than per payment.",
+            "One lesson left in this chapter before the last one. It is about the biggest thefts in the field, none of which touched a chain."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "BIP-141: Segregated Witness",
+              "url": "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki",
+              "note": "the 4,000,000 weight unit limit"
+            },
+            {
+              "title": "EIP-1559: Fee market change for ETH 1.0 chain",
+              "url": "https://eips.ethereum.org/EIPS/eip-1559",
+              "note": "the base fee, its 12.5% per-block adjustment, and the burn"
+            },
+            {
+              "title": "Daian et al., \"Flash Boys 2.0\"",
+              "url": "https://arxiv.org/abs/1904.05234",
+              "note": "front-running and reordering measured on public mempools"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "26-the-weakest-link-is-the-bridge",
+  "courseId": "crypto-chains",
+  "chapterId": "ch5-leaks",
+  "title": "The weakest link is the bridge",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 5 - Where it leaks",
+          "heading": "The weakest link is the bridge",
+          "text": [
+            "The three largest thefts in this field total well over a billion dollars.",
+            "In all three, every block was valid, every signature verified, and consensus never wavered."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "A coin cannot leave its chain",
+          "text": [
+            "Chains cannot see each other. There is no message from bitcoin to Ethereum, and no way for one to verify the other's state.",
+            "So \"moving\" an asset across is not a move at all."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What actually happens",
+          "text": [
+            "The asset is locked on the first chain, and a claim on it is minted on the second.",
+            "Which means somebody holds the lock, and somebody decides when a mint is authorised. That decision happens off-chain."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "So where is the security?"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/bridge-layers.svg",
+          "alt": "Two chains with thousands of nodes each, connected by a highlighted bridge box holding five of nine keys",
+          "caption": "Two networks of thousands, joined by a committee you could fit in a room."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "key",
+          "text": [
+            "A bridge is as strong as the **smallest** of three things: chain A, chain B, and the committee holding the keys.",
+            "The committee is normally many orders of magnitude weaker than either chain - and it is the one with everybody's assets pooled behind it."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "February 2022",
+          "heading": "Wormhole",
+          "text": [
+            "Roughly 326 million dollars. A flaw in how the contract verified guardian signatures let the attacker forge an approval that was never given.",
+            "The mint then happened exactly as designed - wrapped ether on Solana, with nothing behind it."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "March 2022",
+          "heading": "Ronin",
+          "text": [
+            "Roughly 625 million dollars, and no software flaw at all. A withdrawal needed five of nine validator signatures.",
+            "The attacker got four from the operator's own infrastructure. The fifth came from an approval granted to the operator months earlier during a traffic spike, and never revoked."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "The Ronin theft took place over several transactions. It was noticed six days later. How?",
+          "answer": [
+            "A user tried to withdraw and could not. That was the alarm.",
+            "Every transaction the attacker made was valid and signed by the required threshold, so there was nothing for the chain or the contract to flag. Monitoring the balance was somebody's job, not the protocol's, and nobody was doing it."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "And one more, for the shape",
+          "text": [
+            "Poly Network, August 2021: roughly 611 million dollars, most of it later returned by the attacker.",
+            "Three incidents, three different mechanisms, one identical location. The custodial layer beside the chain, not the chain."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Why the pattern repeats"
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "text": [
+            "A bridge pools everyone's assets in one contract, secured by a small set of keys, and advertises the total publicly.",
+            "It is the highest-value, lowest-diversity target in the field, and it exists precisely to reintroduce the custodian the chain underneath it was built to remove."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What to do with the word \"trustless\""
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "Ask which keys, held by whom, and what a majority of them can do on their own. Every current bridge design has an answer, and it is never \"nobody\".",
+            "The chain's security properties do not extend across the join. They stop at the last block, and something ordinary takes over."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "The largest losses in this field's history were not cryptographic failures - they were custodial failures wearing a chain's reputation.",
+            "One lesson left, and it is the boundary every single thing in this course runs into."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Sky Mavis, post-mortem of the Ronin validator compromise",
+              "note": "March 2022 - the five-of-nine threshold and the stale approval"
+            },
+            {
+              "title": "Wormhole, incident report on the February 2022 exploit",
+              "note": "the signature verification flaw and the unbacked mint"
+            },
+            {
+              "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+              "url": "https://bitcoin.org/bitcoin.pdf",
+              "note": "section 1 states the trusted-third-party problem a bridge puts back"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

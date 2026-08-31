@@ -1,0 +1,179 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "23-pseudonymous-is-not-anonymous",
+  "courseId": "crypto-chains",
+  "chapterId": "ch5-leaks",
+  "title": "Pseudonymous is not anonymous",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 5 - Where it leaks",
+          "heading": "Pseudonymous is not anonymous",
+          "text": [
+            "Teodora put one address on the label's website so listeners could pay for records directly.",
+            "It was up for four days. It is now attached to every payment she will ever make."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Start from what is published",
+          "text": [
+            "Every transaction, amount and address, since January 2009, downloadable by anyone, permanently.",
+            "There is no login and no rate limit. The question was never whether the data is available - it is what can be inferred from it."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The first guess",
+          "text": [
+            "If one transaction spends three outputs, whoever made it had to sign for all three.",
+            "So all three belong to the same person. That single assumption, applied across the whole chain, merges millions of addresses into clusters."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The second guess"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/clustering.svg",
+          "alt": "Three inputs marked as one owner feeding a transaction with two outputs, the odd-amount one marked as change",
+          "caption": "One output is a payment; the other is change coming home. The amounts usually say which."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Neither is certain, and it does not matter",
+          "text": [
+            "A wallet can deliberately spend from unrelated coins. Change can be made to look like a payment.",
+            "But they are right often enough, and there are billions of transactions to be right about. Clusters converge."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Clustering only produces anonymous groups of addresses. Where does a name come from?",
+          "answer": [
+            "From one point of contact with the ordinary world, and one is enough. An exchange deposit made with identity documents. An invoice paid to a known supplier. An address published on a record label's website.",
+            "The cluster was already built. The name colours all of it at once, including everything the cluster did before the link existed."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "warning",
+          "title": "It works backwards in time",
+          "text": [
+            "An analysis technique invented in 2032 applies to a payment made in 2026. The data cannot be withdrawn, corrected, or expired.",
+            "This is the only surveillance dataset that is complete, permanent, retroactive, and free to query."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "It was documented from the beginning",
+          "text": [
+            "Section 10 of the whitepaper asks for **a new key pair for every transaction**, and states plainly that multi-input transactions reveal common ownership.",
+            "The privacy model was published as fragile. What drifted was the practice: one address, reused, printed on a website."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What Teodora actually leaked",
+          "text": [
+            "Not the record sales. The escrow to Ines, the pressing plant, her rent - anything paid from those coins joins a cluster the website already labelled with her name.",
+            "Her supplier list and roughly her turnover are now public, to anyone who cared to look."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What helps, honestly",
+          "text": [
+            "A fresh address per payment: free, automatic since BIP-32, and by far the largest single improvement.",
+            "CoinJoin makes the common-input assumption actually false. Taproot makes complex spends look like ordinary ones, so the script type stops being a fingerprint."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "None of it touches what is already published. Privacy here is a property of decisions made before the payment, not after.",
+            "Cash is anonymous and forgets. This is pseudonymous and remembers everything."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "An address is not a name until it is, and when it becomes one it does so retroactively, for everything it ever touched.",
+            "Next: the twelve words that stand between Teodora and losing all of it at once."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "Meiklejohn et al., \"A Fistful of Bitcoins\"",
+              "url": "https://cseweb.ucsd.edu/~smeiklejohn/files/imc13.pdf",
+              "note": "IMC 2013 - the clustering heuristics, measured on the real chain"
+            },
+            {
+              "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+              "url": "https://bitcoin.org/bitcoin.pdf",
+              "note": "section 10 asks for a new key pair per transaction"
+            },
+            {
+              "title": "BIP-341: Taproot",
+              "url": "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki",
+              "note": "why a cooperative complex spend now looks ordinary"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

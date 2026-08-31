@@ -1,0 +1,17 @@
+<svg viewBox="0 0 300 202" xmlns="http://www.w3.org/2000/svg">
+  <text class="dim" x="8" y="12" font-size="10">what a chain settles, and what it inherits</text>
+
+  <rect class="box" x="8" y="20" width="284" height="76" rx="6"/>
+  <text class="lbl" x="18" y="38" font-size="11">it can prove</text>
+  <text x="18" y="56" font-size="11">this was signed by that key</text>
+  <text x="18" y="72" font-size="11">this came before that</text>
+  <text x="18" y="88" font-size="11">this has not changed since</text>
+
+  <line class="stroke-accent" x1="8" y1="110" x2="292" y2="110"/>
+  <text class="accent" x="292" y="124" font-size="11" text-anchor="end">a person types here</text>
+
+  <rect class="box" x="8" y="132" width="284" height="62" rx="6"/>
+  <text class="lbl" x="18" y="150" font-size="11">it cannot know</text>
+  <text x="18" y="168" font-size="11">whether the master arrived</text>
+  <text x="18" y="184" font-size="11">whether any of it was true</text>
+</svg>

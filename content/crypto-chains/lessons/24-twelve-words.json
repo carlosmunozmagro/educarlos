@@ -1,0 +1,204 @@
+{
+  "$schema": "../../../schema/lesson.schema.json",
+  "id": "24-twelve-words",
+  "courseId": "crypto-chains",
+  "chapterId": "ch5-leaks",
+  "title": "Twelve words",
+  "reviewedOn": "2026-08-30",
+  "screens": [
+    {
+      "kind": "title",
+      "blocks": [
+        {
+          "type": "prose",
+          "eyebrow": "Chapter 5 - Where it leaks",
+          "heading": "Twelve words",
+          "text": [
+            "Teodora sets up the hardware wallet for the label and copies twelve words onto a card.",
+            "That card is now the label's entire balance, and every balance it will ever have."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "It is not a password",
+          "text": [
+            "A password unlocks an account someone else keeps. There is no account here and nobody keeping it.",
+            "The words **are** the entropy from lesson 03, written in a form a human can copy without transcribing 64 hex digits."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Why twelve, and not ten or thirteen",
+          "text": [
+            "The wordlist has 2,048 entries, so each word carries exactly 11 bits. The arithmetic has to come out even:"
+          ]
+        },
+        {
+          "type": "formula",
+          "tex": "12 \\times 11 = 132 = 128 + 4"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The spare four bits are a checksum",
+          "text": [
+            "128 bits of randomness, then four bits taken from the hash of that randomness.",
+            "Write a word down wrong and the sentence fails to check out - fifteen times out of sixteen."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "You can watch it land",
+          "text": [
+            "The standard's test vector uses entropy of all zeros. Hash that, and the first four bits come out as 3."
+          ]
+        },
+        {
+          "type": "code",
+          "label": "tools/visuals/seed-bits.py",
+          "code": "sha256(entropy)[0] = 0x37   ->  checksum = 3\nword indexes: [0,0,0,0,0,0,0,0,0,0,0,3]\n\n\"abandon abandon ... abandon about\"   # index 3, not another 0"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "Then the words become a seed"
+        },
+        {
+          "type": "visual",
+          "src": "visuals/crypto-chains/seed-bits.svg",
+          "alt": "Four stacked steps from twelve words through 128 bits plus checksum and PBKDF2 to a 512-bit seed",
+          "caption": "PBKDF2-HMAC-SHA512, 2,048 rounds, salted with the literal string `mnemonic`."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Password hashing uses hundreds of thousands of rounds. Why does this get away with 2,048?",
+          "answer": [
+            "Because there is nothing to stretch. Key stretching buys time against guessing a *low*-entropy input; this input already has 128 bits, and no number of rounds makes that meaningfully harder to guess.",
+            "The exception is the optional passphrase, which a human chooses. There 2,048 rounds is thin - which is an argument for a strong passphrase, not for a slower function."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One seed, every key",
+          "text": [
+            "BIP-32 derives a master key from that seed, and children from the master, deterministically and without limit.",
+            "Which is why a backup written today restores coins sent tomorrow to an address that does not exist yet."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The same property, from the other side",
+          "text": [
+            "An extended **public** key can derive every future receiving address too, without any private key at all.",
+            "Leak one and you lose no money and all privacy - permanently, including addresses you have not generated."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "reveal",
+          "question": "Derivation paths are full of apostrophes - `m/44'/0'/0'`. What is the apostrophe protecting against?",
+          "answer": [
+            "Something genuinely alarming. With ordinary derivation, an attacker holding the parent extended *public* key and any one child *private* key can compute the parent private key - and from it every sibling.",
+            "Hardened derivation, marked by the apostrophe, breaks that path. One leaked account key stays one leaked account key instead of unwinding the whole wallet."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "The optional word that has no error message"
+        },
+        {
+          "type": "callout",
+          "tone": "warning",
+          "text": [
+            "A passphrase goes into the salt, so a different one produces a **different valid wallet**.",
+            "Type it wrong and nothing complains. You get an empty wallet - which looks exactly like a correct passphrase on a wallet that was never funded."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "What it really is"
+        },
+        {
+          "type": "callout",
+          "tone": "gotcha",
+          "text": [
+            "A bearer instrument. Whoever reads the card owns the money, immediately and irreversibly. There is no revocation, no reset, no support desk, and no evidence afterwards.",
+            "Almost every real loss in this field happens here, and none of it happens in the mathematics."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "prose",
+          "heading": "One sentence worth keeping",
+          "text": [
+            "Twelve words are not a way into your wallet; they are the wallet, and the whole security model is now a question about a piece of paper.",
+            "Teodora puts the card in a drawer, and goes to pay the pressing plant on the worst possible afternoon."
+          ]
+        },
+        {
+          "type": "sources",
+          "items": [
+            {
+              "title": "BIP-39: Mnemonic code for generating deterministic keys",
+              "url": "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki",
+              "note": "the wordlist, the checksum, and the PBKDF2 parameters"
+            },
+            {
+              "title": "BIP-32: Hierarchical Deterministic Wallets",
+              "url": "https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki",
+              "note": "derivation, and why hardened derivation exists"
+            },
+            {
+              "title": "BIP-44: Multi-Account Hierarchy for Deterministic Wallets",
+              "url": "https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

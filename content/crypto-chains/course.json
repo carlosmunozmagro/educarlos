@@ -5,7 +5,7 @@
   "accent": "#f0a13a",
   "title": "Crypto, from the math up",
   "subtitle": "What hashing, keys and chains actually do - not what the metaphors say.",
-  "description": "Every explanation of blockchain reaches for a metaphor: a ledger, a chain, a village of accountants. This course skips them. One payment - 0.05 BTC for a vintage synthesiser - runs through the first half of the course, and every mechanism arrives because that payment needs it. You will see the actual machinery, one screen at a time, including the parts that have failed in public.",
+  "description": "Every explanation of blockchain reaches for a metaphor: a ledger, a chain, a village of accountants. This course skips them. Two ordinary jobs run through it - a restored synthesiser sold from Lisbon to Toronto, and a record label in Belgrade paying a mastering engineer it has no reason to trust - and every mechanism arrives because one of them needs it. You will see the actual machinery, one screen at a time, including the parts that have failed in public.",
   "chapters": [
     {
       "id": "ch1-primitives",

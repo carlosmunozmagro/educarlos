@@ -76,6 +76,7 @@ the one who brings up what happens if it does not.
 | The escrow | 2-of-3: Teodora, Ines, and **Dragan**, a mutual friend who is not paid |
 | The fallback | after **30 days**, Teodora can take it back alone |
 | Her backup | twelve words, written once, on paper |
+| How it ends | Ines delivers on **19 May 2026**; she and Teodora sign; Dragan is never contacted |
 
 Why this case and not Nora: an escrow needs a job that can be disputed and a
 third party who is plausible. A restored synthesiser arrives or it does not; a
@@ -92,7 +93,12 @@ or a treasury. It is two people and a bank account.
 | 20-two-ways-to-model-the-world | the same escrow, rebuilt on an account model |
 | 23-pseudonymous-is-not-anonymous | the label's address, and what one payment reveals |
 | 24-twelve-words | the paper in the drawer |
-| 25-the-auction-you-are-in | paying during a fee spike |
+| 25-the-auction-you-are-in | paying the pressing plant during a fee spike, with 41 small inputs |
+| 27-what-it-cannot-do | the escrow resolves, and the arbiter is never needed |
+
+**Case B is closed after lesson 27**, which is also the end of the course. The
+resolution is deliberately undramatic: the refund path went unused and the
+arbiter went uncalled, because that is what a working mechanism looks like.
 
 ## Real failures used as anchors
 
@@ -110,3 +116,6 @@ dates right.
 | Largest downward difficulty adjustment, about 28 % | 3 July 2021 | 15 |
 | Ethereum Classic 51 % attacks | January 2019, August 2020 | 17 |
 | Ethereum's Merge to proof of stake | 15 September 2022 | 18 |
+| The DAO drain, then the fork at block 1,920,000 | 17 June, 20 July 2016 | 21 |
+| Meiklejohn et al. measure address clustering | 2013 | 23 |
+| Poly Network, Wormhole and Ronin bridge thefts | Aug 2021 – Mar 2022 | 26 |

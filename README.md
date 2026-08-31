@@ -25,7 +25,7 @@ to `localStorage` and mid-lesson resume.
 
 | Course | Outlined | Written |
 |---|---|---|
-| `crypto-chains` (EN) | 27 lessons, 5 chapters | chapters 1-4 complete (22) |
+| `crypto-chains` (EN) | 27 lessons, 5 chapters | **complete (27)** |
 | `sociedades-es` (ES) | 28 lessons | 28 |
 | `historia-es` (ES) | 32 lessons | 23 |
 
