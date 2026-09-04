@@ -1,0 +1,34 @@
+{
+  "id": "senal",
+  "kind": "sim",
+  "accent": "#7f8fd6",
+  "epoch": "2026-01-01T00:00:00Z",
+  "tickMinutes": 8,
+  "bands": 16,
+  "basePeriod": 30,
+
+  "multipleFamilies": [
+    [2, 3, 4, 6, 9],
+    [2, 3, 4, 6, 8],
+    [2, 3, 5, 6, 10],
+    [2, 4, 6, 9, 12],
+    [3, 4, 6, 8, 12]
+  ],
+
+  "peakWidth": 2.2,
+  "humFloor": 0.25,
+  "peakThreshold": 0.62,
+  "shyness": 6,
+  "noiseFloor": 0.06,
+  "coarseGroupSize": 4,
+  "predictTolerance": 2,
+
+  "charges": { "max": 3, "regenTicks": 45 },
+  "ping": { "decayTicks": 10, "ringTicks": 26 },
+  "damp": { "durationTicks": 60 },
+  "echo": {
+    "delays": [47, 53, 71, 89, 101],
+    "mapMults": [3, 5, 7, 9, 11, 13],
+    "gain": 0.55
+  }
+}
