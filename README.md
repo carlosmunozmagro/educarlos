@@ -44,8 +44,9 @@ to `localStorage` and mid-lesson resume.
 index.html               single entry, hash router
 app/                     main.js (router) render.js (blocks) mdlite.js
                          progress.js i18n.js styles.css
-content/index.json       list of course ids
+content/index.json       list of course ids, shelves, and environments
 content/<course>/        course.json + lessons/<id>.json
+app/city/                the Mystery environment: sim.js paint.js view.js
 visuals/<course>/*.svg   inlined into the page, theme-aware
 research/<course>/*.md   sourced briefs lessons are written from
 schema/                  JSON Schema, for editor autocomplete
@@ -58,7 +59,7 @@ tools/publish.py         validate, commit, push - see docs/PUBLISH.md
 tools/validate.py        format + house-rule enforcement
 tools/visuals/           generators for data-bearing diagrams
 tools/icons.sh           re-rasterises app/icons/ from icon.svg
-docs/                    STYLE.md  VISUALS.md  FORMAT.md  PLAN.md
+docs/                    STYLE.md  VISUALS.md  FORMAT.md  PLAN.md  CITY.md
 ```
 
 ## How content gets made
@@ -89,6 +90,22 @@ future content comes out — the skills read them rather than duplicating them.
 `docs/FORMAT.md` is the block reference. `python3 tools/validate.py` enforces the
 mechanical parts: ≤80 prose words per screen, ≤1 visual per screen, dead visual
 references, ragged tables, unbalanced `$`, missing sources on law/tax courses.
+
+## The Mystery shelf
+
+Not everything here is a course. A **section** may also declare *environments*:
+routes of their own (`#/x/:id`), loaded only when opened, that run rather than
+being read.
+
+- **`city`** — *The City.* An isometric place that develops itself: land value
+  from access and amenity, roads that reach for value, buildings that grow to
+  the ceiling their land allows, and quarters that hollow out when it falls. A
+  reader can lay a road, plant a park, open the works, build a station or a
+  tower, or clear a block — and then watch the next forty years argue with the
+  decision. It keeps running while the app is closed, and remembers.
+
+  **`docs/CITY.md`** is the mechanism, the six interferences, and how to add a
+  second environment beside it.
 
 ## The two courses
 

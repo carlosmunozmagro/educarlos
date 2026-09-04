@@ -1,7 +1,9 @@
-/* Router + views. Three routes:
+/* Router + views. Five routes:
      #/                        library
+     #/s/:sectionId            a shelf
      #/c/:courseId             course map
-     #/c/:courseId/l/:lessonId lesson player                       */
+     #/c/:courseId/l/:lessonId lesson player
+     #/x/:envId                an environment - not a course, a place      */
 
 import { renderScreen } from './render.js';
 import { inline, escapeHtml } from './mdlite.js';
@@ -13,6 +15,7 @@ import * as Theme from './theme.js';
 const app = document.getElementById('app');
 const cache = { index: null, sections: null, courses: new Map(), lessons: new Map(), svgs: new Map() };
 let punfield = null;   // only the library mounts one
+let leaveView = null;  // an environment runs a loop; the router stops it
 
 /* ---------------------------------------------------------- data */
 
@@ -118,11 +121,22 @@ async function getSections() {
   const byId = new Map(all.map(c => [c.id, c]));
   cache.sections = (idx.sections || DEFAULT_SECTIONS).map(d => ({
     ...d,
+    experiences: d.experiences || [],
     courses: d.courses
       ? d.courses.map(id => byId.get(id)).filter(Boolean)
       : all.filter(c => (c.lang || 'en') === d.lang)
   }));
   return cache.sections;
+}
+
+/* An environment is declared beside the courses on its shelf: same shape,
+   no chapters, and a route of its own. */
+async function envOf(envId) {
+  for (const sec of await getSections()) {
+    const env = sec.experiences.find(e => e.id === envId);
+    if (env) return { env, sec };
+  }
+  return null;
 }
 
 async function sectionOf(courseId) {
@@ -159,6 +173,18 @@ function courseCard(c, i = 0) {
     + ring(st.pct, label) + '</a>';
 }
 
+/* An environment has no progress to show: it is never finished, and it moves
+   whether or not anyone is reading it. So the ring is replaced by an arrow. */
+function envCard(e, i = 0) {
+  return '<a class="course-card env" href="#/x/' + encodeURIComponent(e.id) + '"'
+    + ' data-rise style="--i:' + i + ';--accent:' + escapeHtml(e.accent || '#f0a13a') + '">'
+    + '<div class="meta"><h2 style="view-transition-name:' + vtName('env', e.id) + '">'
+    + inline(e.title) + '</h2>'
+    + '<div class="desc">' + inline(e.subtitle || '') + '</div>'
+    + '<span class="tag">' + escapeHtml(e.tag || 'Environment') + '</span></div>'
+    + '<span class="go">' + GO_ICON + '</span></a>';
+}
+
 /* Home: one full screen of brand, one of shelves, snapped like a lesson. */
 async function viewHome() {
   const sections = await getSections();
@@ -167,12 +193,15 @@ async function viewHome() {
   document.documentElement.lang = 'en';
 
   const shelves = sections.map((s, i) => {
-    const n = s.courses.length;
     const tr = t(s.lang || 'en');
-    const count = n ? n + ' ' + tr(n === 1 ? 'courseOne' : 'courses') : tr('planned');
+    const nc = s.courses.length, ne = s.experiences.length, n = nc + ne;
+    const parts = [];
+    if (nc) parts.push(nc + ' ' + tr(nc === 1 ? 'courseOne' : 'courses'));
+    if (ne) parts.push(ne + ' ' + tr(ne === 1 ? 'placeOne' : 'places'));
+    const count = n ? parts.join(' · ') : tr('planned');
     // Three course names, each in its own accent: a shelf you can read the
     // spines of before you pull it open.
-    const rail = s.courses.slice(0, 3).map(c =>
+    const rail = [...s.experiences, ...s.courses].slice(0, 3).map(c =>
         '<span class="chip" style="--accent:' + escapeHtml(c.accent || '#f0a13a') + '">'
         + '<span class="txt">' + inline(c.title) + '</span></span>').join('')
       + (n > 3 ? '<span class="chip more">+' + (n - 3) + '</span>' : '');
@@ -257,7 +286,7 @@ async function viewSection(id) {
   app.innerHTML = '<div class="topbar"><div class="row">'
     + '<a class="back" href="#/" aria-label="' + tr('home') + '">' + BACK_ICON + '</a>'
     + '<div class="crumb">' + tr('home') + '</div>'
-    + '<div class="count">' + sec.courses.length + '</div>'
+    + '<div class="count">' + (sec.courses.length + sec.experiences.length) + '</div>'
     + Theme.button(lang)
     + '</div></div>'
     + '<div class="page has-bar"><div class="wrap">'
@@ -266,7 +295,7 @@ async function viewSection(id) {
     + escapeHtml(sec.badge || '&middot;') + '</span>'
     + '<h1>' + inline(sec.title) + '</h1>'
     + (sec.subtitle ? '<div class="desc">' + inline(sec.subtitle) + '</div>' : '') + '</div>'
-    + (index.length
+    + (index.length + sec.experiences.length > 1
         ? '<div class="searchbox"><input id="q" type="search" autocomplete="off" spellcheck="false"'
           + ' placeholder="' + escapeHtml(tr('search')) + '" aria-label="' + escapeHtml(tr('search')) + '">'
           + '</div>'
@@ -279,8 +308,9 @@ async function viewSection(id) {
 
   const draw = () => {
     const q = norm(input ? input.value.trim() : '');
-    if (!index.length) {
-      results.innerHTML = '<div class="empty">' + escapeHtml(tr('planned')) + '</div>';
+    const envs = sec.experiences.filter(e => !q || norm(e.title + ' ' + (e.subtitle || '')).includes(q));
+    if (!index.length && !envs.length) {
+      results.innerHTML = '<div class="empty">' + escapeHtml(q ? tr('noResults') : tr('planned')) + '</div>';
       return;
     }
     const hits = index.map(ix => {
@@ -289,11 +319,11 @@ async function viewSection(id) {
       return (ix.hay.includes(q) || lessons.length) ? { ix, lessons } : null;
     }).filter(Boolean);
 
-    if (!hits.length) {
+    if (!hits.length && !envs.length) {
       results.innerHTML = '<div class="empty">' + escapeHtml(tr('noResults')) + '</div>';
       return;
     }
-    results.innerHTML = hits.map(({ ix, lessons }, ci) => {
+    results.innerHTML = envs.map((e, i) => envCard(e, i)).join('') + hits.map(({ ix, lessons }, ci) => {
       const rows = lessons.slice(0, 4).map(l => {
         const label = '<span class="hit-ch">' + escapeHtml(l.chapter) + '</span>' + inline(l.title);
         return l.status === 'planned'
@@ -303,7 +333,7 @@ async function viewSection(id) {
       }).join('');
       const more = lessons.length > 4
         ? '<div class="hit more">+' + (lessons.length - 4) + '</div>' : '';
-      return courseCard(ix.course, ci) + (rows ? '<div class="hits">' + rows + more + '</div>' : '');
+      return courseCard(ix.course, envs.length + ci) + (rows ? '<div class="hits">' + rows + more + '</div>' : '');
     }).join('');
     fillRings();
   };
@@ -389,6 +419,34 @@ async function viewLesson(courseId, lessonId) {
   wireDeck(course, lesson, tr);
 }
 
+/* Environments are code, so the module for each one is named here rather than
+   in content/index.json: the manifest says what exists, this says what runs. */
+const ENVIRONMENTS = {
+  city: () => import('./city/view.js')
+};
+
+/* An environment. Loaded on demand: nobody who only reads lessons should pay
+   for a simulation they never opened. The view owns a running loop, and hands
+   back the function that stops it - the router calls that on the way out. */
+async function viewEnv(envId) {
+  const found = await envOf(envId);
+  if (!found) throw new Error('No environment "' + envId + '".');
+  const { env, sec } = found;
+
+  setChrome(null);
+  document.documentElement.lang = env.lang || 'en';
+  document.title = env.title + ' · ' + NAME;
+  app.style.setProperty('--accent', env.accent || '#f0a13a');
+
+  const load = ENVIRONMENTS[env.id];
+  if (!load) throw new Error('No code for environment "' + env.id + '".');
+  const mod = await load();
+  leaveView = mod.mount(app, {
+    back: '#/s/' + encodeURIComponent(sec.id),
+    themeButton: Theme.button(env.lang || 'en')
+  });
+}
+
 /* ------------------------------------------------- deck behaviour */
 
 function wireDeck(course, lesson, tr) {
@@ -453,7 +511,7 @@ function wireDeck(course, lesson, tr) {
    the direction of travel, which is all the transition needs to know. */
 function depthOf(parts) {
   if (parts[0] === 'c' && parts[2] === 'l' && parts[3]) return 3;
-  if (parts[0] === 'c') return 2;
+  if (parts[0] === 'c' || parts[0] === 'x') return 2;
   if (parts[0] === 's') return 1;
   return 0;
 }
@@ -478,8 +536,11 @@ async function render(parts) {
   window.scrollTo(0, 0);
   punfield?.dispose();
   punfield = null;
+  leaveView?.();
+  leaveView = null;
   try {
-    if (parts[0] === 'c' && parts[2] === 'l' && parts[3]) await viewLesson(parts[1], parts[3]);
+    if (parts[0] === 'x' && parts[1]) await viewEnv(parts[1]);
+    else if (parts[0] === 'c' && parts[2] === 'l' && parts[3]) await viewLesson(parts[1], parts[3]);
     else if (parts[0] === 'c' && parts[1]) await viewCourse(parts[1]);
     else if (parts[0] === 's' && parts[1]) await viewSection(parts[1]);
     else await viewHome();

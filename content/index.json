@@ -23,8 +23,18 @@
       "id": "misterio",
       "badge": "?",
       "title": "Mystery",
-      "subtitle": "Something else entirely. Not decided yet.",
-      "courses": []
+      "subtitle": "Something else entirely. Not a course.",
+      "courses": [],
+      "experiences": [
+        {
+          "id": "city",
+          "title": "The City",
+          "subtitle": "It builds itself. You can interfere.",
+          "tag": "Environment · always running",
+          "accent": "#5aa9e6",
+          "lang": "en"
+        }
+      ]
     }
   ]
 }
