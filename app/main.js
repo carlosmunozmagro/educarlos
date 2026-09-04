@@ -11,8 +11,9 @@ import * as P from './progress.js';
 import * as Theme from './theme.js';
 
 const app = document.getElementById('app');
-const cache = { index: null, sections: null, courses: new Map(), lessons: new Map(), svgs: new Map() };
+const cache = { index: null, sections: null, courses: new Map(), lessons: new Map(), svgs: new Map(), sims: new Map() };
 let punfield = null;   // only the library mounts one
+let teardown = null;   // only the console mounts one - it runs a frame loop
 
 /* ---------------------------------------------------------- data */
 
@@ -30,6 +31,14 @@ async function getCourse(id) {
   if (!cache.courses.has(id)) cache.courses.set(id, await getJSON('content/' + id + '/course.json'));
   return cache.courses.get(id);
 }
+/* A sim is not a course: no chapters, no lessons, no progress ring. It lives
+   under its section's directory and is reached by its own route. */
+async function getSim(sectionId, simId) {
+  const k = sectionId + '/' + simId;
+  if (!cache.sims.has(k)) cache.sims.set(k, await getJSON('content/' + sectionId + '/' + simId + '/sim.json'));
+  return cache.sims.get(k);
+}
+
 async function getLesson(courseId, lessonId) {
   const k = courseId + '/' + lessonId;
   if (!cache.lessons.has(k)) cache.lessons.set(k, await getJSON('content/' + courseId + '/lessons/' + lessonId + '.json'));
@@ -116,12 +125,13 @@ async function getSections() {
   const idx = await getIndex();
   const all = await Promise.all((idx.courses || []).map(getCourse));
   const byId = new Map(all.map(c => [c.id, c]));
-  cache.sections = (idx.sections || DEFAULT_SECTIONS).map(d => ({
+  cache.sections = await Promise.all((idx.sections || DEFAULT_SECTIONS).map(async d => ({
     ...d,
     courses: d.courses
       ? d.courses.map(id => byId.get(id)).filter(Boolean)
-      : all.filter(c => (c.lang || 'en') === d.lang)
-  }));
+      : all.filter(c => (c.lang || 'en') === d.lang),
+    sims: await Promise.all((d.sims || []).map(id => getSim(d.id, id)))
+  })));
   return cache.sections;
 }
 
@@ -167,7 +177,7 @@ async function viewHome() {
   document.documentElement.lang = 'en';
 
   const shelves = sections.map((s, i) => {
-    const n = s.courses.length;
+    const n = s.courses.length + s.sims.length;
     const tr = t(s.lang || 'en');
     const count = n ? n + ' ' + tr(n === 1 ? 'courseOne' : 'courses') : tr('planned');
     // Three course names, each in its own accent: a shelf you can read the
@@ -175,6 +185,9 @@ async function viewHome() {
     const rail = s.courses.slice(0, 3).map(c =>
         '<span class="chip" style="--accent:' + escapeHtml(c.accent || '#f0a13a') + '">'
         + '<span class="txt">' + inline(c.title) + '</span></span>').join('')
+      + s.sims.slice(0, 3).map(m =>
+        '<span class="chip" style="--accent:' + escapeHtml(m.accent || '#7f8fd6') + '">'
+        + '<span class="txt">' + escapeHtml(m.mark || '?') + '</span></span>').join('')
       + (n > 3 ? '<span class="chip more">+' + (n - 3) + '</span>' : '');
     return '<a class="section-card' + (n ? '' : ' soon') + '" href="#/s/' + encodeURIComponent(s.id) + '"'
       + ' data-anim style="--i:' + (i + 1) + '">'
@@ -257,7 +270,7 @@ async function viewSection(id) {
   app.innerHTML = '<div class="topbar"><div class="row">'
     + '<a class="back" href="#/" aria-label="' + tr('home') + '">' + BACK_ICON + '</a>'
     + '<div class="crumb">' + tr('home') + '</div>'
-    + '<div class="count">' + sec.courses.length + '</div>'
+    + '<div class="count">' + (sec.courses.length + sec.sims.length) + '</div>'
     + Theme.button(lang)
     + '</div></div>'
     + '<div class="page has-bar"><div class="wrap">'
@@ -266,6 +279,13 @@ async function viewSection(id) {
     + escapeHtml(sec.badge || '&middot;') + '</span>'
     + '<h1>' + inline(sec.title) + '</h1>'
     + (sec.subtitle ? '<div class="desc">' + inline(sec.subtitle) + '</div>' : '') + '</div>'
+    + (sec.sims.length
+        ? '<div class="card-list">' + sec.sims.map(m =>
+            '<a class="sim-card" href="#/x/' + encodeURIComponent(m.id) + '" data-rise'
+            + ' style="--accent:' + escapeHtml(m.accent || '#7f8fd6') + '">'
+            + '<span class="mk">' + escapeHtml(m.mark || '?') + '</span>'
+            + '<span class="dots"><i></i><i></i><i></i></span></a>').join('') + '</div>'
+        : '')
     + (index.length
         ? '<div class="searchbox"><input id="q" type="search" autocomplete="off" spellcheck="false"'
           + ' placeholder="' + escapeHtml(tr('search')) + '" aria-label="' + escapeHtml(tr('search')) + '">'
@@ -280,7 +300,7 @@ async function viewSection(id) {
   const draw = () => {
     const q = norm(input ? input.value.trim() : '');
     if (!index.length) {
-      results.innerHTML = '<div class="empty">' + escapeHtml(tr('planned')) + '</div>';
+      results.innerHTML = sec.sims.length ? '' : '<div class="empty">' + escapeHtml(tr('planned')) + '</div>';
       return;
     }
     const hits = index.map(ix => {
@@ -389,6 +409,18 @@ async function viewLesson(courseId, lessonId) {
   wireDeck(course, lesson, tr);
 }
 
+/* The console is the one view that keeps running after it is drawn, so it is
+   the one view that has to be torn down. Loaded on demand: a reader who never
+   opens the mystery never fetches the simulation. */
+async function viewSim(simId) {
+  const sections = await getSections();
+  const sec = sections.find(s => s.sims.some(m => m.id === simId));
+  if (!sec) throw new Error('No sim "' + simId + '".');
+  const cfg = sec.sims.find(m => m.id === simId);
+  const { mount } = await import('./sim/console.js');
+  teardown = await mount(app, cfg, simId);
+}
+
 /* ------------------------------------------------- deck behaviour */
 
 function wireDeck(course, lesson, tr) {
@@ -453,7 +485,7 @@ function wireDeck(course, lesson, tr) {
    the direction of travel, which is all the transition needs to know. */
 function depthOf(parts) {
   if (parts[0] === 'c' && parts[2] === 'l' && parts[3]) return 3;
-  if (parts[0] === 'c') return 2;
+  if (parts[0] === 'c' || parts[0] === 'x') return 2;
   if (parts[0] === 's') return 1;
   return 0;
 }
@@ -468,6 +500,8 @@ async function prefetch(parts) {
       await preloadSVGs(await getLesson(parts[1], parts[3]));
     } else if (parts[0] === 'c' && parts[1]) {
       await getCourse(parts[1]);
+    } else if (parts[0] === 'x' && parts[1]) {
+      await getSections();
     } else {
       await getSections();
     }
@@ -478,8 +512,11 @@ async function render(parts) {
   window.scrollTo(0, 0);
   punfield?.dispose();
   punfield = null;
+  teardown?.();
+  teardown = null;
   try {
-    if (parts[0] === 'c' && parts[2] === 'l' && parts[3]) await viewLesson(parts[1], parts[3]);
+    if (parts[0] === 'x' && parts[1]) await viewSim(parts[1]);
+    else if (parts[0] === 'c' && parts[2] === 'l' && parts[3]) await viewLesson(parts[1], parts[3]);
     else if (parts[0] === 'c' && parts[1]) await viewCourse(parts[1]);
     else if (parts[0] === 's' && parts[1]) await viewSection(parts[1]);
     else await viewHome();

@@ -1,9 +1,11 @@
 # The mystery section — design
 
-Status: **phase one built and passing.** The engine exists and is verified
-headlessly; nothing is drawn yet. This document is the specification and the
-record of what the world actually is — the one place the answer is written down
-in plain language, for us, not for readers.
+Status: **phases one and two built and passing.** The engine is verified
+headlessly and the console is on screen, read-only: a waterfall, sixteen bands,
+a live pulse, and where to point. No ping, no damp, no notebook yet. This
+document is the specification and the record of what the world actually is —
+the one place the answer is written down in plain language, for us, not for
+readers.
 
 Where the design changed under contact with a running world, it says so, because
 the reason is usually more useful than the rule.
@@ -143,10 +145,18 @@ Two clocks, and only one of them is state.
 whether the app is open or not. All state lives here. Close the tab, come back
 tomorrow, 180 ticks have happened without you and the app replays them on load.
 
-**Live pulse — wall-clock seconds.** `voiceLevel()` does not require an integer
-tick, so the on-screen waveform is the same function evaluated continuously. It
-is *presentation, not state*: the screen is never still, the state machine still
-steps every 8 minutes. No drift, no battery cost, determinism untouched.
+**Live pulse — wall-clock seconds.** `bandLevelAt()` does not require an integer
+tick, so the level is defined continuously. It is *presentation, not state*: the
+state machine still steps every 8 minutes. No drift, no battery cost,
+determinism untouched.
+
+The pulse draws that level as the **envelope of a carrier**, the way a receiver
+does. Plotted directly it would not move — the world's fastest event is a peak,
+which takes forty minutes to rise, so at sixty frames a second the trace shifts
+less than a pixel. The carrier is a display convention: fixed frequency,
+identical in every band, never varying with anything in the world, so there is
+nothing in it to deduce and it cannot be mistaken for information. Everything
+that means anything is in the envelope, and the envelope is the signal.
 
 **History is recomputed, never stored.** `trace()` replays any past span exactly,
 so the waterfall shows where the voices have been and a two-day absence renders
@@ -258,6 +268,52 @@ times less evidence than one on `verano`, which is the difference between a
 measurable world and a frustrating one. Either narrow the families or raise the
 attention budget — decide it against the real console in phase 2, not on paper.
 
+## What phase two taught us
+
+The console found three things the harness could not, which is what putting it
+on a screen was for.
+
+**A new run opened onto an empty screen.** Tick 0 means no history, and the
+waterfall is history. A first-time visitor got a blank rectangle and no reason
+to return — the exact failure the calibration note warned about, arriving from
+an angle nobody was watching. Fixed by backdating a new run's epoch by one
+waterfall depth, so the world has already been running for two days when the
+console is first opened. Nothing is faked: those ticks are computed by the same
+rules from the same seed. It really was running before the reader got here,
+which is also the premise of the fiction — the honest fix and the right one
+turned out to be the same fix.
+
+**The live pulse was a still picture.** See above: it needed a carrier.
+
+**Raw levels are not display levels.** Two corrections, and without either the
+waterfall lies. A group total pools four bands' worth of noise, so dividing it
+across four columns left real signal dimmer than a single watched band and the
+coarse half of the spectrum read as dead; the fix is to subtract what the other
+bands contribute, leaving the group's signal at band scale, spread across the
+columns it might be in. And the noise floor has to come off the bottom of the
+ramp, or an empty watched band looks much like one with a voice humming in it.
+
+A late bug in the same arithmetic: with three of a group's four bands watched,
+the group pools only *one* band, and subtracting three bands' worth of noise
+rendered it permanently black — the console asserting nothing lives in a band it
+had simply mismeasured. `observe()` now reports how many bands each total pools.
+
+That fix exposes a real tactic, and it stays: spend all three slots inside one
+group and the fourth band is yours exactly, by subtraction. It costs every other
+group to do it, and a reader who works it out has earned it.
+
+### What it looks like
+
+A watched band is a sharp column. An unwatched one is a four-wide smear at the
+resolution of its group. So the picture reads as *sharp where the reader was
+listening, blurred where they were guessing* — and because each row is drawn at
+the resolution the reader had **at that tick**, pointing at a new band makes the
+column go sharp from that moment down. The focus visibly arrives in the history.
+
+Past rows are never re-resolved by a later choice. Retroactively sharpening them
+would let a reader resolve the whole spectrum by pointing at each band in turn,
+which would make attention free and the search meaningless.
+
 ## Verification
 
 Built and passing. `python3 tools/sim_check.py` runs three tiers:
@@ -282,9 +338,15 @@ the live pulse renders.
 produce byte-identical state. A single process cannot check this: a stateful PRNG
 seeded once at import would pass every in-process test and fail here.
 
-Still to do in the browser, at 375×812: the pulse at 60fps without pinning the
-CPU, the digest scrubbing, a reload resuming identically, and a run exported on
-one device importing onto another and matching tick for tick.
+Driven in Chromium at 375×812 via Playwright, with no console errors: the
+console mounts, the waterfall renders 384 ticks of history, the pulse is
+confirmed *moving* by sampling the canvas twice a second apart — the check that
+caught the still picture — attention taps append to the log and survive a
+reload, the seed is stable across reloads, and light, dark, reduced-motion and
+landscape all hold.
+
+Still to do: the digest scrubbing, and a run exported on one device importing
+onto another and matching tick for tick.
 
 Then the browser pass, at 375×812: the pulse runs at 60fps without pinning the
 CPU, the digest scrubs, a reload mid-session resumes identically, and a run
@@ -301,8 +363,8 @@ that was never written.
    `instruments.js`, `tools/sim_harness.mjs` (`--truth`, `--reader`, `--summary`)
    and the three-tier check above. Four design faults found and fixed before a
    pixel was drawn.
-2. **The console, read-only.** Route, canvas waterfall, live pulse, attention
-   allocation. No actions, no notebook. Purpose: agree it feels alive.
+2. ~~**The console, read-only.**~~ **Done.** Route `#/x/:id`, canvas waterfall,
+   carrier pulse, attention allocation, `journal.js`. No actions, no notebook.
 3. **Actions and charges.** Ping, damp, the shy-voice coupling.
 4. **Notebook and layer 1.** Predictions, scoring, the conjunction solve.
 5. **Digest.** Return-after-absence review, export/import.

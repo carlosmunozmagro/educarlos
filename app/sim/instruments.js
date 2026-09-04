@@ -27,16 +27,26 @@ export function observe(world, state) {
   const levels = bandLevels(world, state);
   const size = world.cfg.coarseGroupSize;
   const fine = {};
-  const coarse = new Array(Math.ceil(world.cfg.bands / size)).fill(0);
+  const groups = Math.ceil(world.cfg.bands / size);
+  const coarse = new Array(groups).fill(0);
+  /* How many bands each total actually pools. Watched bands are reported
+     finely and drop out of their group, so a group is not always `size`
+     wide - and anything reasoning about the total needs to know that.
+
+     It also means a reader who spends all three slots inside one group learns
+     the fourth band exactly, by subtraction. That is a real tactic, honestly
+     available, and it costs them every other group to use. Left in. */
+  const coarseCount = new Array(groups).fill(0);
   for (let b = 0; b < world.cfg.bands; b++) {
     if (state.attention.includes(b)) fine[b] = levels[b];
-    else coarse[Math.floor(b / size)] += levels[b];
+    else { coarse[Math.floor(b / size)] += levels[b]; coarseCount[Math.floor(b / size)]++; }
   }
   return {
     tick: state.tick,
     attention: state.attention.slice(),
     fine,
     coarse,
+    coarseCount,
     coarseSize: size,
     charges: state.charges,
     regen: state.regen,

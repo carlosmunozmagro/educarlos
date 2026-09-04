@@ -32,12 +32,26 @@ def ok(name, cond, detail=""):
 
 # --------------------------------------------------------------- 1. static
 
-# The console is allowed a clock and the DOM - it draws. Nothing else is.
-BANNED = {
+# Two tiers, and the line between them is the architecture.
+#
+# The core is the simulation itself: pure functions of (seed, tick, log). It
+# may not read a clock, reach for storage, or touch the page, because every
+# guarantee downstream - fast-forwarding an absence, replaying a run on
+# another device - is a consequence of it having no way to observe anything
+# except its arguments.
+#
+# The edge draws the world and remembers the run. It is allowed a clock and
+# localStorage. It is still not allowed Math.random: a seed decides which
+# world a reader gets, and randomness that is not seeded cannot be replayed.
+CORE = {"rng.js", "world.js", "engine.js", "instruments.js"}
+CORE_BANNED = {
     "Math.random": "seeded hashes only, never a global PRNG",
     "Date.now": "the clock enters through tickAt(cfg, ms) and nowhere else",
     "performance.now": "same",
     "localStorage": "persistence belongs to journal.js, not the rules",
+}
+EDGE_BANNED = {
+    "Math.random": "even the edge must be replayable - seed with crypto, not Math.random",
 }
 DOM = re.compile(r"\b(document|window|requestAnimationFrame|canvas)\b")
 
@@ -49,12 +63,20 @@ def strip_comments(src):
 
 print("static: the rules stay pure")
 stripped = {}
+seen_core = set()
 for path in sorted(SIM.glob("*.js")):
     code = stripped[path.name] = strip_comments(path.read_text())
-    for needle, why in BANNED.items():
+    core = path.name in CORE
+    seen_core.add(path.name) if core else None
+    for needle, why in (CORE_BANNED if core else EDGE_BANNED).items():
         ok(f"{path.name} has no {needle}", needle not in code, why)
-    if path.name != "console.js":
+    if core:
         ok(f"{path.name} does not touch the DOM", not DOM.search(code))
+
+# A new core file that nobody added to CORE would be checked as though it were
+# the edge, which is exactly the slip this line exists to catch.
+ok("every core file was checked", seen_core == CORE,
+   "missing " + ", ".join(sorted(CORE - seen_core)))
 
 # The clock has exactly one door into the simulation, and this is it.
 ok("engine takes the time it is given",

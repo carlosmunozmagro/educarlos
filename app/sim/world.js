@@ -118,25 +118,40 @@ export function nextConjunction(world, tick) {
 
 /* --------------------------------------------------------------- levels */
 
+/* One band, at any moment - including between ticks.
+
+   This is what the live pulse draws. `at` is a tick position and may be
+   fractional: the state machine steps every eight minutes, but the signal it
+   describes is continuous, so a reader watching for two minutes sees a peak
+   visibly rising rather than a frozen frame. Same function, same world, finer
+   sampling - the motion on screen is the signal, not an animation of it.
+
+   Noise is left out deliberately. It is defined per whole tick, and stepping
+   it at sixty frames a second would either strobe or have to be invented
+   between ticks, which would be the one bit of the picture that is not true. */
+export function bandLevelAt(world, state, band, at) {
+  if (state.damp[band] > state.tick) return 0;   // a damped band returns nothing
+  let v = 0;
+  for (const vo of world.voices) {
+    if (state.bands[vo.id] === band) v += voiceLevel(world, vo, at);
+  }
+  for (const tr of state.transients) {
+    if (tr.band !== band) continue;
+    const age = at - tr.start;
+    if (age >= 0 && age < tr.ring) v += tr.amp * Math.exp(-age / (tr.ring / 3));
+  }
+  return v;
+}
+
 /* Derived, never stored. Keeping the per-band signal out of state is what
    makes a replay cheap: state carries only what cannot be recomputed. */
 export function bandLevels(world, state) {
   const n = world.cfg.bands;
   const out = new Array(n).fill(0);
-  const t = state.tick;
-
-  for (const v of world.voices) {
-    const b = state.bands[v.id];
-    if (state.damp[b] > t) continue;          // a damped band returns nothing
-    out[b] += voiceLevel(world, v, t);
+  for (let b = 0; b < n; b++) {
+    out[b] = bandLevelAt(world, state, b, state.tick)
+      + unit(world.seed, state.tick, 'noise' + b) * world.cfg.noiseFloor;
   }
-
-  for (const tr of state.transients) {
-    const age = t - tr.start;
-    if (age >= 0 && age < tr.ring) out[tr.band] += tr.amp * Math.exp(-age / (tr.ring / 3));
-  }
-
-  for (let b = 0; b < n; b++) out[b] += unit(world.seed, t, 'noise' + b) * world.cfg.noiseFloor;
   return out;
 }
 

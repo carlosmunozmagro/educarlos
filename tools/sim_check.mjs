@@ -159,6 +159,16 @@ console.log('\nwhat the reader is allowed to see');
   ok('coarse groups cover the rest of the spectrum',
     o.coarse.length === cfg.bands / cfg.coarseGroupSize);
 
+  /* Every band is reported exactly once - finely or inside one total. A group
+     that forgets how many bands it pooled renders them as empty, which reads
+     as "nothing lives here" about a band that was never actually measured. */
+  ok('every band is accounted for exactly once',
+    o.coarseCount.reduce((a, c) => a + c, 0) + Object.keys(o.fine).length === cfg.bands);
+
+  const tight = replay(w, [{ tick: 10, kind: 'listen', bands: [0, 1, 2] }], 900);
+  const to = observe(w, tight);
+  ok('a group with one band left pools exactly one', to.coarseCount[0] === 1);
+
   /* The instrument must not leak the answer before it is earned. */
   ok('residual is sealed below layer two', residual(w, s, 1) === null);
   ok('residual opens at layer two', Array.isArray(residual(w, s, 2)));

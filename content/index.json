@@ -23,8 +23,10 @@
       "id": "misterio",
       "badge": "?",
       "title": "Mystery",
-      "subtitle": "Something else entirely. Not decided yet.",
-      "courses": []
+      "subtitle": "Something else entirely.",
+      "sims": [
+        "senal"
+      ]
     }
   ]
 }
