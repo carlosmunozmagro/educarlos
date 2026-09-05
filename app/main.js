@@ -3,14 +3,14 @@
      #/c/:courseId             course map
      #/c/:courseId/l/:lessonId lesson player                       */
 
-import { renderScreen } from './render.js';
-import { inline, escapeHtml } from './mdlite.js';
-import { t } from './i18n.js';
-import { NAME, MARK, lettered, punField } from './brand.js';
-import * as P from './progress.js';
-import * as Theme from './theme.js';
-import * as Pat from './patterns.js';
-import { BACK_ICON, GO_ICON, TICK, ring, fillRings, vtName } from './ui.js';
+import { renderScreen } from './render.js?v=202609051941';
+import { inline, escapeHtml } from './mdlite.js?v=202609051941';
+import { t } from './i18n.js?v=202609051941';
+import { NAME, MARK, lettered, punField } from './brand.js?v=202609051941';
+import * as P from './progress.js?v=202609051941';
+import * as Theme from './theme.js?v=202609051941';
+import * as Pat from './patterns.js?v=202609051941';
+import { BACK_ICON, GO_ICON, TICK, ring, fillRings, vtName } from './ui.js?v=202609051941';
 
 const app = document.getElementById('app');
 const cache = { index: null, sections: null, courses: new Map(), lessons: new Map(), svgs: new Map() };

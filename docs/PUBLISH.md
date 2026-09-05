@@ -142,6 +142,24 @@ file, commits with a message describing what moved
 (`publish: historia-es (3), visuals (1)`), pushes, and prints the live URL.
 `python3 tools/publish.py --dry` validates and lists what *would* go, then stops.
 
+### When the app's code changes
+
+Content is fetched with `no-cache`, so a new lesson or pattern shows up on the
+next launch. **Code does not.** The browser caches `app/*.js` and `styles.css`
+by URL, and nothing in a static site tells it they changed — a phone can end up
+running last week's router against this week's `content/index.json`, which looks
+like a bug in the content rather than a stale file.
+
+So every module URL carries a build id. After editing anything in `app/`, stamp
+a new one before you push:
+
+```bash
+python3 tools/bump.py
+```
+
+It rewrites the `?v=` on the entry script, the stylesheet, and every relative
+import, and prints the id. Content-only changes do not need it.
+
 ---
 
 ## Why not Google Drive in the middle

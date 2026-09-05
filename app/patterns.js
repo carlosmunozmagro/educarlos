@@ -10,11 +10,11 @@
      #/p/:patternId              the object - materials, stitches, pieces
      #/p/:patternId/t/:pieceId   the workshop - one round at a time          */
 
-import { inline, escapeHtml } from './mdlite.js';
-import { t } from './i18n.js';
-import * as P from './progress.js';
-import * as Theme from './theme.js';
-import { BACK_ICON, TICK, ring, fillRings, vtName } from './ui.js';
+import { inline, escapeHtml } from './mdlite.js?v=202609051941';
+import { t } from './i18n.js?v=202609051941';
+import * as P from './progress.js?v=202609051941';
+import * as Theme from './theme.js?v=202609051941';
+import { BACK_ICON, TICK, ring, fillRings, vtName } from './ui.js?v=202609051941';
 
 const cache = new Map();
 
