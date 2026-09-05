@@ -1,0 +1,271 @@
+{
+  "id": "ledi-la-perrita",
+  "kind": "pattern",
+  "section": "punto",
+  "lang": "es",
+  "accent": "#c2607f",
+  "title": "Lady, la perrita",
+  "subtitle": "Perrita de amigurumi con vestido, polainas y diadema de flores. Doce piezas.",
+  "description": "Traducción del patrón ruso «Леди и Мальчик Собака» de triruki.ru, del MK de Elena Gadzhíeva. Se teje de abajo arriba: las botas llevan un talón tejido en filas de ida y vuelta, las piernas se unen y el cuerpo sigue de la segunda sin cortar el hilo. La cabeza empieza en una cadena, no en un anillo.",
+  "level": "Media",
+  "materials": [
+    { "label": "Aviso", "value": "el patrón original no lista materiales. Esto es lo que pide la labor, no lo que dice la autora." },
+    { "label": "Hilo", "value": "algodón en cuatro colores: cuerpo, botas, vestido y amarillo para los remates" },
+    { "label": "Ganchillo", "value": "el que te deje el tejido cerrado para ese hilo" },
+    { "label": "Relleno", "value": "fibra hueca siliconada" },
+    { "label": "Extras", "value": "ojos de seguridad, aguja lanera, marcador de vuelta, hilo negro para bordar cejas y boca" }
+  ],
+  "abbr": [
+    { "k": "pb", "name": "punto bajo", "note": "сбн" },
+    { "k": "aum", "name": "aumento", "note": "пр · 2 pb en el mismo punto" },
+    { "k": "dism", "name": "disminución", "note": "уб · 2 pb juntos" },
+    { "k": "cad", "name": "cadeneta", "note": "ВП" },
+    { "k": "pr", "name": "punto raso", "note": "сс" },
+    { "k": "pa", "name": "punto alto", "note": "ссн" },
+    { "k": "pma", "name": "punto alto medio", "note": "пссн" },
+    { "k": "AM", "name": "anillo mágico" },
+    { "k": "HT", "name": "por la hebra de atrás", "note": "ЗЗС" },
+    { "k": "HD", "name": "por la hebra de delante", "note": "ЗПС" },
+    { "k": "(…)×n", "name": "repetir n veces lo que va entre paréntesis" },
+    { "k": "p.", "name": "puntos que debe tener la vuelta al terminarla" }
+  ],
+  "notes": [
+    "**El orden importa.** Botas y piernas primero: el cuerpo sale de la segunda pierna sin cortar el hilo, y las polainas se ponen antes de unirlas.",
+    "Salvo donde se dice lo contrario, se teje **en espiral**. Pon el marcador en el primer punto de cada vuelta.",
+    "Los totales de puntos entre paréntesis los he calculado yo vuelta a vuelta; el original no los da. Si uno no te cuadra, fíate de la instrucción y avísame.",
+    "El original numera el talón del 10 al 15 y luego **vuelve a empezar en el 10** con el botín. Aquí el talón va marcado **T1-T6** para que no se crucen las dos numeraciones."
+  ],
+  "pieces": [
+    {
+      "id": "botas-y-piernas",
+      "title": "Botas y piernas",
+      "qty": 2,
+      "color": "bota + pierna",
+      "rounds": [
+        { "n": 1, "text": "6 pb en AM", "count": 6 },
+        { "n": 2, "text": "6 aum", "count": 12 },
+        { "n": 3, "text": "(1 pb, aum) ×6", "count": 18 },
+        { "n": "4-8", "reps": 5, "text": "18 pb", "count": 18 },
+        { "n": 9, "text": "(1 pb, dism) ×6", "count": 12 },
+        { "n": 10, "label": "T1", "text": "3 pb, pr, 1 cad, girar", "note": "**Empieza el talón** (T1 a T6): seis filas de ida y vuelta, no en redondo. Después el botín sigue por su vuelta 10." },
+        { "n": 11, "label": "T2", "text": "4 pb, pr, 1 cad, girar" },
+        { "n": 12, "label": "T3", "text": "5 pb, pr, 1 cad, girar" },
+        { "n": 13, "label": "T4", "text": "6 pb, pr, 1 cad, girar" },
+        { "n": 14, "label": "T5", "text": "7 pb, pr, 1 cad, girar" },
+        { "n": 15, "label": "T6", "text": "8 pb, pr, 1 cad, girar", "note": "Talón terminado. Vuelve al botín, en redondo, por la vuelta 10." },
+        { "n": "10-12", "reps": 3, "text": "12 pb", "count": 12, "note": "Otra vez en redondo. Al acabar, **cambia al color de la pierna**." },
+        { "n": 13, "text": "HT (4 pb, dism) ×2", "count": 10, "note": "Solo por la hebra de atrás: así queda marcado el borde de la bota." },
+        { "n": "14-34", "reps": 21, "text": "10 pb", "count": 10, "note": "Veintiuna vueltas rectas. Rellena la pierna según subes, poco a poco." },
+        { "n": 35, "text": "Rodilla: doblar por la mitad y tejer juntos 5 pb", "note": "Aplasta la pierna y une los dos lados. Es la rodilla: lo que dobla la pierna después." },
+        { "n": 36, "text": "5 pb por las hebras de delante y 5 pb por las de atrás", "count": 10, "note": "Así se recuperan los 10 pb en redondo después de haber cerrado la rodilla." },
+        { "n": "37-45", "reps": 9, "text": "10 pb", "count": 10, "note": "**En la primera pierna, corta aquí.** En la segunda no cortes el hilo: pasa a las polainas." }
+      ],
+      "finish": [
+        "Primera pierna: cortar y rematar al terminar la vuelta 45.",
+        "Segunda pierna: dejar el hilo vivo, con él se teje el cuerpo."
+      ]
+    },
+    {
+      "id": "polainas",
+      "title": "Polainas",
+      "qty": 2,
+      "color": "a tu gusto",
+      "rounds": [
+        { "n": 1, "text": "15 cad, cerrar en anillo", "count": 15 },
+        { "n": "2-6", "reps": 5, "text": "3 cad de subida, 15 pma, pr", "count": 15, "note": "Cinco filas cerradas con punto raso, no en espiral." },
+        { "n": 7, "text": "15 pb", "count": 15 }
+      ],
+      "finish": ["Pónselas a las piernas antes de unirlas en el cuerpo."]
+    },
+    {
+      "id": "cuerpo",
+      "title": "Cuerpo",
+      "qty": 1,
+      "color": "cuerpo",
+      "rounds": [
+        { "n": 46, "text": "5 pb por la 1.ª pierna, 4 cad, 5 pb por la 2.ª pierna", "count": 14, "note": "**Las piernas van dobladas por la mitad.** Sigues con el hilo vivo de la segunda." },
+        { "n": 47, "text": "Por las medias hebras: (5 pb pierna, 4 pb sobre las cad, 5 pb pierna) ×2", "count": 28, "note": "Ahora sí, en redondo alrededor de las dos piernas y de las cadenetas de la entrepierna." },
+        { "n": 48, "text": "(6 pb, aum) ×4", "count": 32 },
+        { "n": 49, "text": "(7 pb, aum) ×4", "count": 36 },
+        { "n": "50-59", "reps": 10, "text": "36 pb", "count": 36 },
+        { "n": 60, "text": "(10 pb, dism) ×3", "count": 33 },
+        { "n": 61, "text": "(9 pb, dism) ×3", "count": 30 },
+        { "n": 62, "text": "30 pb", "count": 30 },
+        { "n": 63, "text": "(8 pb, dism) ×3", "count": 27 },
+        { "n": 64, "text": "27 pb", "count": 27 },
+        { "n": 65, "text": "(7 pb, dism) ×3", "count": 24 },
+        { "n": 66, "text": "24 pb", "count": 24 },
+        { "n": 67, "text": "(6 pb, dism) ×3", "count": 21 },
+        { "n": 68, "text": "(5 pb, dism) ×3", "count": 18, "note": "Los brazos se cosen entre esta vuelta y la 69." },
+        { "n": 69, "text": "(1 pb, dism) ×6", "count": 12 },
+        { "n": "70-74", "reps": 5, "text": "12 pb", "count": 12, "note": "El cuello. Rellena el cuerpo firme antes de estrecharlo más." },
+        { "n": "75-77", "reps": 3, "text": "9 pb, 3 pa", "count": 12, "note": "Los 3 pa levantan la nuca: la cabeza se apoya inclinada." }
+      ],
+      "finish": ["Rellenar firme y dejar hebra larga para coser la cabeza."]
+    },
+    {
+      "id": "brazos",
+      "title": "Brazos",
+      "qty": 2,
+      "color": "cuerpo",
+      "rounds": [
+        { "n": 1, "text": "8 pb en AM", "count": 8 },
+        { "n": "2-20", "reps": 19, "text": "8 pb", "count": 8, "note": "Diecinueve vueltas rectas. Relleno muy poco o ninguno: el brazo cae mejor blando." },
+        { "n": 21, "text": "(2 pb, dism) ×2", "count": 6 }
+      ],
+      "finish": [
+        "Doblar por la mitad y tejer juntos 3 pb.",
+        "Coser (o tejer en el momento) en las vueltas 68-69 del cuerpo."
+      ]
+    },
+    {
+      "id": "cabeza",
+      "title": "Cabeza",
+      "qty": 1,
+      "color": "cuerpo",
+      "rounds": [
+        { "n": 1, "text": "8 pb, 3 pb en 1 punto, 7 pb, aum", "count": 20, "note": "**Empieza con 10 cad** y teje desde la 2.ª cadeneta desde el ganchillo, rodeando la cadena por los dos lados." },
+        { "n": 2, "text": "aum, 7 pb, 3 aum, 7 pb, 2 aum", "count": 26 },
+        { "n": 3, "text": "1 pb, aum, 7 pb, (aum, 1 pb) ×3, 7 pb, (1 pb, aum) ×2", "count": 32 },
+        { "n": "4-6", "reps": 3, "text": "32 pb", "count": 32 },
+        { "n": 7, "text": "(14 pb, dism) ×2", "count": 30 },
+        { "n": "8-12", "reps": 5, "text": "30 pb", "count": 30 },
+        { "n": 13, "text": "(13 pb, dism) ×2", "count": 28 },
+        { "n": "14-16", "reps": 3, "text": "28 pb", "count": 28 },
+        { "n": 17, "text": "(12 pb, dism) ×2", "count": 26 },
+        { "n": "18-19", "reps": 2, "text": "26 pb", "count": 26, "note": "**Aquí van los ojos**, entre estas dos vueltas y con 1 punto entre ellos. Colócalos ahora, mientras la cabeza está abierta." },
+        { "n": 20, "text": "(11 pb, dism) ×2", "count": 24 },
+        { "n": "21-27", "reps": 7, "text": "24 pb", "count": 24, "note": "Empieza a rellenar la cabeza, firme y por igual: es la pieza que más se mira." },
+        { "n": 28, "text": "(4 pb, dism) ×4", "count": 20 },
+        { "n": 29, "text": "(3 pb, dism) ×4", "count": 16 },
+        { "n": 30, "text": "8 dism", "count": 8, "note": "Último relleno antes de cerrar." }
+      ],
+      "finish": [
+        "Cerrar pasando la aguja por las hebras delanteras de los 8 puntos y tirar.",
+        "Las orejas se cosen en las vueltas 25-26; el hocico, entre la 9 y la 15.",
+        "Bordar cejas y boca al final, cuando el hocico ya esté puesto."
+      ]
+    },
+    {
+      "id": "orejas",
+      "title": "Orejas",
+      "qty": 2,
+      "color": "cuerpo",
+      "rounds": [
+        { "n": 1, "text": "6 pb en AM", "count": 6 },
+        { "n": 2, "text": "6 aum", "count": 12 },
+        { "n": "3-12", "reps": 10, "text": "12 pb", "count": 12, "note": "Sin relleno: la oreja tiene que caer." },
+        { "n": 13, "text": "(4 pb, dism) ×2", "count": 10 },
+        { "n": "14-18", "reps": 5, "text": "10 pb", "count": 10 },
+        { "n": 19, "text": "(3 pb, dism) ×2", "count": 8 },
+        { "n": "20-23", "reps": 4, "text": "8 pb", "count": 8 }
+      ],
+      "finish": [
+        "Doblar por la mitad y tejer juntos 4 pb.",
+        "Coser en las vueltas 25-26 de la cabeza."
+      ]
+    },
+    {
+      "id": "hocico",
+      "title": "Hocico",
+      "qty": 1,
+      "color": "hocico",
+      "rounds": [
+        { "n": 1, "text": "6 pb en AM", "count": 6 },
+        { "n": 2, "text": "(aum, 1 pb) ×3", "count": 9 },
+        { "n": 3, "text": "(2 pb, aum) ×3", "count": 12 },
+        { "n": 4, "text": "(aum, 3 pb) ×3", "count": 15 },
+        { "n": 5, "text": "(4 pb, aum) ×3", "count": 18 },
+        { "n": "6-7", "reps": 2, "text": "18 pb", "count": 18 }
+      ],
+      "finish": [
+        "Cerrar cosiendo, con muy poco relleno.",
+        "Coser a la cabeza entre las vueltas 9 y 15.",
+        "Bordar después las cejas y la boca."
+      ]
+    },
+    {
+      "id": "vestido",
+      "title": "Vestido",
+      "qty": 1,
+      "color": "vestido + amarillo",
+      "rounds": [
+        { "n": 1, "text": "19 cad", "count": 19, "note": "Se teje desde la 2.ª cadeneta desde el ganchillo." },
+        { "n": 2, "text": "18 pb", "count": 18 },
+        { "n": 3, "text": "3 cad, girar, 18 aum de pa", "count": 36 },
+        { "n": 4, "text": "1 cad, girar, (1 pb, aum) ×2, 4 cad, saltar 10, (1 pb, aum) ×4, 4 cad, saltar 10, (1 pb, aum) ×2", "count": 32, "note": "Los dos grupos de 4 cad son las **sisas**: los 10 puntos que saltas son cada manga." },
+        { "n": "5-7", "reps": 3, "text": "32 pb", "count": 32, "note": "A partir de la 8 se sigue **en espiral**." },
+        { "n": 8, "text": "HT (3 pa, aum de pa) ×8", "count": 40 },
+        { "n": 9, "text": "40 pa", "count": 40 },
+        { "n": 10, "text": "(4 pa, aum de pa) ×8", "count": 48 },
+        { "n": "11-14", "reps": 4, "text": "48 pa", "count": 48 },
+        { "n": 15, "text": "HD: rematar el bajo con punto cangrejo" }
+      ],
+      "finish": [
+        "Con hilo amarillo, sobre las hebras de atrás libres de la vuelta 15: (4 cad, pr) hasta el final.",
+        "Unir el hilo amarillo en la vuelta 8 y hacer (3 cad, pr, 6 cad, pr) hasta el final."
+      ]
+    },
+    {
+      "id": "cuello",
+      "title": "Cuello",
+      "qty": 1,
+      "color": "amarillo",
+      "rounds": [
+        { "n": 1, "text": "Unir el hilo amarillo en la fila 1 del vestido, por detrás", "note": "Es un remate, no una vuelta: va todo seguido sobre el escote." },
+        { "n": 2, "text": "(8 cad, pr en el mismo punto), 5 pr, pb, pa, 2 cad, 2 pr, 2 cad, pa, pb, 7 pr" }
+      ],
+      "finish": ["Rematar y esconder las hebras por dentro del escote."]
+    },
+    {
+      "id": "corona-flores",
+      "title": "Corona de flores",
+      "qty": 1,
+      "color": "flores",
+      "rounds": [
+        { "n": 1, "text": "15 cad; desde la 3.ª desde el ganchillo: 2 pa en 1 punto, 3 cad", "note": "Toda la corona es una sola fila larga: no la partas en vueltas." },
+        { "n": 2, "text": "(saltar 1 punto, 3 pa en 1 punto), pr" },
+        { "n": 3, "text": "(3 pa en 1 punto, pr en el siguiente) ×5" },
+        { "n": 4, "text": "2 pa, 2 cad, pr en el mismo punto" }
+      ],
+      "finish": ["Dejar hebra para coser a la diadema."]
+    },
+    {
+      "id": "hoja",
+      "title": "Hoja",
+      "qty": 1,
+      "color": "verde",
+      "rounds": [
+        { "n": 1, "text": "6 cad; desde la 2.ª: pr, pb, 2 pa, pb", "note": "Las dos mitades salen de la misma hebra, una detrás de otra." },
+        { "n": 2, "text": "6 cad; desde la 2.ª: pr, pb, 2 pa, pb, pr" }
+      ],
+      "finish": [
+        "Dejar hebra para coser.",
+        "Coser por detrás de la flor."
+      ]
+    },
+    {
+      "id": "diadema",
+      "title": "Diadema",
+      "qty": 1,
+      "color": "a tu gusto",
+      "rounds": [
+        { "n": 1, "text": "25 cad, cerrar en anillo", "count": 25 },
+        { "n": 2, "text": "25 pb", "count": 25 }
+      ],
+      "finish": [
+        "Coser las flores con sus hojas a la diadema.",
+        "Fijar la diadema a la cabeza."
+      ]
+    }
+  ],
+  "assembly": [
+    { "title": "Orden de montaje", "text": "Piernas al cuerpo (ya van tejidas), brazos en las vueltas 68-69, cabeza sobre el cuello, orejas en las vueltas 25-26 y hocico entre la 9 y la 15." },
+    { "title": "La cara, al final", "text": "Cejas y boca se bordan con el hocico ya cosido: es la única forma de ver dónde caen de verdad." },
+    { "title": "Y ya", "text": "Coser todo lo que se cose. «Listo, ¡eres genial!», dice el patrón original." }
+  ],
+  "source": {
+    "title": "triruki.ru · «Леди и Мальчик Собака», traducción del MK de Elena Gadzhíeva",
+    "url": "https://triruki.ru/ledi-i-malchik-sobaka/"
+  }
+}

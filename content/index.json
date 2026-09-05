@@ -4,6 +4,10 @@
     "sociedades-es",
     "historia-es"
   ],
+  "patterns": [
+    "ledi-la-perrita",
+    "bola-de-practica"
+  ],
   "sections": [
     {
       "id": "en",
@@ -20,11 +24,15 @@
       "lang": "es"
     },
     {
-      "id": "misterio",
-      "badge": "?",
-      "title": "Mystery",
-      "subtitle": "Something else entirely. Not decided yet.",
-      "courses": []
+      "id": "punto",
+      "badge": "🧶",
+      "title": "Punto",
+      "subtitle": "Patrones de ganchillo, una vuelta cada vez, con las manos ocupadas.",
+      "lang": "es",
+      "patterns": [
+        "ledi-la-perrita",
+        "bola-de-practica"
+      ]
     }
   ]
 }

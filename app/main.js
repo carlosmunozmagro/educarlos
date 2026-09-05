@@ -9,10 +9,13 @@ import { t } from './i18n.js';
 import { NAME, MARK, lettered, punField } from './brand.js';
 import * as P from './progress.js';
 import * as Theme from './theme.js';
+import * as Pat from './patterns.js';
+import { BACK_ICON, GO_ICON, TICK, ring, fillRings, vtName } from './ui.js';
 
 const app = document.getElementById('app');
 const cache = { index: null, sections: null, courses: new Map(), lessons: new Map(), svgs: new Map() };
 let punfield = null;   // only the library mounts one
+let disposeView = null;  // a view that holds something (a wake lock) hands back its teardown
 
 /* ---------------------------------------------------------- data */
 
@@ -59,40 +62,6 @@ async function preloadSVGs(lesson) {
 
 /* ---------------------------------------------------------- chrome */
 
-/* Drawn empty, with its target parked in a data attribute: fillRings() lets
-   the browser paint the empty state once, then hands over the real value, and
-   the CSS transition sweeps the arc round. Progress you watch arrive reads as
-   yours in a way a static arc never does. */
-function ring(pct, label) {
-  const r = 19, c = 2 * Math.PI * r;
-  return '<svg class="ring" viewBox="0 0 46 46" aria-hidden="true">'
-    + '<circle class="track" cx="23" cy="23" r="' + r + '"/>'
-    + '<circle class="fill" cx="23" cy="23" r="' + r + '" stroke-dasharray="' + c
-    + '" stroke-dashoffset="' + c + '" data-to="' + (c * (1 - pct))
-    + '" transform="rotate(-90 23 23)"/>'
-    + '<text x="23" y="23" text-anchor="middle" dominant-baseline="central">' + escapeHtml(label) + '</text></svg>';
-}
-
-function fillRings() {
-  const arcs = [...app.querySelectorAll('.ring .fill[data-to]')];
-  if (!arcs.length) return;
-  requestAnimationFrame(() => {
-    for (const a of arcs) { a.style.strokeDashoffset = a.dataset.to; delete a.dataset.to; }
-  });
-}
-
-const BACK_ICON = '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M11 3L5 9l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-const GO_ICON = '<svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M7 3l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-const TICK = '<svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M6 13.5l5 5L20 8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-
-/* View-transition names must be CSS idents and must be unique on the page.
-   Deriving them from the id keeps the same element paired across two views,
-   which is what makes the badge fly and the title settle instead of both
-   just cross-fading. */
-function vtName(prefix, id) {
-  return prefix + '-' + String(id).toLowerCase().replace(/[^a-z0-9]+/g, '-');
-}
-
 function setChrome(course) {
   Theme.apply(Theme.stored());
   document.documentElement.lang = course?.lang || 'en';
@@ -116,11 +85,14 @@ async function getSections() {
   const idx = await getIndex();
   const all = await Promise.all((idx.courses || []).map(getCourse));
   const byId = new Map(all.map(c => [c.id, c]));
+  const pats = new Map((await Promise.all((idx.patterns || []).map(Pat.getPattern)))
+    .map(p => [p.id, p]));
   cache.sections = (idx.sections || DEFAULT_SECTIONS).map(d => ({
     ...d,
     courses: d.courses
       ? d.courses.map(id => byId.get(id)).filter(Boolean)
-      : all.filter(c => (c.lang || 'en') === d.lang)
+      : (d.patterns ? [] : all.filter(c => (c.lang || 'en') === d.lang)),
+    patterns: (d.patterns || []).map(id => pats.get(id)).filter(Boolean)
   }));
   return cache.sections;
 }
@@ -167,12 +139,18 @@ async function viewHome() {
   document.documentElement.lang = 'en';
 
   const shelves = sections.map((s, i) => {
-    const n = s.courses.length;
+    // A shelf holds courses or patterns; both are things with a title and an
+    // accent, and the card only ever shows those.
+    const items = [...s.courses, ...(s.patterns || [])];
+    const n = items.length;
     const tr = t(s.lang || 'en');
-    const count = n ? n + ' ' + tr(n === 1 ? 'courseOne' : 'courses') : tr('planned');
-    // Three course names, each in its own accent: a shelf you can read the
-    // spines of before you pull it open.
-    const rail = s.courses.slice(0, 3).map(c =>
+    const noun = (s.patterns || []).length
+      ? (n === 1 ? 'patternOne' : 'patterns')
+      : (n === 1 ? 'courseOne' : 'courses');
+    const count = n ? n + ' ' + tr(noun) : tr('planned');
+    // Three names, each in its own accent: a shelf you can read the spines of
+    // before you pull it open.
+    const rail = items.slice(0, 3).map(c =>
         '<span class="chip" style="--accent:' + escapeHtml(c.accent || '#f0a13a') + '">'
         + '<span class="txt">' + inline(c.title) + '</span></span>').join('')
       + (n > 3 ? '<span class="chip more">+' + (n - 3) + '</span>' : '');
@@ -253,11 +231,14 @@ async function viewSection(id) {
   document.title = sec.title + ' · ' + NAME;
 
   const index = sec.courses.map(searchIndex);
+  const pindex = (sec.patterns || []).map(p => ({ p, hay: norm(Pat.patternHay(p)) }));
+  const count = sec.courses.length + pindex.length;
+  const searchLabel = tr(pindex.length && !index.length ? 'searchPatterns' : 'search');
 
   app.innerHTML = '<div class="topbar"><div class="row">'
     + '<a class="back" href="#/" aria-label="' + tr('home') + '">' + BACK_ICON + '</a>'
     + '<div class="crumb">' + tr('home') + '</div>'
-    + '<div class="count">' + sec.courses.length + '</div>'
+    + '<div class="count">' + count + '</div>'
     + Theme.button(lang)
     + '</div></div>'
     + '<div class="page has-bar"><div class="wrap">'
@@ -266,9 +247,9 @@ async function viewSection(id) {
     + escapeHtml(sec.badge || '&middot;') + '</span>'
     + '<h1>' + inline(sec.title) + '</h1>'
     + (sec.subtitle ? '<div class="desc">' + inline(sec.subtitle) + '</div>' : '') + '</div>'
-    + (index.length
+    + (count
         ? '<div class="searchbox"><input id="q" type="search" autocomplete="off" spellcheck="false"'
-          + ' placeholder="' + escapeHtml(tr('search')) + '" aria-label="' + escapeHtml(tr('search')) + '">'
+          + ' placeholder="' + escapeHtml(searchLabel) + '" aria-label="' + escapeHtml(searchLabel) + '">'
           + '</div>'
         : '')
     + '<div class="card-list" id="results"></div>'
@@ -279,21 +260,23 @@ async function viewSection(id) {
 
   const draw = () => {
     const q = norm(input ? input.value.trim() : '');
-    if (!index.length) {
+    if (!count) {
       results.innerHTML = '<div class="empty">' + escapeHtml(tr('planned')) + '</div>';
       return;
     }
+    const pats = pindex.filter(x => !q || x.hay.includes(q));
     const hits = index.map(ix => {
       if (!q) return { ix, lessons: [] };
       const lessons = ix.lessons.filter(l => l.hay.includes(q));
       return (ix.hay.includes(q) || lessons.length) ? { ix, lessons } : null;
     }).filter(Boolean);
 
-    if (!hits.length) {
+    if (!hits.length && !pats.length) {
       results.innerHTML = '<div class="empty">' + escapeHtml(tr('noResults')) + '</div>';
       return;
     }
-    results.innerHTML = hits.map(({ ix, lessons }, ci) => {
+    results.innerHTML = pats.map((x, pi) => Pat.patternCard(x.p, pi)).join('')
+      + hits.map(({ ix, lessons }, ci) => {
       const rows = lessons.slice(0, 4).map(l => {
         const label = '<span class="hit-ch">' + escapeHtml(l.chapter) + '</span>' + inline(l.title);
         return l.status === 'planned'
@@ -303,9 +286,9 @@ async function viewSection(id) {
       }).join('');
       const more = lessons.length > 4
         ? '<div class="hit more">+' + (lessons.length - 4) + '</div>' : '';
-      return courseCard(ix.course, ci) + (rows ? '<div class="hits">' + rows + more + '</div>' : '');
-    }).join('');
-    fillRings();
+      return courseCard(ix.course, pats.length + ci) + (rows ? '<div class="hits">' + rows + more + '</div>' : '');
+      }).join('');
+    fillRings(app);
   };
 
   draw();
@@ -453,7 +436,8 @@ function wireDeck(course, lesson, tr) {
    the direction of travel, which is all the transition needs to know. */
 function depthOf(parts) {
   if (parts[0] === 'c' && parts[2] === 'l' && parts[3]) return 3;
-  if (parts[0] === 'c') return 2;
+  if (parts[0] === 'p' && parts[2] === 't' && parts[3]) return 3;
+  if (parts[0] === 'c' || parts[0] === 'p') return 2;
   if (parts[0] === 's') return 1;
   return 0;
 }
@@ -468,6 +452,8 @@ async function prefetch(parts) {
       await preloadSVGs(await getLesson(parts[1], parts[3]));
     } else if (parts[0] === 'c' && parts[1]) {
       await getCourse(parts[1]);
+    } else if (parts[0] === 'p' && parts[1]) {
+      await Pat.getPattern(parts[1]);
     } else {
       await getSections();
     }
@@ -478,9 +464,15 @@ async function render(parts) {
   window.scrollTo(0, 0);
   punfield?.dispose();
   punfield = null;
+  // The workshop holds a wake lock; whatever the reader goes to next must not
+  // inherit it.
+  disposeView?.();
+  disposeView = null;
   try {
     if (parts[0] === 'c' && parts[2] === 'l' && parts[3]) await viewLesson(parts[1], parts[3]);
     else if (parts[0] === 'c' && parts[1]) await viewCourse(parts[1]);
+    else if (parts[0] === 'p' && parts[2] === 't' && parts[3]) disposeView = await Pat.viewWorkshop(app, parts[1], parts[3]);
+    else if (parts[0] === 'p' && parts[1]) await Pat.viewPattern(app, parts[1]);
     else if (parts[0] === 's' && parts[1]) await viewSection(parts[1]);
     else await viewHome();
   } catch (err) {
@@ -529,7 +521,7 @@ async function route() {
 /* The card acknowledges the finger before the route does: a flare on press,
    which has landed by the time the transition takes the screen away. */
 document.addEventListener('pointerdown', (e) => {
-  const card = e.target.closest('.section-card, .course-card, .lesson-row');
+  const card = e.target.closest('.section-card, .course-card, .lesson-row, .piece-row');
   if (!card) return;
   card.classList.remove('tapped');
   void card.offsetWidth;

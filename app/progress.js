@@ -52,3 +52,47 @@ export function courseStats(course) {
 }
 
 export function exportAll() { return JSON.stringify(read(), null, 2); }
+
+/* ------------------------------------------------------------ patterns
+
+   A pattern is not read, it is worked: what gets remembered is the round the
+   hooks are on, and how many of a repeated round are behind you. Same store,
+   a "p/" prefix so pattern keys can never collide with "<course>/<lesson>".
+   Shape: { "p/<patternId>/<pieceId>": { i, r, done, updatedAt } } where i is
+   the round index and r the repeat within it, both 0-based. */
+
+const pkey = (p, piece) => 'p/' + p + '/' + piece;
+const BLANK_PIECE = { i: 0, r: 0, done: false };
+
+export function getPiece(patternId, pieceId) {
+  return { ...BLANK_PIECE, ...(read()[pkey(patternId, pieceId)] || {}) };
+}
+
+export function setPiece(patternId, pieceId, patch) {
+  const all = read();
+  const k = pkey(patternId, pieceId);
+  all[k] = { ...BLANK_PIECE, ...(all[k] || {}), ...patch, updatedAt: Date.now() };
+  write(all);
+  return all[k];
+}
+
+export function resetPiece(patternId, pieceId) {
+  const all = read();
+  delete all[pkey(patternId, pieceId)];
+  write(all);
+}
+
+/** Per-piece state for the pattern page, plus overall completion. */
+export function patternStats(pattern) {
+  const pieces = pattern.pieces || [];
+  const state = {};
+  let done = 0, current = null;
+
+  for (const piece of pieces) {
+    const p = getPiece(pattern.id, piece.id);
+    if (p.done) { state[piece.id] = 'done'; done++; }
+    else if (p.i > 0 || p.r > 0) { state[piece.id] = 'active'; if (!current) current = piece.id; }
+    else { state[piece.id] = 'new'; if (!current) current = piece.id; }
+  }
+  return { total: pieces.length, done, pct: pieces.length ? done / pieces.length : 0, state, current };
+}
