@@ -926,6 +926,7 @@ code, pre, .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, 
   --city-ground:   #10151a;
   --city-ground-2: #121820;
   --city-road:     #1d242c;
+  --city-water:    #16303f;
   --city-home:     #3c4657;
   --city-shop:     #47608a;
   --city-works:    #7a4d3d;
@@ -934,6 +935,8 @@ code, pre, .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, 
   --city-tower:    #5d6f9e;
   --city-edge:     #f0a13a;
   --city-lit:      #ffd489;
+  --city-cold:     #151d26;   /* the value field, cheap land ... */
+  --city-hot:      #f0a13a;   /* ... to dear */
   --city-night:    1;
 }
 @media (prefers-color-scheme: light) {
@@ -941,6 +944,7 @@ code, pre, .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, 
     --city-ground:   #e8e6de;
     --city-ground-2: #e5e3db;
     --city-road:     #d0d4d8;
+    --city-water:    #b7cddc;
     --city-home:     #cbc3b3;
     --city-shop:     #9db6d6;
     --city-works:    #c98b6e;
@@ -949,6 +953,8 @@ code, pre, .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, 
     --city-tower:    #8fa2c8;
     --city-edge:     #16191d;
     --city-lit:      #ffd489;
+    --city-cold:     #dfe3e0;
+    --city-hot:      #d9762f;
     --city-night:    0;
   }
 }
@@ -956,6 +962,7 @@ code, pre, .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, 
   --city-ground:   #e8e6de;
   --city-ground-2: #e5e3db;
   --city-road:     #d0d4d8;
+  --city-water:    #b7cddc;
   --city-home:     #cbc3b3;
   --city-shop:     #9db6d6;
   --city-works:    #c98b6e;
@@ -964,6 +971,8 @@ code, pre, .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, 
   --city-tower:    #8fa2c8;
   --city-edge:     #16191d;
   --city-lit:      #ffd489;
+  --city-cold:     #dfe3e0;
+  --city-hot:      #d9762f;
   --city-night:    0;
 }
 
@@ -1061,6 +1070,28 @@ code, pre, .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, 
   color: var(--text-dim); cursor: pointer;
 }
 .city-recenter[hidden] { display: none; }   /* display:grid outranks the UA rule */
+.city-field { bottom: calc(var(--safe-b) + 11.6rem); }
+.city-field.on {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+}
+
+/* Shown while the value field is on: what the colours mean, in one line. */
+.city-legend {
+  position: absolute; left: 0; right: 0;
+  bottom: calc(var(--safe-b) + 5.6rem);
+  display: flex; align-items: center; justify-content: center; gap: .5rem;
+  padding-inline: var(--pad-x);
+  font-size: .78rem; color: var(--text-dim);
+  text-shadow: 0 1px 12px var(--bg);
+  pointer-events: none;
+}
+.city-legend[hidden] { display: none; }
+.city-legend .ramp {
+  width: 84px; height: 7px; border-radius: 4px;
+  background: linear-gradient(to right, var(--city-cold), var(--city-hot));
+  border: 1px solid var(--line);
+}
 .city-recenter svg { width: 20px; height: 20px; fill: none; stroke: currentColor;
   stroke-width: 1.5; stroke-linecap: round; }
 .city-recenter:active { transform: scale(.92); }

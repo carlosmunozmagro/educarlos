@@ -47,14 +47,23 @@ export function mount(root, { back, themeButton }) {
         + ' aria-label="' + t.label + '" aria-pressed="' + (i === 0) + '">'
         + SVG(t.icon) + '<span>' + t.label + '</span></button>').join('')
     + '</div>'
+    + '<button class="city-recenter city-field" id="city-field" type="button"'
+    + ' aria-label="Show what the land is worth" aria-pressed="false">'
+    + '<svg viewBox="0 0 20 20" aria-hidden="true">'
+    + '<path d="M10 3 17 7l-7 4-7-4z"/><path d="M3 11.5 10 15.5l7-4"/></svg></button>'
     + '<button class="city-recenter" id="city-recenter" type="button" aria-label="Frame the city" hidden>'
     + '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v3M10 13v3M4 10h3M13 10h3"/>'
     + '<circle cx="10" cy="10" r="3.2"/></svg></button>'
+    + '<div class="city-legend" id="city-legend" hidden>'
+    + 'What the land is worth<span class="ramp"></span>'
+    + '</div>'
     + '<div class="city-hint" id="city-hint" hidden>It builds itself.<br>Tap to interfere.</div>'
     + '</div>';
 
   const canvas = root.querySelector('#city-canvas');
   const recenterBtn = root.querySelector('#city-recenter');
+  const fieldBtn = root.querySelector('#city-field');
+  const legend = root.querySelector('#city-legend');
   const statEl = root.querySelector('#city-stat');
   const chronEl = root.querySelector('#city-chron');
   const dock = root.querySelector('#city-dock');
@@ -65,6 +74,7 @@ export function mount(root, { back, themeButton }) {
   let tool = 'road';
   let cam = { z: 1, px: 0, py: 0 };
   let follow = true, target = null, reframe = true;
+  let overlay = false;
   let pulses = [];
   let speed = 1;                   // 0 paused, 1 a year a beat, 3 impatient
   let acc = 0, last = performance.now(), raf = 0;
@@ -227,6 +237,15 @@ export function mount(root, { back, themeButton }) {
 
   canvas.addEventListener('pointerup', release);
 
+  fieldBtn.addEventListener('click', () => {
+    overlay = !overlay;
+    fieldBtn.classList.toggle('on', overlay);
+    fieldBtn.setAttribute('aria-pressed', String(overlay));
+    legend.hidden = !overlay;
+    chronEl.hidden = overlay;      // they share the same line of the screen
+    painter.invalidate();
+  });
+
   recenterBtn.addEventListener('click', () => {
     follow = true; reframe = true;
     recenterBtn.hidden = true;
@@ -284,7 +303,7 @@ export function mount(root, { back, themeButton }) {
     }
 
     if (pulses.length) pulses = pulses.filter(p => now - p.t < 640);
-    painter.draw(s, cam, pulses, now);
+    painter.draw(s, cam, pulses, now, overlay);
     raf = requestAnimationFrame(frame);
   }
 

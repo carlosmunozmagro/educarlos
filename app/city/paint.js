@@ -11,8 +11,8 @@ const TW = 30, TH = 15;      // tile width and height at zoom 1
 const HU = 46;               // pixels of height for one full level
 const INSET = 0.86;          // plot footprint, leaving the street visible
 
-const VARS = ['ground', 'ground-2', 'road', 'home', 'shop', 'works', 'park',
-              'station', 'tower', 'edge', 'lit'];
+const VARS = ['ground', 'ground-2', 'road', 'water', 'home', 'shop', 'works', 'park',
+              'station', 'tower', 'edge', 'lit', 'cold', 'hot'];
 
 function hex(c) {
   c = c.trim();
@@ -132,9 +132,15 @@ export function createPainter(canvas) {
     c.closePath();
   }
 
+  const mix = (a, b, t) => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t];
+
   /* The flat layer: land, roads, parks. Cached, because most years it is the
-     same picture. */
-  function paintGround(s, cam) {
+     same picture.
+
+     In overlay mode the same layer paints the land value field instead of the
+     land: the number every other rule in the model reads, made a colour. It is
+     the only way to see a park working before the buildings around it grow. */
+  function paintGround(s, cam, overlay) {
     const w = TW * cam.z, h = TH * cam.z;
     gctx.clearRect(0, 0, W, H);
 
@@ -143,17 +149,40 @@ export function createPainter(canvas) {
       if (sx < -w || sx > W + w || sy < -h * 2 || sy > H + h * 2) continue;
       const i = y * N + x;
       const k = s.kind[i];
+      const wet = s.water[i];
       let col;
-      if (s.road[i]) col = pal.raw.road;
+      if (overlay && !wet) {
+        col = mix(pal.raw.cold, pal.raw.hot, Math.min(1, s.val[i]));
+        if (s.road[i]) col = shade(col, -0.16);
+      }
+      else if (wet) col = shade(pal.raw.water, (s.tint[i] - 0.5) * 0.09);
+      else if (s.road[i]) col = pal.raw.road;
       else if (k === PARK) col = pal.raw.park;
       else col = s.tint[i] > 0.5 ? pal.raw.ground : pal.raw['ground-2'];
       // Land that is worth something is warmer, even before it is built on.
-      if (!s.road[i] && k === EMPTY) col = shade(col, s.val[i] * 0.06 - 0.02);
+      if (!wet && !s.road[i] && k === EMPTY) col = shade(col, s.val[i] * 0.06 - 0.02);
       gctx.fillStyle = rgb(col);
       diamond(gctx, sx, sy, w, h);
       gctx.fill();
+      // Stroking the same colour closes the antialiased seam between plots,
+      // which is invisible on land and a grid of hairlines over a value field.
+      gctx.strokeStyle = gctx.fillStyle;
+      gctx.lineWidth = 1;
+      gctx.stroke();
 
-      if (k === PARK) {
+      // A road over water is a bridge: the same surface, held above the river,
+      // with the gap under it doing the explaining.
+      if (wet && s.road[i]) {
+        const lift = Math.max(2, h * 0.34);
+        gctx.fillStyle = rgb(shade(pal.raw.road, -0.42));
+        diamond(gctx, sx, sy - lift * 0.45, w * 0.9, h * 0.9);
+        gctx.fill();
+        gctx.fillStyle = rgb(pal.raw.road);
+        diamond(gctx, sx, sy - lift, w * 0.9, h * 0.9);
+        gctx.fill();
+      }
+
+      if (k === PARK && !overlay) {
         gctx.fillStyle = rgb(shade(pal.raw.park, 0.22));
         for (let t = 0; t < 3; t++) {
           const a = (s.tint[i] * 7 + t) % 1, b = (s.tint[i] * 13 + t * 0.37) % 1;
@@ -242,11 +271,14 @@ export function createPainter(canvas) {
     }
   }
 
-  function draw(s, cam, pulses, now) {
-    if (dirty) paintGround(s, cam);
+  function draw(s, cam, pulses, now, overlay = false) {
+    if (dirty) paintGround(s, cam, overlay);
     ctx.clearRect(0, 0, W, H);
     ctx.drawImage(ground, 0, 0, W, H);
+    // Over the field, the city is there to locate you, not to be read.
+    ctx.globalAlpha = overlay ? 0.34 : 1;
     paintBuildings(s, cam);
+    ctx.globalAlpha = 1;
     paintPulses(pulses, cam, now);
   }
 

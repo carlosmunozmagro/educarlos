@@ -97,12 +97,15 @@ Not everything here is a course. A **section** may also declare *environments*:
 routes of their own (`#/x/:id`), loaded only when opened, that run rather than
 being read.
 
-- **`city`** — *The City.* An isometric place that develops itself: land value
-  from access and amenity, roads that reach for value, buildings that grow to
-  the ceiling their land allows, and quarters that hollow out when it falls. A
-  reader can lay a road, plant a park, open the works, build a station or a
-  tower, or clear a block — and then watch the next forty years argue with the
-  decision. It keeps running while the app is closed, and remembers.
+- **`city`** — *The City.* An isometric place that develops itself: a river it
+  has to cross, land value from access and amenity, roads that reach for value,
+  buildings that grow to the ceiling their land allows, and quarters that
+  hollow out when it falls. A reader can lay a road or throw a bridge, plant a
+  park, open the works, build a station or a tower, or clear a block — and then
+  watch the next forty years argue with the decision. The layers button shows
+  the land value field itself, which is the only way to see a park working
+  before the buildings grow. It keeps running while the app is closed, and
+  remembers.
 
   **`docs/CITY.md`** is the mechanism, the six interferences, and how to add a
   second environment beside it.

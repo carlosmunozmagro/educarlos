@@ -14,8 +14,13 @@ app/main.js                  ENVIRONMENTS maps its id to its module
 
 ## What it actually simulates
 
-A 44 × 44 grid of plots. Every year, four moves run in order, and each one
-reads what the last one wrote:
+A 44 × 44 grid of plots, with a river drawn across it before anything is built
+— a meander, two or three plots wide, off to one side so the founding
+crossroads is on dry land. Water cannot be built on and roads cannot cross it,
+so the far bank stays empty until somebody bridges it.
+
+Every year, four moves run in order, and each one reads what the last one
+wrote:
 
 1. **Fields.** *Access* is 1 on every road cell and decays 0.74 per plot away
    from one. *Amenity* starts at +1 on parks and −1.15 on the works, then
@@ -27,14 +32,20 @@ reads what the last one wrote:
    more than one road already touching it — that refusal is what makes blocks
    instead of a smear — branches perpendicular every 4–7 plots with a
    probability set by the land value under it, and dies when it meets the
-   network or the map edge. If fewer than five tips survive, new ones start
+   network, the map edge, or the water. If fewer than five tips survive, new ones start
    from the most valuable road cell with open land beside it.
 3. **Development.** ~190 random plots are considered a year. A plot builds if
    it is empty, touches a road, and `value·1.15 + demand − noise > 0.62`. What
    it becomes follows the neighbourhood: shops where value is high or work is
    scarce, works where amenity is already poor, the occasional park the city
    plants itself, houses otherwise.
-4. **Densification and decay.** Every built plot climbs toward a ceiling its
+4. **Bridges.** From year 22, with a chance rising with demand, the city picks
+   at random among the points where a road already runs up to the water and
+   crosses there — if the river is three plots or narrower at that point. Where
+   a city crosses is a fact about the shape of the water, not about anybody's
+   intention. A tip starts on the far side, and the far bank stops being
+   scenery.
+5. **Densification and decay.** Every built plot climbs toward a ceiling its
    land allows — houses `0.16 + 0.55·value²`, shops `0.3 + 0.95·value²`, the
    works flat. A house or shop on land worth under 0.17, older than 22 years,
    empties out with a 2% annual chance. That is how a works quarter hollows
@@ -48,7 +59,7 @@ station does not just move growth — it makes more of it.
 
 | Tool | What it does to the model |
 |---|---|
-| **Road** | Lays one road cell. On empty land it also starts four new tips — a second network, which becomes a village that may or may not be absorbed. |
+| **Road** | Lays one road cell. On empty land it also starts four new tips — a second network, which becomes a village that may or may not be absorbed. **On water it throws a bridge**, up to four plots wide, decades before the city would have built one. |
 | **Park** | Amenity +1, spread four plots. Rents, heights and road branching all rise around it. |
 | **Works** | Amenity −1.15, 70 jobs. Raises demand city-wide and blights its own street. |
 | **Station** | A new pole (weight 0.85, radius 9) plus four road tips. The strongest single move: a second centre the city grows toward for decades. |
@@ -60,11 +71,16 @@ skyline around year 60. That delay is the environment's argument.
 
 ## Behaviour worth knowing
 
+- **The value field can be seen.** The layers button shows what the land is
+  worth as a colour, cold to hot, with the city ghosted over it. It is the only
+  way to watch a park work before the buildings around it grow — and the
+  fastest way to understand why the roads went where they went.
 - **It runs while the app is shut.** On open, three years pass per hour away,
   capped at 45, and the chronicle says so.
 - **State lives in `localStorage`** under `educarlos:city.v1`: the grid packed
-  into two ~1,900-character strings, plus seed, year, poles and tips. About
-  4.5 KB. Clearing it founds a new city with a new seed.
+  into two ~1,900-character strings (kind, road and water packed into one
+  character per plot), plus seed, year, poles and tips. About 4.7 KB, version
+  2; version 1 saves, which predate the river, are discarded. Clearing it founds a new city with a new seed.
 - **The camera frames the built area**, not the grid, and eases back as the
   city outgrows the screen. Panning or pinching takes it off follow; the
   crosshair button gives it back.

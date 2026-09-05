@@ -44,6 +44,7 @@ export function create(seed = (Math.random() * 1e9) | 0) {
   const s = {
     seed, rnd: rng(seed), year: 0,
     road:  new Uint8Array(N * N),
+    water: new Uint8Array(N * N),
     kind:  new Uint8Array(N * N),
     lvl:   new Float32Array(N * N),   // built height the plot is aiming at
     hgt:   new Float32Array(N * N),   // height actually drawn; eases toward lvl
@@ -59,10 +60,44 @@ export function create(seed = (Math.random() * 1e9) | 0) {
     events: [], marks: {}
   };
   for (let i = 0; i < N * N; i++) s.tint[i] = s.rnd();
+  river(s);
   found(s);
   fields(s);
   census(s);
   return s;
+}
+
+/* A river, drawn before anything is built, because the water was here first.
+
+   A meander: one sine crossing another, walked from one edge of the map to the
+   other, two or three plots wide. It is a wall the roads cannot pass, which is
+   why the far bank stays empty until somebody bridges it - and why bridging it
+   is the most consequential thing in the dock that does not look like a
+   decision. */
+function river(s) {
+  const vertical = s.rnd() < 0.5;
+  // Off to one side, and never through the founding crossroads: a river that
+  // ran under the first four houses would be a river with a hole in it.
+  const side = s.rnd() < 0.5 ? -1 : 1;
+  const mid = (N >> 1) + side * (10 + s.rnd() * 4);
+  const a1 = 2 + s.rnd() * 2.4, a2 = 0.8 + s.rnd() * 1.4;
+  const k1 = 0.09 + s.rnd() * 0.06, k2 = 0.21 + s.rnd() * 0.1;
+  const ph = s.rnd() * 6.28;
+  const c = N >> 1;
+
+  for (let t = 0; t < N; t++) {
+    let u = mid + Math.sin(t * k1 + ph) * a1 + Math.sin(t * k2) * a2;
+    const half = 1 + (Math.sin(t * 0.13 + ph) > 0.35 ? 1 : 0);   // it widens and narrows
+    for (let d = -half; d <= half; d++) {
+      const x = vertical ? Math.round(u + d) : t;
+      const y = vertical ? t : Math.round(u + d);
+      if (!inB(x, y)) continue;
+      // Belt and braces: the founding crossroads is on dry land whatever the
+      // meander does.
+      if (Math.abs(x - c) <= 5 && Math.abs(y - c) <= 5) continue;
+      s.water[idx(x, y)] = 1;
+    }
+  }
 }
 
 /* A crossroads and four carts' worth of houses. Everything else follows. */
@@ -109,7 +144,8 @@ function amenity(s) {
   const { amen, kind, tmp } = s;
   for (let i = 0; i < N * N; i++) {
     const k = kind[i];
-    amen[i] = k === PARK ? 1 : k === WORKS ? -1.15 : k === STATION ? 0.3 : k === TOWER ? 0.2 : 0;
+    amen[i] = s.water[i] ? 0.55
+      : k === PARK ? 1 : k === WORKS ? -1.15 : k === STATION ? 0.3 : k === TOWER ? 0.2 : 0;
   }
   for (let pass = 0; pass < 3; pass++) {
     for (let y = 1; y < N - 1; y++) for (let x = 1; x < N - 1; x++) {
@@ -135,7 +171,8 @@ function fields(s) {
   amenity(s);
   for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
     const i = idx(x, y);
-    s.val[i] = clamp(0.55 * s.acc[i] + 0.72 * poleAt(s, x, y) + 0.45 * s.amen[i], 0, 1);
+    s.val[i] = s.water[i] ? 0
+      : clamp(0.55 * s.acc[i] + 0.72 * poleAt(s, x, y) + 0.45 * s.amen[i], 0, 1);
   }
 }
 
@@ -171,6 +208,7 @@ function growRoads(s) {
     const nx = tp.x + tp.dx, ny = tp.y + tp.dy;
     if (!inB(nx, ny)) { tp.dead = true; continue; }
     const i = idx(nx, ny);
+    if (s.water[i]) { tp.dead = true; continue; }            // the far bank waits
     if (s.road[i]) { tp.dead = true; continue; }             // ran into the network
     if (nearRoads(s, nx, ny, tp.x, tp.y) > 1) { tp.dead = true; continue; }  // too close to it
 
@@ -217,6 +255,62 @@ function growRoads(s) {
   }
 }
 
+/* ---------------------------------------------------------- bridges */
+
+/* Lay a crossing from a bank, if the water here is narrow enough to cross.
+   Returns the far-side plot, or null when the river is too wide at this point:
+   where the city ends up crossing is a fact about the shape of the water, not
+   about anybody's intention. */
+function bridge(s, x, y, span = 4) {
+  if (!s.water[idx(x, y)]) return null;
+  for (const [dx, dy] of N4) {
+    const bx = x - dx, by = y - dy;
+    if (!inB(bx, by) || s.water[idx(bx, by)]) continue;      // must start on a bank
+    const cells = [];
+    let cx = x, cy = y;
+    for (let n = 0; n <= span; n++) {
+      if (!inB(cx, cy)) { cells.length = 0; break; }
+      if (!s.water[idx(cx, cy)]) break;
+      cells.push(idx(cx, cy));
+      cx += dx; cy += dy;
+    }
+    if (!cells.length || !inB(cx, cy) || s.water[idx(cx, cy)]) continue;
+    for (const j of cells) { s.road[j] = 1; s.kind[j] = EMPTY; s.lvl[j] = 0; }
+    s.road[idx(bx, by)] = 1;
+    return { x: cx, y: cy, dx, dy };
+  }
+  return null;
+}
+
+/* Left alone, the city eventually crosses on its own - but only once there is
+   enough pressure to justify it, and only where the water is narrow. */
+function maybeBridge(s) {
+  if (s.year < 22 || s.rnd() > 0.06 * s.demand) return;
+
+  // Every point where a road already runs up to the water is a place the city
+  // has been thinking about crossing. One of them, at random, is where it does.
+  const banks = [];
+  for (let y = 1; y < N - 1; y++) for (let x = 1; x < N - 1; x++) {
+    const i = idx(x, y);
+    if (!s.water[i] || s.road[i]) continue;
+    for (const [dx, dy] of N4) {
+      if (s.road[idx(x + dx, y + dy)] && !s.water[idx(x + dx, y + dy)]) { banks.push([x, y]); break; }
+    }
+  }
+  while (banks.length) {
+    const k = (s.rnd() * banks.length) | 0;
+    const [x, y] = banks.splice(k, 1)[0];
+    const far = bridge(s, x, y, 3);
+    if (!far) continue;
+    if (s.tips.length < 26) s.tips.push(tip(s, far.x, far.y, far.dx, far.dy, 0.96));
+    s.bridges = (s.bridges || 0) + 1;
+    if (s.bridges === 1) say(s, 'A bridge, at last. The far bank stops being scenery.');
+    else if (s.bridges === 2) say(s, 'A second crossing. The far bank is part of town now.');
+    else if (s.bridges % 3 === 0) say(s, 'Another crossing, further down the water.');
+    return;
+  }
+}
+
 /* -------------------------------------------------------- buildings */
 
 function nextToRoad(s, x, y) {
@@ -238,7 +332,7 @@ function develop(s) {
   const { rnd } = s;
   for (let k = 0; k < 190; k++) {
     const x = 1 + ((rnd() * (N - 2)) | 0), y = 1 + ((rnd() * (N - 2)) | 0), i = idx(x, y);
-    if (s.road[i] || s.kind[i]) continue;
+    if (s.road[i] || s.kind[i] || s.water[i]) continue;
     if (!nextToRoad(s, x, y)) continue;
     if (s.val[i] * 1.15 + s.demand * 0.5 - 0.55 * rnd() < 0.62) continue;
     s.kind[i] = pickKind(s, i, s.val[i]);
@@ -332,6 +426,7 @@ export function step(s) {
   s.year++;
   fields(s);
   growRoads(s);
+  maybeBridge(s);
   develop(s);
   densify(s);
   census(s);
@@ -348,6 +443,13 @@ export function place(s, tool, x, y) {
   const i = idx(x, y), q = QUARTER(x, y);
 
   if (tool === 'road') {
+    if (s.water[i]) {
+      const far = bridge(s, x, y, 4);
+      if (!far) return false;                                // too wide here
+      if (s.tips.length < 26) s.tips.push(tip(s, far.x, far.y, far.dx, far.dy, 0.98));
+      say(s, 'You throw a bridge across, ' + q + '. Everything follows a bridge.');
+      return true;
+    }
     if (s.road[i]) return false;
     s.road[i] = 1; s.kind[i] = EMPTY; s.lvl[i] = 0;
     // A road laid where there is no network founds a second one: four tips,
@@ -367,6 +469,7 @@ export function place(s, tool, x, y) {
     let n = 0;
     for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
       const j = idx(clamp(x + dx, 1, N - 2), clamp(y + dy, 1, N - 2));
+      if (s.water[j]) continue;
       if (s.kind[j]) { n++; s.kind[j] = EMPTY; s.lvl[j] = 0; s.hgt[j] = 0; s.age[j] = 0; }
     }
     s.poles = s.poles.filter(p => Math.hypot(p.x - x, p.y - y) > 1.5 || p.r > 11);
@@ -374,6 +477,8 @@ export function place(s, tool, x, y) {
     fields(s);
     return n > 0;
   }
+
+  if (s.water[i]) return false;      // the river is not a plot
 
   const was = s.kind[i];
   s.road[i] = 0;
@@ -413,11 +518,11 @@ const CH = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 export function encode(s) {
   let a = '', b = '';
   for (let i = 0; i < N * N; i++) {
-    a += CH[s.kind[i] * 2 + s.road[i]];
+    a += CH[s.kind[i] * 4 + s.road[i] * 2 + s.water[i]];
     b += CH[clamp(Math.round(s.lvl[i] * 40), 0, 61)];
   }
   return {
-    v: 1, seed: s.seed, year: s.year, at: Date.now(),
+    v: 2, seed: s.seed, year: s.year, at: Date.now(),
     poles: s.poles.map(p => [p.x, p.y, p.w, p.r]),
     tips: s.tips.map(t => [t.x, t.y, t.dx, t.dy, t.run, t.block, +t.vigor.toFixed(3)]),
     marks: s.marks,
@@ -427,13 +532,13 @@ export function encode(s) {
 }
 
 export function decode(raw) {
-  if (!raw || raw.v !== 1 || typeof raw.a !== 'string' || raw.a.length !== N * N) return null;
+  if (!raw || raw.v !== 2 || typeof raw.a !== 'string' || raw.a.length !== N * N) return null;
   const s = create(raw.seed | 0);
-  s.road.fill(0); s.kind.fill(0); s.lvl.fill(0); s.hgt.fill(0); s.age.fill(0);
+  s.road.fill(0); s.kind.fill(0); s.lvl.fill(0); s.hgt.fill(0); s.age.fill(0); s.water.fill(0);
   for (let i = 0; i < N * N; i++) {
     const c = CH.indexOf(raw.a[i]);
     if (c < 0) return null;
-    s.kind[i] = c >> 1; s.road[i] = c & 1;
+    s.kind[i] = c >> 2; s.road[i] = (c >> 1) & 1; s.water[i] = c & 1;
     s.lvl[i] = Math.max(0, CH.indexOf(raw.b[i])) / 40;
     s.hgt[i] = s.lvl[i];
     s.age[i] = 40;
