@@ -61,6 +61,7 @@ tools/publish.py         validate, commit, push - see docs/PUBLISH.md
 tools/validate.py        format + house-rule enforcement
 tools/visuals/           generators for data-bearing diagrams
 tools/icons.sh           re-rasterises app/icons/ from icon.svg
+tools/bump.py            stamps a new build id on app/*.js and styles.css
 docs/                    STYLE.md  VISUALS.md  FORMAT.md  PATTERNS.md  PLAN.md
 ```
 

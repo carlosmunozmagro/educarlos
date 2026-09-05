@@ -17,7 +17,10 @@ content/patterns/<id>.json         one object, one file
 ```
 
 Routes: `#/p/:patternId` is the object page, `#/p/:patternId/t/:pieceId` the
-workshop. `t` for _taller_.
+workshop (`t` for _taller_), and `#/p/:patternId/h` the sheet (`h` for _hoja_).
+`#/p/:id/t/:piece/:n` opens the workshop at round entry `n`, which is what the
+sheet's rows link to; `#/p/:id/h/:piece` opens the sheet scrolled to a piece,
+which is what the workshop's crumb links to.
 
 ## The file
 
@@ -64,6 +67,28 @@ workshop. `t` for _taller_.
 A range round is expanded by the app: `"7-12"` is six taps, each showing its
 own number (7, 8, 9…) and a row of pips, so "which of the six am I on" is
 answered without counting.
+
+## The sheet
+
+The workshop answers *what now*. The sheet answers *where am I* and *what is
+the whole thing*, which needs the opposite layout: the pattern card people
+actually crochet from — boxes, two columns, one round per line as
+`3. (1 pb, aum) ×6 (18)`.
+
+It prints as that card. **Save as PDF** calls `window.print()`; the print
+stylesheet forces the light palette (a dark theme prints as a black page),
+drops every control, sets A4 with 12 mm margins and lays the boxes out in two
+balanced columns. On iOS the print dialog is also the way to a file: share it,
+or save it to Files. No library, no export code — the layout *is* the export.
+
+Two things the paper cannot do, and it keeps both on screen:
+
+- **The rows are live.** Tap the round your hands are actually on and the
+  workshop opens there and saves it, which makes the sheet the recovery path
+  rather than a second thing to keep in sync.
+- **It knows where you are.** Worked rounds are struck through — their notes
+  are not, those are still information — and the current round carries the
+  marker, on started pieces only.
 
 ## The workshop
 

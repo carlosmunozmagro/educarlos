@@ -1,7 +1,7 @@
 /* One renderer per block type. Each returns an HTML string.
    All author text goes through mdlite so nothing is injected raw. */
 
-import { inline, paragraphs, escapeHtml, math } from './mdlite.js';
+import { inline, paragraphs, escapeHtml, math } from './mdlite.js?v=20260905195950';
 
 const CHEV = '<svg class="chev" width="9" height="12" viewBox="0 0 9 12" fill="none" aria-hidden="true"><path d="M2 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
