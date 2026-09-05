@@ -27,7 +27,9 @@ const STRINGS = {
     allPatterns: 'All patterns', nextUp: 'Next',
     sheet: 'The sheet', sheetSub: 'Every step, in order, on one page.',
     openSheet: 'The sheet · every step in order', openWorkshop: 'Work it',
-    youAreHere: 'You are here', jumpHint: 'Tap any round to work from there'
+    youAreHere: 'You are here', jumpHint: 'Tap any round to work from there',
+    savePdf: 'Save as PDF', printHint: 'Opens the print dialog — from there, save it to Files or share it.',
+    sheetOf: 'Pattern sheet'
   },
   es: {
     library: 'Educarlos', librarySub: 'Enseñarlos, una pantalla cada vez.',
@@ -56,7 +58,9 @@ const STRINGS = {
     allPatterns: 'Todos los patrones', nextUp: 'Luego',
     sheet: 'La hoja', sheetSub: 'Todos los pasos, en orden, en una sola página.',
     openSheet: 'La hoja · todos los pasos seguidos', openWorkshop: 'Tejer',
-    youAreHere: 'Vas por aquí', jumpHint: 'Toca cualquier vuelta para seguir desde ahí'
+    youAreHere: 'Vas por aquí', jumpHint: 'Toca cualquier vuelta para seguir desde ahí',
+    savePdf: 'Guardar en PDF', printHint: 'Se abre el diálogo de imprimir: desde ahí, guárdalo en Archivos o compártelo.',
+    sheetOf: 'Ficha del patrón'
   }
 };
 

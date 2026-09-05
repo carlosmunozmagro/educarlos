@@ -70,16 +70,25 @@ answered without counting.
 
 ## The sheet
 
-The workshop answers *what now*. The sheet answers *where am I*, which is a
-different question and gets the opposite layout: every step of every piece in
-one column, the way a printed pattern reads — and it prints as one, with the
-chrome and the colour dropped.
+The workshop answers *what now*. The sheet answers *where am I* and *what is
+the whole thing*, which needs the opposite layout: the pattern card people
+actually crochet from — boxes, two columns, one round per line as
+`3. (1 pb, aum) ×6 (18)`.
 
-It is also the recovery path. Lose your place, scan the list, tap the round
-your hands are actually on, and the workshop opens there and remembers it.
-Worked rounds are struck through (their notes are not — those are still
-information), and the round you are on carries the marker, on started pieces
-only.
+It prints as that card. **Save as PDF** calls `window.print()`; the print
+stylesheet forces the light palette (a dark theme prints as a black page),
+drops every control, sets A4 with 12 mm margins and lays the boxes out in two
+balanced columns. On iOS the print dialog is also the way to a file: share it,
+or save it to Files. No library, no export code — the layout *is* the export.
+
+Two things the paper cannot do, and it keeps both on screen:
+
+- **The rows are live.** Tap the round your hands are actually on and the
+  workshop opens there and saves it, which makes the sheet the recovery path
+  rather than a second thing to keep in sync.
+- **It knows where you are.** Worked rounds are struck through — their notes
+  are not, those are still information — and the current round carries the
+  marker, on started pieces only.
 
 ## The workshop
 

@@ -1166,78 +1166,102 @@ code, pre, .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, 
 @keyframes sheet-up { from { transform: translateY(100%); } to { transform: none; } }
 
 /* ============================================================
-   The sheet — every step in one column
+   The sheet — the pattern card
    ============================================================ */
-/* The workshop answers "what now"; this answers "where am I", and needs the
-   opposite layout: the whole pattern at once, the way the printed page reads.
-   It is also how you get un-lost - scan, find the round your hands are
-   actually on, tap it, and the workshop opens there. */
-.hint-line {
-  margin-top: .7rem; font-size: .78rem; color: var(--text-faint);
+/* Built like the printed cards people actually crochet from: boxes, columns,
+   one round per line as "3. (1 pb, aum) x6 (18)". The workshop answers "what
+   now"; this answers "where am I" and "what is the whole thing". */
+.ficha-head { margin-bottom: 1.1rem; }
+.ficha-head .kicker {
+  font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: .35rem;
 }
-/* Arriving from the workshop scrolls to the piece: it must land under the
-   fixed bar, not behind it. */
-.sheet-piece { margin-bottom: 2.2rem; scroll-margin-top: calc(var(--safe-t) + 4.5rem); }
-.sheet-piece-head {
-  display: flex; align-items: flex-end; justify-content: space-between; gap: .8rem;
-  padding-bottom: .5rem; margin-bottom: .3rem;
-  border-bottom: 2px solid var(--line-2);
-}
-.sheet-piece-head h2 { font-size: 1.15rem; }
-.sheet-piece-head .s { color: var(--text-faint); font-size: .78rem; }
-.sheet-piece-head .work {
-  flex: none; padding: .34rem .8rem; border-radius: 999px;
-  background: color-mix(in srgb, var(--accent) 14%, transparent);
-  color: var(--accent); font-size: .78rem; font-weight: 700; text-decoration: none;
-}
+.ficha-head h1 { font-size: clamp(1.7rem, 7vw, 2.1rem); }
+.ficha-head .sub { color: var(--text-dim); font-size: .92rem; margin-top: .4rem; line-height: 1.5; }
+.ficha-head .facts { margin-top: .7rem; }
 
-.steps-list { display: flex; flex-direction: column; }
-/* A row, not a card: the eye has to be able to run down the numbers. */
-.step {
-  display: grid; grid-template-columns: 3.1rem 1fr auto;
-  gap: .1rem .7rem; align-items: baseline;
-  padding: .5rem .5rem .5rem .3rem; border-radius: 9px;
+.ficha-tools {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .6rem .9rem;
+  margin-bottom: 1.4rem;
+}
+.ficha-tools .cta { margin-top: 0; }
+.hint-line { font-size: .76rem; color: var(--text-faint); line-height: 1.45; }
+.chip-btn.print { background: transparent; border-color: var(--line); color: var(--text-dim); }
+
+/* One column on a phone, two wherever there is room - and always two on
+   paper, which is what makes it one page instead of four. */
+.ficha-cols { column-gap: 1rem; }
+@media (min-width: 34rem) { .ficha-cols { columns: 2; } }
+
+.fbox {
+  break-inside: avoid; -webkit-column-break-inside: avoid;
+  margin: 0 0 .9rem; padding: .8rem .9rem .85rem;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 13px;
+}
+.fbox h2 {
+  display: flex; align-items: baseline; gap: .45rem;
+  font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--accent);
+  padding-bottom: .4rem; margin-bottom: .5rem;
   border-bottom: 1px solid var(--line);
+}
+.fbox h2 .q {
+  font-size: .68rem; letter-spacing: .04em; text-transform: none;
+  font-weight: 600; color: var(--text-faint);
+}
+.fbox h2 .work {
+  margin-left: auto; flex: none; text-decoration: none;
+  font-size: .68rem; font-weight: 700; letter-spacing: .04em; text-transform: none;
+  color: var(--accent); opacity: .85;
+}
+.fbox ul { margin: 0; padding-left: 1.05rem; }
+.fbox li { font-size: .86rem; line-height: 1.5; margin-bottom: .3rem; color: var(--text-dim); }
+.fbox li b { color: var(--text); font-weight: 600; }
+.fbox dl { margin: 0; }
+.fbox dl > div { display: grid; grid-template-columns: 3.9rem 1fr; gap: .5rem; padding: .16rem 0; }
+.fbox dt {
+  font-weight: 700; font-size: .82rem; color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+}
+.fbox dd { margin: 0; font-size: .82rem; color: var(--text-dim); line-height: 1.4; }
+.fbox dd .n { color: var(--text-faint); }
+
+/* A round is one line: number, instruction, total. Dense on purpose - the
+   point of the card is seeing many at once. */
+.steps-list { display: flex; flex-direction: column; }
+.step {
+  display: grid; grid-template-columns: 2.6rem 1fr; gap: .35rem;
+  padding: .22rem .3rem .22rem 0; border-radius: 7px;
   color: inherit; text-decoration: none;
 }
 .step:active { background: var(--surface-2); }
 .step .n {
-  font-weight: 700; font-size: .88rem; color: var(--text-faint);
+  text-align: right; font-weight: 700; font-size: .82rem; color: var(--text-faint);
   font-variant-numeric: tabular-nums;
 }
-.step .tx { font-size: .96rem; line-height: 1.45; }
+.step .tx { font-size: .88rem; line-height: 1.45; }
+.step .c { color: var(--text-faint); font-variant-numeric: tabular-nums; }
 .step .nt {
-  display: block; margin-top: .2rem;
-  color: var(--text-faint); font-size: .82rem; line-height: 1.45;
+  display: block; margin: .12rem 0 .3rem;
+  color: var(--text-faint); font-size: .78rem; line-height: 1.45;
 }
-.step .c {
-  min-width: 2.2rem; text-align: right;
-  color: var(--text-faint); font-size: .84rem; font-variant-numeric: tabular-nums;
-}
-.step.past { opacity: .5; }
+.step.past { opacity: .45; }
 .step.past .tx { text-decoration: line-through; text-decoration-color: var(--line-2); }
 /* The note under a worked round is still information; only the instruction
    itself is struck through. */
 .step.past .nt { text-decoration: none; }
 .step.now {
-  background: color-mix(in srgb, var(--accent) 10%, transparent);
-  border-bottom-color: transparent;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  box-shadow: inset 2px 0 0 var(--accent);
 }
 .step.now .n, .step.now .c { color: var(--accent); }
-.step.now .tx { font-weight: 600; }
-.step .here {
-  grid-column: 2 / -1;
-  font-size: .68rem; letter-spacing: .08em; text-transform: uppercase;
-  font-weight: 700; color: var(--accent);
-}
+.step.now .tx { font-weight: 650; }
 
-.sheet-finish { margin-top: .9rem; padding-left: 3.8rem; }
-.sheet-finish h3 {
-  font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
-  color: var(--text-faint); margin-bottom: .35rem;
+.fpiece .fin {
+  margin: .5rem 0 0 2.95rem; color: var(--text-faint);
+  font-size: .78rem; line-height: 1.45;
 }
-.sheet-finish ul { margin: 0; padding-left: 1.1rem; }
-.sheet-finish li { color: var(--text-dim); font-size: .88rem; line-height: 1.5; margin-bottom: .25rem; }
+.ficha-src { margin-top: 1.4rem; color: var(--text-faint); font-size: .76rem; line-height: 1.5; }
 
 .cta.wide {
   display: flex; justify-content: center; width: 100%;
@@ -1249,11 +1273,40 @@ code, pre, .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, 
 .sheet-link { text-decoration: none; }
 .sheet-link b { border-bottom: 1px dotted var(--line-2); }
 
-/* On paper it is just the pattern: no chrome, no colour, nothing to tap. */
+/* ---------------------------------------------------------- on paper */
+/* The same card, minus everything that only makes sense under a finger.
+   Forced light: a dark theme prints as a black page nobody wants. */
+@page { size: A4; margin: 12mm; }
 @media print {
-  .topbar, .cta, .sheet-piece-head .work, .hint-line, .step .here { display: none !important; }
-  .page.has-bar { padding-top: 0; }
-  .step, .step.past, .step.now { opacity: 1; background: none; break-inside: avoid; }
+  :root, :root[data-theme="dark"] {
+    --bg: #fff; --bg-soft: #fff; --surface: #fff; --surface-2: #fff;
+    --text: #111; --text-dim: #333; --text-faint: #666;
+    --line: #d8d8d8; --line-2: #bbb;
+  }
+  html, body { background: #fff; }
+  .no-print, .topbar, .ficha-tools, .fbox h2 .work { display: none !important; }
+  .page.has-bar { padding: 0; min-height: 0; }
+  .wrap { max-width: none; padding: 0; }
+  .ficha-cols { columns: 2; column-gap: 7mm; }
+  .fbox { margin-bottom: 3.5mm; padding: 2.4mm 3mm; border-color: #ddd; border-radius: 2.5mm; }
+  .fbox h2 { padding-bottom: 1.2mm; margin-bottom: 1.6mm; font-size: 7.6pt; }
+  .step, .step.past, .step.now {
+    opacity: 1; background: none; box-shadow: none; break-inside: avoid;
+    padding: .4mm 0;
+  }
   .step.past .tx { text-decoration: none; }
-  .sheet-piece { break-inside: auto; }
+  .step .tx, .fbox li, .fbox dd, .fbox dt { font-size: 8.2pt; line-height: 1.34; }
+  .step .n { font-size: 7.8pt; }
+  .step .nt, .fpiece .fin { font-size: 7.4pt; line-height: 1.34; margin-top: .2mm; }
+  .fpiece .fin { margin-bottom: 0; }
+  .fbox li { margin-bottom: .8mm; }
+  .fbox dl > div { padding: .3mm 0; }
+  .ficha-head { margin-bottom: 4mm; }
+  .ficha-head h1 { font-size: 17pt; }
+  .ficha-head .sub { font-size: 8.4pt; margin-top: 1mm; }
+  .ficha-head .kicker { font-size: 6.6pt; }
+  .ficha-src { margin-top: 3mm; font-size: 7pt; }
+  .fbox h2 { color: #111; }
+  a { color: inherit; text-decoration: none; }
+  [data-rise], [data-anim] { animation: none !important; opacity: 1 !important; transform: none !important; }
 }

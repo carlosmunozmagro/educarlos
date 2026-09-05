@@ -3,14 +3,14 @@
      #/c/:courseId             course map
      #/c/:courseId/l/:lessonId lesson player                       */
 
-import { renderScreen } from './render.js?v=20260905195433';
-import { inline, escapeHtml } from './mdlite.js?v=20260905195433';
-import { t } from './i18n.js?v=20260905195433';
-import { NAME, MARK, lettered, punField } from './brand.js?v=20260905195433';
-import * as P from './progress.js?v=20260905195433';
-import * as Theme from './theme.js?v=20260905195433';
-import * as Pat from './patterns.js?v=20260905195433';
-import { BACK_ICON, GO_ICON, TICK, ring, fillRings, vtName } from './ui.js?v=20260905195433';
+import { renderScreen } from './render.js?v=20260905195950';
+import { inline, escapeHtml } from './mdlite.js?v=20260905195950';
+import { t } from './i18n.js?v=20260905195950';
+import { NAME, MARK, lettered, punField } from './brand.js?v=20260905195950';
+import * as P from './progress.js?v=20260905195950';
+import * as Theme from './theme.js?v=20260905195950';
+import * as Pat from './patterns.js?v=20260905195950';
+import { BACK_ICON, GO_ICON, TICK, ring, fillRings, vtName } from './ui.js?v=20260905195950';
 
 const app = document.getElementById('app');
 const cache = { index: null, sections: null, courses: new Map(), lessons: new Map(), svgs: new Map() };

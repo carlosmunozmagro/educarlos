@@ -10,11 +10,11 @@
      #/p/:patternId              the object - materials, stitches, pieces
      #/p/:patternId/t/:pieceId   the workshop - one round at a time          */
 
-import { inline, escapeHtml } from './mdlite.js?v=20260905195433';
-import { t } from './i18n.js?v=20260905195433';
-import * as P from './progress.js?v=20260905195433';
-import * as Theme from './theme.js?v=20260905195433';
-import { BACK_ICON, TICK, ring, fillRings, vtName } from './ui.js?v=20260905195433';
+import { inline, escapeHtml } from './mdlite.js?v=20260905195950';
+import { t } from './i18n.js?v=20260905195950';
+import * as P from './progress.js?v=20260905195950';
+import * as Theme from './theme.js?v=20260905195950';
+import { BACK_ICON, TICK, ring, fillRings, vtName } from './ui.js?v=20260905195950';
 
 const cache = new Map();
 
@@ -387,14 +387,22 @@ export async function viewWorkshop(app, patternId, pieceId, at = null) {
 
 /* ---------------------------------------------------------------- sheet */
 
-/* The workshop answers "what now". The sheet answers "where am I", which is a
-   different question and needs the opposite layout: every step of every piece
-   in one column, the way a printed pattern reads. It is also the recovery
-   path - lose your place and you scan the list, tap the round you are
-   actually on, and the workshop opens there.
+/* The sheet is the printed pattern card: the whole thing on one page, in
+   boxes and columns, every round on its own line as "3. (1 pb, aum) x6 (18)".
+   It answers "where am I" and "what does the whole thing look like", which
+   the workshop deliberately cannot.
 
-   Same data, no second copy: rows are the same prepared rounds the workshop
-   steps through, and the position markers come from the same store. */
+   Two things a paper card cannot do, and it keeps both: the rows are live -
+   tap the round your hands are on and the workshop opens there - and worked
+   rounds are struck through. Print drops both and leaves the card. */
+
+const PRINT_ICON = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 8V3h8v5M6 15H4.5A1.5 1.5 0 0 1 3 13.5v-4A1.5 1.5 0 0 1 4.5 8h11A1.5 1.5 0 0 1 17 9.5v4a1.5 1.5 0 0 1-1.5 1.5H14" fill="none"/><path d="M6 12h8v5H6z" fill="none"/></svg>';
+
+function fbox(title, inner, cls = '') {
+  if (!inner) return '';
+  return '<section class="fbox ' + cls + '"><h2>' + escapeHtml(title) + '</h2>' + inner + '</section>';
+}
+
 export async function viewSheet(app, patternId, focusPiece = null) {
   const pattern = await getPattern(patternId);
   const lang = pattern.lang || 'es';
@@ -408,61 +416,89 @@ export async function viewSheet(app, patternId, focusPiece = null) {
   const home = '#/p/' + encodeURIComponent(pattern.id);
 
   const pieces = (pattern.pieces || []).map((piece, pi) => {
-    const { rounds, worked } = prepare(piece);
+    const { rounds } = prepare(piece);
     const pos = P.getPiece(pattern.id, piece.id);
     const work = home + '/t/' + encodeURIComponent(piece.id);
-
     // A piece nobody has touched has no "you are here": marking its first
     // round would put the badge on every unstarted piece at once.
     const started = pos.done || pos.i > 0 || pos.r > 0;
+
     const rows = rounds.map((rd, i) => {
       const state = pos.done || i < pos.i ? 'past' : (started && i === pos.i ? 'now' : '');
       const num = rd.label || (rd.reps > 1 ? rd.from + '-' + rd.to : String(rd.from));
       return '<a class="step ' + state + '" href="' + work + '/' + i + '">'
-        + '<span class="n">' + escapeHtml(num) + '</span>'
+        + '<span class="n">' + escapeHtml(num) + '.</span>'
         + '<span class="tx">' + inline(rd.text || '')
+        + (rd.count ? ' <span class="c">(' + rd.count + ')</span>' : '')
         + (rd.note ? '<span class="nt">' + inline(rd.note) + '</span>' : '') + '</span>'
-        + (rd.count ? '<span class="c">' + rd.count + '</span>' : '<span class="c"></span>')
-        + (state === 'now' ? '<span class="here">' + escapeHtml(tr('youAreHere')) + '</span>' : '')
         + '</a>';
     }).join('');
 
-    const fin = (piece.finish || []).map(f => '<li>' + inline(f) + '</li>').join('');
-    const sub = [
-      piece.qty && piece.qty > 1 ? '×' + piece.qty : '',
-      piece.color || '',
-      worked + ' ' + tr('rounds')
-    ].filter(Boolean).join(' · ');
+    const head = [
+      piece.qty && piece.qty > 1 ? '(×' + piece.qty + ')' : '',
+      piece.color ? '· ' + piece.color : ''
+    ].filter(Boolean).join(' ');
 
-    return '<section class="sheet-piece" id="pz-' + escapeHtml(piece.id) + '" data-rise style="--i:' + pi + '">'
-      + '<div class="sheet-piece-head">'
-      + '<div><h2>' + inline(piece.title) + '</h2><span class="s">' + escapeHtml(sub) + '</span></div>'
-      + '<a class="work" href="' + work + '">' + escapeHtml(tr('openWorkshop')) + '</a>'
-      + '</div>'
+    return '<section class="fbox fpiece" id="pz-' + escapeHtml(piece.id) + '" data-rise style="--i:' + pi + '">'
+      + '<h2>' + inline(piece.title) + (head ? ' <span class="q">' + escapeHtml(head) + '</span>' : '')
+      + '<a class="work" href="' + work + '">' + escapeHtml(tr('openWorkshop')) + '</a></h2>'
       + '<div class="steps-list">' + rows + '</div>'
-      + (fin ? '<div class="sheet-finish"><h3>' + escapeHtml(tr('finishing')) + '</h3><ul>' + fin + '</ul></div>' : '')
+      + (piece.finish || []).map(f => '<p class="fin">' + inline(f) + '</p>').join('')
       + '</section>';
   }).join('');
 
-  const abbr = (pattern.abbr || []).length
-    ? '<div class="pat-block abbr" data-rise><h2>' + escapeHtml(tr('abbrev')) + '</h2>'
-      + '<dl>' + pattern.abbr.map(a =>
-          '<div><dt>' + inline(a.k) + '</dt><dd>' + inline(a.name)
-          + (a.note ? ' <span class="n">' + inline(a.note) + '</span>' : '') + '</dd></div>').join('')
-      + '</dl></div>'
+  const materials = (pattern.materials || []).map(m => '<li>' + (typeof m === 'string'
+    ? inline(m) : '<b>' + inline(m.label) + '</b> ' + inline(m.value)) + '</li>').join('');
+
+  const abbr = (pattern.abbr || []).map(a =>
+    '<div><dt>' + inline(a.k) + '</dt><dd>' + inline(a.name)
+    + (a.note ? ' <span class="n">' + inline(a.note) + '</span>' : '') + '</dd></div>').join('');
+
+  const notes = (pattern.notes || []).map(n => '<li>' + inline(n) + '</li>').join('');
+  const assembly = (pattern.assembly || []).map(a => '<li>'
+    + (a.title ? '<b>' + inline(a.title) + '</b> ' : '') + inline(a.text || a) + '</li>').join('');
+
+  const chips = [pattern.level, pattern.size, pattern.hook]
+    .filter(Boolean).map(c => '<span class="fact">' + escapeHtml(c) + '</span>').join('');
+
+  const src = pattern.source
+    ? '<div class="ficha-src">' + escapeHtml(tr('source')) + ' '
+      + (pattern.source.url
+          ? '<a href="' + escapeHtml(pattern.source.url) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(pattern.source.title) + '</a>'
+          : escapeHtml(pattern.source.title)) + '</div>'
     : '';
 
-  app.innerHTML = '<div class="topbar"><div class="row">'
+  app.innerHTML = '<div class="topbar no-print"><div class="row">'
     + '<a class="back" href="' + home + '" aria-label="' + escapeHtml(tr('backToPattern')) + '">' + BACK_ICON + '</a>'
     + '<div class="crumb">' + inline(pattern.title) + '</div>'
+    + '<button class="chip-btn print" data-print type="button" aria-label="' + escapeHtml(tr('savePdf'))
+    + '" title="' + escapeHtml(tr('savePdf')) + '">' + PRINT_ICON + '</button>'
     + Theme.button(lang)
     + '</div></div>'
-    + '<div class="page has-bar sheet-page"><div class="wrap">'
-    + '<div class="map-head"><h1>' + escapeHtml(tr('sheet')) + '</h1>'
-    + '<div class="desc">' + escapeHtml(tr('sheetSub')) + '</div>'
-    + '<div class="hint-line">' + escapeHtml(tr('jumpHint')) + '</div></div>'
-    + pieces + abbr
+    + '<div class="page has-bar ficha"><div class="wrap">'
+    + '<header class="ficha-head">'
+    + '<div class="kicker">' + escapeHtml(tr('sheetOf')) + '</div>'
+    + '<h1>' + inline(pattern.title) + '</h1>'
+    + (pattern.subtitle ? '<div class="sub">' + inline(pattern.subtitle) + '</div>' : '')
+    + (chips ? '<div class="facts">' + chips + '</div>' : '')
+    + '</header>'
+    + '<div class="ficha-tools no-print">'
+    + '<button class="cta ghost" data-print type="button">' + escapeHtml(tr('savePdf')) + '</button>'
+    + '<span class="hint-line">' + escapeHtml(tr('printHint')) + '</span></div>'
+    + '<div class="ficha-cols">'
+    + fbox(tr('materials'), materials ? '<ul>' + materials + '</ul>' : '', 'materials')
+    + fbox(tr('abbrev'), abbr ? '<dl>' + abbr + '</dl>' : '', 'abbr')
+    + fbox(tr('notes'), notes ? '<ul>' + notes + '</ul>' : '', 'notes')
+    + pieces
+    + fbox(tr('assembly'), assembly ? '<ul>' + assembly + '</ul>' : '', 'assembly')
+    + '</div>'
+    + '<div class="hint-line no-print">' + escapeHtml(tr('jumpHint')) + '</div>'
+    + src
     + '</div></div>';
+
+  for (const b of app.querySelectorAll('[data-print]')) {
+    b.addEventListener('click', () => window.print());
+  }
 
   // Arriving from the workshop means arriving at that piece, not at the top.
   if (focusPiece) {
