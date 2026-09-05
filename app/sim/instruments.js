@@ -27,6 +27,23 @@ export function observe(world, state) {
   const levels = bandLevels(world, state);
   const size = world.cfg.coarseGroupSize;
   const fine = {};
+
+  /* A ping lights the band it lands in, for as long as it rings.
+
+     This is what a ping is for. Without it the sonar is unreadable: the return
+     arrives inside a group total, smeared across four columns, over the three
+     hours the transient takes to die - so a reader spends a charge worth six
+     hours of real time and sees nothing happen. Lighting the band makes the
+     answer immediate and makes it the right shape, because the answer *is* the
+     length of the return: a short bright dash where nothing lives, a long one
+     where something does. You ping, and you listen to what comes back.
+
+     Only the reader's own pings light a band. An echo is the source answering,
+     and revealing those would hand layer two over years early - so echoes ring
+     in the dark, and stay in the residual where they belong. */
+  const lit = state.transients
+    .filter(t => t.kind === 'ping' && state.tick - t.start < t.ring)
+    .map(t => t.band);
   const groups = Math.ceil(world.cfg.bands / size);
   const coarse = new Array(groups).fill(0);
   /* How many bands each total actually pools. Watched bands are reported
@@ -38,12 +55,13 @@ export function observe(world, state) {
      available, and it costs them every other group to use. Left in. */
   const coarseCount = new Array(groups).fill(0);
   for (let b = 0; b < world.cfg.bands; b++) {
-    if (state.attention.includes(b)) fine[b] = levels[b];
+    if (state.attention.includes(b) || lit.includes(b)) fine[b] = levels[b];
     else { coarse[Math.floor(b / size)] += levels[b]; coarseCount[Math.floor(b / size)]++; }
   }
   return {
     tick: state.tick,
     attention: state.attention.slice(),
+    lit,
     fine,
     coarse,
     coarseCount,

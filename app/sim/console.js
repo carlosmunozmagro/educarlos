@@ -1,10 +1,11 @@
-/* The console. Phase two: read-only, plus where to point.
+/* The console.
 
-   Three surfaces, and between them they are the whole argument of the design:
+   Four surfaces, and between them they are the whole argument of the design:
 
      the waterfall  where the signal has been, at the resolution the reader
                     had at the time
      the strip      sixteen bands, three of which they are listening to
+     the bar        what the reader can do, and what it will cost
      the pulse      the same signal now, continuous, moving
 
    Near-wordless on purpose. The only glyphs are hexadecimal band numbers and
@@ -34,6 +35,18 @@ const HEX = '0123456789ABCDEF';
 const CARRIER_HZ = 0.5;
 const WINDOW_SEC = 5;
 const BACK = '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M11 3L5 9l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+/* Drawn rather than typed. Three glyphs instead of three words keeps the
+   console outside the EN/ES split, and drawing them beats picking unicode
+   that some phone renders as a box. */
+const ICON = {
+  listen: '<circle cx="9" cy="9" r="6.4"/><circle cx="9" cy="9" r="2" fill="currentColor" stroke="none"/>',
+  ping: '<circle cx="9" cy="9" r="2" fill="currentColor" stroke="none"/>'
+      + '<path d="M4.6 5.4a6 6 0 0 0 0 7.2"/><path d="M13.4 5.4a6 6 0 0 1 0 7.2"/>',
+  damp: '<circle cx="9" cy="9" r="6.4"/><path d="M4.5 13.5 13.5 4.5"/>'
+};
+const icon = (k) => '<svg viewBox="0 0 18 18" fill="none" stroke="currentColor"'
+  + ' stroke-width="1.6" stroke-linecap="round" aria-hidden="true">' + ICON[k] + '</svg>';
 
 const clamp01 = (v) => (v < 0 ? 0 : v > 1 ? 1 : v);
 
@@ -99,7 +112,6 @@ export async function mount(app, cfg, simId) {
   app.innerHTML = '<div class="topbar"><div class="row">'
     + '<a class="back" href="#/s/misterio" aria-label="Back">' + BACK + '</a>'
     + '<div class="crumb mono" id="sim-clock"></div>'
-    + '<div class="count mono" id="sim-charges"></div>'
     + Theme.button('en')
     + '</div></div>'
     + '<div class="sim">'
@@ -109,6 +121,16 @@ export async function mount(app, cfg, simId) {
         '<button class="sim-band" data-band="' + b + '" type="button">'
         + '<span class="g">' + HEX[b] + '</span><span class="m"></span></button>').join('')
     + '</div>'
+    + '<div class="sim-bar">'
+    + '<div class="sim-modes" id="sim-modes">'
+    + ['listen', 'ping', 'damp'].map(k =>
+        '<button class="sim-mode" data-mode="' + k + '" type="button" aria-label="' + k + '">'
+        + icon(k) + '</button>').join('')
+    + '</div>'
+    + '<div class="sim-charge" id="sim-charge">'
+    + Array.from({ length: cfg.charges.max }, () =>
+        '<span class="pip"><i></i></span>').join('')
+    + '</div></div>'
     + '<canvas id="sim-pulse" class="sim-pulse"></canvas>'
     + '</div>';
 
@@ -116,7 +138,8 @@ export async function mount(app, cfg, simId) {
   const pulse = document.getElementById('sim-pulse');
   const strip = document.getElementById('sim-strip');
   const clock = document.getElementById('sim-clock');
-  const charges = document.getElementById('sim-charges');
+  const modes = document.getElementById('sim-modes');
+  const charge = document.getElementById('sim-charge');
   const fx = fall.getContext('2d');
   const px = pulse.getContext('2d');
 
@@ -195,7 +218,12 @@ export async function mount(app, cfg, simId) {
      humming breathes; a lane with a voice peaking fills. */
   function drawPulse(nowSec) {
     px.clearRect(0, 0, pw, ph);
-    const att = state.attention;
+    /* Watched bands, plus any band a ping is currently lighting. The extra
+       lane is the sonar return, and it is the whole feedback for the most
+       expensive thing a reader can do: it arrives the instant they spend the
+       charge, and how long it stays is the answer. */
+    const view = rows[rows.length - 1];
+    const att = view.attention.concat(view.lit.filter(b => !view.attention.includes(b)));
     const lanes = att.length || 1;
     const laneH = ph / lanes;
     const steps = Math.min(pw, 220);
@@ -220,6 +248,7 @@ export async function mount(app, cfg, simId) {
       px.fillText(HEX[b], 4, mid);
 
       px.strokeStyle = ink(1.05);
+      px.globalAlpha = view.lit.includes(b) && !view.attention.includes(b) ? 0.75 : 1;
       px.beginPath();
       for (let s = 0; s <= steps; s++) {
         const sec = nowSec - WINDOW_SEC + (WINDOW_SEC * s) / steps;
@@ -230,13 +259,35 @@ export async function mount(app, cfg, simId) {
         s ? px.lineTo(x, y) : px.moveTo(x, y);
       }
       px.stroke();
+      px.globalAlpha = 1;
     });
   }
 
   function drawStrip() {
     const att = state.attention;
     for (const el of strip.children) {
-      el.classList.toggle('on', att.includes(Number(el.dataset.band)));
+      const b = Number(el.dataset.band);
+      el.classList.toggle('on', att.includes(b));
+      /* A damped band returns nothing, and looking at one is a real mistake a
+         reader can make. Marked, not disabled. */
+      el.classList.toggle('shut', state.damp[b] > tick);
+    }
+    for (const el of modes.children) el.classList.toggle('on', el.dataset.mode === mode);
+  }
+
+  /* Three pips, and the next one filling. The meter is the clock the costed
+     actions run on: a reader can see roughly how long until the next charge
+     without being told a number, which is the whole pace of the thing made
+     visible in eight pixels. */
+  function drawCharge() {
+    const pips = charge.children;
+    for (let i = 0; i < pips.length; i++) {
+      const full = i < state.charges;
+      pips[i].classList.toggle('full', full);
+      const filling = !full && i === state.charges;
+      pips[i].firstElementChild.style.height =
+        filling ? Math.round((state.regen / cfg.charges.regenTicks) * 100) + '%' : '';
+      pips[i].classList.toggle('filling', filling);
     }
   }
 
@@ -244,7 +295,7 @@ export async function mount(app, cfg, simId) {
     const d = Math.floor((tick * cfg.tickMinutes) / 1440);
     const h = Math.floor(((tick * cfg.tickMinutes) % 1440) / 60);
     clock.textContent = String(d) + 'd ' + String(h).padStart(2, '0') + 'h';
-    charges.textContent = '·'.repeat(state.charges) || '—';
+    drawCharge();
   }
 
   /* Attention is free, but it is still a choice and it is still logged: what
@@ -255,16 +306,54 @@ export async function mount(app, cfg, simId) {
     const i = att.indexOf(band);
     if (i >= 0) { if (att.length <= 1) return; att.splice(i, 1); }
     else { att.push(band); while (att.length > 3) att.shift(); }
-    const action = { tick, kind: 'listen', bands: att };
+    commit({ tick, kind: 'listen', bands: att });
+  }
+
+  /* Every action goes through here: logged first, then applied, then the
+     current row of the waterfall is recomputed so the consequence is on
+     screen at once rather than at the next tick. The log is the run; the
+     state is only ever a fold of it. */
+  function commit(action) {
     Journal.append(simId, run, action);
     state = applyAction(world, state, action);
     rows[rows.length - 1] = observe(world, state);
-    drawStrip(); drawFall();
+    drawStrip(); drawCharge(); drawFall();
+    return state.events.some(e => e.kind === 'refused');
+  }
+
+  /* A costed action is two taps - pick the mode, then the band - and the mode
+     falls back to listening afterwards. A charge is six hours of real time, so
+     spending one by brushing the screen once would be a genuine loss, and no
+     amount of undo can exist here: the log is the world's history and the
+     world has already answered. */
+  function act(band) {
+    if (mode === 'listen') { point(band); return; }
+    const kind = mode;
+    mode = 'listen';
+    if (commit({ tick, kind, band })) refuse();
+  }
+
+  /* Nothing was spent and nothing happened. Said with a flinch rather than a
+     sentence - there are no sentences here. */
+  function refuse() {
+    charge.classList.remove('refused');
+    void charge.offsetWidth;
+    charge.classList.add('refused');
   }
 
   strip.addEventListener('click', (e) => {
     const btn = e.target.closest('.sim-band');
-    if (btn) point(Number(btn.dataset.band));
+    if (btn) act(Number(btn.dataset.band));
+  });
+
+  modes.addEventListener('click', (e) => {
+    const btn = e.target.closest('.sim-mode');
+    if (!btn) return;
+    /* Arming a costed action with an empty meter is refused here rather than
+       silently, so the reader learns the cost before they pick a target. */
+    if (btn.dataset.mode !== 'listen' && state.charges < 1) { refuse(); return; }
+    mode = btn.dataset.mode === mode ? 'listen' : btn.dataset.mode;
+    drawStrip();
   });
 
   /* Wall-clock time crossing a tick boundary is the only thing that advances
@@ -288,7 +377,7 @@ export async function mount(app, cfg, simId) {
   }
 
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let raf = 0, alive = true;
+  let raf = 0, alive = true, mode = 'listen';
 
   function frame() {
     if (!alive) return;

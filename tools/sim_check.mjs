@@ -169,6 +169,31 @@ console.log('\nwhat the reader is allowed to see');
   const to = observe(w, tight);
   ok('a group with one band left pools exactly one', to.coarseCount[0] === 1);
 
+  /* A ping lights its band while it rings, and goes dark after. This is the
+     sonar being readable at all: the answer is the length of the light. */
+  const P = [{ tick: 100, kind: 'ping', band: 5 }];
+  const during = observe(w, replay(w, P, 100 + Math.floor(cfg.ping.decayTicks / 2)));
+  ok('a ping lights its band while ringing', during.lit.includes(5) && 5 in during.fine);
+  ok('a lit band leaves its group total',
+    during.coarseCount[1] < cfg.coarseGroupSize);
+
+  const after = observe(w, replay(w, P, 100 + cfg.ping.ringTicks + 1));
+  ok('the light goes out when the ring dies', !after.lit.includes(5));
+
+  /* An empty band goes dark sooner than an occupied one. If those two came
+     back the same length there would be nothing to read and no reason to
+     spend a charge. */
+  ok('ring and decay are tellable apart',
+    cfg.ping.ringTicks - cfg.ping.decayTicks >= 8);
+
+  /* The source's own answers ring in the dark. Revealing them would hand
+     layer two over before layer one had been solved. */
+  const echoed = replay(w, P, 100 + w.delay + 2);
+  const eo = observe(w, echoed);
+  ok('an echo does not light its band',
+    !eo.lit.includes(echoBand(w, 5)) && !(echoBand(w, 5) in eo.fine)
+      || eo.attention.includes(echoBand(w, 5)));
+
   /* The instrument must not leak the answer before it is earned. */
   ok('residual is sealed below layer two', residual(w, s, 1) === null);
   ok('residual opens at layer two', Array.isArray(residual(w, s, 2)));

@@ -1043,3 +1043,74 @@ code, pre, .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, 
 @media (prefers-reduced-motion: reduce) {
   .sim-card .dots i { animation: none; }
 }
+
+
+/* The bar: what the reader can do, and what it will cost. */
+.sim-bar {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+}
+
+.sim-modes { display: flex; gap: .4rem; }
+
+.sim-mode {
+  appearance: none;
+  width: 2.5rem; height: 2.1rem;
+  display: grid; place-items: center;
+  border: 1px solid var(--line);
+  background: var(--bg-soft);
+  color: var(--text-faint);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .18s var(--ease), border-color .18s var(--ease), color .18s var(--ease);
+}
+.sim-mode svg { width: 18px; height: 18px; }
+.sim-mode.on {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 60%, var(--line));
+  background: color-mix(in srgb, var(--accent) 16%, var(--bg-soft));
+}
+.sim-mode:active { transform: scale(.94); }
+
+/* Three pips and the next one filling. A charge is six hours, so this is the
+   pace of the whole thing rendered in eight pixels - no number, no words. */
+.sim-charge { display: flex; gap: .3rem; align-items: flex-end; }
+.sim-charge .pip {
+  position: relative;
+  width: 9px; height: 1.5rem;
+  border: 1px solid var(--line-2);
+  border-radius: 3px;
+  overflow: hidden;
+  background: var(--bg-soft);
+}
+.sim-charge .pip i {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 0;
+  background: var(--accent);
+  transition: height .4s var(--ease);
+}
+.sim-charge .pip.full i { height: 100%; }
+.sim-charge .pip.filling i { opacity: .45; }
+
+/* Nothing was spent and nothing happened. */
+.sim-charge.refused { animation: simrefuse .32s var(--ease); }
+@keyframes simrefuse {
+  0%, 100% { transform: translateX(0); }
+  25%      { transform: translateX(-3px); }
+  75%      { transform: translateX(3px); }
+}
+
+/* A damped band returns nothing. Marked, never disabled - listening to one is
+   a mistake worth being allowed to make. */
+.sim-band.shut {
+  opacity: .45;
+  border-style: dashed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sim-charge.refused { animation: none; }
+}

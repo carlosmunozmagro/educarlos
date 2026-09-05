@@ -144,7 +144,8 @@ export function step(world, prev) {
   const due = [];
   s.pending = s.pending.filter(p => (p.at === s.tick ? (due.push(p), false) : p.at > s.tick));
   for (const p of due) {
-    s.transients.push({ band: p.band, start: s.tick, ring: cfg.ping.ringTicks, amp: cfg.echo.gain });
+    s.transients.push({ band: p.band, start: s.tick, ring: cfg.ping.ringTicks,
+      amp: cfg.echo.gain, kind: 'echo' });
     s.events.push({ kind: 'echo', band: p.band, of: p.of, at: p.src });
   }
 
@@ -179,7 +180,7 @@ export function applyAction(world, s, a) {
        layer two. The instrument and the trap are the same instrument. */
     const occupied = s.bands.includes(a.band) && s.damp[a.band] <= s.tick;
     s.transients.push({
-      band: a.band, start: s.tick, amp: 1,
+      band: a.band, start: s.tick, amp: 1, kind: 'ping',
       ring: occupied ? cfg.ping.ringTicks : cfg.ping.decayTicks
     });
     for (const v of world.voices) if (s.bands[v.id] === a.band) relocate(world, s, v, 'ping');

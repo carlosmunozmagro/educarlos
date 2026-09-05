@@ -1,8 +1,9 @@
 # The mystery section — design
 
-Status: **phases one and two built and passing.** The engine is verified
-headlessly and the console is on screen, read-only: a waterfall, sixteen bands,
-a live pulse, and where to point. No ping, no damp, no notebook yet. This
+Status: **phases one to three built and passing.** The engine is verified
+headlessly and the console is on screen and playable: a waterfall, sixteen
+bands, a live pulse, where to point, and the two costed actions on their charge
+meter. No notebook yet, so nothing is scored and no layer can be solved. This
 document is the specification and the record of what the world actually is —
 the one place the answer is written down in plain language, for us, not for
 readers.
@@ -79,6 +80,9 @@ spectrum returns as **four group totals**, four bands summed into each. A hot
 group says roughly where to look and never which band, because a sum cannot be
 unpicked: one loud band and three quiet ones read the same as four middling ones.
 
+A **ping temporarily lights a fourth band** — the one it lands in, for as long
+as it rings. That is what the charge buys.
+
 Voices are **shy**. A voice **caught mid-peak** `S` times in a band the reader is
 listening to drifts elsewhere — counted per peak, not per tick. Staring chases
 the signal off. This is what makes "which three?" a strategy rather than a menu,
@@ -95,7 +99,7 @@ per ~6 hours. This is what enforces the pace honestly; grinding is impossible.
 | Action | Effect | Cost |
 |---|---|---|
 | `listen(b₁,b₂,b₃)` | full resolution on three bands | free, logged |
-| `ping(b)` | sonar: rings long in an occupied band, dies fast in an empty one; evicts whatever was there; returns as an echo `Δ` later | 1 charge |
+| `ping(b)` | sonar: **lights band `b` while it rings** — long in an occupied band, short in an empty one; evicts whatever was there; returns as an echo `Δ` later | 1 charge |
 | `damp(b)` | suppresses band `b` for `D` ticks; voices will not enter it | 1 charge |
 | `mark(tick)` / `predict(tick)` | notebook entries | free |
 
@@ -314,6 +318,39 @@ Past rows are never re-resolved by a later choice. Retroactively sharpening them
 would let a reader resolve the whole spectrum by pointing at each band in turn,
 which would make attention free and the search meaningless.
 
+## What phase three taught us
+
+Only one thing, and it was the important one.
+
+**A ping had no feedback.** The return arrives inside a group total, smeared
+across four columns, decaying over the hours the transient takes to die — so a
+reader spent a charge worth six hours of real time, tapped the most expensive
+control in the console, and watched nothing happen. The mechanic was correct and
+unreadable, which is the same as not existing.
+
+So a ping now **lights the band it lands in**, at full resolution, for as long as
+it rings. It is what sonar is: you ping, and you listen to what comes back. The
+answer becomes the *length of the light* — a short bright dash where nothing
+lives, a long one where something does — which is legible in the pulse the
+instant the charge is spent and in the waterfall for hours afterwards.
+
+That also finally answers what the charge buys: a fourth band, briefly, chosen
+freely. Attention stays scarce; a ping rents a look at somewhere it cannot reach.
+
+**Only the reader's own pings light a band.** An echo is the source answering,
+and lighting those would hand layer two over before layer one had been solved.
+Echoes ring in the dark, and stay in the residual where they belong. The engine
+tags every transient with which it is, and the check asserts the distinction
+both ways.
+
+Two smaller decisions in the same pass. A costed action is **two taps** — arm the
+mode, then pick the band — and the mode falls back to listening afterwards: a
+charge is six hours, so spending one by brushing the screen would be a real
+loss, and no undo can ever exist here because the log *is* the world's history
+and the world has already answered. And arming with an empty meter is refused at
+the mode button rather than silently at the band, so the cost is learned before
+a target is chosen.
+
 ## Verification
 
 Built and passing. `python3 tools/sim_check.py` runs three tiers:
@@ -345,6 +382,10 @@ caught the still picture — attention taps append to the log and survive a
 reload, the seed is stable across reloads, and light, dark, reduced-motion and
 landscape all hold.
 
+Also driven: arming a mode, spending a charge, the meter emptying and refusing a
+fourth action, a damped band marked shut — and every one of those reconstructed
+correctly after a reload, from the log alone.
+
 Still to do: the digest scrubbing, and a run exported on one device importing
 onto another and matching tick for tick.
 
@@ -365,7 +406,8 @@ that was never written.
    pixel was drawn.
 2. ~~**The console, read-only.**~~ **Done.** Route `#/x/:id`, canvas waterfall,
    carrier pulse, attention allocation, `journal.js`. No actions, no notebook.
-3. **Actions and charges.** Ping, damp, the shy-voice coupling.
+3. ~~**Actions and charges.**~~ **Done.** Ping, damp, the charge meter, the
+   sonar light, refusal.
 4. **Notebook and layer 1.** Predictions, scoring, the conjunction solve.
 5. **Digest.** Return-after-absence review, export/import.
 6. **Layer 2.** Residual instrument, echo, the solve.
