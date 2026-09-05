@@ -11,7 +11,20 @@ const STRINGS = {
     nextLesson: 'Next lesson', backToMap: 'Back to the course', backToLibrary: 'All courses',
     scroll: 'Scroll', resume: 'Resume', start: 'Start',
     of: 'of', notFound: 'Not found.', loading: 'Loading…',
-    reviewed: 'Reviewed', planned: 'Coming soon'
+    reviewed: 'Reviewed', planned: 'Coming soon',
+    patterns: 'patterns', patternOne: 'pattern',
+    searchPatterns: 'Search patterns and pieces',
+    pieces: 'pieces', pieceOne: 'piece', piece: 'Piece',
+    materials: 'Materials', abbrev: 'Stitches used', notes: 'Before you start',
+    assembly: 'Assembly', finishing: 'Finishing', source: 'Pattern from',
+    round: 'Round', rounds: 'rounds', sameRound: 'identical rounds',
+    tapNext: 'Tap anywhere for the next round', undo: 'Back one round',
+    tally: 'Count stitches', tallyReset: 'Hold to reset the stitch count',
+    keepAwake: 'Keep the screen on', workshopOn: 'Screen stays on',
+    startPiece: 'Start', resumePiece: 'Continue', restartPiece: 'Start over',
+    pieceDone: 'Piece finished', patternDone: 'Every piece finished',
+    nextPiece: 'Next piece', backToPattern: 'Back to the pattern',
+    allPatterns: 'All patterns', nextUp: 'Next'
   },
   es: {
     library: 'Educarlos', librarySub: 'Enseñarlos, una pantalla cada vez.',
@@ -24,7 +37,20 @@ const STRINGS = {
     nextLesson: 'Siguiente lección', backToMap: 'Volver al curso', backToLibrary: 'Todos los cursos',
     scroll: 'Desliza', resume: 'Continuar', start: 'Empezar',
     of: 'de', notFound: 'No encontrado.', loading: 'Cargando…',
-    reviewed: 'Revisado', planned: 'Próximamente'
+    reviewed: 'Revisado', planned: 'Próximamente',
+    patterns: 'patrones', patternOne: 'patrón',
+    searchPatterns: 'Busca patrones y piezas',
+    pieces: 'piezas', pieceOne: 'pieza', piece: 'Pieza',
+    materials: 'Materiales', abbrev: 'Puntos que se usan', notes: 'Antes de empezar',
+    assembly: 'Montaje', finishing: 'Para rematar', source: 'Patrón de',
+    round: 'Vuelta', rounds: 'vueltas', sameRound: 'vueltas iguales',
+    tapNext: 'Toca donde sea para la siguiente vuelta', undo: 'Una vuelta atrás',
+    tally: 'Contar puntos', tallyReset: 'Mantén pulsado para poner el contador a cero',
+    keepAwake: 'Mantener la pantalla encendida', workshopOn: 'La pantalla no se apaga',
+    startPiece: 'Empezar', resumePiece: 'Seguir', restartPiece: 'Empezar de nuevo',
+    pieceDone: 'Pieza terminada', patternDone: 'Todas las piezas terminadas',
+    nextPiece: 'Siguiente pieza', backToPattern: 'Volver al patrón',
+    allPatterns: 'Todos los patrones', nextUp: 'Luego'
   }
 };
 

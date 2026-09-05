@@ -1,0 +1,76 @@
+{
+  "id": "bola-de-practica",
+  "kind": "pattern",
+  "section": "punto",
+  "lang": "es",
+  "accent": "#c2703f",
+  "title": "Bola de práctica",
+  "subtitle": "La esfera de siempre: sirve para probar el modo taller antes de meterte en un muñeco.",
+  "description": "Una esfera de amigurumi de seis aumentos, tejida en espiral. No es un patrón de nadie: es la forma base de la que salen casi todas las cabezas y todos los cuerpos, y aquí está para que pruebes cómo se lee un patrón en la app antes de empezar con un muñeco de verdad.",
+  "level": "Fácil",
+  "size": "≈ 7 cm",
+  "hook": "Ganchillo 2,5 mm",
+  "materials": [
+    { "label": "Hilo", "value": "algodón del 3 (aprox. 25 g), un solo color" },
+    { "label": "Ganchillo", "value": "2,5 mm, o el que te deje el tejido cerrado" },
+    { "label": "Relleno", "value": "fibra hueca siliconada" },
+    { "label": "Extras", "value": "aguja lanera, marcador de vuelta" }
+  ],
+  "abbr": [
+    { "k": "AM", "name": "anillo mágico", "note": "el aro que se cierra tirando de la hebra" },
+    { "k": "pb", "name": "punto bajo" },
+    { "k": "aum", "name": "aumento", "note": "2 pb en el mismo punto" },
+    { "k": "dism", "name": "disminución", "note": "2 pb juntos, mejor invisible" },
+    { "k": "cad", "name": "cadeneta" },
+    { "k": "(…) ×6", "name": "repetir seis veces lo que va entre paréntesis" },
+    { "k": "p.", "name": "puntos que debe tener la vuelta al terminarla" }
+  ],
+  "notes": [
+    "Se teje **en espiral**, sin cerrar cada vuelta con punto raso.",
+    "Pon el marcador en el primer punto de la vuelta y muévelo cada vez: es lo único que te dice dónde estás si sueltas la labor.",
+    "El número entre paréntesis al final de cada vuelta es el total de puntos. Si no te cuadra, el error está en esa vuelta, no en la siguiente."
+  ],
+  "pieces": [
+    {
+      "id": "bola",
+      "title": "La bola",
+      "qty": 1,
+      "color": "un solo color",
+      "rounds": [
+        { "n": 1, "text": "6 pb en **AM**", "count": 6, "note": "Cierra el anillo tirando de la hebra corta antes de seguir." },
+        { "n": 2, "text": "6 aum", "count": 12 },
+        { "n": 3, "text": "(1 pb, aum) ×6", "count": 18 },
+        { "n": 4, "text": "(2 pb, aum) ×6", "count": 24 },
+        { "n": 5, "text": "(3 pb, aum) ×6", "count": 30 },
+        { "n": 6, "text": "(4 pb, aum) ×6", "count": 36 },
+        { "n": "7-12", "reps": 6, "text": "1 pb en cada punto", "count": 36, "note": "Seis vueltas rectas. El contador de abajo lleva la cuenta de los 36 puntos si la pierdes." },
+        { "n": 13, "text": "(4 pb, dism) ×6", "count": 30 },
+        { "n": 14, "text": "(3 pb, dism) ×6", "count": 24 },
+        { "n": 15, "text": "(2 pb, dism) ×6", "count": 18, "note": "**Rellena ahora**, mientras la boca sigue abierta. Firme, pero sin que se marque el relleno entre los puntos." },
+        { "n": 16, "text": "(1 pb, dism) ×6", "count": 12 },
+        { "n": 17, "text": "6 dism", "count": 6, "note": "Añade el último poco de relleno antes de cerrar." }
+      ],
+      "finish": [
+        "Corta dejando unos 15 cm de hebra.",
+        "Pasa la aguja por la hebra delantera de los 6 puntos que quedan y tira: la boca se cierra sola.",
+        "Esconde la hebra atravesando la bola de lado a lado, tira un poco y corta a ras."
+      ]
+    },
+    {
+      "id": "cordon",
+      "title": "Cordón para colgarla",
+      "qty": 1,
+      "color": "el mismo hilo",
+      "rounds": [
+        { "n": 1, "text": "30 cad", "count": 30 },
+        { "n": 2, "text": "1 pb en cada cadeneta, volviendo", "count": 30, "note": "Deja hebras largas en los dos extremos para coser." }
+      ],
+      "finish": [
+        "Cose los dos extremos al mismo punto de la bola, junto al cierre."
+      ]
+    }
+  ],
+  "assembly": [
+    { "title": "Repasa la forma", "text": "Si la esfera queda ovalada, casi siempre es relleno de menos en el ecuador, no un fallo de puntos." }
+  ]
+}

@@ -44,11 +44,14 @@ to `localStorage` and mid-lesson resume.
 index.html               single entry, hash router
 app/                     main.js (router) render.js (blocks) mdlite.js
                          progress.js i18n.js styles.css
-content/index.json       list of course ids
+content/index.json       list of course ids, pattern ids, and sections
 content/<course>/        course.json + lessons/<id>.json
+content/patterns/        <id>.json - one crochet pattern each
 visuals/<course>/*.svg   inlined into the page, theme-aware
 research/<course>/*.md   sourced briefs lessons are written from
 schema/                  JSON Schema, for editor autocomplete
+app/patterns.js          the pattern page and the workshop - see docs/PATTERNS.md
+app/ui.js                chrome shared by both halves (icons, ring)
 app/brand.js             the mark, the name, the pun field
 app/theme.js             system / light / dark, remembered per reader
 app/icons/               home-screen icon: icon.svg + rasterised PNGs
@@ -58,7 +61,7 @@ tools/publish.py         validate, commit, push - see docs/PUBLISH.md
 tools/validate.py        format + house-rule enforcement
 tools/visuals/           generators for data-bearing diagrams
 tools/icons.sh           re-rasterises app/icons/ from icon.svg
-docs/                    STYLE.md  VISUALS.md  FORMAT.md  PLAN.md
+docs/                    STYLE.md  VISUALS.md  FORMAT.md  PATTERNS.md  PLAN.md
 ```
 
 ## How content gets made
@@ -86,7 +89,9 @@ future content comes out — the skills read them rather than duplicating them.
 **`docs/PUBLISH.md`** is the deploy guide: one-time GitHub Pages setup, then
 `python3 tools/publish.py` for everything after.
 
-`docs/FORMAT.md` is the block reference. `python3 tools/validate.py` enforces the
+`docs/PATTERNS.md` is the reference for the other content kind: crochet
+patterns, worked one round at a time in a hands-busy workshop view rather than
+read. `docs/FORMAT.md` is the block reference. `python3 tools/validate.py` enforces the
 mechanical parts: ≤80 prose words per screen, ≤1 visual per screen, dead visual
 references, ragged tables, unbalanced `$`, missing sources on law/tax courses.
 
