@@ -5,6 +5,7 @@
     "historia-es"
   ],
   "patterns": [
+    "ledi-la-perrita",
     "bola-de-practica"
   ],
   "sections": [
@@ -28,7 +29,10 @@
       "title": "Punto",
       "subtitle": "Patrones de ganchillo, una vuelta cada vez, con las manos ocupadas.",
       "lang": "es",
-      "patterns": ["bola-de-practica"]
+      "patterns": [
+        "ledi-la-perrita",
+        "bola-de-practica"
+      ]
     }
   ]
 }

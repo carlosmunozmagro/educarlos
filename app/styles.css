@@ -979,17 +979,18 @@ code, pre, .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, 
    button that advances it, and the two controls that could be tapped by
    mistake (back, stitch count) sit in a bar at the thumb end. */
 .shop {
-  height: 100dvh; display: grid;
+  height: 100dvh; width: 100%; overflow: hidden;
+  display: grid; grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto 2px 1fr auto;
   padding-top: var(--safe-t); padding-bottom: var(--safe-b);
   background: var(--bg);
 }
 .shop-bar {
-  display: flex; align-items: center; gap: .6rem;
+  display: flex; align-items: center; gap: .6rem; min-width: 0;
   height: 46px; padding-inline: max(var(--pad-x), .75rem);
   max-width: var(--maxw); width: 100%; margin-inline: auto;
 }
-.shop-bar .crumb { color: var(--text-dim); }
+.shop-bar .crumb { flex: 1 1 auto; min-width: 0; color: var(--text-dim); }
 .shop-bar .crumb b { font-weight: 650; color: var(--text); }
 .shop-pbar { background: var(--line); }
 .shop-pbar > i {
@@ -1099,7 +1100,7 @@ code, pre, .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, 
 /* The bar the thumb can reach without looking. Tall on purpose: these are
    the two taps you make with a hook still in your hand. */
 .shop-foot {
-  display: flex; align-items: center; gap: .5rem;
+  display: flex; align-items: center; gap: .5rem; min-width: 0;
   padding: .5rem max(var(--pad-x), .75rem) .7rem;
   max-width: var(--maxw); width: 100%; margin-inline: auto;
   border-top: 1px solid var(--line);
