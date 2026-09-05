@@ -10,11 +10,11 @@
      #/p/:patternId              the object - materials, stitches, pieces
      #/p/:patternId/t/:pieceId   the workshop - one round at a time          */
 
-import { inline, escapeHtml } from './mdlite.js?v=202609051941';
-import { t } from './i18n.js?v=202609051941';
-import * as P from './progress.js?v=202609051941';
-import * as Theme from './theme.js?v=202609051941';
-import { BACK_ICON, TICK, ring, fillRings, vtName } from './ui.js?v=202609051941';
+import { inline, escapeHtml } from './mdlite.js?v=20260905195433';
+import { t } from './i18n.js?v=20260905195433';
+import * as P from './progress.js?v=20260905195433';
+import * as Theme from './theme.js?v=20260905195433';
+import { BACK_ICON, TICK, ring, fillRings, vtName } from './ui.js?v=20260905195433';
 
 const cache = new Map();
 
@@ -151,6 +151,8 @@ export async function viewPattern(app, patternId) {
     // than to re-read the materials.
     + '<div class="pat-block pieces" data-rise><h2>' + escapeHtml(tr('pieces')) + '</h2>'
     + '<div class="piece-list">' + (pieces || '<div class="empty">—</div>') + '</div></div>'
+    + '<a class="cta ghost wide" href="#/p/' + encodeURIComponent(pattern.id) + '/h">'
+    + escapeHtml(tr('openSheet')) + '</a>'
     + notes + materials + abbr + assembly + src
     + '</div></div>';
 
@@ -196,7 +198,7 @@ const EYE = '<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10"
 const UNDO = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 6.5h7.5a4.5 4.5 0 1 1 0 9H7" fill="none"/><path d="M6.8 3.4 3.6 6.5l3.2 3.1" fill="none"/></svg>';
 const KEY = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3.5 5.2h13M3.5 10h13M3.5 14.8h8" fill="none"/></svg>';
 
-export async function viewWorkshop(app, patternId, pieceId) {
+export async function viewWorkshop(app, patternId, pieceId, at = null) {
   const pattern = await getPattern(patternId);
   const piece = (pattern.pieces || []).find(p => p.id === pieceId);
   if (!piece) throw new Error('No piece "' + pieceId + '".');
@@ -213,16 +215,21 @@ export async function viewWorkshop(app, patternId, pieceId) {
   document.title = piece.title + ' · ' + pattern.title;
   app.style.setProperty('--accent', pattern.accent || '#f0a13a');
 
+  // `at` comes from the sheet: the reader pointed at a round and said start
+  // there. It overrides the saved position, and is written straight back, so
+  // going back to the sheet shows the same place.
   const saved = P.getPiece(pattern.id, piece.id);
-  let i = saved.done ? rounds.length : Math.min(saved.i, rounds.length);
-  let r = saved.done ? 0 : Math.min(saved.r, Math.max(0, (rounds[i]?.reps || 1) - 1));
+  const jump = Number.isFinite(at) ? Math.max(0, Math.min(at, rounds.length - 1)) : null;
+  let i = jump ?? (saved.done ? rounds.length : Math.min(saved.i, rounds.length));
+  let r = jump !== null ? 0 : (saved.done ? 0 : Math.min(saved.r, Math.max(0, (rounds[i]?.reps || 1) - 1)));
   let tally = 0;
 
   app.innerHTML = '<div class="shop">'
     + '<div class="shop-bar">'
     + '<a class="back" href="' + home + '" aria-label="' + escapeHtml(tr('backToPattern')) + '">' + BACK_ICON + '</a>'
-    + '<div class="crumb"><b>' + inline(piece.title) + '</b>'
-    + (piece.color ? '<span> · ' + escapeHtml(piece.color) + '</span>' : '') + '</div>'
+    + '<a class="crumb sheet-link" href="#/p/' + encodeURIComponent(pattern.id) + '/h/' + encodeURIComponent(piece.id) + '">'
+    + '<b>' + inline(piece.title) + '</b>'
+    + (piece.color ? '<span> · ' + escapeHtml(piece.color) + '</span>' : '') + '</a>'
     + '<button class="chip-btn" data-awake type="button" aria-pressed="true"'
     + ' aria-label="' + escapeHtml(tr('keepAwake')) + '" title="' + escapeHtml(tr('keepAwake')) + '">' + EYE + '</button>'
     + Theme.button(lang)
@@ -250,6 +257,7 @@ export async function viewWorkshop(app, patternId, pieceId) {
   if (!lock.supported) awakeBtn.hidden = true;
 
   const save = () => P.setPiece(pattern.id, piece.id, { i, r, done: i >= rounds.length });
+  if (jump !== null) save();
 
   function paintTally() {
     const rd = rounds[i];
@@ -375,6 +383,92 @@ export async function viewWorkshop(app, patternId, pieceId) {
 
   paint();
   return () => lock.dispose();
+}
+
+/* ---------------------------------------------------------------- sheet */
+
+/* The workshop answers "what now". The sheet answers "where am I", which is a
+   different question and needs the opposite layout: every step of every piece
+   in one column, the way a printed pattern reads. It is also the recovery
+   path - lose your place and you scan the list, tap the round you are
+   actually on, and the workshop opens there.
+
+   Same data, no second copy: rows are the same prepared rounds the workshop
+   steps through, and the position markers come from the same store. */
+export async function viewSheet(app, patternId, focusPiece = null) {
+  const pattern = await getPattern(patternId);
+  const lang = pattern.lang || 'es';
+  const tr = t(lang);
+
+  Theme.apply(Theme.stored());
+  document.documentElement.lang = lang;
+  document.title = tr('sheet') + ' · ' + pattern.title;
+  app.style.setProperty('--accent', pattern.accent || '#f0a13a');
+
+  const home = '#/p/' + encodeURIComponent(pattern.id);
+
+  const pieces = (pattern.pieces || []).map((piece, pi) => {
+    const { rounds, worked } = prepare(piece);
+    const pos = P.getPiece(pattern.id, piece.id);
+    const work = home + '/t/' + encodeURIComponent(piece.id);
+
+    // A piece nobody has touched has no "you are here": marking its first
+    // round would put the badge on every unstarted piece at once.
+    const started = pos.done || pos.i > 0 || pos.r > 0;
+    const rows = rounds.map((rd, i) => {
+      const state = pos.done || i < pos.i ? 'past' : (started && i === pos.i ? 'now' : '');
+      const num = rd.label || (rd.reps > 1 ? rd.from + '-' + rd.to : String(rd.from));
+      return '<a class="step ' + state + '" href="' + work + '/' + i + '">'
+        + '<span class="n">' + escapeHtml(num) + '</span>'
+        + '<span class="tx">' + inline(rd.text || '')
+        + (rd.note ? '<span class="nt">' + inline(rd.note) + '</span>' : '') + '</span>'
+        + (rd.count ? '<span class="c">' + rd.count + '</span>' : '<span class="c"></span>')
+        + (state === 'now' ? '<span class="here">' + escapeHtml(tr('youAreHere')) + '</span>' : '')
+        + '</a>';
+    }).join('');
+
+    const fin = (piece.finish || []).map(f => '<li>' + inline(f) + '</li>').join('');
+    const sub = [
+      piece.qty && piece.qty > 1 ? '×' + piece.qty : '',
+      piece.color || '',
+      worked + ' ' + tr('rounds')
+    ].filter(Boolean).join(' · ');
+
+    return '<section class="sheet-piece" id="pz-' + escapeHtml(piece.id) + '" data-rise style="--i:' + pi + '">'
+      + '<div class="sheet-piece-head">'
+      + '<div><h2>' + inline(piece.title) + '</h2><span class="s">' + escapeHtml(sub) + '</span></div>'
+      + '<a class="work" href="' + work + '">' + escapeHtml(tr('openWorkshop')) + '</a>'
+      + '</div>'
+      + '<div class="steps-list">' + rows + '</div>'
+      + (fin ? '<div class="sheet-finish"><h3>' + escapeHtml(tr('finishing')) + '</h3><ul>' + fin + '</ul></div>' : '')
+      + '</section>';
+  }).join('');
+
+  const abbr = (pattern.abbr || []).length
+    ? '<div class="pat-block abbr" data-rise><h2>' + escapeHtml(tr('abbrev')) + '</h2>'
+      + '<dl>' + pattern.abbr.map(a =>
+          '<div><dt>' + inline(a.k) + '</dt><dd>' + inline(a.name)
+          + (a.note ? ' <span class="n">' + inline(a.note) + '</span>' : '') + '</dd></div>').join('')
+      + '</dl></div>'
+    : '';
+
+  app.innerHTML = '<div class="topbar"><div class="row">'
+    + '<a class="back" href="' + home + '" aria-label="' + escapeHtml(tr('backToPattern')) + '">' + BACK_ICON + '</a>'
+    + '<div class="crumb">' + inline(pattern.title) + '</div>'
+    + Theme.button(lang)
+    + '</div></div>'
+    + '<div class="page has-bar sheet-page"><div class="wrap">'
+    + '<div class="map-head"><h1>' + escapeHtml(tr('sheet')) + '</h1>'
+    + '<div class="desc">' + escapeHtml(tr('sheetSub')) + '</div>'
+    + '<div class="hint-line">' + escapeHtml(tr('jumpHint')) + '</div></div>'
+    + pieces + abbr
+    + '</div></div>';
+
+  // Arriving from the workshop means arriving at that piece, not at the top.
+  if (focusPiece) {
+    const el = document.getElementById('pz-' + focusPiece);
+    if (el) requestAnimationFrame(() => el.scrollIntoView({ block: 'start' }));
+  }
 }
 
 /* ---------------------------------------------------------------- card */

@@ -3,14 +3,14 @@
      #/c/:courseId             course map
      #/c/:courseId/l/:lessonId lesson player                       */
 
-import { renderScreen } from './render.js?v=202609051941';
-import { inline, escapeHtml } from './mdlite.js?v=202609051941';
-import { t } from './i18n.js?v=202609051941';
-import { NAME, MARK, lettered, punField } from './brand.js?v=202609051941';
-import * as P from './progress.js?v=202609051941';
-import * as Theme from './theme.js?v=202609051941';
-import * as Pat from './patterns.js?v=202609051941';
-import { BACK_ICON, GO_ICON, TICK, ring, fillRings, vtName } from './ui.js?v=202609051941';
+import { renderScreen } from './render.js?v=20260905195433';
+import { inline, escapeHtml } from './mdlite.js?v=20260905195433';
+import { t } from './i18n.js?v=20260905195433';
+import { NAME, MARK, lettered, punField } from './brand.js?v=20260905195433';
+import * as P from './progress.js?v=20260905195433';
+import * as Theme from './theme.js?v=20260905195433';
+import * as Pat from './patterns.js?v=20260905195433';
+import { BACK_ICON, GO_ICON, TICK, ring, fillRings, vtName } from './ui.js?v=20260905195433';
 
 const app = document.getElementById('app');
 const cache = { index: null, sections: null, courses: new Map(), lessons: new Map(), svgs: new Map() };
@@ -436,7 +436,7 @@ function wireDeck(course, lesson, tr) {
    the direction of travel, which is all the transition needs to know. */
 function depthOf(parts) {
   if (parts[0] === 'c' && parts[2] === 'l' && parts[3]) return 3;
-  if (parts[0] === 'p' && parts[2] === 't' && parts[3]) return 3;
+  if (parts[0] === 'p' && (parts[2] === 't' || parts[2] === 'h')) return 3;
   if (parts[0] === 'c' || parts[0] === 'p') return 2;
   if (parts[0] === 's') return 1;
   return 0;
@@ -471,7 +471,10 @@ async function render(parts) {
   try {
     if (parts[0] === 'c' && parts[2] === 'l' && parts[3]) await viewLesson(parts[1], parts[3]);
     else if (parts[0] === 'c' && parts[1]) await viewCourse(parts[1]);
-    else if (parts[0] === 'p' && parts[2] === 't' && parts[3]) disposeView = await Pat.viewWorkshop(app, parts[1], parts[3]);
+    else if (parts[0] === 'p' && parts[2] === 't' && parts[3])
+      disposeView = await Pat.viewWorkshop(app, parts[1], parts[3],
+        parts[4] !== undefined ? Number(parts[4]) : null);
+    else if (parts[0] === 'p' && parts[2] === 'h') await Pat.viewSheet(app, parts[1], parts[3] || null);
     else if (parts[0] === 'p' && parts[1]) await Pat.viewPattern(app, parts[1]);
     else if (parts[0] === 's' && parts[1]) await viewSection(parts[1]);
     else await viewHome();

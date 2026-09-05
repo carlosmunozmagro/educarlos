@@ -20,7 +20,9 @@ stylesheet is stamped the same way; vendor/ is not, being pinned already.
 import datetime, pathlib, re, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-BUILD = datetime.datetime.now().strftime('%Y%m%d%H%M')
+# Seconds included on purpose: two runs a minute apart would otherwise
+# produce the same id and silently leave the old URLs in place.
+BUILD = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
 
 # An app-owned asset URL: a relative import, the entry <script>, or the
 # stylesheet link - with or without an existing ?v= stamp. vendor/ is left

@@ -17,7 +17,10 @@ content/patterns/<id>.json         one object, one file
 ```
 
 Routes: `#/p/:patternId` is the object page, `#/p/:patternId/t/:pieceId` the
-workshop. `t` for _taller_.
+workshop (`t` for _taller_), and `#/p/:patternId/h` the sheet (`h` for _hoja_).
+`#/p/:id/t/:piece/:n` opens the workshop at round entry `n`, which is what the
+sheet's rows link to; `#/p/:id/h/:piece` opens the sheet scrolled to a piece,
+which is what the workshop's crumb links to.
 
 ## The file
 
@@ -64,6 +67,19 @@ workshop. `t` for _taller_.
 A range round is expanded by the app: `"7-12"` is six taps, each showing its
 own number (7, 8, 9…) and a row of pips, so "which of the six am I on" is
 answered without counting.
+
+## The sheet
+
+The workshop answers *what now*. The sheet answers *where am I*, which is a
+different question and gets the opposite layout: every step of every piece in
+one column, the way a printed pattern reads — and it prints as one, with the
+chrome and the colour dropped.
+
+It is also the recovery path. Lose your place, scan the list, tap the round
+your hands are actually on, and the workshop opens there and remembers it.
+Worked rounds are struck through (their notes are not — those are still
+information), and the round you are on carries the marker, on started pieces
+only.
 
 ## The workshop
 

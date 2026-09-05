@@ -2,7 +2,7 @@
    progress ring, and the view-transition naming rule. Kept out of main.js so
    patterns.js can use it without importing the router that mounts it. */
 
-import { escapeHtml } from './mdlite.js?v=202609051941';
+import { escapeHtml } from './mdlite.js?v=20260905195433';
 
 export const BACK_ICON = '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M11 3L5 9l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 export const GO_ICON = '<svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M7 3l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';

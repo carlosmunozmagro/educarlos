@@ -24,7 +24,10 @@ const STRINGS = {
     startPiece: 'Start', resumePiece: 'Continue', restartPiece: 'Start over',
     pieceDone: 'Piece finished', patternDone: 'Every piece finished',
     nextPiece: 'Next piece', backToPattern: 'Back to the pattern',
-    allPatterns: 'All patterns', nextUp: 'Next'
+    allPatterns: 'All patterns', nextUp: 'Next',
+    sheet: 'The sheet', sheetSub: 'Every step, in order, on one page.',
+    openSheet: 'The sheet · every step in order', openWorkshop: 'Work it',
+    youAreHere: 'You are here', jumpHint: 'Tap any round to work from there'
   },
   es: {
     library: 'Educarlos', librarySub: 'Enseñarlos, una pantalla cada vez.',
@@ -50,7 +53,10 @@ const STRINGS = {
     startPiece: 'Empezar', resumePiece: 'Seguir', restartPiece: 'Empezar de nuevo',
     pieceDone: 'Pieza terminada', patternDone: 'Todas las piezas terminadas',
     nextPiece: 'Siguiente pieza', backToPattern: 'Volver al patrón',
-    allPatterns: 'Todos los patrones', nextUp: 'Luego'
+    allPatterns: 'Todos los patrones', nextUp: 'Luego',
+    sheet: 'La hoja', sheetSub: 'Todos los pasos, en orden, en una sola página.',
+    openSheet: 'La hoja · todos los pasos seguidos', openWorkshop: 'Tejer',
+    youAreHere: 'Vas por aquí', jumpHint: 'Toca cualquier vuelta para seguir desde ahí'
   }
 };
 
