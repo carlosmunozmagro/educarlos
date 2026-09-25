@@ -52,6 +52,8 @@ research/<course>/*.md   sourced briefs lessons are written from
 schema/                  JSON Schema, for editor autocomplete
 app/patterns.js          the pattern page and the workshop - see docs/PATTERNS.md
 app/ui.js                chrome shared by both halves (icons, ring)
+app/drive.js             the HTML drive: fixed links, uploads, history - see docs/DRIVE.md
+drive/<id>/              one shared HTML file: index.html, versions/, history.json
 app/brand.js             the mark, the name, the pun field
 app/theme.js             system / light / dark, remembered per reader
 app/icons/               home-screen icon: icon.svg + rasterised PNGs
@@ -62,7 +64,7 @@ tools/validate.py        format + house-rule enforcement
 tools/visuals/           generators for data-bearing diagrams
 tools/icons.sh           re-rasterises app/icons/ from icon.svg
 tools/bump.py            stamps a new build id on app/*.js and styles.css
-docs/                    STYLE.md  VISUALS.md  FORMAT.md  PATTERNS.md  PLAN.md
+docs/                    STYLE.md  VISUALS.md  FORMAT.md  PATTERNS.md  PLAN.md  DRIVE.md
 ```
 
 ## How content gets made

@@ -33,6 +33,14 @@
         "ledi-la-perrita",
         "bola-de-practica"
       ]
+    },
+    {
+      "id": "drive",
+      "badge": "🗂️",
+      "title": "Drive HTML",
+      "subtitle": "En pruebas. Cada archivo con su enlace fijo: descárgalo, cámbialo y sube tu versión.",
+      "lang": "es",
+      "drive": true
     }
   ]
 }
