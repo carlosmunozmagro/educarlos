@@ -1310,3 +1310,81 @@ code, pre, .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, 
   a { color: inherit; text-decoration: none; }
   [data-rise], [data-anim] { animation: none !important; opacity: 1 !important; transform: none !important; }
 }
+
+/* ============================================================
+   Drive — shared HTML files, their fixed link and their history
+   ============================================================ */
+.course-card .go {
+  flex: none; display: grid; place-items: center;
+  width: 26px; height: 26px; color: var(--text-faint);
+}
+
+.drv-url {
+  display: flex; align-items: center; gap: .5rem;
+  padding: .55rem .6rem .55rem .85rem;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+}
+.drv-url code {
+  flex: 1; min-width: 0; font-size: .8rem; color: var(--text-dim);
+  overflow-wrap: anywhere; user-select: all;
+}
+.drv-url button, .drv-acts button, .drv-acts a {
+  flex: none; padding: .35rem .7rem; border-radius: 999px;
+  border: 1px solid var(--line-2); background: transparent; color: var(--text-dim);
+  font-size: .8rem; font-weight: 600; text-decoration: none; cursor: pointer;
+}
+.drv-btns { display: flex; flex-wrap: wrap; gap: .6rem; }
+.drv-btns .cta { margin-top: .9rem; }
+
+.drv-frame {
+  display: block; width: 100%; height: 60vh; min-height: 320px;
+  border: 1px solid var(--line); border-radius: 12px; background: #fff;
+}
+
+.drv-box {
+  margin-bottom: 1.9rem; padding: 1rem 1.05rem;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+}
+details.drv-box > summary { cursor: pointer; font-weight: 600; font-size: .95rem; }
+details.drv-box[open] > summary { margin-bottom: .8rem; }
+.drv-new { margin-top: 1.4rem; }
+
+.drv-form { display: flex; flex-direction: column; gap: .75rem; }
+.drv-form label { display: flex; flex-direction: column; gap: .3rem; font-size: .82rem; font-weight: 600; color: var(--text-dim); }
+.drv-form .opt { font-weight: 400; color: var(--text-faint); }
+.drv-form input {
+  font: inherit; font-size: .95rem; font-weight: 400; color: var(--text);
+  padding: .6rem .75rem; border-radius: 10px;
+  border: 1px solid var(--line-2); background: var(--bg-soft);
+}
+.drv-form input[type=file] { padding: .5rem; font-size: .85rem; }
+.drv-form .cta { align-self: flex-start; margin-top: .2rem; }
+.drv-form .cta:disabled, .drv-acts button:disabled { opacity: .5; cursor: default; }
+.drv-msg { font-size: .86rem; color: var(--text-dim); min-height: 1.2em; }
+.drv-msg:empty { display: none; }
+.drv-msg.good { color: var(--good); }
+.drv-msg.bad { color: var(--danger); }
+
+.drv-form .drv-pending { margin-bottom: .2rem; }
+.drv-pending {
+  margin-bottom: 1.6rem; padding: .75rem .9rem; border-radius: 12px; font-size: .88rem;
+  background: color-mix(in srgb, var(--warn) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--warn) 40%, var(--line));
+}
+
+.drv-hist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .55rem; }
+.drv-ver {
+  padding: .75rem .9rem; background: var(--surface);
+  border: 1px solid var(--line); border-radius: 14px;
+}
+.drv-ver.cur { border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
+.drv-vhead { display: flex; align-items: baseline; gap: .55rem; }
+.drv-n { font-weight: 700; color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9rem; }
+.drv-by { font-weight: 600; }
+.drv-cur {
+  margin-left: auto; font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--accent);
+}
+.drv-meta { font-size: .78rem; color: var(--text-faint); margin-top: .1rem; }
+.drv-note { font-size: .88rem; color: var(--text-dim); margin-top: .35rem; }
+.drv-acts { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .6rem; }

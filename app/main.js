@@ -1,16 +1,19 @@
 /* Router + views. Three routes:
      #/                        library
      #/c/:courseId             course map
-     #/c/:courseId/l/:lessonId lesson player                       */
+     #/c/:courseId/l/:lessonId lesson player
+   plus the pattern routes (#/p/...) in patterns.js and the drive (#/d/...)
+   in drive.js.                                                      */
 
-import { renderScreen } from './render.js?v=20260905195950';
-import { inline, escapeHtml } from './mdlite.js?v=20260905195950';
-import { t } from './i18n.js?v=20260905195950';
-import { NAME, MARK, lettered, punField } from './brand.js?v=20260905195950';
-import * as P from './progress.js?v=20260905195950';
-import * as Theme from './theme.js?v=20260905195950';
-import * as Pat from './patterns.js?v=20260905195950';
-import { BACK_ICON, GO_ICON, TICK, ring, fillRings, vtName } from './ui.js?v=20260905195950';
+import { renderScreen } from './render.js?v=20260925121640';
+import { inline, escapeHtml } from './mdlite.js?v=20260925121640';
+import { t } from './i18n.js?v=20260925121640';
+import { NAME, MARK, lettered, punField } from './brand.js?v=20260925121640';
+import * as P from './progress.js?v=20260925121640';
+import * as Theme from './theme.js?v=20260925121640';
+import * as Pat from './patterns.js?v=20260925121640';
+import * as Drive from './drive.js?v=20260925121640';
+import { BACK_ICON, GO_ICON, TICK, ring, fillRings, vtName } from './ui.js?v=20260925121640';
 
 const app = document.getElementById('app');
 const cache = { index: null, sections: null, courses: new Map(), lessons: new Map(), svgs: new Map() };
@@ -87,12 +90,16 @@ async function getSections() {
   const byId = new Map(all.map(c => [c.id, c]));
   const pats = new Map((await Promise.all((idx.patterns || []).map(Pat.getPattern)))
     .map(p => [p.id, p]));
+  // A section marked "drive" lists the shared HTML files instead of courses.
+  const files = (idx.sections || []).some(d => d.drive)
+    ? await Drive.getFiles().catch(() => []) : [];
   cache.sections = (idx.sections || DEFAULT_SECTIONS).map(d => ({
     ...d,
     courses: d.courses
       ? d.courses.map(id => byId.get(id)).filter(Boolean)
-      : (d.patterns ? [] : all.filter(c => (c.lang || 'en') === d.lang)),
-    patterns: (d.patterns || []).map(id => pats.get(id)).filter(Boolean)
+      : (d.patterns || d.drive ? [] : all.filter(c => (c.lang || 'en') === d.lang)),
+    patterns: (d.patterns || []).map(id => pats.get(id)).filter(Boolean),
+    files: d.drive ? files : []
   }));
   return cache.sections;
 }
@@ -141,10 +148,11 @@ async function viewHome() {
   const shelves = sections.map((s, i) => {
     // A shelf holds courses or patterns; both are things with a title and an
     // accent, and the card only ever shows those.
-    const items = [...s.courses, ...(s.patterns || [])];
+    const items = [...s.courses, ...(s.patterns || []), ...(s.files || [])];
     const n = items.length;
     const tr = t(s.lang || 'en');
-    const noun = (s.patterns || []).length
+    const noun = s.files.length ? (n === 1 ? 'fileOne' : 'files')
+      : (s.patterns || []).length
       ? (n === 1 ? 'patternOne' : 'patterns')
       : (n === 1 ? 'courseOne' : 'courses');
     const count = n ? n + ' ' + tr(noun) : tr('planned');
@@ -222,6 +230,7 @@ async function viewSection(id) {
   const sections = await getSections();
   const sec = sections.find(s => s.id === id);
   if (!sec) throw new Error('No section "' + id + '".');
+  if (sec.drive) { setChrome(null); app.style.removeProperty('--accent'); return Drive.viewList(app, sec); }
   const lang = sec.lang || 'en';
   const tr = t(lang);
 
@@ -437,7 +446,7 @@ function wireDeck(course, lesson, tr) {
 function depthOf(parts) {
   if (parts[0] === 'c' && parts[2] === 'l' && parts[3]) return 3;
   if (parts[0] === 'p' && (parts[2] === 't' || parts[2] === 'h')) return 3;
-  if (parts[0] === 'c' || parts[0] === 'p') return 2;
+  if (parts[0] === 'c' || parts[0] === 'p' || parts[0] === 'd') return 2;
   if (parts[0] === 's') return 1;
   return 0;
 }
@@ -454,6 +463,8 @@ async function prefetch(parts) {
       await getCourse(parts[1]);
     } else if (parts[0] === 'p' && parts[1]) {
       await Pat.getPattern(parts[1]);
+    } else if (parts[0] === 'd') {
+      await Drive.getDrive();
     } else {
       await getSections();
     }
@@ -476,6 +487,7 @@ async function render(parts) {
         parts[4] !== undefined ? Number(parts[4]) : null);
     else if (parts[0] === 'p' && parts[2] === 'h') await Pat.viewSheet(app, parts[1], parts[3] || null);
     else if (parts[0] === 'p' && parts[1]) await Pat.viewPattern(app, parts[1]);
+    else if (parts[0] === 'd' && parts[1]) { setChrome(null); await Drive.viewFile(app, parts[1]); }
     else if (parts[0] === 's' && parts[1]) await viewSection(parts[1]);
     else await viewHome();
   } catch (err) {
