@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drive HTML</title>
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center;
+         font: 16px/1.5 -apple-system, "Segoe UI", Inter, system-ui, sans-serif;
+         color: #56616d; background: #fbfbfa; text-align: center; padding: 0 16px; }
+  a { color: #3a8ef0; }
+</style>
+</head>
+<body>
+<p id="msg">Cargando…</p>
+<script>
+/* The fixed link of a drive file: drive/?calendario shows its latest version,
+   drive/?calendario&v=2 a specific one. The page is replaced by the file
+   itself, so what opens is exactly what was uploaded. */
+(async () => {
+  const msg = document.getElementById('msg');
+  const fail = (t) => { msg.innerHTML = t + '<br><br><a href="../#/s/drive">Ir al Drive HTML</a>'; };
+  const q = new URLSearchParams(location.search);
+  const id = [...q.keys()].find(k => k !== 'v');
+  if (!id) { location.replace('../#/s/drive'); return; }
+  try {
+    const cfg = await (await fetch('config.json', { cache: 'no-cache' })).json();
+    if (!cfg.supabaseUrl) return fail('El Drive todavía no está conectado.');
+    const v = q.get('v');
+    const url = cfg.supabaseUrl.replace(/\/+$/, '') + '/rest/v1/drive_versions?select=html'
+      + '&file_id=eq.' + encodeURIComponent(id)
+      + (v ? '&n=eq.' + encodeURIComponent(v) : '&order=n.desc&limit=1');
+    const headers = { apikey: cfg.supabaseKey };
+    if (cfg.supabaseKey.startsWith('eyJ')) headers.Authorization = 'Bearer ' + cfg.supabaseKey;
+    const r = await fetch(url, { headers, cache: 'no-store' });
+    const rows = r.ok ? await r.json() : [];
+    if (!rows.length) return fail('No existe el archivo «' + id.replace(/[<>&]/g, '') + '»' + (v ? ' (versión ' + v.replace(/[<>&]/g, '') + ')' : '') + '.');
+    document.open();
+    document.write(rows[0].html);
+    document.close();
+  } catch (e) {
+    fail('No se ha podido cargar el archivo.');
+  }
+})();
+</script>
+</body>
+</html>
