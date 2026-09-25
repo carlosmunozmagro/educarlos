@@ -1348,10 +1348,6 @@ code, pre, .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, 
 details.drv-box > summary { cursor: pointer; font-weight: 600; font-size: .95rem; }
 details.drv-box[open] > summary { margin-bottom: .8rem; }
 .drv-new { margin-top: 1.4rem; }
-.drv-key summary b { font-weight: 600; }
-.drv-key summary b.ok { color: var(--good); }
-.drv-key summary b.no { color: var(--text-faint); }
-.drv-help { font-size: .88rem; color: var(--text-dim); line-height: 1.5; }
 
 .drv-form { display: flex; flex-direction: column; gap: .75rem; }
 .drv-form label { display: flex; flex-direction: column; gap: .3rem; font-size: .82rem; font-weight: 600; color: var(--text-dim); }
@@ -1369,6 +1365,7 @@ details.drv-box[open] > summary { margin-bottom: .8rem; }
 .drv-msg.good { color: var(--good); }
 .drv-msg.bad { color: var(--danger); }
 
+.drv-form .drv-pending { margin-bottom: .2rem; }
 .drv-pending {
   margin-bottom: 1.6rem; padding: .75rem .9rem; border-radius: 12px; font-size: .88rem;
   background: color-mix(in srgb, var(--warn) 14%, transparent);

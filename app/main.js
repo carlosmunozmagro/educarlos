@@ -5,15 +5,15 @@
    plus the pattern routes (#/p/...) in patterns.js and the drive (#/d/...)
    in drive.js.                                                      */
 
-import { renderScreen } from './render.js?v=20260925105859';
-import { inline, escapeHtml } from './mdlite.js?v=20260925105859';
-import { t } from './i18n.js?v=20260925105859';
-import { NAME, MARK, lettered, punField } from './brand.js?v=20260925105859';
-import * as P from './progress.js?v=20260925105859';
-import * as Theme from './theme.js?v=20260925105859';
-import * as Pat from './patterns.js?v=20260925105859';
-import * as Drive from './drive.js?v=20260925105859';
-import { BACK_ICON, GO_ICON, TICK, ring, fillRings, vtName } from './ui.js?v=20260925105859';
+import { renderScreen } from './render.js?v=20260925113705';
+import { inline, escapeHtml } from './mdlite.js?v=20260925113705';
+import { t } from './i18n.js?v=20260925113705';
+import { NAME, MARK, lettered, punField } from './brand.js?v=20260925113705';
+import * as P from './progress.js?v=20260925113705';
+import * as Theme from './theme.js?v=20260925113705';
+import * as Pat from './patterns.js?v=20260925113705';
+import * as Drive from './drive.js?v=20260925113705';
+import { BACK_ICON, GO_ICON, TICK, ring, fillRings, vtName } from './ui.js?v=20260925113705';
 
 const app = document.getElementById('app');
 const cache = { index: null, sections: null, courses: new Map(), lessons: new Map(), svgs: new Map() };

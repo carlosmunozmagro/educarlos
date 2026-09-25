@@ -54,6 +54,7 @@ app/patterns.js          the pattern page and the workshop - see docs/PATTERNS.m
 app/ui.js                chrome shared by both halves (icons, ring)
 app/drive.js             the HTML drive: fixed links, uploads, history - see docs/DRIVE.md
 drive/<id>/              one shared HTML file: index.html, versions/, history.json
+worker/drive-worker.js   the Cloudflare Worker that makes the drive's commits
 app/brand.js             the mark, the name, the pun field
 app/theme.js             system / light / dark, remembered per reader
 app/icons/               home-screen icon: icon.svg + rasterised PNGs

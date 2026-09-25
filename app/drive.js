@@ -7,19 +7,20 @@
      drive/<id>/versions/vNNNN.html every version ever uploaded, never edited
      drive/<id>/history.json        who uploaded which version, when, and why
 
-   There is no server. Uploading writes straight to the repo through the
-   GitHub API, as one commit per version, with a token the uploader pastes
-   once and this browser remembers. Reading needs nothing: it is all static.
+   Reading needs nothing: it is all static. Writing goes through a small
+   Cloudflare Worker (worker/drive-worker.js) that holds the GitHub key and
+   makes one commit per version, so nobody uploading ever needs a key - only
+   the team word, if one is set. Its URL is "worker" in drive/index.json.
 
      #/s/drive     the file list (a section, like any other shelf)
      #/d/:fileId   one file - open, download, upload, history, restore      */
 
-import { inline, escapeHtml } from './mdlite.js?v=20260925105859';
-import * as Theme from './theme.js?v=20260925105859';
-import { BACK_ICON, GO_ICON, vtName } from './ui.js?v=20260925105859';
+import { inline, escapeHtml } from './mdlite.js?v=20260925113705';
+import * as Theme from './theme.js?v=20260925113705';
+import { BACK_ICON, GO_ICON, vtName } from './ui.js?v=20260925113705';
 
 const ROOT = 'drive/';
-const TOKEN_KEY = 'educarlos:gh-token';
+const WORD_KEY = 'educarlos:drive-word';
 const NAME_KEY = 'educarlos:drive-name';
 const FRESH_KEY = 'educarlos:drive-fresh:';
 const MAX_BYTES = 5 * 1024 * 1024;
@@ -34,7 +35,7 @@ function load(store, k) { try { return store.getItem(k) || ''; } catch { return 
 function save(store, k, v) {
   try { v ? store.setItem(k, v) : store.removeItem(k); } catch {}
 }
-const token = () => load(localStorage, TOKEN_KEY);
+const word = () => load(localStorage, WORD_KEY);
 const myName = () => load(localStorage, NAME_KEY);
 
 /* ---------------------------------------------------------- reading */
@@ -76,159 +77,41 @@ const fileUrl = (id) => ROOT + encodeURIComponent(id) + '/';
 const versionUrl = (id, v) => ROOT + encodeURIComponent(id) + '/' + v.file;
 const absolute = (rel) => new URL(rel, location.href.split('#')[0]).href;
 
-/* --------------------------------------------------------- GitHub API */
+/* ------------------------------------------------------- the Worker */
 
-class GhError extends Error {}
-
-function explain(status, body) {
-  if (status === 401) return 'La clave de subida no es válida o ha caducado. Pega una nueva.';
-  if (status === 403) return 'La clave no tiene permiso para escribir en el repo (necesita «Contents: Read and write»).';
-  if (status === 404) return 'No se encuentra el repo con esta clave. Comprueba que la clave da acceso a «educarlos».';
-  if (status === 409 || status === 422) return 'Alguien ha subido algo a la vez. Vuelve a intentarlo.';
-  return 'GitHub ha respondido ' + status + '. ' + (body || '').slice(0, 160);
-}
-
-async function gh(path, { method = 'GET', body } = {}) {
-  const r = await fetch('https://api.github.com' + path, {
-    method,
-    cache: 'no-store',
-    headers: {
-      Accept: 'application/vnd.github+json',
-      Authorization: 'Bearer ' + token(),
-      'X-GitHub-Api-Version': '2022-11-28',
-      ...(body ? { 'Content-Type': 'application/json' } : {})
-    },
-    body: body ? JSON.stringify(body) : undefined
-  });
-  if (!r.ok) {
-    const err = new GhError(explain(r.status, await r.text().catch(() => '')));
-    err.status = r.status;
-    throw err;
-  }
-  return r.status === 204 ? null : r.json();
-}
-
-function utf8FromBase64(b64) {
-  const bin = atob(b64.replace(/\s/g, ''));
-  return new TextDecoder().decode(Uint8Array.from(bin, c => c.charCodeAt(0)));
-}
-
-/* A file's text as of one commit, or null if it does not exist there. Read
-   from the API, never the site: the site is minutes behind, and a commit
-   built on a stale history would drop someone else's version. */
-async function readAt(repo, path, sha) {
+/* One call to the upload Worker. It answers { error } with a status on
+   anything it refuses; a wrong word also forgets the remembered one, so the
+   next try asks again instead of failing the same way. */
+async function api(action, payload) {
+  const { worker } = await getDrive();
+  if (!worker) throw new Error('Las subidas todavía no están activadas: falta configurar el Worker (docs/DRIVE.md).');
+  let r;
   try {
-    const f = await gh('/repos/' + repo + '/contents/' + path + '?ref=' + sha);
-    if (f.content) return utf8FromBase64(f.content);
-    // Over 1 MB the contents API leaves content out; the blob still has it.
-    const b = await gh('/repos/' + repo + '/git/blobs/' + f.sha);
-    return utf8FromBase64(b.content);
-  } catch (e) {
-    if (e.status === 404) return null;
-    throw e;
-  }
-}
-
-/* Write several files as a single commit on the Pages branch. build() gets
-   the head it is building on and returns { files, message, result }. If the
-   branch moved in the meantime the ref update is refused, and the whole thing
-   is rebuilt on the new head - so two people uploading at once both land. */
-async function commit(build) {
-  const { repo, branch = 'main' } = await getDrive();
-  for (let attempt = 0; attempt < 4; attempt++) {
-    const ref = await gh('/repos/' + repo + '/git/ref/heads/' + branch);
-    const head = ref.object.sha;
-    const parent = await gh('/repos/' + repo + '/git/commits/' + head);
-    const { files, message, result } = await build({ repo, head });
-    const tree = await gh('/repos/' + repo + '/git/trees', {
+    r = await fetch(worker.replace(/\/+$/, '') + '/' + action, {
       method: 'POST',
-      body: {
-        base_tree: parent.tree.sha,
-        tree: files.map(f => ({ path: f.path, mode: '100644', type: 'blob', content: f.content }))
-      }
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
     });
-    const made = await gh('/repos/' + repo + '/git/commits', {
-      method: 'POST', body: { message, tree: tree.sha, parents: [head] }
-    });
-    try {
-      await gh('/repos/' + repo + '/git/refs/heads/' + branch, {
-        method: 'PATCH', body: { sha: made.sha, force: false }
-      });
-      return result;
-    } catch (e) {
-      if (e.status !== 422 && e.status !== 409) throw e;
-    }
+  } catch {
+    throw new Error('No se ha podido conectar con el servidor de subidas. Comprueba la conexión.');
   }
-  throw new GhError('Hay demasiadas subidas a la vez. Espera un momento y vuelve a intentarlo.');
+  const data = await r.json().catch(() => ({}));
+  if (!r.ok) {
+    if (r.status === 401) save(localStorage, WORD_KEY, '');
+    throw new Error(data.error || 'El servidor de subidas ha respondido ' + r.status + '.');
+  }
+  return data;
 }
 
-const pad = (n) => String(n).padStart(4, '0');
-
-/* Publish `html` as the next version of file `id`. `extra` is merged into the
-   history entry (restoredFrom, for a restore). Returns the new history. */
-async function publish(file, html, by, note, extra = {}) {
-  const base = ROOT + file.id + '/';
-  const history = await commit(async ({ repo, head }) => {
-    const raw = await readAt(repo, base + 'history.json', head);
-    const hist = raw ? JSON.parse(raw) : { versions: [] };
-    const n = hist.versions.reduce((m, v) => Math.max(m, v.n), 0) + 1;
-    const entry = {
-      n, file: 'versions/v' + pad(n) + '.html',
-      by, at: new Date().toISOString(),
-      note: note || '', bytes: new Blob([html]).size, ...extra
-    };
-    hist.versions.push(entry);
-    return {
-      files: [
-        { path: base + 'index.html', content: html },
-        { path: base + entry.file, content: html },
-        { path: base + 'history.json', content: JSON.stringify(hist, null, 2) + '\n' }
-      ],
-      message: 'Drive: ' + file.title + ' v' + n + ' (' + by + ')'
-        + (extra.restoredFrom ? ' - restaura v' + extra.restoredFrom : '')
-        + (note ? '\n\n' + note : ''),
-      result: hist
-    };
-  });
-  save(sessionStorage, FRESH_KEY + file.id, JSON.stringify(history));
-  return history;
+/* The site's copies lag the commit by the minute or two Pages takes to
+   rebuild, so what the Worker hands back is kept for this tab. */
+function remember(id, history, html) {
+  save(sessionStorage, FRESH_KEY + id, JSON.stringify(history));
+  save(sessionStorage, FRESH_KEY + id + ':html', html && html.length < 2e6 ? html : '');
 }
-
-/* Add a new file to the drive: its folder, first version, and a line in
-   drive/index.json. */
-async function createFile(title, html, by, note) {
-  const id = slug(title);
-  if (!id) throw new GhError('Ponle un nombre al archivo.');
-  const at = new Date().toISOString();
-  const entry = { n: 1, file: 'versions/v0001.html', by, at, note: note || 'Primera versión', bytes: new Blob([html]).size };
-  const hist = { versions: [entry] };
-  const idx = await commit(async ({ repo, head }) => {
-    const raw = await readAt(repo, ROOT + 'index.json', head);
-    const d = raw ? JSON.parse(raw) : { files: [] };
-    if (d.files.some(f => f.id === id)) throw new GhError('Ya hay un archivo que se llama así.');
-    d.files.push({ id, title, subtitle: '', accent: ACCENTS[d.files.length % ACCENTS.length] });
-    const base = ROOT + id + '/';
-    return {
-      files: [
-        { path: ROOT + 'index.json', content: JSON.stringify(d, null, 2) + '\n' },
-        { path: base + 'index.html', content: html },
-        { path: base + entry.file, content: html },
-        { path: base + 'history.json', content: JSON.stringify(hist, null, 2) + '\n' }
-      ],
-      message: 'Drive: nuevo archivo «' + title + '» (' + by + ')',
-      result: d
-    };
-  });
-  index = idx;
-  save(sessionStorage, FRESH_KEY + id, JSON.stringify(hist));
-  save(sessionStorage, FRESH_KEY + '_index', JSON.stringify(idx));
-  return id;
-}
-
-const ACCENTS = ['#3a8ef0', '#46c08a', '#f0a13a', '#c46fe0', '#e8695f'];
 
 function slug(s) {
-  return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+  return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
     .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 48);
 }
 
@@ -269,8 +152,7 @@ export function fileCard(file, i = 0, hist = null) {
 
 /* --------------------------------------------------------- the list */
 
-/* The section page for the drive: every file, then the upload key and a way
-   to add a new file. Called from main.js in place of the generic section. */
+/* The section page for the drive: every file, then a way to add a new one. Called from main.js in place of the generic section. */
 export async function viewList(app, sec) {
   let files = await getFiles();
   try {
@@ -300,15 +182,14 @@ export async function viewList(app, sec) {
     + '<details class="drv-box drv-new" data-rise>'
     + '<summary>+ Añadir un archivo nuevo</summary>'
     + '<form id="newf" class="drv-form">'
+    + (await offNote())
     + '<label>Nombre del archivo<input name="title" required maxlength="60" placeholder="Ej.: Presupuesto 2027"></label>'
     + uploadFields()
     + '<button class="cta" type="submit">Crear archivo</button>'
     + '<div class="drv-msg" role="status"></div>'
     + '</form></details>'
-    + keyBox()
     + '</div></div>';
 
-  wireKey(app);
   const form = app.querySelector('#newf');
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -319,7 +200,11 @@ export async function viewList(app, sec) {
     busy(form, true);
     say(msg, 'Creando «' + title + '»…');
     try {
-      const id = await createFile(title, got.html, got.by, got.note);
+      const r = await api('create', { word: got.word, title, html: got.html, by: got.by, note: got.note });
+      index = r.index;
+      save(sessionStorage, FRESH_KEY + '_index', JSON.stringify(r.index));
+      remember(r.id, r.history, got.html);
+      const id = r.id;
       location.hash = '#/d/' + encodeURIComponent(id);
     } catch (err) {
       say(msg, err.message || String(err), 'bad');
@@ -394,11 +279,12 @@ export async function viewFile(app, id) {
 
     + '<div class="pat-block" data-rise><h2>Vista previa</h2>'
     // Sandboxed without same-origin: an uploaded page runs its scripts, but
-    // cannot reach this origin's storage, where the upload key lives.
+    // cannot reach this origin's storage.
     + '<iframe class="drv-frame" id="pv" sandbox="allow-scripts allow-popups allow-forms" title="Vista previa de ' + escapeHtml(file.title) + '"></iframe></div>'
 
     + '<div class="pat-block" data-rise><h2>Subir una versión nueva</h2>'
     + '<form id="up" class="drv-form drv-box">'
+    + (await offNote())
     + uploadFields()
     + '<button class="cta" type="submit">Subir versión</button>'
     + '<div class="drv-msg" role="status"></div>'
@@ -407,8 +293,6 @@ export async function viewFile(app, id) {
     + '<div class="pat-block" data-rise><h2>Historial</h2>'
     + (rows ? '<ol class="drv-hist">' + rows + '</ol>' : '<div class="empty">Sin versiones todavía.</div>')
     + '<div class="drv-msg" id="hmsg" role="status"></div></div>'
-
-    + keyBox()
     + '</div></div>';
 
   // The preview: straight from the site, unless this tab holds a newer
@@ -426,8 +310,6 @@ export async function viewFile(app, id) {
     catch { getSelection().selectAllChildren(app.querySelector('#u')); }
   });
 
-  wireKey(app);
-
   const form = app.querySelector('#up');
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -437,8 +319,8 @@ export async function viewFile(app, id) {
     busy(form, true);
     say(msg, 'Subiendo…');
     try {
-      await publish(file, got.html, got.by, got.note);
-      save(sessionStorage, FRESH_KEY + id + ':html', got.html.length < 2e6 ? got.html : '');
+      const r = await api('upload', { word: got.word, id, html: got.html, by: got.by, note: got.note });
+      remember(id, r.history, got.html);
       viewFile(app, id);
     } catch (err) {
       say(msg, err.message || String(err), 'bad');
@@ -450,20 +332,19 @@ export async function viewFile(app, id) {
   app.querySelectorAll('[data-restore]').forEach(btn => btn.addEventListener('click', async () => {
     const n = Number(btn.dataset.restore);
     const v = hist.versions.find(x => x.n === n);
-    if (!token()) { say(hmsg, 'Para recuperar una versión hace falta la clave de subida (abajo).', 'bad'); return; }
-    const by = myName() || prompt('¿Cómo te llamas? Saldrá en el historial.') || '';
-    if (!by.trim()) return;
-    save(localStorage, NAME_KEY, by.trim());
     if (!confirm('¿Recuperar la versión ' + n + ' de ' + (v.by || '—') + '?\n\n'
       + 'Se publicará como versión nueva. No se borra nada: la actual sigue en el historial.')) return;
+    const by = myName() || (prompt('¿Tu nombre? Saldrá en el historial (puedes dejarlo vacío).') || '').trim();
+    if (by) save(localStorage, NAME_KEY, by);
+    const w = word() || (prompt('Palabra del equipo:') || '').trim();
     btn.disabled = true;
     say(hmsg, 'Recuperando la versión ' + n + '…');
     try {
-      const { repo, branch = 'main' } = await getDrive();
-      const html = await readAt(repo, ROOT + id + '/' + v.file, branch);
-      if (html == null) throw new GhError('No se encuentra la versión ' + n + ' en el repo.');
-      await publish(file, html, by.trim(), '', { restoredFrom: n });
-      save(sessionStorage, FRESH_KEY + id + ':html', html.length < 2e6 ? html : '');
+      const r = await api('restore', { word: w, id, n, by });
+      if (w) save(localStorage, WORD_KEY, w);
+      // The restored page is already on the site, as its own version file.
+      const html = await fetch(versionUrl(id, v)).then(x => x.ok ? x.text() : '').catch(() => '');
+      remember(id, r.history, html);
       viewFile(app, id);
     } catch (err) {
       say(hmsg, err.message || String(err), 'bad');
@@ -474,26 +355,34 @@ export async function viewFile(app, id) {
 
 /* ------------------------------------------------------- form pieces */
 
+/* Until the Worker exists, say so up front rather than on the first try. */
+async function offNote() {
+  return (await getDrive()).worker ? ''
+    : '<div class="drv-pending">Las subidas todavía no están activadas: falta poner en marcha '
+      + 'el servidor de subidas (el Worker). Ver y descargar ya funciona.</div>';
+}
+
 function uploadFields() {
   return '<label>Archivo HTML<input name="file" type="file" accept=".html,.htm,text/html" required></label>'
-    + '<label>Tu nombre<input name="by" required maxlength="40" autocomplete="name" value="' + escapeHtml(myName()) + '" placeholder="Saldrá en el historial"></label>'
-    + '<label><span>Qué has cambiado <span class="opt">(opcional)</span></span><input name="note" maxlength="200" placeholder="Ej.: añadidas las fechas de octubre"></label>';
+    + '<label><span>Tu nombre <span class="opt">(opcional)</span></span><input name="by" maxlength="40" autocomplete="name" value="' + escapeHtml(myName()) + '" placeholder="Saldrá en el historial"></label>'
+    + '<label><span>Qué has cambiado <span class="opt">(opcional)</span></span><input name="note" maxlength="200" placeholder="Ej.: añadidas las fechas de octubre"></label>'
+    // Remembered after the first upload that gets it right, so it is asked
+    // once per browser; the field stays so it can be changed.
+    + '<label>Palabra del equipo<input name="word" type="password" autocomplete="off" spellcheck="false" value="' + escapeHtml(word()) + '" placeholder="La que os hayáis dado"></label>';
 }
 
 async function readForm(form, msg) {
-  if (!token()) {
-    say(msg, 'Primero pega la clave de subida (más abajo, en «Clave de subida»).', 'bad');
-    form.closest('.page').querySelector('.drv-key').open = true;
-    return null;
-  }
   const f = form.file.files[0];
   const by = form.by.value.trim();
   if (!f) { say(msg, 'Elige un archivo .html.', 'bad'); return null; }
   if (!/\.html?$/i.test(f.name)) { say(msg, 'Tiene que ser un archivo .html.', 'bad'); return null; }
   if (f.size > MAX_BYTES) { say(msg, 'El archivo pesa más de 5 MB.', 'bad'); return null; }
-  if (!by) { say(msg, 'Pon tu nombre.', 'bad'); return null; }
-  save(localStorage, NAME_KEY, by);
-  return { html: await f.text(), by, note: form.note.value.trim() };
+  if (by) save(localStorage, NAME_KEY, by);
+  const w = form.word.value.trim();
+  // Saved before the call; a wrong word is forgotten again when the Worker
+  // refuses it.
+  if (w) save(localStorage, WORD_KEY, w);
+  return { html: await f.text(), by, note: form.note.value.trim(), word: w };
 }
 
 function say(el, text, kind = '') {
@@ -503,53 +392,4 @@ function say(el, text, kind = '') {
 
 function busy(form, on) {
   form.querySelectorAll('button, input').forEach(x => { x.disabled = on; });
-}
-
-/* --------------------------------------------------------- the key */
-
-function keyBox() {
-  const has = !!token();
-  return '<details class="drv-box drv-key" data-rise>'
-    + '<summary>Clave de subida · <b class="' + (has ? 'ok' : 'no') + '">'
-    + (has ? 'guardada en este navegador' : 'sin configurar') + '</b></summary>'
-    + '<p class="drv-help">Para ver y descargar no hace falta nada. Para <b>subir</b> o '
-    + '<b>recuperar</b> versiones, este navegador necesita una clave de GitHub con permiso '
-    + 'para escribir en el repo. Se pega una vez y se queda guardada solo aquí.</p>'
-    + '<form id="keyf" class="drv-form">'
-    + '<label>Clave (token de GitHub)<input name="k" type="password" autocomplete="off" spellcheck="false" placeholder="github_pat_…"></label>'
-    + '<div class="drv-btns"><button class="cta" type="submit">Guardar y probar</button>'
-    + (has ? '<button class="cta ghost" type="button" id="forget">Quitar la clave</button>' : '')
-    + '</div><div class="drv-msg" role="status"></div></form></details>';
-}
-
-function wireKey(app) {
-  const form = app.querySelector('#keyf');
-  if (!form) return;
-  const msg = form.querySelector('.drv-msg');
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const k = form.k.value.trim();
-    if (!k) { say(msg, 'Pega la clave primero.', 'bad'); return; }
-    const before = token();
-    save(localStorage, TOKEN_KEY, k);
-    say(msg, 'Probando…');
-    try {
-      const { repo } = await getDrive();
-      const r = await gh('/repos/' + repo);
-      if (r.permissions && r.permissions.push === false) throw new GhError('La clave funciona pero no puede escribir en ' + repo + '.');
-      say(msg, 'Clave guardada. Ya puedes subir versiones.', 'good');
-      form.k.value = '';
-      const s = app.querySelector('.drv-key summary b');
-      s.textContent = 'guardada en este navegador'; s.className = 'ok';
-    } catch (err) {
-      save(localStorage, TOKEN_KEY, before);
-      say(msg, err.message || String(err), 'bad');
-    }
-  });
-  app.querySelector('#forget')?.addEventListener('click', () => {
-    save(localStorage, TOKEN_KEY, '');
-    say(msg, 'Clave quitada de este navegador.', 'good');
-    const s = app.querySelector('.drv-key summary b');
-    s.textContent = 'sin configurar'; s.className = 'no';
-  });
 }

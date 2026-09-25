@@ -1,6 +1,7 @@
 {
   "repo": "carlosmunozmagro/educarlos",
   "branch": "main",
+  "worker": "",
   "files": [
     {
       "id": "calendario",
