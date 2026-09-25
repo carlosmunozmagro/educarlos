@@ -10,9 +10,12 @@
 
      GITHUB_TOKEN     secret  fine-grained token, Contents: Read and write, only on the repo
      TEAM_WORD        secret  the word asked for on upload; leave unset for none
-     REPO             text    carlosmunozmagro/educarlos
-     BRANCH           text    main
-     ALLOWED_ORIGINS  text    https://carlosmunozmagro.github.io  (comma-separated)
+
+   and, only to change the defaults:
+
+     REPO             text    default carlosmunozmagro/educarlos
+     BRANCH           text    default main
+     ALLOWED_ORIGINS  text    default https://carlosmunozmagro.github.io  (comma-separated)
 
    It only ever writes inside drive/: a file's index.html, a new version,
    its history.json, and drive/index.json when a file is added. Nothing is
@@ -61,7 +64,7 @@ class Oops extends Error {
 
 function corsHeaders(request, env) {
   const origin = request.headers.get('Origin') || '';
-  const allowed = String(env.ALLOWED_ORIGINS || '').split(',').map(s => s.trim()).filter(Boolean);
+  const allowed = String(env.ALLOWED_ORIGINS || 'https://carlosmunozmagro.github.io').split(',').map(s => s.trim()).filter(Boolean);
   const ok = allowed.includes('*') || allowed.includes(origin);
   return {
     ...(ok ? { 'Access-Control-Allow-Origin': origin } : {}),

@@ -82,10 +82,15 @@ In the Worker → **Settings** → **Variables and Secrets** → **Add**:
 | Name | Type | Value |
 |---|---|---|
 | `GITHUB_TOKEN` | **Secret** | the `github_pat_…` from step 1 |
-| `TEAM_WORD` | **Secret** | the team word (e.g. `octubre`). Leave it out to ask for none |
-| `REPO` | Text | `carlosmunozmagro/educarlos` |
-| `BRANCH` | Text | `main` |
-| `ALLOWED_ORIGINS` | Text | `https://carlosmunozmagro.github.io` |
+| `TEAM_WORD` | **Secret** | the team word. Leave it out to ask for none |
+
+Nothing else is needed: the repo (`carlosmunozmagro/educarlos`), the branch
+(`main`) and the allowed website (`https://carlosmunozmagro.github.io`) are
+already the defaults. They can be changed with the variables `REPO`, `BRANCH`
+and `ALLOWED_ORIGINS`.
+
+The word is **not** written anywhere in the repo, because the repo is
+public. It lives only in Cloudflare and gets passed on to the team.
 
 **Deploy** again if it asks you to.
 
